@@ -1,0 +1,296 @@
+{
+  "itemId": "381",
+  "name": "清水",
+  "tables": [
+    {
+      "rows": 7,
+      "columns": 3,
+      "headers": [
+        [
+          {
+            "type": "text",
+            "text": "合成设备"
+          }
+        ],
+        [
+          {
+            "type": "text",
+            "text": "原料需求"
+          }
+        ],
+        [
+          {
+            "type": "text",
+            "text": "合成产物"
+          }
+        ]
+      ],
+      "data": [
+        [
+          [
+            {
+              "type": "text",
+              "text": "（液体模式）"
+            }
+          ],
+          [
+            {
+              "type": "entry",
+              "id": "381",
+              "count": "1"
+            },
+            {
+              "type": "entry",
+              "id": "566",
+              "count": "1"
+            }
+          ],
+          [
+            {
+              "type": "entry",
+              "id": "494",
+              "count": "2"
+            }
+          ]
+        ],
+        [
+          [],
+          [
+            {
+              "type": "entry",
+              "id": "381",
+              "count": "1"
+            },
+            {
+              "type": "entry",
+              "id": "570",
+              "count": "1"
+            }
+          ],
+          [
+            {
+              "type": "entry",
+              "id": "575",
+              "count": "2"
+            }
+          ]
+        ],
+        [
+          [
+            {
+              "type": "entry",
+              "id": "746",
+              "count": "0"
+            }
+          ],
+          [
+            {
+              "type": "entry",
+              "id": "381",
+              "count": "1"
+            },
+            {
+              "type": "entry",
+              "id": "586",
+              "count": "1"
+            }
+          ],
+          [
+            {
+              "type": "entry",
+              "id": "201",
+              "count": "1"
+            }
+          ]
+        ],
+        [
+          [],
+          [
+            {
+              "type": "entry",
+              "id": "381",
+              "count": "1"
+            },
+            {
+              "type": "entry",
+              "id": "587",
+              "count": "1"
+            }
+          ],
+          [
+            {
+              "type": "entry",
+              "id": "769",
+              "count": "1"
+            }
+          ]
+        ],
+        [
+          [],
+          [
+            {
+              "type": "entry",
+              "id": "381",
+              "count": "1"
+            },
+            {
+              "type": "entry",
+              "id": "771",
+              "count": "1"
+            }
+          ],
+          [
+            {
+              "type": "entry",
+              "id": "892",
+              "count": "1"
+            }
+          ]
+        ],
+        [
+          [
+            {
+              "type": "entry",
+              "id": "752",
+              "count": "0"
+            }
+          ],
+          [
+            {
+              "type": "entry",
+              "id": "381",
+              "count": "1"
+            },
+            {
+              "type": "entry",
+              "id": "542",
+              "count": "2"
+            }
+          ],
+          [
+            {
+              "type": "entry",
+              "id": "771",
+              "count": "1"
+            }
+          ]
+        ]
+      ]
+    },
+    {
+      "rows": 3,
+      "columns": 5,
+      "headers": [
+        [
+          {
+            "type": "text",
+            "text": "合成设备"
+          }
+        ],
+        [
+          {
+            "type": "text",
+            "text": "原料需求"
+          }
+        ],
+        [],
+        [
+          {
+            "type": "text",
+            "text": "合成产物"
+          }
+        ],
+        []
+      ],
+      "data": [
+        [
+          [
+            {
+              "type": "entry",
+              "id": "176",
+              "count": "0"
+            }
+          ],
+          [
+            {
+              "type": "entry",
+              "id": "381",
+              "count": "1"
+            }
+          ],
+          [
+            {
+              "type": "text",
+              "text": "以上任意一种容器"
+            }
+          ],
+          [
+            {
+              "type": "entry",
+              "id": "370",
+              "count": "1"
+            },
+            {
+              "type": "entry",
+              "id": "371",
+              "count": "1"
+            },
+            {
+              "type": "entry",
+              "id": "552",
+              "count": "1"
+            },
+            {
+              "type": "entry",
+              "id": "551",
+              "count": "1"
+            }
+          ],
+          []
+        ],
+        [
+          [
+            {
+              "type": "entry",
+              "id": "745",
+              "count": "0"
+            }
+          ],
+          [
+            {
+              "type": "text",
+              "text": "盛装"
+            },
+            {
+              "type": "entry",
+              "id": "381",
+              "count": "0"
+            },
+            {
+              "type": "text",
+              "text": "的"
+            },
+            {
+              "type": "text",
+              "text": "任意一种容器"
+            }
+          ],
+          [],
+          [
+            {
+              "type": "entry",
+              "id": "381",
+              "count": "1"
+            }
+          ],
+          [
+            {
+              "type": "text",
+              "text": "与原料对应的空容器"
+            }
+          ]
+        ]
+      ]
+    }
+  ]
+}

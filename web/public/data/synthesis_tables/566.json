@@ -1,0 +1,82 @@
+{
+  "itemId": "566",
+  "name": "锦草种子",
+  "tables": [
+    {
+      "rows": 3,
+      "columns": 3,
+      "headers": [
+        [
+          {
+            "type": "text",
+            "text": "合成设备"
+          }
+        ],
+        [
+          {
+            "type": "text",
+            "text": "原料需求"
+          }
+        ],
+        [
+          {
+            "type": "text",
+            "text": "合成产物"
+          }
+        ]
+      ],
+      "data": [
+        [
+          [
+            {
+              "type": "entry",
+              "id": "173",
+              "count": "0"
+            }
+          ],
+          [
+            {
+              "type": "entry",
+              "id": "494",
+              "count": "1"
+            }
+          ],
+          [
+            {
+              "type": "entry",
+              "id": "566",
+              "count": "1"
+            }
+          ]
+        ],
+        [
+          [
+            {
+              "type": "text",
+              "text": "（液体模式）"
+            }
+          ],
+          [
+            {
+              "type": "entry",
+              "id": "566",
+              "count": "1"
+            },
+            {
+              "type": "entry",
+              "id": "381",
+              "count": "1"
+            }
+          ],
+          [
+            {
+              "type": "entry",
+              "id": "494",
+              "count": "2"
+            }
+          ]
+        ]
+      ]
+    }
+  ]
+}

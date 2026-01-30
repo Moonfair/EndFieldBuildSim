@@ -1,0 +1,144 @@
+{
+  "itemId": "771",
+  "name": "息壤",
+  "tables": [
+    {
+      "rows": 5,
+      "columns": 3,
+      "headers": [
+        [
+          {
+            "type": "text",
+            "text": "合成设备"
+          }
+        ],
+        [
+          {
+            "type": "text",
+            "text": "原料需求"
+          }
+        ],
+        [
+          {
+            "type": "text",
+            "text": "合成产物"
+          }
+        ]
+      ],
+      "data": [
+        [
+          [
+            {
+              "type": "entry",
+              "id": "752",
+              "count": "0"
+            }
+          ],
+          [
+            {
+              "type": "entry",
+              "id": "542",
+              "count": "1"
+            },
+            {
+              "type": "entry",
+              "id": "381",
+              "count": "1"
+            }
+          ],
+          [
+            {
+              "type": "entry",
+              "id": "771",
+              "count": "1"
+            }
+          ]
+        ],
+        [
+          [
+            {
+              "type": "entry",
+              "id": "746",
+              "count": "0"
+            }
+          ],
+          [
+            {
+              "type": "entry",
+              "id": "771",
+              "count": "1"
+            },
+            {
+              "type": "entry",
+              "id": "381",
+              "count": "1"
+            }
+          ],
+          [
+            {
+              "type": "entry",
+              "id": "892",
+              "count": "1"
+            }
+          ]
+        ],
+        [
+          [
+            {
+              "type": "entry",
+              "id": "177",
+              "count": "0"
+            }
+          ],
+          [
+            {
+              "type": "entry",
+              "id": "771",
+              "count": "5"
+            },
+            {
+              "type": "entry",
+              "id": "544",
+              "count": "15"
+            }
+          ],
+          [
+            {
+              "type": "entry",
+              "id": "767",
+              "count": "1"
+            }
+          ]
+        ],
+        [
+          [
+            {
+              "type": "entry",
+              "id": "175",
+              "count": "0"
+            }
+          ],
+          [
+            {
+              "type": "entry",
+              "id": "771",
+              "count": "10"
+            },
+            {
+              "type": "entry",
+              "id": "557",
+              "count": "10"
+            }
+          ],
+          [
+            {
+              "type": "entry",
+              "id": "480",
+              "count": "1"
+            }
+          ]
+        ]
+      ]
+    }
+  ]
+}

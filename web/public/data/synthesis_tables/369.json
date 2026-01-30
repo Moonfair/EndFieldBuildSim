@@ -1,0 +1,83 @@
+{
+  "itemId": "369",
+  "name": "酮化灌木粉末",
+  "tables": [
+    {
+      "rows": 3,
+      "columns": 3,
+      "headers": [
+        [
+          {
+            "type": "text",
+            "text": "合成设备"
+          }
+        ],
+        [
+          {
+            "type": "text",
+            "text": "原料需求"
+          }
+        ],
+        [
+          {
+            "type": "text",
+            "text": "合成产物"
+          }
+        ]
+      ],
+      "data": [
+        [
+          [
+            {
+              "type": "entry",
+              "id": "54",
+              "count": "0"
+            }
+          ],
+          [
+            {
+              "type": "entry",
+              "id": "46",
+              "count": "1"
+            }
+          ],
+          [
+            {
+              "type": "entry",
+              "id": "369",
+              "count": "2"
+            }
+          ]
+        ],
+        [
+          [
+            {
+              "type": "entry",
+              "id": "177",
+              "count": "0"
+            }
+          ],
+          [
+            {
+              "type": "entry",
+              "id": "369",
+              "count": "1"
+            },
+            {
+              "type": "entry",
+              "id": "377",
+              "count": "5"
+            }
+          ],
+          [
+            {
+              "type": "entry",
+              "id": "196",
+              "count": "1"
+            }
+          ]
+        ]
+      ]
+    }
+  ]
+}

@@ -1,0 +1,78 @@
+{
+  "itemId": "204",
+  "name": "荞花种子",
+  "tables": [
+    {
+      "rows": 3,
+      "columns": 5,
+      "headers": [
+        [
+          {
+            "type": "text",
+            "text": "合成设备"
+          }
+        ],
+        [
+          {
+            "type": "text",
+            "text": "原料需求"
+          }
+        ],
+        [],
+        [
+          {
+            "type": "text",
+            "text": "合成产物"
+          }
+        ],
+        []
+      ],
+      "data": [
+        [
+          [
+            {
+              "type": "entry",
+              "id": "174",
+              "count": "0"
+            }
+          ],
+          [],
+          [],
+          [
+            {
+              "type": "entry",
+              "id": "31",
+              "count": "1"
+            }
+          ],
+          []
+        ],
+        [
+          [
+            {
+              "type": "entry",
+              "id": "173",
+              "count": "0"
+            }
+          ],
+          [
+            {
+              "type": "entry",
+              "id": "31",
+              "count": "1"
+            }
+          ],
+          [],
+          [
+            {
+              "type": "entry",
+              "id": "204",
+              "count": "2"
+            }
+          ],
+          []
+        ]
+      ]
+    }
+  ]
+}

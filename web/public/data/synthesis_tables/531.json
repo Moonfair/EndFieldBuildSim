@@ -1,0 +1,55 @@
+{
+  "itemId": "531",
+  "name": "苦叶椒种子",
+  "tables": [
+    {
+      "rows": 2,
+      "columns": 3,
+      "headers": [
+        [
+          {
+            "type": "text",
+            "text": "合成设备"
+          }
+        ],
+        [
+          {
+            "type": "text",
+            "text": "原料需求"
+          }
+        ],
+        [
+          {
+            "type": "text",
+            "text": "合成产物"
+          }
+        ]
+      ],
+      "data": [
+        [
+          [
+            {
+              "type": "entry",
+              "id": "173",
+              "count": "0"
+            }
+          ],
+          [
+            {
+              "type": "entry",
+              "id": "530",
+              "count": "1"
+            }
+          ],
+          [
+            {
+              "type": "entry",
+              "id": "531",
+              "count": "2"
+            }
+          ]
+        ]
+      ]
+    }
+  ]
+}

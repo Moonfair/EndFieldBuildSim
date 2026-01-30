@@ -1,0 +1,100 @@
+{
+  "itemId": "545",
+  "name": "致密晶体粉末",
+  "tables": [
+    {
+      "rows": 4,
+      "columns": 3,
+      "headers": [
+        [
+          {
+            "type": "text",
+            "text": "合成设备"
+          }
+        ],
+        [
+          {
+            "type": "text",
+            "text": "原料需求"
+          }
+        ],
+        [
+          {
+            "type": "text",
+            "text": "合成产物"
+          }
+        ]
+      ],
+      "data": [
+        [
+          [
+            {
+              "type": "entry",
+              "id": "188",
+              "count": "0"
+            }
+          ],
+          [
+            {
+              "type": "entry",
+              "id": "38",
+              "count": "2"
+            },
+            {
+              "type": "entry",
+              "id": "543",
+              "count": "1"
+            }
+          ],
+          [
+            {
+              "type": "entry",
+              "id": "545",
+              "count": "1"
+            }
+          ]
+        ],
+        [
+          [
+            {
+              "type": "entry",
+              "id": "53",
+              "count": "0"
+            }
+          ],
+          [
+            {
+              "type": "entry",
+              "id": "544",
+              "count": "1"
+            }
+          ],
+          [
+            {
+              "type": "entry",
+              "id": "545",
+              "count": "1"
+            }
+          ]
+        ],
+        [
+          [],
+          [
+            {
+              "type": "entry",
+              "id": "545",
+              "count": "1"
+            }
+          ],
+          [
+            {
+              "type": "entry",
+              "id": "557",
+              "count": "1"
+            }
+          ]
+        ]
+      ]
+    }
+  ]
+}

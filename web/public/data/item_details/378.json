@@ -1,0 +1,911 @@
+{
+  "code": 0,
+  "message": "OK",
+  "timestamp": "1769744479",
+  "data": {
+    "item": {
+      "itemId": "378",
+      "document": {
+        "documentMap": {
+          "1eelzjwO": {
+            "id": "document-id",
+            "blockIds": [
+              "bGKSuM",
+              "BvJa5K"
+            ],
+            "blockMap": {
+              "73SqYU": {
+                "id": "73SqYU",
+                "parentId": "sczzso_IMxSAY",
+                "align": "center",
+                "kind": "text",
+                "text": {
+                  "inlineElements": [
+                    {
+                      "kind": "entry",
+                      "entry": {
+                        "id": "178",
+                        "showType": "card-big",
+                        "count": "0"
+                      }
+                    }
+                  ],
+                  "kind": "body"
+                }
+              },
+              "8hwKgY": {
+                "id": "8hwKgY",
+                "parentId": "1CYfiZ_VD7uDo",
+                "align": "center",
+                "kind": "text",
+                "text": {
+                  "inlineElements": [
+                    {
+                      "bold": true,
+                      "kind": "text",
+                      "text": {
+                        "text": "合成产物"
+                      }
+                    }
+                  ],
+                  "kind": "body"
+                }
+              },
+              "Aavri4": {
+                "id": "Aavri4",
+                "parentId": "sczzso_IMxSAY",
+                "align": "center",
+                "kind": "text",
+                "text": {
+                  "inlineElements": [
+                    {
+                      "kind": "text",
+                      "text": {
+                        "text": "（供能）"
+                      }
+                    }
+                  ],
+                  "kind": "body"
+                }
+              },
+              "BvJa5K": {
+                "id": "BvJa5K",
+                "parentId": "document-id",
+                "kind": "horizontalLine",
+                "horizontalLine": {
+                  "kind": "3"
+                }
+              },
+              "JTyDqe": {
+                "id": "JTyDqe",
+                "parentId": "1CYfiZ_IMxSAY",
+                "align": "center",
+                "kind": "text",
+                "text": {
+                  "inlineElements": [
+                    {
+                      "bold": true,
+                      "kind": "text",
+                      "text": {
+                        "text": "合成设备"
+                      }
+                    }
+                  ],
+                  "kind": "body"
+                }
+              },
+              "RL1oCE": {
+                "id": "RL1oCE",
+                "parentId": "VBrhPT_IMxSAY",
+                "align": "center",
+                "kind": "text",
+                "text": {
+                  "inlineElements": [
+                    {
+                      "kind": "entry",
+                      "entry": {
+                        "id": "177",
+                        "showType": "card-big",
+                        "count": "0"
+                      }
+                    }
+                  ],
+                  "kind": "body"
+                }
+              },
+              "a9z2Hq": {
+                "id": "a9z2Hq",
+                "parentId": "sczzso_l07u7G",
+                "align": "center",
+                "kind": "text",
+                "text": {
+                  "inlineElements": [
+                    {
+                      "kind": "entry",
+                      "entry": {
+                        "id": "378",
+                        "showType": "card-big",
+                        "count": "1"
+                      }
+                    }
+                  ],
+                  "kind": "body"
+                }
+              },
+              "bGKSuM": {
+                "id": "bGKSuM",
+                "parentId": "document-id",
+                "kind": "table",
+                "table": {
+                  "id": "bGKSuM",
+                  "rowIds": [
+                    "1CYfiZ",
+                    "VBrhPT",
+                    "sczzso"
+                  ],
+                  "columnIds": [
+                    "IMxSAY",
+                    "l07u7G",
+                    "VD7uDo"
+                  ],
+                  "rowMap": {
+                    "1CYfiZ": {
+                      "id": "1CYfiZ"
+                    },
+                    "VBrhPT": {
+                      "id": "VBrhPT"
+                    },
+                    "sczzso": {
+                      "id": "sczzso"
+                    }
+                  },
+                  "columnMap": {
+                    "IMxSAY": {
+                      "id": "IMxSAY",
+                      "width": 386.6666666666667
+                    },
+                    "VD7uDo": {
+                      "id": "VD7uDo",
+                      "width": 386.6666666666667
+                    },
+                    "l07u7G": {
+                      "id": "l07u7G",
+                      "width": 386.6666666666667
+                    }
+                  },
+                  "cellMap": {
+                    "1CYfiZ_IMxSAY": {
+                      "id": "1CYfiZ_IMxSAY",
+                      "childIds": [
+                        "JTyDqe"
+                      ],
+                      "rowSpan": "1",
+                      "colSpan": "1",
+                      "borderKind": "",
+                      "borderColor": "",
+                      "backgroundColor": "",
+                      "verticalAlign": "unknown"
+                    },
+                    "1CYfiZ_VD7uDo": {
+                      "id": "1CYfiZ_VD7uDo",
+                      "childIds": [
+                        "8hwKgY"
+                      ],
+                      "rowSpan": "1",
+                      "colSpan": "1",
+                      "borderKind": "",
+                      "borderColor": "",
+                      "backgroundColor": "",
+                      "verticalAlign": "unknown"
+                    },
+                    "1CYfiZ_l07u7G": {
+                      "id": "1CYfiZ_l07u7G",
+                      "childIds": [
+                        "r0ZAnP"
+                      ],
+                      "rowSpan": "1",
+                      "colSpan": "1",
+                      "borderKind": "",
+                      "borderColor": "",
+                      "backgroundColor": "",
+                      "verticalAlign": "unknown"
+                    },
+                    "VBrhPT_IMxSAY": {
+                      "id": "VBrhPT_IMxSAY",
+                      "childIds": [
+                        "RL1oCE"
+                      ],
+                      "rowSpan": "1",
+                      "colSpan": "1",
+                      "borderKind": "",
+                      "borderColor": "",
+                      "backgroundColor": "",
+                      "verticalAlign": "unknown"
+                    },
+                    "VBrhPT_VD7uDo": {
+                      "id": "VBrhPT_VD7uDo",
+                      "childIds": [
+                        "e81EcD"
+                      ],
+                      "rowSpan": "1",
+                      "colSpan": "1",
+                      "borderKind": "",
+                      "borderColor": "",
+                      "backgroundColor": "",
+                      "verticalAlign": "unknown"
+                    },
+                    "VBrhPT_l07u7G": {
+                      "id": "VBrhPT_l07u7G",
+                      "childIds": [
+                        "sKTzi7"
+                      ],
+                      "rowSpan": "1",
+                      "colSpan": "1",
+                      "borderKind": "",
+                      "borderColor": "",
+                      "backgroundColor": "",
+                      "verticalAlign": "unknown"
+                    },
+                    "sczzso_IMxSAY": {
+                      "id": "sczzso_IMxSAY",
+                      "childIds": [
+                        "73SqYU",
+                        "Aavri4"
+                      ],
+                      "rowSpan": "1",
+                      "colSpan": "1",
+                      "borderKind": "",
+                      "borderColor": "",
+                      "backgroundColor": "",
+                      "verticalAlign": "unknown"
+                    },
+                    "sczzso_VD7uDo": {
+                      "id": "sczzso_VD7uDo",
+                      "childIds": [
+                        "upcVRx"
+                      ],
+                      "rowSpan": "1",
+                      "colSpan": "1",
+                      "borderKind": "",
+                      "borderColor": "",
+                      "backgroundColor": "",
+                      "verticalAlign": "unknown"
+                    },
+                    "sczzso_l07u7G": {
+                      "id": "sczzso_l07u7G",
+                      "childIds": [
+                        "a9z2Hq"
+                      ],
+                      "rowSpan": "1",
+                      "colSpan": "1",
+                      "borderKind": "",
+                      "borderColor": "",
+                      "backgroundColor": "",
+                      "verticalAlign": "unknown"
+                    }
+                  },
+                  "description": "",
+                  "rowHeader": true,
+                  "colHeader": false
+                }
+              },
+              "e81EcD": {
+                "id": "e81EcD",
+                "parentId": "VBrhPT_VD7uDo",
+                "align": "center",
+                "kind": "text",
+                "text": {
+                  "inlineElements": [
+                    {
+                      "kind": "entry",
+                      "entry": {
+                        "id": "378",
+                        "showType": "card-big",
+                        "count": "1"
+                      }
+                    }
+                  ],
+                  "kind": "body"
+                }
+              },
+              "r0ZAnP": {
+                "id": "r0ZAnP",
+                "parentId": "1CYfiZ_l07u7G",
+                "align": "center",
+                "kind": "text",
+                "text": {
+                  "inlineElements": [
+                    {
+                      "bold": true,
+                      "kind": "text",
+                      "text": {
+                        "text": "原料需求"
+                      }
+                    }
+                  ],
+                  "kind": "body"
+                }
+              },
+              "sKTzi7": {
+                "id": "sKTzi7",
+                "parentId": "VBrhPT_l07u7G",
+                "align": "center",
+                "kind": "text",
+                "text": {
+                  "inlineElements": [
+                    {
+                      "kind": "entry",
+                      "entry": {
+                        "id": "373",
+                        "showType": "card-big",
+                        "count": "10"
+                      }
+                    },
+                    {
+                      "kind": "text",
+                      "text": {
+                        "text": " "
+                      }
+                    },
+                    {
+                      "kind": "entry",
+                      "entry": {
+                        "id": "47",
+                        "showType": "card-big",
+                        "count": "15"
+                      }
+                    }
+                  ],
+                  "kind": "body"
+                }
+              },
+              "upcVRx": {
+                "id": "upcVRx",
+                "parentId": "sczzso_VD7uDo",
+                "align": "center",
+                "kind": "text",
+                "text": {
+                  "inlineElements": [
+                    {
+                      "kind": "text",
+                      "text": {
+                        "text": "420（功率值）"
+                      }
+                    }
+                  ],
+                  "kind": "body"
+                }
+              }
+            },
+            "authorMap": {},
+            "version": "1.0.0"
+          },
+          "PKJw5GRJ": {
+            "id": "document-id",
+            "blockIds": [
+              "POJC5u",
+              "VLHJm1",
+              "Vn5hvf",
+              "Zr3OHzS3G7Fw",
+              "EN3jyC3uzQsL",
+              "nVkI7Z2dxGDy",
+              "pCnuhO"
+            ],
+            "blockMap": {
+              "91w3Ju": {
+                "id": "91w3Ju",
+                "parentId": "kwPhM2",
+                "align": "left",
+                "kind": "text",
+                "text": {
+                  "inlineElements": [
+                    {
+                      "color": "light_text_primary",
+                      "kind": "text",
+                      "text": {
+                        "text": "每装箱"
+                      }
+                    },
+                    {
+                      "kind": "entry",
+                      "entry": {
+                        "id": "378",
+                        "showType": "link-imgText",
+                        "count": "1"
+                      }
+                    },
+                    {
+                      "color": "light_text_primary",
+                      "kind": "text",
+                      "text": {
+                        "text": "需要30点货箱容量。"
+                      }
+                    }
+                  ],
+                  "kind": "body"
+                }
+              },
+              "BeYlxs45wVQH": {
+                "id": "BeYlxs45wVQH",
+                "parentId": "eBtxTV7rplxv",
+                "align": "left",
+                "kind": "text",
+                "text": {
+                  "inlineElements": [
+                    {
+                      "color": "light_text_primary",
+                      "kind": "text",
+                      "text": {
+                        "text": "破坏地图各处的"
+                      }
+                    },
+                    {
+                      "bold": true,
+                      "color": "light_rank_yellow",
+                      "kind": "text",
+                      "text": {
+                        "text": "箱子"
+                      }
+                    },
+                    {
+                      "color": "light_text_primary",
+                      "kind": "text",
+                      "text": {
+                        "text": "等途径可以获得一定数量的中容谷地电池。"
+                      }
+                    }
+                  ],
+                  "kind": "body"
+                }
+              },
+              "EN3jyC3uzQsL": {
+                "id": "EN3jyC3uzQsL",
+                "parentId": "document-id",
+                "align": "left",
+                "kind": "text",
+                "text": {
+                  "inlineElements": [
+                    {
+                      "bold": true,
+                      "color": "light_text_primary",
+                      "kind": "text",
+                      "text": {
+                        "text": "冒险探索获取。"
+                      }
+                    }
+                  ],
+                  "kind": "body"
+                }
+              },
+              "POJC5u": {
+                "id": "POJC5u",
+                "parentId": "document-id",
+                "kind": "horizontalLine",
+                "horizontalLine": {
+                  "kind": "5"
+                }
+              },
+              "VLHJm1": {
+                "id": "VLHJm1",
+                "parentId": "document-id",
+                "align": "left",
+                "kind": "text",
+                "text": {
+                  "inlineElements": [
+                    {
+                      "bold": true,
+                      "color": "light_text_primary",
+                      "kind": "text",
+                      "text": {
+                        "text": "用于仓储节点货物装箱。"
+                      }
+                    }
+                  ],
+                  "kind": "body"
+                }
+              },
+              "Vn5hvf": {
+                "id": "Vn5hvf",
+                "parentId": "document-id",
+                "kind": "list",
+                "list": {
+                  "id": "Vn5hvf",
+                  "itemIds": [
+                    "kwPhM2"
+                  ],
+                  "itemMap": {
+                    "kwPhM2": {
+                      "id": "kwPhM2",
+                      "childIds": [
+                        "91w3Ju"
+                      ]
+                    }
+                  },
+                  "kind": "unordered"
+                }
+              },
+              "Zr3OHzS3G7Fw": {
+                "id": "Zr3OHzS3G7Fw",
+                "parentId": "document-id",
+                "kind": "horizontalLine",
+                "horizontalLine": {
+                  "kind": "5"
+                }
+              },
+              "nVkI7Z2dxGDy": {
+                "id": "nVkI7Z2dxGDy",
+                "parentId": "document-id",
+                "kind": "list",
+                "list": {
+                  "id": "nVkI7Z2dxGDy",
+                  "itemIds": [
+                    "eBtxTV7rplxv"
+                  ],
+                  "itemMap": {
+                    "eBtxTV7rplxv": {
+                      "id": "eBtxTV7rplxv",
+                      "childIds": [
+                        "BeYlxs45wVQH"
+                      ]
+                    }
+                  },
+                  "kind": "unordered"
+                }
+              },
+              "pCnuhO": {
+                "id": "pCnuhO",
+                "parentId": "document-id",
+                "kind": "horizontalLine",
+                "horizontalLine": {
+                  "kind": "2"
+                }
+              }
+            },
+            "authorMap": {},
+            "version": "1.0.0"
+          }
+        },
+        "chapterGroup": [
+          {
+            "title": "物品用途",
+            "widgets": [
+              {
+                "id": "BrfRWXDB",
+                "title": "相关用途",
+                "size": "large"
+              }
+            ]
+          },
+          {
+            "title": "参与配方",
+            "widgets": [
+              {
+                "id": "ZQxNP3i5",
+                "title": "工业合成",
+                "size": "large"
+              }
+            ]
+          }
+        ],
+        "extraInfo": {
+          "showType": "",
+          "illustration": "",
+          "composite": ""
+        },
+        "widgetCommonMap": {
+          "BrfRWXDB": {
+            "type": "common",
+            "tableList": [],
+            "tabList": [],
+            "tabDataMap": {
+              "default": {
+                "intro": null,
+                "content": "PKJw5GRJ",
+                "audioList": []
+              }
+            }
+          },
+          "ZQxNP3i5": {
+            "type": "common",
+            "tableList": [],
+            "tabList": [],
+            "tabDataMap": {
+              "default": {
+                "intro": null,
+                "content": "1eelzjwO",
+                "audioList": []
+              }
+            }
+          }
+        }
+      },
+      "name": "中容谷地电池",
+      "mainType": {
+        "id": "1",
+        "name": "终末地百科",
+        "status": 2,
+        "position": 1,
+        "typeSub": []
+      },
+      "subType": {
+        "id": "6",
+        "name": "物品",
+        "fatherTypeId": "1",
+        "style": 7,
+        "status": 2,
+        "position": 7,
+        "icon": "",
+        "items": [],
+        "filterTagTree": [
+          {
+            "id": "10000",
+            "children": [
+              {
+                "id": "10001",
+                "children": [],
+                "name": "1星",
+                "type": 2,
+                "value": "rarity_1"
+              },
+              {
+                "id": "10002",
+                "children": [],
+                "name": "2星",
+                "type": 2,
+                "value": "rarity_2"
+              },
+              {
+                "id": "10003",
+                "children": [],
+                "name": "3星",
+                "type": 2,
+                "value": "rarity_3"
+              },
+              {
+                "id": "10004",
+                "children": [],
+                "name": "4星",
+                "type": 2,
+                "value": "rarity_4"
+              },
+              {
+                "id": "10005",
+                "children": [],
+                "name": "5星",
+                "type": 2,
+                "value": "rarity_5"
+              },
+              {
+                "id": "10006",
+                "children": [],
+                "name": "6星",
+                "type": 2,
+                "value": "rarity_6"
+              }
+            ],
+            "name": "星级",
+            "type": 2,
+            "value": ""
+          },
+          {
+            "id": "10253",
+            "children": [
+              {
+                "id": "10261",
+                "children": [],
+                "name": "灰色品质",
+                "type": 1,
+                "value": ""
+              },
+              {
+                "id": "10260",
+                "children": [],
+                "name": "绿色品质",
+                "type": 1,
+                "value": ""
+              },
+              {
+                "id": "10263",
+                "children": [],
+                "name": "蓝色品质",
+                "type": 1,
+                "value": ""
+              },
+              {
+                "id": "10257",
+                "children": [],
+                "name": "紫色品质",
+                "type": 1,
+                "value": ""
+              },
+              {
+                "id": "10259",
+                "children": [],
+                "name": "金色品质",
+                "type": 1,
+                "value": ""
+              },
+              {
+                "id": "10313",
+                "children": [],
+                "name": "橙色品质",
+                "type": 1,
+                "value": ""
+              }
+            ],
+            "name": "品质",
+            "type": 1,
+            "value": ""
+          },
+          {
+            "id": "10254",
+            "children": [
+              {
+                "id": "10320",
+                "children": [],
+                "name": "自然资源",
+                "type": 1,
+                "value": ""
+              },
+              {
+                "id": "10255",
+                "children": [],
+                "name": "采集材料",
+                "type": 1,
+                "value": ""
+              },
+              {
+                "id": "10332",
+                "children": [],
+                "name": "珍贵材料",
+                "type": 1,
+                "value": ""
+              },
+              {
+                "id": "10318",
+                "children": [],
+                "name": "工业产物",
+                "type": 1,
+                "value": ""
+              },
+              {
+                "id": "10317",
+                "children": [],
+                "name": "可用道具",
+                "type": 1,
+                "value": ""
+              },
+              {
+                "id": "10316",
+                "children": [],
+                "name": "功能道具",
+                "type": 1,
+                "value": ""
+              },
+              {
+                "id": "10319",
+                "children": [],
+                "name": "干员礼物",
+                "type": 1,
+                "value": ""
+              },
+              {
+                "id": "10258",
+                "children": [],
+                "name": "培养素材",
+                "type": 1,
+                "value": ""
+              },
+              {
+                "id": "10262",
+                "children": [],
+                "name": "任务物品",
+                "type": 1,
+                "value": ""
+              },
+              {
+                "id": "10256",
+                "children": [],
+                "name": "珍贵物品",
+                "type": 1,
+                "value": ""
+              }
+            ],
+            "name": "物品分类",
+            "type": 1,
+            "value": ""
+          }
+        ]
+      },
+      "lang": "zh_Hans",
+      "lastUpdatedUser": {
+        "id": "1939869660098",
+        "nickname": "小狗殺魚",
+        "avatarCode": 0,
+        "avatar": "https://bbs.hycdn.cn/image/2026/01/20/16c8840085b7cd898f42947cdb195584.png"
+      },
+      "createdUser": {
+        "id": "6208993443188",
+        "nickname": "肉丝饼",
+        "avatarCode": 0,
+        "avatar": "https://bbs.hycdn.cn/image/2025/10/31/9c96dd862681caf8673e940a6f338d09.png"
+      },
+      "brief": {
+        "cover": "https://bbs.hycdn.cn/image/2025/12/21/203953/c9c1b6d48fc64cf87afd22fb44538f9e.png",
+        "name": "中容谷地电池",
+        "description": {
+          "id": "document-id",
+          "blockIds": [
+            "LXY1iB",
+            "9bzHRe"
+          ],
+          "blockMap": {
+            "9bzHRe": {
+              "id": "9bzHRe",
+              "parentId": "document-id",
+              "align": "left",
+              "kind": "text",
+              "text": {
+                "inlineElements": [
+                  {
+                    "color": "light_text_tertiary",
+                    "kind": "text",
+                    "text": {
+                      "text": "“能工巧匠”在必要时能够将中容电池改造为爆破性武器。"
+                    }
+                  }
+                ],
+                "kind": "body"
+              }
+            },
+            "LXY1iB": {
+              "id": "LXY1iB",
+              "parentId": "document-id",
+              "align": "left",
+              "kind": "text",
+              "text": {
+                "inlineElements": [
+                  {
+                    "bold": true,
+                    "color": "light_text_primary",
+                    "kind": "text",
+                    "text": {
+                      "text": "通过设备封装获得的电池，可用于发电、设备充能或与据点进行交易。"
+                    }
+                  }
+                ],
+                "kind": "body"
+              }
+            }
+          },
+          "authorMap": {},
+          "version": "1.0.0"
+        },
+        "associate": null,
+        "subTypeList": [
+          {
+            "subTypeId": "10000",
+            "value": "10003"
+          },
+          {
+            "subTypeId": "10253",
+            "value": "10263"
+          },
+          {
+            "subTypeId": "10254",
+            "value": "10318"
+          }
+        ],
+        "composite": null
+      },
+      "status": 2,
+      "publishedAtTs": "1766384653",
+      "lastAuditPassedAt": "1769480927",
+      "tagIds": [
+        "10003",
+        "10318",
+        "10263"
+      ]
+    }
+  }
+}

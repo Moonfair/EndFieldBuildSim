@@ -1,0 +1,86 @@
+{
+  "itemId": "549",
+  "name": "高容谷地电池",
+  "tables": [
+    {
+      "rows": 3,
+      "columns": 3,
+      "headers": [
+        [
+          {
+            "type": "text",
+            "text": "合成设备"
+          }
+        ],
+        [
+          {
+            "type": "text",
+            "text": "原料需求"
+          }
+        ],
+        [
+          {
+            "type": "text",
+            "text": "合成产物"
+          }
+        ]
+      ],
+      "data": [
+        [
+          [
+            {
+              "type": "entry",
+              "id": "177",
+              "count": "0"
+            }
+          ],
+          [
+            {
+              "type": "entry",
+              "id": "541",
+              "count": "10"
+            },
+            {
+              "type": "entry",
+              "id": "544",
+              "count": "15"
+            }
+          ],
+          [
+            {
+              "type": "entry",
+              "id": "549",
+              "count": "1"
+            }
+          ]
+        ],
+        [
+          [
+            {
+              "type": "entry",
+              "id": "178",
+              "count": "0"
+            }
+          ],
+          [
+            {
+              "type": "entry",
+              "id": "549",
+              "count": "1"
+            }
+          ],
+          [
+            {
+              "type": "text",
+              "text": "1100"
+            },
+            {
+              "type": "text",
+              "text": "（功率值）"
+            }
+          ]
+        ]
+      ]
+    }
+  ]
+}

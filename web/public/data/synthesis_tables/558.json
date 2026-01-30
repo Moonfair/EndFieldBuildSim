@@ -1,0 +1,60 @@
+{
+  "itemId": "558",
+  "name": "膨地啪",
+  "tables": [
+    {
+      "rows": 2,
+      "columns": 3,
+      "headers": [
+        [
+          {
+            "type": "text",
+            "text": "合成设备"
+          }
+        ],
+        [
+          {
+            "type": "text",
+            "text": "原料需求"
+          }
+        ],
+        [
+          {
+            "type": "text",
+            "text": "合成产物"
+          }
+        ]
+      ],
+      "data": [
+        [
+          [
+            {
+              "type": "entry",
+              "id": "752",
+              "count": "0"
+            }
+          ],
+          [
+            {
+              "type": "entry",
+              "id": "892",
+              "count": "1"
+            },
+            {
+              "type": "entry",
+              "id": "22",
+              "count": "1"
+            }
+          ],
+          [
+            {
+              "type": "entry",
+              "id": "558",
+              "count": "1"
+            }
+          ]
+        ]
+      ]
+    }
+  ]
+}

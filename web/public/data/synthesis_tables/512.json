@@ -1,0 +1,60 @@
+{
+  "itemId": "512",
+  "name": "柑实罐头",
+  "tables": [
+    {
+      "rows": 2,
+      "columns": 3,
+      "headers": [
+        [
+          {
+            "type": "text",
+            "text": "合成设备"
+          }
+        ],
+        [
+          {
+            "type": "text",
+            "text": "原料需求"
+          }
+        ],
+        [
+          {
+            "type": "text",
+            "text": "合成产物"
+          }
+        ]
+      ],
+      "data": [
+        [
+          [
+            {
+              "type": "entry",
+              "id": "176",
+              "count": "0"
+            }
+          ],
+          [
+            {
+              "type": "entry",
+              "id": "380",
+              "count": "5"
+            },
+            {
+              "type": "entry",
+              "id": "370",
+              "count": "5"
+            }
+          ],
+          [
+            {
+              "type": "entry",
+              "id": "512",
+              "count": "1"
+            }
+          ]
+        ]
+      ]
+    }
+  ]
+}
