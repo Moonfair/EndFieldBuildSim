@@ -25,14 +25,14 @@ export default function DeviceDetailPage() {
     setError(null);
 
     Promise.all([
-      fetch(`/data/item_details/${id}.json`).then((res) => {
+      fetch(`${import.meta.env.BASE_URL}data/item_details/${id}.json`).then((res) => {
         if (!res.ok) throw new Error(`Device not found: ${id}`);
         return res.json();
       }),
-      fetch(`/data/device_production_tables/${id}.json`)
+      fetch(`${import.meta.env.BASE_URL}data/device_production_tables/${id}.json`)
         .then((res) => (res.ok ? res.json() : null))
         .catch(() => null),
-      fetch('/data/item_lookup.json').then((res) => res.json()),
+      fetch(`${import.meta.env.BASE_URL}data/item_lookup.json`).then((res) => res.json()),
     ])
       .then(([deviceRes, productionRes, lookupRes]) => {
         setDeviceData(deviceRes);

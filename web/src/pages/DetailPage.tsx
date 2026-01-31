@@ -25,14 +25,14 @@ export default function DetailPage() {
     setError(null);
 
     Promise.all([
-      fetch(`/data/item_details/${id}.json`).then((res) => {
+      fetch(`${import.meta.env.BASE_URL}data/item_details/${id}.json`).then((res) => {
         if (!res.ok) throw new Error(`Item not found: ${id}`);
         return res.json();
       }),
-      fetch(`/data/synthesis_tables/${id}.json`)
+      fetch(`${import.meta.env.BASE_URL}data/synthesis_tables/${id}.json`)
         .then((res) => (res.ok ? res.json() : null))
         .catch(() => null),
-      fetch('/data/item_lookup.json').then((res) => res.json()),
+      fetch(`${import.meta.env.BASE_URL}data/item_lookup.json`).then((res) => res.json()),
     ])
       .then(([itemRes, synthesisRes, lookupRes]) => {
         setItemData(itemRes);

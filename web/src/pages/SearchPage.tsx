@@ -12,7 +12,7 @@ export default function SearchPage() {
   const [error, setError] = useState<string | null>(null);
 
   useEffect(() => {
-    fetch('/data/item_lookup.json')
+    fetch(`${import.meta.env.BASE_URL}data/item_lookup.json`)
       .then((res) => {
         if (!res.ok) throw new Error(`HTTP ${res.status}`);
         return res.json();
