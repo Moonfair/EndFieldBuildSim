@@ -1,7 +1,7 @@
 {
   "deviceId": "174",
   "deviceName": "种植机",
-  "recipeCount": 7,
+  "recipeCount": 8,
   "recipes": [
     {
       "materials": [
@@ -89,6 +89,16 @@
         {
           "id": "42",
           "name": "柑实",
+          "count": "1"
+        }
+      ]
+    },
+    {
+      "materials": [],
+      "products": [
+        {
+          "id": "31",
+          "name": "荞花",
           "count": "1"
         }
       ]

@@ -1,18 +1,8 @@
 {
   "deviceId": "173",
   "deviceName": "采种机",
-  "recipeCount": 12,
+  "recipeCount": 8,
   "recipes": [
-    {
-      "materials": [],
-      "products": [
-        {
-          "id": "566",
-          "name": "锦草种子",
-          "count": "1"
-        }
-      ]
-    },
     {
       "materials": [
         {
@@ -30,16 +20,6 @@
       ]
     },
     {
-      "materials": [],
-      "products": [
-        {
-          "id": "570",
-          "name": "芽针种子",
-          "count": "1"
-        }
-      ]
-    },
-    {
       "materials": [
         {
           "id": "200",
@@ -51,16 +31,6 @@
         {
           "id": "199",
           "name": "灰芦麦种子",
-          "count": "2"
-        }
-      ]
-    },
-    {
-      "materials": [],
-      "products": [
-        {
-          "id": "202",
-          "name": "酮化树种",
           "count": "2"
         }
       ]
@@ -125,16 +95,6 @@
         {
           "id": "531",
           "name": "苦叶椒种子",
-          "count": "2"
-        }
-      ]
-    },
-    {
-      "materials": [],
-      "products": [
-        {
-          "id": "481",
-          "name": "砂叶种子",
           "count": "2"
         }
       ]

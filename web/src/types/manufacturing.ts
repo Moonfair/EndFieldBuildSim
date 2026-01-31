@@ -7,7 +7,30 @@ export interface ManufacturingRecipe {
 }
 
 /**
- * 制造依赖树节点
+ * 配方数据库
+ */
+export interface RecipeDatabase {
+  recipes: Record<string, ManufacturingRecipe>;
+  asMaterials: Record<string, string[]>;
+  asProducts: Record<string, string[]>;
+  byDevice: Record<string, string[]>;
+}
+
+/**
+ * 设备生产表
+ */
+export interface DeviceProductionTable {
+  deviceId: string;
+  deviceName: string;
+  recipeCount: number;
+  recipes: Array<{
+    materials: Array<{ id: string; name: string; count: number }>;
+    products: Array<{ id: string; name: string; count: number }>;
+  }>;
+}
+
+/**
+ * 配方数据库
  */
 export interface DependencyNode {
   itemId: string;
@@ -75,6 +98,7 @@ export interface SimulatorState {
  * 配方查找结果
  */
 export interface RecipeLookup {
-  byItem: Map<string, ManufacturingRecipe[]>; // itemId -> recipes
+  asMaterials: Map<string, ManufacturingRecipe[]>; // itemId -> recipes (as material)
+  asProducts: Map<string, ManufacturingRecipe[]>; // itemId -> recipes (as product)
   byDevice: Map<string, ManufacturingRecipe[]>; // deviceId -> recipes
 }

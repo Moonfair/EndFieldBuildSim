@@ -1,13 +1,13 @@
 export interface RecipeItem {
   id: string;
   name: string;
-  count: string;
+  count: number;
 }
 
 export interface Recipe {
   materials: RecipeItem[];
   products: RecipeItem[];
-  manufacturingTime?: string;
+  manufacturingTime?: number;
 }
 
 export interface DeviceProductionTable {

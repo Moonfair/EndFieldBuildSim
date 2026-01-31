@@ -22,7 +22,7 @@ function RecipeItemRenderer({ items, itemLookup }: RecipeItemRendererProps) {
       <div className="flex flex-col gap-2">
         {items.map((item, index) => {
           const lookupItem = itemLookup?.[item.id];
-          const countText = item.count !== '0' ? `x${item.count}` : '';
+          const countText = item.count !== 0 ? `x${item.count}` : '';
 
           return (
             <a

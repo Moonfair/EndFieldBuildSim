@@ -42,7 +42,7 @@ export function buildDependencyTree(options: BuildOptions): DependencyNode {
   visited.add(targetItemId);
 
   const isBaseMaterial = baseMaterialIds.has(targetItemId);
-  const recipes = recipeLookup.byItem.get(targetItemId) || [];
+  const recipes = recipeLookup.asProducts.get(targetItemId) || [];
 
   const children: DependencyNode[] = [];
   const uniqueMaterialIds = new Set<string>();

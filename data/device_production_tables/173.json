@@ -1,7 +1,7 @@
 {
   "deviceId": "173",
   "deviceName": "采种机",
-  "recipeCount": 12,
+  "recipeCount": 13,
   "recipes": [
     {
       "materials": [],
@@ -109,6 +109,22 @@
         {
           "id": "202",
           "name": "酮化树种",
+          "count": "2"
+        }
+      ]
+    },
+    {
+      "materials": [
+        {
+          "id": "31",
+          "name": "荞花",
+          "count": "1"
+        }
+      ],
+      "products": [
+        {
+          "id": "204",
+          "name": "荞花种子",
           "count": "2"
         }
       ]

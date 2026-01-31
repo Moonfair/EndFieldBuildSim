@@ -4,6 +4,7 @@ import type { ItemResponse } from '../types/detail';
 import type { DeviceProductionTable as DeviceProductionTableType } from '../types/device';
 import type { ItemLookup } from '../types/catalog';
 import type { Block } from '../types/document';
+import type { RecipeDatabase } from '../types/manufacturing';
 import DocumentRenderer from '../components/DocumentRenderer';
 import DeviceProductionTable from '../components/DeviceProductionTable';
 import ItemImage from '../components/ItemImage';
@@ -13,7 +14,7 @@ import { cn } from '@/lib/utils';
 export default function DeviceDetailPage() {
   const { id } = useParams<{ id: string }>();
   const [deviceData, setDeviceData] = useState<ItemResponse | null>(null);
-  const [productionTable, setProductionTable] = useState<DeviceProductionTableType | null>(null);
+  const [recipeDatabase, setRecipeDatabase] = useState<RecipeDatabase | null>(null);
   const [itemLookup, setItemLookup] = useState<ItemLookup | null>(null);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState<string | null>(null);
@@ -29,14 +30,15 @@ export default function DeviceDetailPage() {
         if (!res.ok) throw new Error(`Device not found: ${id}`);
         return res.json();
       }),
-      fetch(`${import.meta.env.BASE_URL}data/device_production_tables/${id}.json`)
-        .then((res) => (res.ok ? res.json() : null))
-        .catch(() => null),
+      fetch(`${import.meta.env.BASE_URL}data/recipe_database.json`).then((res) => {
+        if (!res.ok) throw new Error('Failed to load recipe database');
+        return res.json();
+      }),
       fetch(`${import.meta.env.BASE_URL}data/item_lookup.json`).then((res) => res.json()),
     ])
-      .then(([deviceRes, productionRes, lookupRes]) => {
+      .then(([deviceRes, recipeDatabaseRes, lookupRes]) => {
         setDeviceData(deviceRes);
-        setProductionTable(productionRes);
+        setRecipeDatabase(recipeDatabaseRes);
         setItemLookup(lookupRes);
         setLoading(false);
       })
@@ -77,6 +79,25 @@ export default function DeviceDetailPage() {
       </div>
     );
   }
+
+  // 从 recipe_database 构建设备生产表
+  const productionTable: DeviceProductionTableType | null = recipeDatabase && id && recipeDatabase.byDevice[id] ? {
+    deviceId: id,
+    deviceName: deviceData?.data?.item?.name || '未知设备',
+    recipeCount: recipeDatabase.byDevice[id].length,
+    recipes: recipeDatabase.byDevice[id].map((recipeId: string) => recipeDatabase.recipes[recipeId]).map((recipe) => ({
+      materials: recipe.materials.map((m) => ({
+        id: m.id.toString(),
+        name: m.name,
+        count: m.count,
+      })),
+      products: recipe.products.map((p) => ({
+        id: p.id.toString(),
+        name: p.name,
+        count: p.count,
+      })),
+    })),
+  } : null;
 
   const device = deviceData.data.item;
   const coverImage = device.brief?.cover;

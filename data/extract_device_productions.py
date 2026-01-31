@@ -59,13 +59,17 @@ def build_device_productions(item_lookup: Dict[str, str]) -> Dict[str, List[Dict
             for row in table.get('data', []):
                 if len(row) < 3:
                     continue
-                
+
                 # Column 0: 合成设备 (device)
                 # Column 1: 原料需求 (materials)
-                # Column 2: 合成产物 (products)
+                # Column 2: 合成产物 (products) - for 3-column tables
+                # Column 3: 合成产物 (products) - for 5-column tables (col 2 is empty)
                 device_cell = row[0]
                 materials_cell = row[1]
+                
                 products_cell = row[2]
+                if len(row) > 3 and row[3]:
+                    products_cell = row[3]
                 
                 for device_item in device_cell:
                     device_type = device_item.get('type')

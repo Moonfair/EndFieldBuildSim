@@ -5,22 +5,24 @@ import { cn } from '@/lib/utils';
 
 interface ItemCardProps {
   item: CatalogItem;
-  subType?: string;
 }
 
-export default function ItemCard({ item, subType }: ItemCardProps) {
+export default function ItemCard({ item }: ItemCardProps) {
+  const isDevice = item.subTypeID === '5';
+  const routePath = isDevice ? `/device/${item.itemId}` : `/item/${item.itemId}`;
+
   return (
-    <Link to={`/item/${item.itemId}`} className="block">
+    <Link to={routePath} className="block">
       <div
         className="relative bg-white rounded-card shadow-card overflow-hidden transition-all duration-200 hover:-translate-y-1 hover:shadow-card-hover border-2 border-transparent hover:border-primary p-4"
         data-testid={`item-card-${item.itemId}`}
       >
-        {subType && (
+        {item.subTypeName && (
           <span className={cn(
             "absolute top-2 right-2 text-xs px-2 py-0.5 rounded-full text-white",
-            subType === "设备" ? "bg-badge-device" : "bg-badge-item"
+            item.subTypeName === "设备" ? "bg-badge-device" : "bg-badge-item"
           )}>
-            {subType}
+            {item.subTypeName}
           </span>
         )}
         

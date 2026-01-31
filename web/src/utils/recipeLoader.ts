@@ -1,175 +1,77 @@
 import type { ManufacturingRecipe, RecipeLookup } from '../types/manufacturing';
-import type { SynthesisTable } from '../types/synthesis';
-import type { DeviceProductionTable } from '../types/device';
 import type { ItemLookup } from '../types/catalog';
 
+interface RecipeEntry {
+  deviceId: string;
+  deviceName: string;
+  materials: Array<{ id: string; name: string; count: number }>;
+  products: Array<{ id: string; name: string; count: number }>;
+  manufacturingTime?: number;
+}
+
+interface RecipeDatabase {
+  recipes: Record<string, RecipeEntry>;
+  asMaterials: Record<string, string[]>;
+  asProducts: Record<string, string[]>;
+  byDevice: Record<string, string[]>;
+}
+
 let cachedRecipeLookup: RecipeLookup | null = null;
+let cachedRecipes: Map<string, ManufacturingRecipe> | null = null;
 
-function parseManufacturingTime(timeStr: string | undefined): number {
-  if (!timeStr) return 2;
-  const match = timeStr.match(/^(\d+(?:\.\d+)?)(s|m)?$/);
-  if (!match) return 2;
-  const value = parseFloat(match[1]);
-  const unit = match[2];
-  if (unit === 'm') return value * 60;
-  return value;
-}
-
-function normalizeDeviceText(text: string): string {
-  const normalized = text
-    .replace(/[（）()]/g, '_')
-    .replace(/\s+/g, '')
-    .replace(/_+/g, '_')
-    .replace(/^_+|_+$/g, '');
-  return normalized || 'unknown';
-}
-
-export async function loadRecipeLookup(itemLookup?: ItemLookup): Promise<RecipeLookup> {
+export async function loadRecipeLookup(_itemLookup?: ItemLookup): Promise<RecipeLookup> {
   if (cachedRecipeLookup) {
     return cachedRecipeLookup;
   }
 
-  const byItem = new Map<string, ManufacturingRecipe[]>();
+  const asMaterials = new Map<string, ManufacturingRecipe[]>();
+  const asProducts = new Map<string, ManufacturingRecipe[]>();
   const byDevice = new Map<string, ManufacturingRecipe[]>();
+  cachedRecipes = new Map<string, ManufacturingRecipe>();
 
-  const [synthesisList, deviceProductionList, deviceTextMap] = await Promise.all([
-    fetchSynthesisTables(),
-    fetchDeviceProductionTables(),
-    fetchDeviceTextMap(),
-  ]);
-
-  const deviceTimeMap = new Map<string, number>();
-  const deviceNameMap = new Map<string, string>();
-  for (const deviceTable of deviceProductionList) {
-    deviceNameMap.set(deviceTable.deviceId, deviceTable.deviceName);
-    for (const recipe of deviceTable.recipes) {
-      for (const product of recipe.products) {
-        const time = parseManufacturingTime(recipe.manufacturingTime);
-        deviceTimeMap.set(`${deviceTable.deviceId}-${product.id}`, time);
-      }
-    }
+  const response = await fetch(`${import.meta.env.BASE_URL}data/recipe_database.json`);
+  if (!response.ok) {
+    console.error('Failed to load recipe_database.json');
+    return { asMaterials, asProducts, byDevice };
   }
 
-  for (const synthesisTable of synthesisList) {
-    for (const tableData of synthesisTable.tables) {
-      for (const row of tableData.data) {
-        if (!row || row.length < 3) continue;
-        if (!row[0] || row[0].length === 0) continue;
-        
-        const deviceCells = row[0] || [];
-        const deviceCell = deviceCells.find(
-          (cell) => cell.type === 'entry' || (cell.type === 'text' && cell.text.trim() !== '')
-        );
-        if (!deviceCell) continue;
+  const database: RecipeDatabase = await response.json();
 
-        const materialCells = row[1] || [];
-        const productCells = row[2] || [];
+  for (const [recipeId, recipe] of Object.entries(database.recipes)) {
+    const manufacturingRecipe: ManufacturingRecipe = {
+      deviceId: recipe.deviceId,
+      deviceName: recipe.deviceName,
+      materials: recipe.materials,
+      products: recipe.products,
+      manufacturingTime: recipe.manufacturingTime || 2,
+    };
 
-        if (materialCells.length === 0 || productCells.length === 0) continue;
+    cachedRecipes.set(recipeId, manufacturingRecipe);
 
-        let deviceId: string;
-        let deviceName: string;
-
-        if (deviceCell.type === 'entry') {
-          deviceId = deviceCell.id;
-          deviceName = deviceNameMap.get(deviceId) || synthesisTable.name;
-        } else {
-          const deviceText = deviceCell.text.trim();
-          const normalizedText = normalizeDeviceText(deviceText);
-          deviceId = deviceTextMap[deviceText] || `text_${normalizedText}`;
-          deviceName = deviceText || synthesisTable.name;
-        }
-
-        const materials = materialCells
-          .filter((cell) => cell.type === 'entry' && cell.count !== '0')
-          .map((cell) => ({
-            id: (cell as any).id,
-            name: itemLookup?.[(cell as any).id]?.name || '',
-            count: parseInt((cell as any).count),
-          }));
-
-        const products = productCells
-          .filter((cell) => cell.type === 'entry' && cell.count !== '0')
-          .map((cell) => ({
-            id: (cell as any).id,
-            name: itemLookup?.[(cell as any).id]?.name || '',
-            count: parseInt((cell as any).count),
-          }));
-
-        for (const product of products) {
-          const manufacturingTime = deviceTimeMap.get(`${deviceId}-${product.id}`) || 2;
-
-          const recipe: ManufacturingRecipe = {
-            deviceId,
-            deviceName,
-            materials,
-            products: [product],
-            manufacturingTime,
-          };
-
-          if (!byItem.has(product.id)) {
-            byItem.set(product.id, []);
-          }
-          byItem.get(product.id)!.push(recipe);
-
-          if (!byDevice.has(deviceId)) {
-            byDevice.set(deviceId, []);
-          }
-          byDevice.get(deviceId)!.push(recipe);
-        }
-      }
-    }
   }
 
-  cachedRecipeLookup = { byItem, byDevice };
+  const populateLookup = (
+    source: Record<string, string[]>,
+    target: Map<string, ManufacturingRecipe[]>
+  ) => {
+    for (const [key, recipeIds] of Object.entries(source)) {
+      const recipes = recipeIds
+        .map((recipeId) => cachedRecipes?.get(recipeId))
+        .filter((recipe): recipe is ManufacturingRecipe => Boolean(recipe));
+      if (recipes.length > 0) {
+        target.set(key, recipes);
+      }
+    }
+  };
+
+  populateLookup(database.asMaterials, asMaterials);
+  populateLookup(database.asProducts, asProducts);
+  populateLookup(database.byDevice, byDevice);
+
+  cachedRecipeLookup = { asMaterials, asProducts, byDevice };
   return cachedRecipeLookup;
 }
 
-async function fetchSynthesisTables(): Promise<SynthesisTable[]> {
-  const response = await fetch(`${import.meta.env.BASE_URL}data/synthesis_tables_list.json`);
-  if (!response.ok) return [];
-
-  const fileNames = await response.json();
-
-  const tables = await Promise.all(
-    fileNames.map(async (fileName: string) => {
-      const itemResponse = await fetch(
-        `${import.meta.env.BASE_URL}data/synthesis_tables/${fileName}`
-      );
-      if (itemResponse.ok) {
-        return itemResponse.json();
-      }
-      return null;
-    })
-  );
-
-  return tables.filter((t) => t !== null);
-}
-
-async function fetchDeviceProductionTables(): Promise<DeviceProductionTable[]> {
-  const response = await fetch(`${import.meta.env.BASE_URL}data/device_production_tables_list.json`);
-  if (!response.ok) return [];
-
-  const fileNames = await response.json();
-
-  const tables = await Promise.all(
-    fileNames.map(async (fileName: string) => {
-      const deviceResponse = await fetch(
-        `${import.meta.env.BASE_URL}data/device_production_tables/${fileName}`
-      );
-      if (deviceResponse.ok) {
-        return deviceResponse.json();
-      }
-      return null;
-    })
-  );
-
-  return tables.filter((t) => t !== null);
-}
-
-async function fetchDeviceTextMap(): Promise<Record<string, string>> {
-  const response = await fetch(`${import.meta.env.BASE_URL}data/overrides/device_text_map.json`);
-  if (!response.ok) return {};
-
-  return response.json();
+export function getRecipes(): Map<string, ManufacturingRecipe> {
+  return cachedRecipes || new Map();
 }

@@ -1,7 +1,7 @@
 {
   "deviceId": "745",
   "deviceName": "拆解机",
-  "recipeCount": 10,
+  "recipeCount": 14,
   "recipes": [
     {
       "materials": [
@@ -20,6 +20,70 @@
         {
           "id": "381",
           "name": "清水",
+          "count": "1"
+        }
+      ]
+    },
+    {
+      "materials": [
+        {
+          "id": "381",
+          "name": "清水",
+          "count": "0"
+        }
+      ],
+      "products": [
+        {
+          "id": "381",
+          "name": "清水",
+          "count": "1"
+        }
+      ]
+    },
+    {
+      "materials": [
+        {
+          "id": "769",
+          "name": "芽针溶液",
+          "count": "0"
+        }
+      ],
+      "products": [
+        {
+          "id": "769",
+          "name": "芽针溶液",
+          "count": "1"
+        }
+      ]
+    },
+    {
+      "materials": [
+        {
+          "id": "892",
+          "name": "液化息壤",
+          "count": "0"
+        }
+      ],
+      "products": [
+        {
+          "id": "892",
+          "name": "液化息壤",
+          "count": "1"
+        }
+      ]
+    },
+    {
+      "materials": [
+        {
+          "id": "201",
+          "name": "锦草溶液",
+          "count": "0"
+        }
+      ],
+      "products": [
+        {
+          "id": "201",
+          "name": "锦草溶液",
           "count": "1"
         }
       ]

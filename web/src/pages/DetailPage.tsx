@@ -1,11 +1,12 @@
 import { useState, useEffect } from 'react';
 import { useParams, Link } from 'react-router-dom';
 import type { ItemResponse } from '../types/detail';
-import type { SynthesisTable as SynthesisTableType } from '../types/synthesis';
 import type { ItemLookup } from '../types/catalog';
 import type { Block } from '../types/document';
+import type { ManufacturingRecipe } from '../types/manufacturing';
 import DocumentRenderer from '../components/DocumentRenderer';
-import SynthesisTable from '../components/SynthesisTable';
+import ProductRecipeTable from '../components/ProductRecipeTable';
+import MaterialRecipeTable from '../components/MaterialRecipeTable';
 import ManufacturingSimulator from '../components/ManufacturingSimulator';
 import ItemImage from '../components/ItemImage';
 import { Skeleton } from '../components/ui/Skeleton';
@@ -14,8 +15,9 @@ import { cn } from '@/lib/utils';
 export default function DetailPage() {
   const { id } = useParams<{ id: string }>();
   const [itemData, setItemData] = useState<ItemResponse | null>(null);
-  const [synthesisTable, setSynthesisTable] = useState<SynthesisTableType | null>(null);
   const [itemLookup, setItemLookup] = useState<ItemLookup | null>(null);
+  const [materialRecipes, setMaterialRecipes] = useState<ManufacturingRecipe[]>([]);
+  const [productRecipes, setProductRecipes] = useState<ManufacturingRecipe[]>([]);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState<string | null>(null);
 
@@ -25,20 +27,26 @@ export default function DetailPage() {
     setLoading(true);
     setError(null);
 
-    Promise.all([
-      fetch(`${import.meta.env.BASE_URL}data/item_details/${id}.json`).then((res) => {
-        if (!res.ok) throw new Error(`Item not found: ${id}`);
-        return res.json();
-      }),
-      fetch(`${import.meta.env.BASE_URL}data/synthesis_tables/${id}.json`)
-        .then((res) => (res.ok ? res.json() : null))
-        .catch(() => null),
-      fetch(`${import.meta.env.BASE_URL}data/item_lookup.json`).then((res) => res.json()),
-    ])
-      .then(([itemRes, synthesisRes, lookupRes]) => {
+    const loadItemData = fetch(`${import.meta.env.BASE_URL}data/item_details/${id}.json`).then((res) => {
+      if (!res.ok) throw new Error(`Item not found: ${id}`);
+      return res.json();
+    });
+
+    const loadItemLookup = fetch(`${import.meta.env.BASE_URL}data/item_lookup.json`).then((res) => res.json());
+
+    Promise.all([loadItemData, loadItemLookup])
+      .then(async ([itemRes, lookupRes]) => {
         setItemData(itemRes);
-        setSynthesisTable(synthesisRes);
         setItemLookup(lookupRes);
+
+        if (lookupRes) {
+          const { loadRecipeLookup } = await import('../utils/recipeLoader');
+          const recipes = await loadRecipeLookup(lookupRes);
+
+          setMaterialRecipes(recipes.asMaterials.get(id) || []);
+          setProductRecipes(recipes.asProducts.get(id) || []);
+        }
+
         setLoading(false);
       })
       .catch((err) => {
@@ -161,9 +169,15 @@ export default function DetailPage() {
         )}
       </div>
 
-      {synthesisTable && (
+      {productRecipes.length > 0 && itemLookup && (
         <div className="bg-white rounded-card shadow-card p-6">
-          <SynthesisTable table={synthesisTable} itemLookup={itemLookup || undefined} />
+          <ProductRecipeTable recipes={productRecipes} itemLookup={itemLookup} targetItemId={id || ''} />
+        </div>
+      )}
+
+      {materialRecipes.length > 0 && itemLookup && (
+        <div className="bg-white rounded-card shadow-card p-6">
+          <MaterialRecipeTable recipes={materialRecipes} itemLookup={itemLookup} materialItemId={id || ''} />
         </div>
       )}
 
