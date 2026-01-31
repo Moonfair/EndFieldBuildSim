@@ -1,73 +1,77 @@
-# React + TypeScript + Vite
+# EndFieldBuildSim Web App
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Web application for browsing Endfield game items, devices, and synthesis tables.
 
-Currently, two official plugins are available:
+## Development
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
-
-## React Compiler
-
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
-
-## Expanding the ESLint configuration
-
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
-
-```js
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-
-      // Remove tseslint.configs.recommended and replace with this
-      tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      tseslint.configs.stylisticTypeChecked,
-
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+```bash
+cd web
+npm install
+npm run dev
 ```
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+Visit http://localhost:5173/
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
+## Build
 
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+```bash
+cd web
+npm run build
 ```
+
+Built files will be in `web/dist/`
+
+## Deploy to GitHub Pages
+
+See [DEPLOYMENT.md](../DEPLOYMENT.md) for comprehensive deployment instructions including:
+- Automatic GitHub Actions deployment
+- Manual deployment alternatives
+- Configuration and troubleshooting
+
+## Related Documentation
+
+- **[README.md](../README.md)** - Main project guide and data collection workflow
+- **[AGENTS.md](../AGENTS.md)** - Developer guide and code style
+- **[DEPLOYMENT.md](../DEPLOYMENT.md)** - GitHub Pages deployment guide
+- **[WEB_APP_COMPLETION.md](../WEB_APP_COMPLETION.md)** - Web app implementation report
+
+## Project Structure
+
+```
+web/
+├── public/
+│   ├── data/              # JSON data files (254 items + 79 synthesis tables)
+│   └── placeholder.png    # Fallback image
+├── src/
+│   ├── components/
+│   │   ├── DocumentRenderer.tsx    # Rich text document renderer
+│   │   ├── ItemCard.tsx            # Item card for search results
+│   │   ├── ItemImage.tsx           # Lazy-loading image component
+│   │   ├── Layout.tsx              # Page layout with header
+│   │   └── SynthesisTable.tsx      # Synthesis table renderer
+│   ├── pages/
+│   │   ├── SearchPage.tsx          # Search page with Fuse.js
+│   │   ├── DetailPage.tsx          # Item detail page
+│   │   └── NotFoundPage.tsx        # 404 error page
+│   ├── types/                       # TypeScript type definitions
+│   └── App.tsx                      # Router configuration
+└── package.json
+```
+
+## Features
+
+- 🔍 **Fuzzy Search**: Search 254 items with real-time filtering
+- 📱 **Responsive Design**: Works on mobile and desktop
+- 🖼️ **Lazy Loading**: Images load on-demand for better performance
+- 🔗 **Item Links**: Click items in tables to navigate to their details
+- 📊 **Synthesis Tables**: View item crafting requirements (79 items)
+- 📝 **Rich Text**: Formatted descriptions with inline item references
+
+## Tech Stack
+
+- React 18
+- TypeScript
+- React Router (HashRouter for GitHub Pages)
+- Tailwind CSS
+- Fuse.js (fuzzy search)
+- Vite (build tool)
