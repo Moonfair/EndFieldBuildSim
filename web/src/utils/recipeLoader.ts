@@ -43,11 +43,14 @@ export async function loadRecipeLookup(itemLookup?: ItemLookup): Promise<RecipeL
   for (const synthesisTable of synthesisList) {
     for (const tableData of synthesisTable.tables) {
       for (const row of tableData.data) {
+        if (!row || row.length < 3) continue;
+        if (!row[0] || row[0].length === 0) continue;
+        
         const deviceCell = row[0][0];
-        if (deviceCell.type !== 'entry') continue;
+        if (!deviceCell || deviceCell.type !== 'entry') continue;
 
-        const materialCells = row[1];
-        const productCells = row[2];
+        const materialCells = row[1] || [];
+        const productCells = row[2] || [];
 
         if (materialCells.length === 0 || productCells.length === 0) continue;
 
