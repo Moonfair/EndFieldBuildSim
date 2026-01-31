@@ -6,6 +6,7 @@ import type { ItemLookup } from '../types/catalog';
 import type { Block } from '../types/document';
 import DocumentRenderer from '../components/DocumentRenderer';
 import SynthesisTable from '../components/SynthesisTable';
+import ManufacturingSimulator from '../components/ManufacturingSimulator';
 import ItemImage from '../components/ItemImage';
 import { Skeleton } from '../components/ui/Skeleton';
 import { cn } from '@/lib/utils';
@@ -164,6 +165,14 @@ export default function DetailPage() {
         <div className="bg-white rounded-card shadow-card p-6">
           <SynthesisTable table={synthesisTable} itemLookup={itemLookup || undefined} />
         </div>
+      )}
+
+      {id && itemLookup && (
+        <ManufacturingSimulator
+          targetItemId={id}
+          targetItemName={itemName}
+          itemLookup={itemLookup}
+        />
       )}
     </div>
   );

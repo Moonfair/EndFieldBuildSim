@@ -1,0 +1,80 @@
+export interface ManufacturingRecipe {
+  deviceId: string;
+  deviceName: string;
+  materials: Array<{ id: string; name: string; count: number }>;
+  products: Array<{ id: string; name: string; count: number }>;
+  manufacturingTime: number; // seconds
+}
+
+/**
+ * 制造依赖树节点
+ */
+export interface DependencyNode {
+  itemId: string;
+  itemName: string;
+  isBase: boolean; // 是否为基础原料（无法生产或用户指定）
+  recipes: ManufacturingRecipe[]; // 可用配方列表
+  selectedRecipe?: ManufacturingRecipe; // 选中的配方
+  children: DependencyNode[]; // 原料的依赖树
+}
+
+/**
+ * 设备配置
+ */
+export interface DeviceConfig {
+  deviceId: string;
+  deviceName: string;
+  recipe: ManufacturingRecipe;
+  count: number; // 该设备数量
+  productionRate: number; // 每秒产出数量
+  inputs: Array<{ itemId: string; source: string }>; // 输入来源（设备或仓库）
+  outputs: Array<{ itemId: string; destination: string }>; // 输出目标
+}
+
+/**
+ * 生产方案
+ */
+export interface ProductionPlan {
+  type: 'efficiency' | 'scale';
+  name: string;
+  targetProduct: { id: string; name: string };
+  targetRate: number; // 每秒产出目标数量
+  devices: DeviceConfig[];
+  totalDeviceCount: number;
+  bottleneck: { itemId: string; description: string } | null;
+  connections: Connection[];
+  baseMaterials: Array<{ id: string; name: string; requiredRate: number }>;
+}
+
+/**
+ * 设备连接
+ */
+export interface Connection {
+  from: string; // 设备ID 或 "warehouse"
+  to: string; // 设备ID
+  itemId: string;
+  count: number; // 传输数量
+  rate: number; // 传输速率（每秒）
+}
+
+/**
+ * 模拟器状态
+ */
+export interface SimulatorState {
+  targetItemId: string;
+  baseMaterialIds: Set<string>; // 用户标记为基础原料的物品ID
+  dependencyTree: DependencyNode | null;
+  efficiencyPlan: ProductionPlan | null;
+  scalePlan: ProductionPlan | null;
+  targetRate: number; // 目标产出率（每秒）
+  loading: boolean;
+  error: string | null;
+}
+
+/**
+ * 配方查找结果
+ */
+export interface RecipeLookup {
+  byItem: Map<string, ManufacturingRecipe[]>; // itemId -> recipes
+  byDevice: Map<string, ManufacturingRecipe[]>; // deviceId -> recipes
+}
