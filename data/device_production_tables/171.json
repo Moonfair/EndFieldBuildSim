@@ -17,8 +17,7 @@
           "name": "铁制零件",
           "count": "1"
         }
-      ],
-      "manufacturingTime": "2s"
+      ]
     },
     {
       "materials": [
@@ -34,8 +33,7 @@
           "name": "钢制零件",
           "count": "1"
         }
-      ],
-      "manufacturingTime": "2s"
+      ]
     },
     {
       "materials": [
@@ -51,8 +49,7 @@
           "name": "紫晶零件",
           "count": "1"
         }
-      ],
-      "manufacturingTime": "2s"
+      ]
     },
     {
       "materials": [
@@ -68,8 +65,7 @@
           "name": "高晶零件",
           "count": "1"
         }
-      ],
-      "manufacturingTime": "2s"
+      ]
     }
   ]
 }

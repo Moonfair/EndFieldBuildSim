@@ -17,8 +17,7 @@
           "name": "碳粉末",
           "count": "1"
         }
-      ],
-      "manufacturingTime": "2s"
+      ]
     },
     {
       "materials": [
@@ -34,8 +33,7 @@
           "name": "致密晶体粉末",
           "count": "1"
         }
-      ],
-      "manufacturingTime": "2s"
+      ]
     },
     {
       "materials": [
@@ -51,8 +49,7 @@
           "name": "碳粉末",
           "count": "1"
         }
-      ],
-      "manufacturingTime": "2s"
+      ]
     },
     {
       "materials": [
@@ -68,8 +65,7 @@
           "name": "致密碳粉末",
           "count": "1"
         }
-      ],
-      "manufacturingTime": "2s"
+      ]
     },
     {
       "materials": [
@@ -85,8 +81,7 @@
           "name": "碳粉末",
           "count": "2"
         }
-      ],
-      "manufacturingTime": "2s"
+      ]
     },
     {
       "materials": [
@@ -102,8 +97,7 @@
           "name": "碳块",
           "count": "2"
         }
-      ],
-      "manufacturingTime": "2s"
+      ]
     },
     {
       "materials": [
@@ -119,8 +113,7 @@
           "name": "稳定碳块",
           "count": "1"
         }
-      ],
-      "manufacturingTime": "2s"
+      ]
     },
     {
       "materials": [
@@ -136,8 +129,7 @@
           "name": "致密碳粉末",
           "count": "1"
         }
-      ],
-      "manufacturingTime": "2s"
+      ]
     },
     {
       "materials": [
@@ -153,8 +145,7 @@
           "name": "碳粉末",
           "count": "2"
         }
-      ],
-      "manufacturingTime": "2s"
+      ]
     },
     {
       "materials": [
@@ -170,8 +161,7 @@
           "name": "晶体外壳粉末",
           "count": "1"
         }
-      ],
-      "manufacturingTime": "2s"
+      ]
     },
     {
       "materials": [
@@ -187,8 +177,7 @@
           "name": "碳块",
           "count": "2"
         }
-      ],
-      "manufacturingTime": "2s"
+      ]
     },
     {
       "materials": [
@@ -204,8 +193,7 @@
           "name": "碳粉末",
           "count": "2"
         }
-      ],
-      "manufacturingTime": "2s"
+      ]
     },
     {
       "materials": [
@@ -221,8 +209,7 @@
           "name": "钢块",
           "count": "1"
         }
-      ],
-      "manufacturingTime": "2s"
+      ]
     },
     {
       "materials": [
@@ -238,8 +225,7 @@
           "name": "蓝铁块",
           "count": "1"
         }
-      ],
-      "manufacturingTime": "2s"
+      ]
     },
     {
       "materials": [
@@ -255,25 +241,7 @@
           "name": "碳块",
           "count": "1"
         }
-      ],
-      "manufacturingTime": "2s"
-    },
-    {
-      "materials": [
-        {
-          "id": "49",
-          "name": "紫晶矿",
-          "count": "1"
-        }
-      ],
-      "products": [
-        {
-          "id": "193",
-          "name": "紫晶纤维",
-          "count": "1"
-        }
-      ],
-      "manufacturingTime": "2s"
+      ]
     },
     {
       "materials": [
@@ -289,8 +257,7 @@
           "name": "紫晶纤维",
           "count": "1"
         }
-      ],
-      "manufacturingTime": "2s"
+      ]
     },
     {
       "materials": [
@@ -306,8 +273,23 @@
           "name": "密制晶体",
           "count": "1"
         }
+      ]
+    },
+    {
+      "materials": [
+        {
+          "id": "49",
+          "name": "紫晶矿",
+          "count": "1"
+        }
       ],
-      "manufacturingTime": "2s"
+      "products": [
+        {
+          "id": "193",
+          "name": "紫晶纤维",
+          "count": "1"
+        }
+      ]
     },
     {
       "materials": [
@@ -323,8 +305,7 @@
           "name": "高晶纤维",
           "count": "1"
         }
-      ],
-      "manufacturingTime": "2s"
+      ]
     },
     {
       "materials": [
@@ -340,8 +321,7 @@
           "name": "碳块",
           "count": "1"
         }
-      ],
-      "manufacturingTime": "2s"
+      ]
     },
     {
       "materials": [
@@ -357,8 +337,7 @@
           "name": "晶体外壳",
           "count": "1"
         }
-      ],
-      "manufacturingTime": "2s"
+      ]
     },
     {
       "materials": [
@@ -374,8 +353,7 @@
           "name": "晶体外壳",
           "count": "1"
         }
-      ],
-      "manufacturingTime": "2s"
+      ]
     },
     {
       "materials": [
@@ -391,8 +369,7 @@
           "name": "蓝铁块",
           "count": "1"
         }
-      ],
-      "manufacturingTime": "2s"
+      ]
     }
   ]
 }

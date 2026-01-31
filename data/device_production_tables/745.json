@@ -1,7 +1,7 @@
 {
   "deviceId": "745",
   "deviceName": "拆解机",
-  "recipeCount": 14,
+  "recipeCount": 10,
   "recipes": [
     {
       "materials": [
@@ -27,21 +27,10 @@
     {
       "materials": [
         {
-          "id": "381",
-          "name": "清水",
-          "count": "0"
-        }
-      ],
-      "products": [
-        {
-          "id": "381",
-          "name": "清水",
+          "id": "371",
+          "name": "蓝铁瓶",
           "count": "1"
-        }
-      ]
-    },
-    {
-      "materials": [
+        },
         {
           "id": "769",
           "name": "芽针溶液",
@@ -50,40 +39,39 @@
       ],
       "products": [
         {
+          "id": "371",
+          "name": "蓝铁瓶",
+          "count": "1"
+        },
+        {
           "id": "769",
           "name": "芽针溶液",
-          "count": "1"
+          "count": "0"
         }
       ]
     },
     {
       "materials": [
         {
-          "id": "892",
-          "name": "液化息壤",
-          "count": "0"
-        }
-      ],
-      "products": [
-        {
-          "id": "892",
-          "name": "液化息壤",
+          "id": "371",
+          "name": "蓝铁瓶",
           "count": "1"
-        }
-      ]
-    },
-    {
-      "materials": [
+        },
         {
-          "id": "201",
-          "name": "锦草溶液",
+          "id": "381",
+          "name": "清水",
           "count": "0"
         }
       ],
       "products": [
         {
-          "id": "201",
-          "name": "锦草溶液",
+          "id": "371",
+          "name": "蓝铁瓶",
+          "count": "1"
+        },
+        {
+          "id": "381",
+          "name": "清水",
           "count": "1"
         }
       ]
@@ -96,60 +84,6 @@
           "count": "1"
         },
         {
-          "id": "769",
-          "name": "芽针溶液",
-          "count": "0"
-        }
-      ],
-      "products": [
-        {
-          "id": "371",
-          "name": "蓝铁瓶",
-          "count": "1"
-        },
-        {
-          "id": "769",
-          "name": "芽针溶液",
-          "count": "0"
-        }
-      ],
-      "manufacturingTime": "2s"
-    },
-    {
-      "materials": [
-        {
-          "id": "371",
-          "name": "蓝铁瓶",
-          "count": "1"
-        },
-        {
-          "id": "381",
-          "name": "清水",
-          "count": "0"
-        }
-      ],
-      "products": [
-        {
-          "id": "371",
-          "name": "蓝铁瓶",
-          "count": "1"
-        },
-        {
-          "id": "381",
-          "name": "清水",
-          "count": "1"
-        }
-      ],
-      "manufacturingTime": "2s"
-    },
-    {
-      "materials": [
-        {
-          "id": "371",
-          "name": "蓝铁瓶",
-          "count": "1"
-        },
-        {
           "id": "201",
           "name": "锦草溶液",
           "count": "0"
@@ -166,8 +100,7 @@
           "name": "锦草溶液",
           "count": "0"
         }
-      ],
-      "manufacturingTime": "2s"
+      ]
     },
     {
       "materials": [
@@ -193,8 +126,7 @@
           "name": "液化息壤",
           "count": "0"
         }
-      ],
-      "manufacturingTime": "2s"
+      ]
     },
     {
       "materials": [
@@ -220,8 +152,7 @@
           "name": "清水",
           "count": "1"
         }
-      ],
-      "manufacturingTime": "2s"
+      ]
     },
     {
       "materials": [
@@ -247,8 +178,7 @@
           "name": "锦草溶液",
           "count": "1"
         }
-      ],
-      "manufacturingTime": "2s"
+      ]
     },
     {
       "materials": [
@@ -274,8 +204,7 @@
           "name": "芽针溶液",
           "count": "0"
         }
-      ],
-      "manufacturingTime": "2s"
+      ]
     },
     {
       "materials": [
@@ -301,8 +230,7 @@
           "name": "液化息壤",
           "count": "0"
         }
-      ],
-      "manufacturingTime": "2s"
+      ]
     },
     {
       "materials": [

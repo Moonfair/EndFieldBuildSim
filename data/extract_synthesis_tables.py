@@ -51,48 +51,51 @@ def extract_synthesis_table(item_data):
         if not has_synthesis_device:
             continue
         
-        table_block = None
+        table_blocks = []
         for block_id, block in block_map.items():
             if block.get('kind') == 'table':
-                table_block = block
-                break
+                table_blocks.append(block)
         
-        if not table_block or 'table' not in table_block:
+        if not table_blocks:
             continue
         
-        table_data = table_block['table']
-        row_ids = table_data.get('rowIds', [])
-        column_ids = table_data.get('columnIds', [])
-        
-        table_result = {
-            'rows': len(row_ids),
-            'columns': len(column_ids),
-            'headers': [],
-            'data': []
-        }
-        
-        for row_idx, row_id in enumerate(row_ids):
-            row_data = []
+        for table_block in table_blocks:
+            if 'table' not in table_block:
+                continue
             
-            for col_idx, col_id in enumerate(column_ids):
-                cell_parent_id = f"{row_id}_{col_id}"
-                
-                cell_content = []
-                for block_id, block in block_map.items():
-                    if block.get('parentId') == cell_parent_id:
-                        if 'text' in block:
-                            inline_elements = block['text'].get('inlineElements', [])
-                            cell_content = extract_cell_content(inline_elements)
-                        break
-                
-                row_data.append(cell_content)
+            table_data = table_block['table']
+            row_ids = table_data.get('rowIds', [])
+            column_ids = table_data.get('columnIds', [])
             
-            if row_idx == 0:
-                table_result['headers'] = row_data
-            else:
-                table_result['data'].append(row_data)
-        
-        tables.append(table_result)
+            table_result = {
+                'rows': len(row_ids),
+                'columns': len(column_ids),
+                'headers': [],
+                'data': []
+            }
+            
+            for row_idx, row_id in enumerate(row_ids):
+                row_data = []
+                
+                for col_idx, col_id in enumerate(column_ids):
+                    cell_parent_id = f"{row_id}_{col_id}"
+                    
+                    cell_content = []
+                    for block_id, block in block_map.items():
+                        if block.get('parentId') == cell_parent_id:
+                            if 'text' in block:
+                                inline_elements = block['text'].get('inlineElements', [])
+                                cell_content = extract_cell_content(inline_elements)
+                            break
+                    
+                    row_data.append(cell_content)
+                
+                if row_idx == 0:
+                    table_result['headers'] = row_data
+                else:
+                    table_result['data'].append(row_data)
+            
+            tables.append(table_result)
     
     return tables
 

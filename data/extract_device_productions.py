@@ -101,14 +101,9 @@ def build_device_productions(item_lookup: Dict[str, str]) -> Dict[str, List[Dict
                                     'count': prod_count
                                 })
                                 product_ids.append(f"{prod_id}:{prod_count}")
-                    else:
-                        # If no products specified, assume the item itself is the product
-                        products.append({
-                            'id': item_id,
-                            'name': item_name,
-                            'count': '1'
-                        })
-                        product_ids.append(f"{item_id}:1")
+                    
+                    if not products:
+                        continue
                     
                     # Create recipe fingerprint for deduplication
                     recipe_key = f"{','.join(sorted(material_ids))}|{','.join(sorted(product_ids))}"

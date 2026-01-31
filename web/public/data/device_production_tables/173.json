@@ -1,7 +1,7 @@
 {
   "deviceId": "173",
   "deviceName": "采种机",
-  "recipeCount": 14,
+  "recipeCount": 12,
   "recipes": [
     {
       "materials": [],
@@ -27,8 +27,7 @@
           "name": "金石稻种子",
           "count": "2"
         }
-      ],
-      "manufacturingTime": "2s"
+      ]
     },
     {
       "materials": [],
@@ -54,8 +53,7 @@
           "name": "灰芦麦种子",
           "count": "2"
         }
-      ],
-      "manufacturingTime": "2s"
+      ]
     },
     {
       "materials": [],
@@ -97,8 +95,7 @@
           "name": "砂叶种子",
           "count": "2"
         }
-      ],
-      "manufacturingTime": "2s"
+      ]
     },
     {
       "materials": [
@@ -114,35 +111,7 @@
           "name": "酮化树种",
           "count": "2"
         }
-      ],
-      "manufacturingTime": "2s"
-    },
-    {
-      "materials": [],
-      "products": [
-        {
-          "id": "203",
-          "name": "柑实种子",
-          "count": "1"
-        }
       ]
-    },
-    {
-      "materials": [
-        {
-          "id": "31",
-          "name": "荞花",
-          "count": "1"
-        }
-      ],
-      "products": [
-        {
-          "id": "204",
-          "name": "荞花种子",
-          "count": "1"
-        }
-      ],
-      "manufacturingTime": "2s"
     },
     {
       "materials": [
@@ -158,8 +127,7 @@
           "name": "苦叶椒种子",
           "count": "2"
         }
-      ],
-      "manufacturingTime": "2s"
+      ]
     },
     {
       "materials": [],
@@ -185,8 +153,7 @@
           "name": "芽针种子",
           "count": "1"
         }
-      ],
-      "manufacturingTime": "2s"
+      ]
     },
     {
       "materials": [
@@ -202,8 +169,7 @@
           "name": "锦草种子",
           "count": "1"
         }
-      ],
-      "manufacturingTime": "2s"
+      ]
     }
   ]
 }

@@ -17,8 +17,7 @@
           "name": "荞花粉末",
           "count": "2"
         }
-      ],
-      "manufacturingTime": "2s"
+      ]
     },
     {
       "materials": [
@@ -34,8 +33,7 @@
           "name": "柑实粉末",
           "count": "2"
         }
-      ],
-      "manufacturingTime": "2s"
+      ]
     },
     {
       "materials": [
@@ -51,8 +49,7 @@
           "name": "锦草粉末",
           "count": "2"
         }
-      ],
-      "manufacturingTime": "2s"
+      ]
     },
     {
       "materials": [
@@ -68,8 +65,7 @@
           "name": "芽针粉末",
           "count": "2"
         }
-      ],
-      "manufacturingTime": "2s"
+      ]
     },
     {
       "materials": [
@@ -85,8 +81,7 @@
           "name": "源石粉末",
           "count": "1"
         }
-      ],
-      "manufacturingTime": "2s"
+      ]
     },
     {
       "materials": [
@@ -102,8 +97,7 @@
           "name": "砂叶粉末",
           "count": "3"
         }
-      ],
-      "manufacturingTime": "2s"
+      ]
     },
     {
       "materials": [
@@ -119,8 +113,7 @@
           "name": "酮化灌木粉末",
           "count": "2"
         }
-      ],
-      "manufacturingTime": "2s"
+      ]
     },
     {
       "materials": [
@@ -136,8 +129,7 @@
           "name": "蓝铁粉末",
           "count": "1"
         }
-      ],
-      "manufacturingTime": "2s"
+      ]
     },
     {
       "materials": [
@@ -153,8 +145,7 @@
           "name": "紫晶粉末",
           "count": "1"
         }
-      ],
-      "manufacturingTime": "2s"
+      ]
     },
     {
       "materials": [
@@ -170,8 +161,7 @@
           "name": "碳粉末",
           "count": "2"
         }
-      ],
-      "manufacturingTime": "2s"
+      ]
     },
     {
       "materials": [
@@ -187,8 +177,7 @@
           "name": "晶体外壳粉末",
           "count": "1"
         }
-      ],
-      "manufacturingTime": "2s"
+      ]
     }
   ]
 }

@@ -22,8 +22,7 @@
           "name": "细磨荞花粉末",
           "count": "1"
         }
-      ],
-      "manufacturingTime": "2s"
+      ]
     },
     {
       "materials": [
@@ -44,8 +43,7 @@
           "name": "致密晶体粉末",
           "count": "1"
         }
-      ],
-      "manufacturingTime": "2s"
+      ]
     },
     {
       "materials": [
@@ -66,30 +64,7 @@
           "name": "细磨柑实粉末",
           "count": "1"
         }
-      ],
-      "manufacturingTime": "2s"
-    },
-    {
-      "materials": [
-        {
-          "id": "195",
-          "name": "碳粉末",
-          "count": "2"
-        },
-        {
-          "id": "543",
-          "name": "砂叶粉末",
-          "count": "1"
-        }
-      ],
-      "products": [
-        {
-          "id": "548",
-          "name": "致密碳粉末",
-          "count": "1"
-        }
-      ],
-      "manufacturingTime": "2s"
+      ]
     },
     {
       "materials": [
@@ -110,8 +85,7 @@
           "name": "致密源石粉末",
           "count": "1"
         }
-      ],
-      "manufacturingTime": "2s"
+      ]
     },
     {
       "materials": [
@@ -132,8 +106,7 @@
           "name": "致密蓝铁粉末",
           "count": "1"
         }
-      ],
-      "manufacturingTime": "2s"
+      ]
     },
     {
       "materials": [
@@ -154,8 +127,28 @@
           "name": "高晶粉末",
           "count": "1"
         }
+      ]
+    },
+    {
+      "materials": [
+        {
+          "id": "195",
+          "name": "碳粉末",
+          "count": "2"
+        },
+        {
+          "id": "543",
+          "name": "砂叶粉末",
+          "count": "1"
+        }
       ],
-      "manufacturingTime": "2s"
+      "products": [
+        {
+          "id": "548",
+          "name": "致密碳粉末",
+          "count": "1"
+        }
+      ]
     }
   ]
 }

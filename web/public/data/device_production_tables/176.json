@@ -1,7 +1,7 @@
 {
   "deviceId": "176",
   "deviceName": "灌装机",
-  "recipeCount": 20,
+  "recipeCount": 16,
   "recipes": [
     {
       "materials": [
@@ -128,46 +128,6 @@
           "count": "1"
         }
       ]
-    },
-    {
-      "materials": [
-        {
-          "id": "381",
-          "name": "清水",
-          "count": "1"
-        }
-      ],
-      "products": []
-    },
-    {
-      "materials": [
-        {
-          "id": "769",
-          "name": "芽针溶液",
-          "count": "1"
-        }
-      ],
-      "products": []
-    },
-    {
-      "materials": [
-        {
-          "id": "892",
-          "name": "液化息壤",
-          "count": "1"
-        }
-      ],
-      "products": []
-    },
-    {
-      "materials": [
-        {
-          "id": "201",
-          "name": "锦草溶液",
-          "count": "1"
-        }
-      ],
-      "products": []
     },
     {
       "materials": [

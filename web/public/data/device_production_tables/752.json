@@ -22,8 +22,7 @@
           "name": "息壤",
           "count": "1"
         }
-      ],
-      "manufacturingTime": "2s"
+      ]
     },
     {
       "materials": [
@@ -44,8 +43,7 @@
           "name": "膨地啪",
           "count": "1"
         }
-      ],
-      "manufacturingTime": "2s"
+      ]
     },
     {
       "materials": [
@@ -66,8 +64,7 @@
           "name": "息壤",
           "count": "1"
         }
-      ],
-      "manufacturingTime": "2s"
+      ]
     }
   ]
 }

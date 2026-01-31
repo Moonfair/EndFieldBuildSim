@@ -22,8 +22,7 @@
           "name": "蓝铁装备原件",
           "count": "1"
         }
-      ],
-      "manufacturingTime": "10s"
+      ]
     },
     {
       "materials": [
@@ -44,8 +43,7 @@
           "name": "紫晶装备原件",
           "count": "1"
         }
-      ],
-      "manufacturingTime": "10s"
+      ]
     },
     {
       "materials": [
@@ -66,8 +64,7 @@
           "name": "高晶装备原件",
           "count": "1"
         }
-      ],
-      "manufacturingTime": "10s"
+      ]
     },
     {
       "materials": [
@@ -88,8 +85,7 @@
           "name": "息壤装备原件",
           "count": "1"
         }
-      ],
-      "manufacturingTime": "10s"
+      ]
     }
   ]
 }

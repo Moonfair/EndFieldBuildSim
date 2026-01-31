@@ -43,8 +43,7 @@
           "name": "工业爆炸物",
           "count": "1"
         }
-      ],
-      "manufacturingTime": "10s"
+      ]
     },
     {
       "materials": [
@@ -65,8 +64,7 @@
           "name": "中容谷地电池",
           "count": "1"
         }
-      ],
-      "manufacturingTime": "10s"
+      ]
     },
     {
       "materials": [
@@ -87,8 +85,7 @@
           "name": "低容谷地电池",
           "count": "1"
         }
-      ],
-      "manufacturingTime": "10s"
+      ]
     },
     {
       "materials": [
@@ -109,8 +106,7 @@
           "name": "芽针针剂",
           "count": "1"
         }
-      ],
-      "manufacturingTime": "10s"
+      ]
     },
     {
       "materials": [
@@ -184,8 +180,7 @@
           "name": "低容武陵电池",
           "count": "1"
         }
-      ],
-      "manufacturingTime": "10s"
+      ]
     }
   ]
 }
