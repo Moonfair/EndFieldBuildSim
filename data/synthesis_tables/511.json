@@ -1,0 +1,60 @@
+{
+  "itemId": "511",
+  "name": "优质荞愈胶囊",
+  "tables": [
+    {
+      "rows": 2,
+      "columns": 3,
+      "headers": [
+        [
+          {
+            "type": "text",
+            "text": "合成设备"
+          }
+        ],
+        [
+          {
+            "type": "text",
+            "text": "原料需求"
+          }
+        ],
+        [
+          {
+            "type": "text",
+            "text": "合成产物"
+          }
+        ]
+      ],
+      "data": [
+        [
+          [
+            {
+              "type": "entry",
+              "id": "176",
+              "count": "0"
+            }
+          ],
+          [
+            {
+              "type": "entry",
+              "id": "379",
+              "count": "10"
+            },
+            {
+              "type": "entry",
+              "id": "371",
+              "count": "10"
+            }
+          ],
+          [
+            {
+              "type": "entry",
+              "id": "511",
+              "count": "1"
+            }
+          ]
+        ]
+      ]
+    }
+  ]
+}

@@ -1,0 +1,86 @@
+{
+  "itemId": "378",
+  "name": "中容谷地电池",
+  "tables": [
+    {
+      "rows": 3,
+      "columns": 3,
+      "headers": [
+        [
+          {
+            "type": "text",
+            "text": "合成设备"
+          }
+        ],
+        [
+          {
+            "type": "text",
+            "text": "原料需求"
+          }
+        ],
+        [
+          {
+            "type": "text",
+            "text": "合成产物"
+          }
+        ]
+      ],
+      "data": [
+        [
+          [
+            {
+              "type": "entry",
+              "id": "177",
+              "count": "0"
+            }
+          ],
+          [
+            {
+              "type": "entry",
+              "id": "373",
+              "count": "10"
+            },
+            {
+              "type": "text",
+              "text": " "
+            },
+            {
+              "type": "entry",
+              "id": "47",
+              "count": "15"
+            }
+          ],
+          [
+            {
+              "type": "entry",
+              "id": "378",
+              "count": "1"
+            }
+          ]
+        ],
+        [
+          [
+            {
+              "type": "entry",
+              "id": "178",
+              "count": "0"
+            }
+          ],
+          [
+            {
+              "type": "entry",
+              "id": "378",
+              "count": "1"
+            }
+          ],
+          [
+            {
+              "type": "text",
+              "text": "420（功率值）"
+            }
+          ]
+        ]
+      ]
+    }
+  ]
+}

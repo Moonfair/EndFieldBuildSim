@@ -1,0 +1,138 @@
+{
+  "itemId": "195",
+  "name": "碳粉末",
+  "tables": [
+    {
+      "rows": 5,
+      "columns": 3,
+      "headers": [
+        [
+          {
+            "type": "text",
+            "text": "合成设备"
+          }
+        ],
+        [
+          {
+            "type": "text",
+            "text": "原料需求"
+          }
+        ],
+        [
+          {
+            "type": "text",
+            "text": "合成产物"
+          }
+        ]
+      ],
+      "data": [
+        [
+          [
+            {
+              "type": "entry",
+              "id": "54",
+              "count": "0"
+            }
+          ],
+          [
+            {
+              "type": "entry",
+              "id": "192",
+              "count": "1"
+            }
+          ],
+          [
+            {
+              "type": "entry",
+              "id": "195",
+              "count": "2"
+            }
+          ]
+        ],
+        [
+          [
+            {
+              "type": "entry",
+              "id": "53",
+              "count": "0"
+            }
+          ],
+          [
+            {
+              "type": "entry",
+              "id": "543",
+              "count": "3"
+            }
+          ],
+          [
+            {
+              "type": "entry",
+              "id": "195",
+              "count": "2"
+            }
+          ]
+        ],
+        [
+          [],
+          [
+            {
+              "type": "entry",
+              "id": "379",
+              "count": "1"
+            },
+            {
+              "type": "entry",
+              "id": "380",
+              "count": "1"
+            },
+            {
+              "type": "entry",
+              "id": "587",
+              "count": "1"
+            },
+            {
+              "type": "entry",
+              "id": "586",
+              "count": "1"
+            }
+          ],
+          [
+            {
+              "type": "entry",
+              "id": "195",
+              "count": "1"
+            }
+          ]
+        ],
+        [
+          [
+            {
+              "type": "entry",
+              "id": "188",
+              "count": "0"
+            }
+          ],
+          [
+            {
+              "type": "entry",
+              "id": "195",
+              "count": "2"
+            },
+            {
+              "type": "entry",
+              "id": "543",
+              "count": "1"
+            }
+          ],
+          [
+            {
+              "type": "entry",
+              "id": "548",
+              "count": "1"
+            }
+          ]
+        ]
+      ]
+    }
+  ]
+}

@@ -1,0 +1,95 @@
+{
+  "deviceId": "175",
+  "deviceName": "装备原件机",
+  "recipeCount": 4,
+  "recipes": [
+    {
+      "materials": [
+        {
+          "id": "194",
+          "name": "蓝铁块",
+          "count": "10"
+        },
+        {
+          "id": "33",
+          "name": "晶体外壳",
+          "count": "10"
+        }
+      ],
+      "products": [
+        {
+          "id": "375",
+          "name": "蓝铁装备原件",
+          "count": "1"
+        }
+      ],
+      "manufacturingTime": "10s"
+    },
+    {
+      "materials": [
+        {
+          "id": "33",
+          "name": "晶体外壳",
+          "count": "5"
+        },
+        {
+          "id": "193",
+          "name": "紫晶纤维",
+          "count": "5"
+        }
+      ],
+      "products": [
+        {
+          "id": "374",
+          "name": "紫晶装备原件",
+          "count": "1"
+        }
+      ],
+      "manufacturingTime": "10s"
+    },
+    {
+      "materials": [
+        {
+          "id": "557",
+          "name": "密制晶体",
+          "count": "10"
+        },
+        {
+          "id": "556",
+          "name": "高晶纤维",
+          "count": "10"
+        }
+      ],
+      "products": [
+        {
+          "id": "479",
+          "name": "高晶装备原件",
+          "count": "1"
+        }
+      ],
+      "manufacturingTime": "10s"
+    },
+    {
+      "materials": [
+        {
+          "id": "557",
+          "name": "密制晶体",
+          "count": "10"
+        },
+        {
+          "id": "771",
+          "name": "息壤",
+          "count": "10"
+        }
+      ],
+      "products": [
+        {
+          "id": "480",
+          "name": "息壤装备原件",
+          "count": "1"
+        }
+      ],
+      "manufacturingTime": "10s"
+    }
+  ]
+}

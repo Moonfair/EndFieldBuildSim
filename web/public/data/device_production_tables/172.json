@@ -1,0 +1,75 @@
+{
+  "deviceId": "172",
+  "deviceName": "塑形机",
+  "recipeCount": 4,
+  "recipes": [
+    {
+      "materials": [
+        {
+          "id": "555",
+          "name": "钢块",
+          "count": "2"
+        }
+      ],
+      "products": [
+        {
+          "id": "552",
+          "name": "钢质瓶",
+          "count": "1"
+        }
+      ],
+      "manufacturingTime": "2s"
+    },
+    {
+      "materials": [
+        {
+          "id": "194",
+          "name": "蓝铁块",
+          "count": "2"
+        }
+      ],
+      "products": [
+        {
+          "id": "371",
+          "name": "蓝铁瓶",
+          "count": "1"
+        }
+      ],
+      "manufacturingTime": "2s"
+    },
+    {
+      "materials": [
+        {
+          "id": "193",
+          "name": "紫晶纤维",
+          "count": "2"
+        }
+      ],
+      "products": [
+        {
+          "id": "370",
+          "name": "紫晶质瓶",
+          "count": "1"
+        }
+      ],
+      "manufacturingTime": "2s"
+    },
+    {
+      "materials": [
+        {
+          "id": "556",
+          "name": "高晶纤维",
+          "count": "2"
+        }
+      ],
+      "products": [
+        {
+          "id": "551",
+          "name": "高晶质瓶",
+          "count": "1"
+        }
+      ],
+      "manufacturingTime": "2s"
+    }
+  ]
+}

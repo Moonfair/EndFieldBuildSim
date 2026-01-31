@@ -1,0 +1,73 @@
+{
+  "deviceId": "746",
+  "deviceName": "反应池",
+  "recipeCount": 3,
+  "recipes": [
+    {
+      "materials": [
+        {
+          "id": "586",
+          "name": "锦草粉末",
+          "count": "1"
+        },
+        {
+          "id": "381",
+          "name": "清水",
+          "count": "1"
+        }
+      ],
+      "products": [
+        {
+          "id": "201",
+          "name": "锦草溶液",
+          "count": "1"
+        }
+      ],
+      "manufacturingTime": "2s"
+    },
+    {
+      "materials": [
+        {
+          "id": "587",
+          "name": "芽针粉末",
+          "count": "1"
+        },
+        {
+          "id": "381",
+          "name": "清水",
+          "count": "1"
+        }
+      ],
+      "products": [
+        {
+          "id": "769",
+          "name": "芽针溶液",
+          "count": "1"
+        }
+      ],
+      "manufacturingTime": "2s"
+    },
+    {
+      "materials": [
+        {
+          "id": "771",
+          "name": "息壤",
+          "count": "1"
+        },
+        {
+          "id": "381",
+          "name": "清水",
+          "count": "1"
+        }
+      ],
+      "products": [
+        {
+          "id": "892",
+          "name": "液化息壤",
+          "count": "1"
+        }
+      ],
+      "manufacturingTime": "2s"
+    }
+  ]
+}

@@ -1,0 +1,73 @@
+{
+  "deviceId": "752",
+  "deviceName": "天有洪炉",
+  "recipeCount": 3,
+  "recipes": [
+    {
+      "materials": [
+        {
+          "id": "381",
+          "name": "清水",
+          "count": "1"
+        },
+        {
+          "id": "542",
+          "name": "稳定碳块",
+          "count": "2"
+        }
+      ],
+      "products": [
+        {
+          "id": "771",
+          "name": "息壤",
+          "count": "1"
+        }
+      ],
+      "manufacturingTime": "2s"
+    },
+    {
+      "materials": [
+        {
+          "id": "892",
+          "name": "液化息壤",
+          "count": "1"
+        },
+        {
+          "id": "22",
+          "name": "驮兽粪便",
+          "count": "1"
+        }
+      ],
+      "products": [
+        {
+          "id": "558",
+          "name": "膨地啪",
+          "count": "1"
+        }
+      ],
+      "manufacturingTime": "2s"
+    },
+    {
+      "materials": [
+        {
+          "id": "542",
+          "name": "稳定碳块",
+          "count": "1"
+        },
+        {
+          "id": "381",
+          "name": "清水",
+          "count": "1"
+        }
+      ],
+      "products": [
+        {
+          "id": "771",
+          "name": "息壤",
+          "count": "1"
+        }
+      ],
+      "manufacturingTime": "2s"
+    }
+  ]
+}

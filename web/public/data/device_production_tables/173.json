@@ -1,0 +1,209 @@
+{
+  "deviceId": "173",
+  "deviceName": "采种机",
+  "recipeCount": 14,
+  "recipes": [
+    {
+      "materials": [],
+      "products": [
+        {
+          "id": "566",
+          "name": "锦草种子",
+          "count": "1"
+        }
+      ]
+    },
+    {
+      "materials": [
+        {
+          "id": "573",
+          "name": "金石稻",
+          "count": "1"
+        }
+      ],
+      "products": [
+        {
+          "id": "574",
+          "name": "金石稻种子",
+          "count": "2"
+        }
+      ],
+      "manufacturingTime": "2s"
+    },
+    {
+      "materials": [],
+      "products": [
+        {
+          "id": "570",
+          "name": "芽针种子",
+          "count": "1"
+        }
+      ]
+    },
+    {
+      "materials": [
+        {
+          "id": "200",
+          "name": "灰芦麦",
+          "count": "1"
+        }
+      ],
+      "products": [
+        {
+          "id": "199",
+          "name": "灰芦麦种子",
+          "count": "2"
+        }
+      ],
+      "manufacturingTime": "2s"
+    },
+    {
+      "materials": [],
+      "products": [
+        {
+          "id": "202",
+          "name": "酮化树种",
+          "count": "2"
+        }
+      ]
+    },
+    {
+      "materials": [
+        {
+          "id": "576",
+          "name": "琼叶参",
+          "count": "1"
+        }
+      ],
+      "products": [
+        {
+          "id": "577",
+          "name": "琼叶参种子",
+          "count": "2"
+        }
+      ]
+    },
+    {
+      "materials": [
+        {
+          "id": "367",
+          "name": "砂叶",
+          "count": "1"
+        }
+      ],
+      "products": [
+        {
+          "id": "481",
+          "name": "砂叶种子",
+          "count": "2"
+        }
+      ],
+      "manufacturingTime": "2s"
+    },
+    {
+      "materials": [
+        {
+          "id": "46",
+          "name": "酮化灌木",
+          "count": "1"
+        }
+      ],
+      "products": [
+        {
+          "id": "202",
+          "name": "酮化树种",
+          "count": "2"
+        }
+      ],
+      "manufacturingTime": "2s"
+    },
+    {
+      "materials": [],
+      "products": [
+        {
+          "id": "203",
+          "name": "柑实种子",
+          "count": "1"
+        }
+      ]
+    },
+    {
+      "materials": [
+        {
+          "id": "31",
+          "name": "荞花",
+          "count": "1"
+        }
+      ],
+      "products": [
+        {
+          "id": "204",
+          "name": "荞花种子",
+          "count": "1"
+        }
+      ],
+      "manufacturingTime": "2s"
+    },
+    {
+      "materials": [
+        {
+          "id": "530",
+          "name": "苦叶椒",
+          "count": "1"
+        }
+      ],
+      "products": [
+        {
+          "id": "531",
+          "name": "苦叶椒种子",
+          "count": "2"
+        }
+      ],
+      "manufacturingTime": "2s"
+    },
+    {
+      "materials": [],
+      "products": [
+        {
+          "id": "481",
+          "name": "砂叶种子",
+          "count": "2"
+        }
+      ]
+    },
+    {
+      "materials": [
+        {
+          "id": "575",
+          "name": "芽针",
+          "count": "1"
+        }
+      ],
+      "products": [
+        {
+          "id": "570",
+          "name": "芽针种子",
+          "count": "1"
+        }
+      ],
+      "manufacturingTime": "2s"
+    },
+    {
+      "materials": [
+        {
+          "id": "494",
+          "name": "锦草",
+          "count": "1"
+        }
+      ],
+      "products": [
+        {
+          "id": "566",
+          "name": "锦草种子",
+          "count": "1"
+        }
+      ],
+      "manufacturingTime": "2s"
+    }
+  ]
+}

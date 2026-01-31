@@ -1,0 +1,398 @@
+{
+  "deviceId": "53",
+  "deviceName": "精炼炉",
+  "recipeCount": 23,
+  "recipes": [
+    {
+      "materials": [
+        {
+          "id": "379",
+          "name": "荞花粉末",
+          "count": "1"
+        }
+      ],
+      "products": [
+        {
+          "id": "195",
+          "name": "碳粉末",
+          "count": "1"
+        }
+      ],
+      "manufacturingTime": "2s"
+    },
+    {
+      "materials": [
+        {
+          "id": "544",
+          "name": "致密源石粉末",
+          "count": "1"
+        }
+      ],
+      "products": [
+        {
+          "id": "545",
+          "name": "致密晶体粉末",
+          "count": "1"
+        }
+      ],
+      "manufacturingTime": "2s"
+    },
+    {
+      "materials": [
+        {
+          "id": "380",
+          "name": "柑实粉末",
+          "count": "1"
+        }
+      ],
+      "products": [
+        {
+          "id": "195",
+          "name": "碳粉末",
+          "count": "1"
+        }
+      ],
+      "manufacturingTime": "2s"
+    },
+    {
+      "materials": [
+        {
+          "id": "553",
+          "name": "细磨荞花粉末",
+          "count": "1"
+        }
+      ],
+      "products": [
+        {
+          "id": "548",
+          "name": "致密碳粉末",
+          "count": "1"
+        }
+      ],
+      "manufacturingTime": "2s"
+    },
+    {
+      "materials": [
+        {
+          "id": "586",
+          "name": "锦草粉末",
+          "count": "1"
+        }
+      ],
+      "products": [
+        {
+          "id": "195",
+          "name": "碳粉末",
+          "count": "2"
+        }
+      ],
+      "manufacturingTime": "2s"
+    },
+    {
+      "materials": [
+        {
+          "id": "494",
+          "name": "锦草",
+          "count": "1"
+        }
+      ],
+      "products": [
+        {
+          "id": "192",
+          "name": "碳块",
+          "count": "2"
+        }
+      ],
+      "manufacturingTime": "2s"
+    },
+    {
+      "materials": [
+        {
+          "id": "548",
+          "name": "致密碳粉末",
+          "count": "1"
+        }
+      ],
+      "products": [
+        {
+          "id": "542",
+          "name": "稳定碳块",
+          "count": "1"
+        }
+      ],
+      "manufacturingTime": "2s"
+    },
+    {
+      "materials": [
+        {
+          "id": "554",
+          "name": "细磨柑实粉末",
+          "count": "1"
+        }
+      ],
+      "products": [
+        {
+          "id": "548",
+          "name": "致密碳粉末",
+          "count": "1"
+        }
+      ],
+      "manufacturingTime": "2s"
+    },
+    {
+      "materials": [
+        {
+          "id": "587",
+          "name": "芽针粉末",
+          "count": "1"
+        }
+      ],
+      "products": [
+        {
+          "id": "195",
+          "name": "碳粉末",
+          "count": "2"
+        }
+      ],
+      "manufacturingTime": "2s"
+    },
+    {
+      "materials": [
+        {
+          "id": "47",
+          "name": "源石粉末",
+          "count": "1"
+        }
+      ],
+      "products": [
+        {
+          "id": "38",
+          "name": "晶体外壳粉末",
+          "count": "1"
+        }
+      ],
+      "manufacturingTime": "2s"
+    },
+    {
+      "materials": [
+        {
+          "id": "575",
+          "name": "芽针",
+          "count": "1"
+        }
+      ],
+      "products": [
+        {
+          "id": "192",
+          "name": "碳块",
+          "count": "2"
+        }
+      ],
+      "manufacturingTime": "2s"
+    },
+    {
+      "materials": [
+        {
+          "id": "543",
+          "name": "砂叶粉末",
+          "count": "3"
+        }
+      ],
+      "products": [
+        {
+          "id": "195",
+          "name": "碳粉末",
+          "count": "2"
+        }
+      ],
+      "manufacturingTime": "2s"
+    },
+    {
+      "materials": [
+        {
+          "id": "547",
+          "name": "致密蓝铁粉末",
+          "count": "1"
+        }
+      ],
+      "products": [
+        {
+          "id": "555",
+          "name": "钢块",
+          "count": "1"
+        }
+      ],
+      "manufacturingTime": "2s"
+    },
+    {
+      "materials": [
+        {
+          "id": "368",
+          "name": "蓝铁粉末",
+          "count": "1"
+        }
+      ],
+      "products": [
+        {
+          "id": "194",
+          "name": "蓝铁块",
+          "count": "1"
+        }
+      ],
+      "manufacturingTime": "2s"
+    },
+    {
+      "materials": [
+        {
+          "id": "367",
+          "name": "砂叶",
+          "count": "1"
+        }
+      ],
+      "products": [
+        {
+          "id": "192",
+          "name": "碳块",
+          "count": "1"
+        }
+      ],
+      "manufacturingTime": "2s"
+    },
+    {
+      "materials": [
+        {
+          "id": "49",
+          "name": "紫晶矿",
+          "count": "1"
+        }
+      ],
+      "products": [
+        {
+          "id": "193",
+          "name": "紫晶纤维",
+          "count": "1"
+        }
+      ],
+      "manufacturingTime": "2s"
+    },
+    {
+      "materials": [
+        {
+          "id": "29",
+          "name": "紫晶粉末",
+          "count": "1"
+        }
+      ],
+      "products": [
+        {
+          "id": "193",
+          "name": "紫晶纤维",
+          "count": "1"
+        }
+      ],
+      "manufacturingTime": "2s"
+    },
+    {
+      "materials": [
+        {
+          "id": "545",
+          "name": "致密晶体粉末",
+          "count": "1"
+        }
+      ],
+      "products": [
+        {
+          "id": "557",
+          "name": "密制晶体",
+          "count": "1"
+        }
+      ],
+      "manufacturingTime": "2s"
+    },
+    {
+      "materials": [
+        {
+          "id": "546",
+          "name": "高晶粉末",
+          "count": "1"
+        }
+      ],
+      "products": [
+        {
+          "id": "556",
+          "name": "高晶纤维",
+          "count": "1"
+        }
+      ],
+      "manufacturingTime": "2s"
+    },
+    {
+      "materials": [
+        {
+          "id": "45",
+          "name": "原木",
+          "count": "1"
+        }
+      ],
+      "products": [
+        {
+          "id": "192",
+          "name": "碳块",
+          "count": "1"
+        }
+      ],
+      "manufacturingTime": "2s"
+    },
+    {
+      "materials": [
+        {
+          "id": "48",
+          "name": "源矿",
+          "count": "1"
+        }
+      ],
+      "products": [
+        {
+          "id": "33",
+          "name": "晶体外壳",
+          "count": "1"
+        }
+      ],
+      "manufacturingTime": "2s"
+    },
+    {
+      "materials": [
+        {
+          "id": "38",
+          "name": "晶体外壳粉末",
+          "count": "1"
+        }
+      ],
+      "products": [
+        {
+          "id": "33",
+          "name": "晶体外壳",
+          "count": "1"
+        }
+      ],
+      "manufacturingTime": "2s"
+    },
+    {
+      "materials": [
+        {
+          "id": "205",
+          "name": "蓝铁矿",
+          "count": "1"
+        }
+      ],
+      "products": [
+        {
+          "id": "194",
+          "name": "蓝铁块",
+          "count": "1"
+        }
+      ],
+      "manufacturingTime": "2s"
+    }
+  ]
+}

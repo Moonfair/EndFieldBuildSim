@@ -1,0 +1,95 @@
+{
+  "itemId": "46",
+  "name": "酮化灌木",
+  "tables": [
+    {
+      "rows": 4,
+      "columns": 3,
+      "headers": [
+        [
+          {
+            "type": "text",
+            "text": "合成设备"
+          }
+        ],
+        [
+          {
+            "type": "text",
+            "text": "原料需求"
+          }
+        ],
+        [
+          {
+            "type": "text",
+            "text": "合成产物"
+          }
+        ]
+      ],
+      "data": [
+        [
+          [
+            {
+              "type": "entry",
+              "id": "173",
+              "count": "0"
+            }
+          ],
+          [],
+          [
+            {
+              "type": "entry",
+              "id": "202",
+              "count": "2"
+            }
+          ]
+        ],
+        [
+          [
+            {
+              "type": "entry",
+              "id": "174",
+              "count": "0"
+            }
+          ],
+          [
+            {
+              "type": "entry",
+              "id": "202",
+              "count": "1"
+            }
+          ],
+          [
+            {
+              "type": "entry",
+              "id": "46",
+              "count": "1"
+            }
+          ]
+        ],
+        [
+          [
+            {
+              "type": "entry",
+              "id": "54",
+              "count": "0"
+            }
+          ],
+          [
+            {
+              "type": "entry",
+              "id": "46",
+              "count": "1"
+            }
+          ],
+          [
+            {
+              "type": "entry",
+              "id": "369",
+              "count": "2"
+            }
+          ]
+        ]
+      ]
+    }
+  ]
+}

@@ -1,0 +1,144 @@
+{
+  "deviceId": "174",
+  "deviceName": "种植机",
+  "recipeCount": 8,
+  "recipes": [
+    {
+      "materials": [
+        {
+          "id": "566",
+          "name": "锦草种子",
+          "count": "1"
+        },
+        {
+          "id": "381",
+          "name": "清水",
+          "count": "1"
+        }
+      ],
+      "products": [
+        {
+          "id": "494",
+          "name": "锦草",
+          "count": "2"
+        }
+      ]
+    },
+    {
+      "materials": [
+        {
+          "id": "570",
+          "name": "芽针种子",
+          "count": "1"
+        },
+        {
+          "id": "381",
+          "name": "清水",
+          "count": "1"
+        }
+      ],
+      "products": [
+        {
+          "id": "575",
+          "name": "芽针",
+          "count": "2"
+        }
+      ]
+    },
+    {
+      "materials": [
+        {
+          "id": "202",
+          "name": "酮化树种",
+          "count": "1"
+        }
+      ],
+      "products": [
+        {
+          "id": "46",
+          "name": "酮化灌木",
+          "count": "1"
+        }
+      ]
+    },
+    {
+      "materials": [
+        {
+          "id": "481",
+          "name": "砂叶种子",
+          "count": "1"
+        }
+      ],
+      "products": [
+        {
+          "id": "367",
+          "name": "砂叶",
+          "count": "1"
+        }
+      ]
+    },
+    {
+      "materials": [
+        {
+          "id": "203",
+          "name": "柑实种子",
+          "count": "1"
+        }
+      ],
+      "products": [
+        {
+          "id": "42",
+          "name": "柑实",
+          "count": "1"
+        }
+      ]
+    },
+    {
+      "materials": [],
+      "products": [
+        {
+          "id": "204",
+          "name": "荞花种子",
+          "count": "1"
+        }
+      ]
+    },
+    {
+      "materials": [
+        {
+          "id": "481",
+          "name": "砂叶种子",
+          "count": "1"
+        }
+      ],
+      "products": [
+        {
+          "id": "42",
+          "name": "柑实",
+          "count": "1"
+        }
+      ]
+    },
+    {
+      "materials": [
+        {
+          "id": "570",
+          "name": "芽针种子",
+          "count": "0"
+        },
+        {
+          "id": "381",
+          "name": "清水",
+          "count": "1"
+        }
+      ],
+      "products": [
+        {
+          "id": "575",
+          "name": "芽针",
+          "count": "2"
+        }
+      ]
+    }
+  ]
+}

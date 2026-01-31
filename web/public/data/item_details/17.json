@@ -845,7 +845,7 @@
         "avatar": "https://bbs.hycdn.cn/asset/avatar_award/4c05c11e12994d409cec99541c949805.webp"
       },
       "brief": {
-        "cover": "https://bbs.hycdn.cn/image/2026/01/07/3048259/a0b3d2d1310785ad669be22e04ea4ecb.png",
+        "cover": "/images/items/17.png",
         "name": "理智",
         "description": {
           "id": "document-id",
