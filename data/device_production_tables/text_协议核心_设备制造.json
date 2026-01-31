@@ -1,0 +1,209 @@
+{
+  "deviceId": "text_协议核心_设备制造",
+  "deviceName": "Unknown Device (text_协议核心_设备制造)",
+  "recipeCount": 12,
+  "recipes": [
+    {
+      "materials": [
+        {
+          "id": "373",
+          "name": "铁制零件",
+          "count": "10"
+        },
+        {
+          "id": "55",
+          "name": "便携源石矿机",
+          "count": "1"
+        }
+      ],
+      "products": [
+        {
+          "id": "167",
+          "name": "二型电驱矿机",
+          "count": "1"
+        }
+      ]
+    },
+    {
+      "materials": [
+        {
+          "id": "373",
+          "name": "铁制零件",
+          "count": "10"
+        }
+      ],
+      "products": [
+        {
+          "id": "188",
+          "name": "研磨机",
+          "count": "1"
+        }
+      ]
+    },
+    {
+      "materials": [
+        {
+          "id": "373",
+          "name": "铁制零件",
+          "count": "10"
+        }
+      ],
+      "products": [
+        {
+          "id": "742",
+          "name": "储液罐",
+          "count": "1"
+        }
+      ]
+    },
+    {
+      "materials": [
+        {
+          "id": "373",
+          "name": "铁制零件",
+          "count": "10"
+        }
+      ],
+      "products": [
+        {
+          "id": "736",
+          "name": "水泵",
+          "count": "1"
+        }
+      ]
+    },
+    {
+      "materials": [
+        {
+          "id": "373",
+          "name": "铁制零件",
+          "count": "20"
+        }
+      ],
+      "products": [
+        {
+          "id": "185",
+          "name": "扩装铳械塔",
+          "count": "1"
+        }
+      ]
+    },
+    {
+      "materials": [
+        {
+          "id": "373",
+          "name": "铁制零件",
+          "count": "20"
+        }
+      ],
+      "products": [
+        {
+          "id": "746",
+          "name": "反应池",
+          "count": "1"
+        }
+      ]
+    },
+    {
+      "materials": [
+        {
+          "id": "373",
+          "name": "铁制零件",
+          "count": "20"
+        }
+      ],
+      "products": [
+        {
+          "id": "744",
+          "name": "给水器",
+          "count": "1"
+        }
+      ]
+    },
+    {
+      "materials": [
+        {
+          "id": "373",
+          "name": "铁制零件",
+          "count": "20"
+        }
+      ],
+      "products": [
+        {
+          "id": "743",
+          "name": "洒水机",
+          "count": "1"
+        }
+      ]
+    },
+    {
+      "materials": [
+        {
+          "id": "373",
+          "name": "铁制零件",
+          "count": "20"
+        }
+      ],
+      "products": [
+        {
+          "id": "752",
+          "name": "天有洪炉",
+          "count": "1"
+        }
+      ]
+    },
+    {
+      "materials": [
+        {
+          "id": "373",
+          "name": "铁制零件",
+          "count": "20"
+        }
+      ],
+      "products": [
+        {
+          "id": "745",
+          "name": "拆解机",
+          "count": "1"
+        }
+      ]
+    },
+    {
+      "materials": [
+        {
+          "id": "540",
+          "name": "高晶零件",
+          "count": "20"
+        }
+      ],
+      "products": [
+        {
+          "id": "180",
+          "name": "长距滑索架",
+          "count": "1"
+        }
+      ]
+    },
+    {
+      "materials": [
+        {
+          "id": "192",
+          "name": "碳块",
+          "count": "10"
+        },
+        {
+          "id": "377",
+          "name": "紫晶零件",
+          "count": "20"
+        }
+      ],
+      "products": [
+        {
+          "id": "174",
+          "name": "种植机",
+          "count": "1"
+        }
+      ]
+    }
+  ]
+}

@@ -15,6 +15,15 @@ function parseManufacturingTime(timeStr: string | undefined): number {
   return value;
 }
 
+function normalizeDeviceText(text: string): string {
+  const normalized = text
+    .replace(/[（）()]/g, '_')
+    .replace(/\s+/g, '')
+    .replace(/_+/g, '_')
+    .replace(/^_+|_+$/g, '');
+  return normalized || 'unknown';
+}
+
 export async function loadRecipeLookup(itemLookup?: ItemLookup): Promise<RecipeLookup> {
   if (cachedRecipeLookup) {
     return cachedRecipeLookup;
@@ -23,9 +32,10 @@ export async function loadRecipeLookup(itemLookup?: ItemLookup): Promise<RecipeL
   const byItem = new Map<string, ManufacturingRecipe[]>();
   const byDevice = new Map<string, ManufacturingRecipe[]>();
 
-  const [synthesisList, deviceProductionList] = await Promise.all([
+  const [synthesisList, deviceProductionList, deviceTextMap] = await Promise.all([
     fetchSynthesisTables(),
     fetchDeviceProductionTables(),
+    fetchDeviceTextMap(),
   ]);
 
   const deviceTimeMap = new Map<string, number>();
@@ -46,16 +56,29 @@ export async function loadRecipeLookup(itemLookup?: ItemLookup): Promise<RecipeL
         if (!row || row.length < 3) continue;
         if (!row[0] || row[0].length === 0) continue;
         
-        const deviceCell = row[0][0];
-        if (!deviceCell || deviceCell.type !== 'entry') continue;
+        const deviceCells = row[0] || [];
+        const deviceCell = deviceCells.find(
+          (cell) => cell.type === 'entry' || (cell.type === 'text' && cell.text.trim() !== '')
+        );
+        if (!deviceCell) continue;
 
         const materialCells = row[1] || [];
         const productCells = row[2] || [];
 
         if (materialCells.length === 0 || productCells.length === 0) continue;
 
-        const deviceId = deviceCell.id;
-        const deviceName = deviceNameMap.get(deviceId) || synthesisTable.name;
+        let deviceId: string;
+        let deviceName: string;
+
+        if (deviceCell.type === 'entry') {
+          deviceId = deviceCell.id;
+          deviceName = deviceNameMap.get(deviceId) || synthesisTable.name;
+        } else {
+          const deviceText = deviceCell.text.trim();
+          const normalizedText = normalizeDeviceText(deviceText);
+          deviceId = deviceTextMap[deviceText] || `text_${normalizedText}`;
+          deviceName = deviceText || synthesisTable.name;
+        }
 
         const materials = materialCells
           .filter((cell) => cell.type === 'entry' && cell.count !== '0')
@@ -142,4 +165,11 @@ async function fetchDeviceProductionTables(): Promise<DeviceProductionTable[]> {
   );
 
   return tables.filter((t) => t !== null);
+}
+
+async function fetchDeviceTextMap(): Promise<Record<string, string>> {
+  const response = await fetch(`${import.meta.env.BASE_URL}data/overrides/device_text_map.json`);
+  if (!response.ok) return {};
+
+  return response.json();
 }

@@ -1,0 +1,28 @@
+{
+  "deviceId": "text_液体模式",
+  "deviceName": "Unknown Device (text_液体模式)",
+  "recipeCount": 1,
+  "recipes": [
+    {
+      "materials": [
+        {
+          "id": "381",
+          "name": "清水",
+          "count": "1"
+        },
+        {
+          "id": "566",
+          "name": "锦草种子",
+          "count": "1"
+        }
+      ],
+      "products": [
+        {
+          "id": "494",
+          "name": "锦草",
+          "count": "2"
+        }
+      ]
+    }
+  ]
+}

@@ -68,10 +68,16 @@ def build_device_productions(item_lookup: Dict[str, str]) -> Dict[str, List[Dict
                 products_cell = row[2]
                 
                 for device_item in device_cell:
-                    if device_item.get('type') != 'entry':
-                        continue
+                    device_type = device_item.get('type')
                     
-                    device_id = device_item['id']
+                    if device_type == 'entry':
+                        device_id = device_item['id']
+                    elif device_type == 'text':
+                        device_text = device_item.get('text', '').strip()
+                        normalized = device_text.replace('（', '_').replace('）', '_').replace('(', '_').replace(')', '_').replace(' ', '').strip('_')
+                        device_id = f"text_{normalized}"
+                    else:
+                        continue
                     
                     materials = []
                     material_ids = []
