@@ -4,34 +4,60 @@ import type { CatalogItem, ItemLookup } from '../types/catalog';
 import ItemCard from '../components/ItemCard';
 import { SearchInput } from '../components/ui/SearchInput';
 import { Skeleton } from '../components/ui/Skeleton';
+import { loadRecipeLookup } from '../utils/recipeLoader';
 
 export default function SearchPage() {
   const [itemLookup, setItemLookup] = useState<ItemLookup | null>(null);
   const [loading, setLoading] = useState(true);
   const [searchQuery, setSearchQuery] = useState('');
   const [error, setError] = useState<string | null>(null);
+  const [recipeLookup, setRecipeLookup] = useState<Awaited<ReturnType<typeof loadRecipeLookup>> | null>(null);
 
   useEffect(() => {
-    fetch(`${import.meta.env.BASE_URL}data/item_lookup.json`)
-      .then((res) => {
-        if (!res.ok) throw new Error(`HTTP ${res.status}`);
-        return res.json();
-      })
-      .then((data: ItemLookup) => {
-        setItemLookup(data);
+    const loadData = async () => {
+      try {
+        const [itemResponse, recipeData] = await Promise.all([
+          fetch(`${import.meta.env.BASE_URL}data/item_lookup.json`),
+          loadRecipeLookup()
+        ]);
+
+        if (!itemResponse.ok) throw new Error(`HTTP ${itemResponse.status}`);
+
+        const itemData: ItemLookup = await itemResponse.json();
+        setItemLookup(itemData);
+        setRecipeLookup(recipeData);
         setLoading(false);
-      })
-      .catch((err) => {
-        console.error('Failed to load item lookup:', err);
+      } catch (err) {
+        console.error('Failed to load data:', err);
         setError('加载数据失败');
         setLoading(false);
-      });
+      }
+    };
+
+    loadData();
   }, []);
 
   const items = useMemo<CatalogItem[]>(() => {
     if (!itemLookup) return [];
-    return Object.values(itemLookup);
-  }, [itemLookup]);
+
+    const participatingItems = new Set<string>();
+
+    if (recipeLookup) {
+      recipeLookup.asMaterials.forEach((_recipes, itemId) => {
+        participatingItems.add(itemId);
+      });
+      recipeLookup.asProducts.forEach((_recipes, itemId) => {
+        participatingItems.add(itemId);
+      });
+      recipeLookup.byDevice.forEach((_recipes, deviceId) => {
+        participatingItems.add(deviceId);
+      });
+    }
+
+    return Object.values(itemLookup).filter((item) =>
+      participatingItems.has(item.itemId)
+    );
+  }, [itemLookup, recipeLookup]);
 
   const fuse = useMemo(() => {
     if (items.length === 0) return null;
