@@ -54,9 +54,19 @@ export default function SearchPage() {
       });
     }
 
-    return Object.values(itemLookup).filter((item) =>
+    const filteredItems = Object.values(itemLookup).filter((item) =>
       participatingItems.has(item.itemId)
     );
+
+    return filteredItems.sort((a, b) => {
+      const aIsDevice = a.subTypeID === '5';
+      const bIsDevice = b.subTypeID === '5';
+
+      if (aIsDevice && !bIsDevice) return 1;
+      if (!aIsDevice && bIsDevice) return -1;
+
+      return a.name.localeCompare(b.name);
+    });
   }, [itemLookup, recipeLookup]);
 
   const fuse = useMemo(() => {
