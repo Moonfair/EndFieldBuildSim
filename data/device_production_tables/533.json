@@ -1,0 +1,30 @@
+{
+  "deviceId": "533",
+  "deviceName": "苦涩麦粉",
+  "recipeCount": 1,
+  "recipes": [
+    {
+      "materials": [
+        {
+          "id": "533",
+          "count": "1"
+        },
+        {
+          "id": "138",
+          "count": "1"
+        },
+        {
+          "id": "34",
+          "count": "1"
+        }
+      ],
+      "products": [
+        {
+          "id": "537",
+          "count": "1"
+        }
+      ],
+      "manufacturingTime": null
+    }
+  ]
+}

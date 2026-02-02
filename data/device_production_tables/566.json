@@ -1,0 +1,60 @@
+{
+  "deviceId": "566",
+  "deviceName": "锦草种子",
+  "recipeCount": 3,
+  "recipes": [
+    {
+      "materials": [
+        {
+          "id": "494",
+          "count": "1"
+        }
+      ],
+      "products": [
+        {
+          "id": "566",
+          "count": "1"
+        }
+      ],
+      "manufacturingTime": null
+    },
+    {
+      "materials": [
+        {
+          "id": "566",
+          "count": "1"
+        },
+        {
+          "id": "381",
+          "count": "1"
+        }
+      ],
+      "products": [
+        {
+          "id": "494",
+          "count": "2"
+        }
+      ],
+      "manufacturingTime": null
+    },
+    {
+      "materials": [
+        {
+          "id": "566",
+          "count": "1"
+        },
+        {
+          "id": "192",
+          "count": "1"
+        }
+      ],
+      "products": [
+        {
+          "id": "348",
+          "count": "1"
+        }
+      ],
+      "manufacturingTime": null
+    }
+  ]
+}

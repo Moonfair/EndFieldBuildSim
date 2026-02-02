@@ -1,0 +1,71 @@
+{
+  "deviceId": "38",
+  "deviceName": "晶体外壳粉末",
+  "recipeCount": 4,
+  "recipes": [
+    {
+      "materials": [
+        {
+          "id": "33",
+          "count": "1"
+        }
+      ],
+      "products": [
+        {
+          "id": "38",
+          "count": "1"
+        }
+      ],
+      "manufacturingTime": null
+    },
+    {
+      "materials": [
+        {
+          "id": "47",
+          "count": "1"
+        }
+      ],
+      "products": [
+        {
+          "id": "38",
+          "count": "1"
+        }
+      ],
+      "manufacturingTime": null
+    },
+    {
+      "materials": [
+        {
+          "id": "38",
+          "count": "1"
+        }
+      ],
+      "products": [
+        {
+          "id": "33",
+          "count": "1"
+        }
+      ],
+      "manufacturingTime": null
+    },
+    {
+      "materials": [
+        {
+          "id": "38",
+          "count": "2"
+        },
+        {
+          "id": "543",
+          "count": "1"
+        }
+      ],
+      "products": [
+        {
+          "id": "545",
+          "count": "1"
+        }
+      ],
+      "manufacturingTime": null
+    }
+  ]
+}

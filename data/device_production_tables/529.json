@@ -1,0 +1,30 @@
+{
+  "deviceId": "529",
+  "deviceName": "爆辣腌渍水果",
+  "recipeCount": 1,
+  "recipes": [
+    {
+      "materials": [
+        {
+          "id": "380",
+          "count": "1"
+        },
+        {
+          "id": "35",
+          "count": "1"
+        },
+        {
+          "id": "530",
+          "count": "1"
+        }
+      ],
+      "products": [
+        {
+          "id": "529",
+          "count": "1"
+        }
+      ],
+      "manufacturingTime": null
+    }
+  ]
+}

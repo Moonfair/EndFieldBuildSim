@@ -1,0 +1,26 @@
+{
+  "deviceId": "591",
+  "deviceName": "锦素炒饭",
+  "recipeCount": 1,
+  "recipes": [
+    {
+      "materials": [
+        {
+          "id": "587",
+          "count": "8"
+        },
+        {
+          "id": "573",
+          "count": "8"
+        }
+      ],
+      "products": [
+        {
+          "id": "591",
+          "count": "1"
+        }
+      ],
+      "manufacturingTime": null
+    }
+  ]
+}

@@ -1,0 +1,68 @@
+{
+  "deviceId": "551",
+  "deviceName": "高晶质瓶",
+  "recipeCount": 3,
+  "recipes": [
+    {
+      "materials": [
+        {
+          "id": "556",
+          "count": "2"
+        }
+      ],
+      "products": [
+        {
+          "id": "551",
+          "count": "1"
+        }
+      ],
+      "manufacturingTime": null
+    },
+    {
+      "materials": [
+        {
+          "id": "551",
+          "count": "1"
+        },
+        {
+          "id": "381",
+          "count": "1"
+        }
+      ],
+      "products": [
+        {
+          "id": "551",
+          "count": "1"
+        },
+        {
+          "id": "381",
+          "count": "0"
+        }
+      ],
+      "manufacturingTime": null
+    },
+    {
+      "materials": [
+        {
+          "id": "551",
+          "count": "1"
+        },
+        {
+          "id": "381",
+          "count": "0"
+        }
+      ],
+      "products": [
+        {
+          "id": "551",
+          "count": "1"
+        },
+        {
+          "id": "381",
+          "count": "1"
+        }
+      ],
+      "manufacturingTime": null
+    }
+  ]
+}

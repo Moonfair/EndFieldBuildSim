@@ -1,0 +1,105 @@
+{
+  "deviceId": "31",
+  "deviceName": "荞花",
+  "recipeCount": 6,
+  "recipes": [
+    {
+      "materials": [
+        {
+          "id": "204",
+          "count": "1"
+        }
+      ],
+      "products": [
+        {
+          "id": "31",
+          "count": "1"
+        }
+      ],
+      "manufacturingTime": null
+    },
+    {
+      "materials": [
+        {
+          "id": "31",
+          "count": "1"
+        }
+      ],
+      "products": [
+        {
+          "id": "192",
+          "count": "1"
+        }
+      ],
+      "manufacturingTime": null
+    },
+    {
+      "materials": [
+        {
+          "id": "31",
+          "count": "1"
+        }
+      ],
+      "products": [
+        {
+          "id": "379",
+          "count": "2"
+        }
+      ],
+      "manufacturingTime": null
+    },
+    {
+      "materials": [
+        {
+          "id": "31",
+          "count": "1"
+        }
+      ],
+      "products": [
+        {
+          "id": "204",
+          "count": "2"
+        }
+      ],
+      "manufacturingTime": null
+    },
+    {
+      "materials": [
+        {
+          "id": "31",
+          "count": "1"
+        }
+      ],
+      "products": [
+        {
+          "id": "379",
+          "count": "2"
+        }
+      ],
+      "manufacturingTime": null
+    },
+    {
+      "materials": [
+        {
+          "id": "31",
+          "count": "1"
+        },
+        {
+          "id": "30",
+          "count": "1"
+        },
+        {
+          "id": "36",
+          "count": "1"
+        }
+      ],
+      "products": [
+        {
+          "id": "517",
+          "count": "1"
+        }
+      ],
+      "manufacturingTime": null
+    }
+  ]
+}

@@ -1,0 +1,22 @@
+{
+  "deviceId": "49",
+  "deviceName": "紫晶矿",
+  "recipeCount": 1,
+  "recipes": [
+    {
+      "materials": [
+        {
+          "id": "49",
+          "count": "1"
+        }
+      ],
+      "products": [
+        {
+          "id": "193",
+          "count": "1"
+        }
+      ],
+      "manufacturingTime": null
+    }
+  ]
+}

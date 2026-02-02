@@ -1,0 +1,72 @@
+{
+  "deviceId": "34",
+  "deviceName": "兽肉",
+  "recipeCount": 3,
+  "recipes": [
+    {
+      "materials": [
+        {
+          "id": "34",
+          "count": "1"
+        },
+        {
+          "id": "138",
+          "count": "1"
+        }
+      ],
+      "products": [
+        {
+          "id": "521",
+          "count": "1"
+        }
+      ],
+      "manufacturingTime": null
+    },
+    {
+      "materials": [
+        {
+          "id": "34",
+          "count": "1"
+        },
+        {
+          "id": "138",
+          "count": "1"
+        },
+        {
+          "id": "533",
+          "count": "1"
+        }
+      ],
+      "products": [
+        {
+          "id": "537",
+          "count": "1"
+        }
+      ],
+      "manufacturingTime": null
+    },
+    {
+      "materials": [
+        {
+          "id": "34",
+          "count": "1"
+        },
+        {
+          "id": "30",
+          "count": "1"
+        },
+        {
+          "id": "379",
+          "count": "1"
+        }
+      ],
+      "products": [
+        {
+          "id": "519",
+          "count": "1"
+        }
+      ],
+      "manufacturingTime": null
+    }
+  ]
+}

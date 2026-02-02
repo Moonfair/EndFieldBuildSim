@@ -1,0 +1,41 @@
+{
+  "deviceId": "574",
+  "deviceName": "金石稻种子",
+  "recipeCount": 2,
+  "recipes": [
+    {
+      "materials": [
+        {
+          "id": "573",
+          "count": "1"
+        }
+      ],
+      "products": [
+        {
+          "id": "574",
+          "count": "2"
+        }
+      ],
+      "manufacturingTime": null
+    },
+    {
+      "materials": [
+        {
+          "id": "574",
+          "count": "1"
+        },
+        {
+          "id": "192",
+          "count": "1"
+        }
+      ],
+      "products": [
+        {
+          "id": "574",
+          "count": "1"
+        }
+      ],
+      "manufacturingTime": null
+    }
+  ]
+}

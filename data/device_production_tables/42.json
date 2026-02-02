@@ -1,0 +1,67 @@
+{
+  "deviceId": "42",
+  "deviceName": "柑实",
+  "recipeCount": 4,
+  "recipes": [
+    {
+      "materials": [
+        {
+          "id": "42",
+          "count": "1"
+        }
+      ],
+      "products": [
+        {
+          "id": "481",
+          "count": "2"
+        }
+      ],
+      "manufacturingTime": null
+    },
+    {
+      "materials": [
+        {
+          "id": "481",
+          "count": "1"
+        }
+      ],
+      "products": [
+        {
+          "id": "42",
+          "count": "1"
+        }
+      ],
+      "manufacturingTime": null
+    },
+    {
+      "materials": [
+        {
+          "id": "42",
+          "count": "1"
+        }
+      ],
+      "products": [
+        {
+          "id": "380",
+          "count": "2"
+        }
+      ],
+      "manufacturingTime": null
+    },
+    {
+      "materials": [
+        {
+          "id": "42",
+          "count": "1"
+        }
+      ],
+      "products": [
+        {
+          "id": "380",
+          "count": "2"
+        }
+      ],
+      "manufacturingTime": null
+    }
+  ]
+}

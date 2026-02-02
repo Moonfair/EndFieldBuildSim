@@ -1,0 +1,41 @@
+{
+  "deviceId": "369",
+  "deviceName": "酮化灌木粉末",
+  "recipeCount": 2,
+  "recipes": [
+    {
+      "materials": [
+        {
+          "id": "46",
+          "count": "1"
+        }
+      ],
+      "products": [
+        {
+          "id": "369",
+          "count": "2"
+        }
+      ],
+      "manufacturingTime": null
+    },
+    {
+      "materials": [
+        {
+          "id": "369",
+          "count": "1"
+        },
+        {
+          "id": "377",
+          "count": "5"
+        }
+      ],
+      "products": [
+        {
+          "id": "196",
+          "count": "1"
+        }
+      ],
+      "manufacturingTime": null
+    }
+  ]
+}

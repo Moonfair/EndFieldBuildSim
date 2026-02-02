@@ -96,6 +96,7 @@ export default function DeviceDetailPage() {
         name: p.name,
         count: p.count,
       })),
+      manufacturingTime: recipe.manufacturingTime,
     })),
   } : null;
 

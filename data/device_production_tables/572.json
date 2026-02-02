@@ -1,0 +1,22 @@
+{
+  "deviceId": "572",
+  "deviceName": "荆刺芽针",
+  "recipeCount": 1,
+  "recipes": [
+    {
+      "materials": [
+        {
+          "id": "572",
+          "count": "1"
+        }
+      ],
+      "products": [
+        {
+          "id": "589",
+          "count": "2"
+        }
+      ],
+      "manufacturingTime": null
+    }
+  ]
+}

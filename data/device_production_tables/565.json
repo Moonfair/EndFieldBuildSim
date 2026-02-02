@@ -1,0 +1,26 @@
+{
+  "deviceId": "565",
+  "deviceName": "谷地馅饼",
+  "recipeCount": 1,
+  "recipes": [
+    {
+      "materials": [
+        {
+          "id": "200",
+          "count": "8"
+        },
+        {
+          "id": "34",
+          "count": "4"
+        }
+      ],
+      "products": [
+        {
+          "id": "565",
+          "count": "1"
+        }
+      ],
+      "manufacturingTime": null
+    }
+  ]
+}

@@ -1,0 +1,22 @@
+{
+  "deviceId": "43",
+  "deviceName": "黯银柑实",
+  "recipeCount": 1,
+  "recipes": [
+    {
+      "materials": [
+        {
+          "id": "43",
+          "count": "1"
+        }
+      ],
+      "products": [
+        {
+          "id": "509",
+          "count": "2"
+        }
+      ],
+      "manufacturingTime": null
+    }
+  ]
+}

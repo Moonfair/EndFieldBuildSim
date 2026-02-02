@@ -1,0 +1,41 @@
+{
+  "deviceId": "547",
+  "deviceName": "致密蓝铁粉末",
+  "recipeCount": 2,
+  "recipes": [
+    {
+      "materials": [
+        {
+          "id": "368",
+          "count": "2"
+        },
+        {
+          "id": "543",
+          "count": "1"
+        }
+      ],
+      "products": [
+        {
+          "id": "547",
+          "count": "1"
+        }
+      ],
+      "manufacturingTime": null
+    },
+    {
+      "materials": [
+        {
+          "id": "547",
+          "count": "1"
+        }
+      ],
+      "products": [
+        {
+          "id": "555",
+          "count": "1"
+        }
+      ],
+      "manufacturingTime": null
+    }
+  ]
+}

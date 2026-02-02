@@ -1,0 +1,30 @@
+{
+  "deviceId": "562",
+  "deviceName": "星融果冻",
+  "recipeCount": 1,
+  "recipes": [
+    {
+      "materials": [
+        {
+          "id": "380",
+          "count": "1"
+        },
+        {
+          "id": "342",
+          "count": "1"
+        },
+        {
+          "id": "36",
+          "count": "1"
+        }
+      ],
+      "products": [
+        {
+          "id": "562",
+          "count": "1"
+        }
+      ],
+      "manufacturingTime": null
+    }
+  ]
+}

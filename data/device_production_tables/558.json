@@ -1,0 +1,26 @@
+{
+  "deviceId": "558",
+  "deviceName": "膨地啪",
+  "recipeCount": 1,
+  "recipes": [
+    {
+      "materials": [
+        {
+          "id": "892",
+          "count": "1"
+        },
+        {
+          "id": "22",
+          "count": "1"
+        }
+      ],
+      "products": [
+        {
+          "id": "558",
+          "count": "1"
+        }
+      ],
+      "manufacturingTime": null
+    }
+  ]
+}

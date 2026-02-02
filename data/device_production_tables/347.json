@@ -1,0 +1,26 @@
+{
+  "deviceId": "347",
+  "deviceName": "酮化灌木田块",
+  "recipeCount": 1,
+  "recipes": [
+    {
+      "materials": [
+        {
+          "id": "202",
+          "count": "1"
+        },
+        {
+          "id": "192",
+          "count": "1"
+        }
+      ],
+      "products": [
+        {
+          "id": "347",
+          "count": "1"
+        }
+      ],
+      "manufacturingTime": null
+    }
+  ]
+}

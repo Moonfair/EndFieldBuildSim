@@ -1,0 +1,26 @@
+{
+  "deviceId": "561",
+  "deviceName": "精选荞复锭剂",
+  "recipeCount": 1,
+  "recipes": [
+    {
+      "materials": [
+        {
+          "id": "508",
+          "count": "10"
+        },
+        {
+          "id": "552",
+          "count": "10"
+        }
+      ],
+      "products": [
+        {
+          "id": "561",
+          "count": "1"
+        }
+      ],
+      "manufacturingTime": null
+    }
+  ]
+}

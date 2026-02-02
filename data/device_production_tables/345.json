@@ -1,0 +1,26 @@
+{
+  "deviceId": "345",
+  "deviceName": "柑实田块",
+  "recipeCount": 1,
+  "recipes": [
+    {
+      "materials": [
+        {
+          "id": "203",
+          "count": "1"
+        },
+        {
+          "id": "192",
+          "count": "1"
+        }
+      ],
+      "products": [
+        {
+          "id": "345",
+          "count": "1"
+        }
+      ],
+      "manufacturingTime": null
+    }
+  ]
+}

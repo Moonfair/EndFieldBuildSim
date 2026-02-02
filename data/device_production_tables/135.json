@@ -1,0 +1,30 @@
+{
+  "deviceId": "135",
+  "deviceName": "开工日肉汤",
+  "recipeCount": 1,
+  "recipes": [
+    {
+      "materials": [
+        {
+          "id": "134",
+          "count": "1"
+        },
+        {
+          "id": "379",
+          "count": "1"
+        },
+        {
+          "id": "380",
+          "count": "1"
+        }
+      ],
+      "products": [
+        {
+          "id": "135",
+          "count": "1"
+        }
+      ],
+      "manufacturingTime": null
+    }
+  ]
+}

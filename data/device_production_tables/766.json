@@ -1,0 +1,26 @@
+{
+  "deviceId": "766",
+  "deviceName": "琼叶参田块",
+  "recipeCount": 1,
+  "recipes": [
+    {
+      "materials": [
+        {
+          "id": "577",
+          "count": "1"
+        },
+        {
+          "id": "192",
+          "count": "1"
+        }
+      ],
+      "products": [
+        {
+          "id": "766",
+          "count": "1"
+        }
+      ],
+      "manufacturingTime": null
+    }
+  ]
+}

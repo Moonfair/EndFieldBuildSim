@@ -73,7 +73,7 @@ export default function DeviceProductionTable({ table, itemLookup }: DeviceProdu
                 <RecipeItemRenderer items={recipe.products} itemLookup={itemLookup} />
                 <td className="border border-gray-300 p-2 text-center">
                   <div className="text-sm font-medium">
-                    {recipe.manufacturingTime || '-'}
+                    {recipe.manufacturingTime ? `${recipe.manufacturingTime}秒` : '-'}
                   </div>
                 </td>
               </tr>

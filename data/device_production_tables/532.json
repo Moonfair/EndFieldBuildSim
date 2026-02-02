@@ -1,0 +1,45 @@
+{
+  "deviceId": "532",
+  "deviceName": "灼壳虫",
+  "recipeCount": 2,
+  "recipes": [
+    {
+      "materials": [
+        {
+          "id": "532",
+          "count": "1"
+        },
+        {
+          "id": "370",
+          "count": "1"
+        }
+      ],
+      "products": [
+        {
+          "id": "535",
+          "count": "0"
+        }
+      ],
+      "manufacturingTime": null
+    },
+    {
+      "materials": [
+        {
+          "id": "532",
+          "count": "1"
+        },
+        {
+          "id": "371",
+          "count": "1"
+        }
+      ],
+      "products": [
+        {
+          "id": "585",
+          "count": "1"
+        }
+      ],
+      "manufacturingTime": null
+    }
+  ]
+}

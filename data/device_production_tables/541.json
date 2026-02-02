@@ -1,0 +1,116 @@
+{
+  "deviceId": "541",
+  "deviceName": "钢制零件",
+  "recipeCount": 7,
+  "recipes": [
+    {
+      "materials": [
+        {
+          "id": "541",
+          "count": "20"
+        }
+      ],
+      "products": [
+        {
+          "id": "339",
+          "count": "1"
+        }
+      ],
+      "manufacturingTime": null
+    },
+    {
+      "materials": [
+        {
+          "id": "541",
+          "count": "20"
+        }
+      ],
+      "products": [
+        {
+          "id": "372",
+          "count": "1"
+        }
+      ],
+      "manufacturingTime": null
+    },
+    {
+      "materials": [
+        {
+          "id": "541",
+          "count": "20"
+        }
+      ],
+      "products": [
+        {
+          "id": "187",
+          "count": "1"
+        }
+      ],
+      "manufacturingTime": null
+    },
+    {
+      "materials": [
+        {
+          "id": "541",
+          "count": "20"
+        }
+      ],
+      "products": [
+        {
+          "id": "340",
+          "count": "1"
+        }
+      ],
+      "manufacturingTime": null
+    },
+    {
+      "materials": [
+        {
+          "id": "541",
+          "count": "20"
+        }
+      ],
+      "products": [
+        {
+          "id": "747",
+          "count": "1"
+        }
+      ],
+      "manufacturingTime": null
+    },
+    {
+      "materials": [
+        {
+          "id": "555",
+          "count": "1"
+        }
+      ],
+      "products": [
+        {
+          "id": "541",
+          "count": "1"
+        }
+      ],
+      "manufacturingTime": null
+    },
+    {
+      "materials": [
+        {
+          "id": "541",
+          "count": "10"
+        },
+        {
+          "id": "544",
+          "count": "15"
+        }
+      ],
+      "products": [
+        {
+          "id": "549",
+          "count": "1"
+        }
+      ],
+      "manufacturingTime": null
+    }
+  ]
+}

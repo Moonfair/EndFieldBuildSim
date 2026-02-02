@@ -1,0 +1,37 @@
+{
+  "deviceId": "538",
+  "deviceName": " 重红柱状菌",
+  "recipeCount": 2,
+  "recipes": [
+    {
+      "materials": [
+        {
+          "id": "538",
+          "count": "1"
+        }
+      ],
+      "products": [
+        {
+          "id": "317",
+          "count": "3"
+        }
+      ],
+      "manufacturingTime": null
+    },
+    {
+      "materials": [
+        {
+          "id": "317",
+          "count": "1"
+        }
+      ],
+      "products": [
+        {
+          "id": "538",
+          "count": "1"
+        }
+      ],
+      "manufacturingTime": null
+    }
+  ]
+}

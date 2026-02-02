@@ -1,0 +1,26 @@
+{
+  "deviceId": "520",
+  "deviceName": "速食骨汤",
+  "recipeCount": 1,
+  "recipes": [
+    {
+      "materials": [
+        {
+          "id": "137",
+          "count": "1"
+        },
+        {
+          "id": "36",
+          "count": "1"
+        }
+      ],
+      "products": [
+        {
+          "id": "520",
+          "count": "1"
+        }
+      ],
+      "manufacturingTime": null
+    }
+  ]
+}

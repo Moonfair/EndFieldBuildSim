@@ -1,0 +1,45 @@
+{
+  "deviceId": "510",
+  "deviceName": "荞愈胶囊",
+  "recipeCount": 2,
+  "recipes": [
+    {
+      "materials": [
+        {
+          "id": "379",
+          "count": "5"
+        },
+        {
+          "id": "370",
+          "count": "5"
+        }
+      ],
+      "products": [
+        {
+          "id": "510",
+          "count": "1"
+        }
+      ],
+      "manufacturingTime": null
+    },
+    {
+      "materials": [
+        {
+          "id": "379",
+          "count": "5"
+        },
+        {
+          "id": "370",
+          "count": "5"
+        }
+      ],
+      "products": [
+        {
+          "id": "510",
+          "count": "1"
+        }
+      ],
+      "manufacturingTime": null
+    }
+  ]
+}

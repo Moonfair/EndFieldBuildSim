@@ -1,0 +1,56 @@
+{
+  "deviceId": "368",
+  "deviceName": "蓝铁粉末",
+  "recipeCount": 3,
+  "recipes": [
+    {
+      "materials": [
+        {
+          "id": "194",
+          "count": "1"
+        }
+      ],
+      "products": [
+        {
+          "id": "368",
+          "count": "1"
+        }
+      ],
+      "manufacturingTime": null
+    },
+    {
+      "materials": [
+        {
+          "id": "368",
+          "count": "1"
+        }
+      ],
+      "products": [
+        {
+          "id": "194",
+          "count": "1"
+        }
+      ],
+      "manufacturingTime": null
+    },
+    {
+      "materials": [
+        {
+          "id": "368",
+          "count": "2"
+        },
+        {
+          "id": "543",
+          "count": "1"
+        }
+      ],
+      "products": [
+        {
+          "id": "547",
+          "count": "1"
+        }
+      ],
+      "manufacturingTime": null
+    }
+  ]
+}

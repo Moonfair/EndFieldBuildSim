@@ -1,0 +1,71 @@
+{
+  "deviceId": "548",
+  "deviceName": "致密碳粉末",
+  "recipeCount": 4,
+  "recipes": [
+    {
+      "materials": [
+        {
+          "id": "195",
+          "count": "2"
+        },
+        {
+          "id": "543",
+          "count": "1"
+        }
+      ],
+      "products": [
+        {
+          "id": "548",
+          "count": "1"
+        }
+      ],
+      "manufacturingTime": null
+    },
+    {
+      "materials": [
+        {
+          "id": "548",
+          "count": "1"
+        }
+      ],
+      "products": [
+        {
+          "id": "542",
+          "count": "1"
+        }
+      ],
+      "manufacturingTime": null
+    },
+    {
+      "materials": [
+        {
+          "id": "553",
+          "count": "1"
+        }
+      ],
+      "products": [
+        {
+          "id": "548",
+          "count": "1"
+        }
+      ],
+      "manufacturingTime": null
+    },
+    {
+      "materials": [
+        {
+          "id": "554",
+          "count": "1"
+        }
+      ],
+      "products": [
+        {
+          "id": "548",
+          "count": "1"
+        }
+      ],
+      "manufacturingTime": null
+    }
+  ]
+}

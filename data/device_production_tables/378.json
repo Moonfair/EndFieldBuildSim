@@ -1,0 +1,26 @@
+{
+  "deviceId": "378",
+  "deviceName": "中容谷地电池",
+  "recipeCount": 1,
+  "recipes": [
+    {
+      "materials": [
+        {
+          "id": "373",
+          "count": "10"
+        },
+        {
+          "id": "47",
+          "count": "15"
+        }
+      ],
+      "products": [
+        {
+          "id": "378",
+          "count": "1"
+        }
+      ],
+      "manufacturingTime": null
+    }
+  ]
+}

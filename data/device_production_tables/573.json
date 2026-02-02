@@ -1,0 +1,83 @@
+{
+  "deviceId": "573",
+  "deviceName": "金石稻",
+  "recipeCount": 4,
+  "recipes": [
+    {
+      "materials": [
+        {
+          "id": "573",
+          "count": "1"
+        }
+      ],
+      "products": [
+        {
+          "id": "574",
+          "count": "2"
+        }
+      ],
+      "manufacturingTime": null
+    },
+    {
+      "materials": [
+        {
+          "id": "573",
+          "count": "8"
+        },
+        {
+          "id": "34",
+          "count": "4"
+        }
+      ],
+      "products": [
+        {
+          "id": "893",
+          "count": "1"
+        }
+      ],
+      "manufacturingTime": null
+    },
+    {
+      "materials": [
+        {
+          "id": "573",
+          "count": "8"
+        },
+        {
+          "id": "587",
+          "count": "8"
+        }
+      ],
+      "products": [
+        {
+          "id": "591",
+          "count": "1"
+        }
+      ],
+      "manufacturingTime": null
+    },
+    {
+      "materials": [
+        {
+          "id": "584",
+          "count": "1"
+        },
+        {
+          "id": "581",
+          "count": "1"
+        },
+        {
+          "id": "573",
+          "count": "1"
+        }
+      ],
+      "products": [
+        {
+          "id": "580",
+          "count": "1"
+        }
+      ],
+      "manufacturingTime": null
+    }
+  ]
+}

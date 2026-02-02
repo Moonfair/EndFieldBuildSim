@@ -1,0 +1,262 @@
+{
+  "deviceId": "379",
+  "deviceName": "荞花粉末",
+  "recipeCount": 13,
+  "recipes": [
+    {
+      "materials": [
+        {
+          "id": "31",
+          "count": "1"
+        }
+      ],
+      "products": [
+        {
+          "id": "379",
+          "count": "2"
+        }
+      ],
+      "manufacturingTime": null
+    },
+    {
+      "materials": [
+        {
+          "id": "379",
+          "count": "1"
+        }
+      ],
+      "products": [
+        {
+          "id": "195",
+          "count": "1"
+        }
+      ],
+      "manufacturingTime": null
+    },
+    {
+      "materials": [
+        {
+          "id": "379",
+          "count": "5"
+        },
+        {
+          "id": "370",
+          "count": "5"
+        }
+      ],
+      "products": [
+        {
+          "id": "510",
+          "count": "1"
+        }
+      ],
+      "manufacturingTime": null
+    },
+    {
+      "materials": [
+        {
+          "id": "379",
+          "count": "10"
+        },
+        {
+          "id": "371",
+          "count": "10"
+        }
+      ],
+      "products": [
+        {
+          "id": "511",
+          "count": "1"
+        }
+      ],
+      "manufacturingTime": null
+    },
+    {
+      "materials": [
+        {
+          "id": "379",
+          "count": "2"
+        },
+        {
+          "id": "543",
+          "count": "1"
+        }
+      ],
+      "products": [
+        {
+          "id": "553",
+          "count": "1"
+        }
+      ],
+      "manufacturingTime": null
+    },
+    {
+      "materials": [
+        {
+          "id": "31",
+          "count": "1"
+        }
+      ],
+      "products": [
+        {
+          "id": "379",
+          "count": "2"
+        }
+      ],
+      "manufacturingTime": null
+    },
+    {
+      "materials": [
+        {
+          "id": "379",
+          "count": "5"
+        },
+        {
+          "id": "370",
+          "count": "5"
+        }
+      ],
+      "products": [
+        {
+          "id": "510",
+          "count": "1"
+        }
+      ],
+      "manufacturingTime": null
+    },
+    {
+      "materials": [
+        {
+          "id": "379",
+          "count": "10"
+        },
+        {
+          "id": "371",
+          "count": "10"
+        }
+      ],
+      "products": [
+        {
+          "id": "511",
+          "count": "1"
+        }
+      ],
+      "manufacturingTime": null
+    },
+    {
+      "materials": [
+        {
+          "id": "379",
+          "count": "1"
+        },
+        {
+          "id": "198",
+          "count": "1"
+        },
+        {
+          "id": "36",
+          "count": "1"
+        }
+      ],
+      "products": [
+        {
+          "id": "525",
+          "count": "1"
+        }
+      ],
+      "manufacturingTime": null
+    },
+    {
+      "materials": [
+        {
+          "id": "379",
+          "count": "1"
+        },
+        {
+          "id": "380",
+          "count": "1"
+        },
+        {
+          "id": "134",
+          "count": "1"
+        }
+      ],
+      "products": [
+        {
+          "id": "135",
+          "count": "1"
+        }
+      ],
+      "manufacturingTime": null
+    },
+    {
+      "materials": [
+        {
+          "id": "379",
+          "count": "1"
+        },
+        {
+          "id": "30",
+          "count": "1"
+        },
+        {
+          "id": "34",
+          "count": "1"
+        }
+      ],
+      "products": [
+        {
+          "id": "519",
+          "count": "1"
+        }
+      ],
+      "manufacturingTime": null
+    },
+    {
+      "materials": [
+        {
+          "id": "379",
+          "count": "1"
+        },
+        {
+          "id": "36",
+          "count": "1"
+        },
+        {
+          "id": "200",
+          "count": "1"
+        }
+      ],
+      "products": [
+        {
+          "id": "528",
+          "count": "1"
+        }
+      ],
+      "manufacturingTime": null
+    },
+    {
+      "materials": [
+        {
+          "id": "379",
+          "count": "2"
+        },
+        {
+          "id": "380",
+          "count": "1"
+        },
+        {
+          "id": "370",
+          "count": "1"
+        }
+      ],
+      "products": [
+        {
+          "id": "44",
+          "count": "1"
+        }
+      ],
+      "manufacturingTime": null
+    }
+  ]
+}

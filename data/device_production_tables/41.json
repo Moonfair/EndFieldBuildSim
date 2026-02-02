@@ -1,0 +1,22 @@
+{
+  "deviceId": "41",
+  "deviceName": "映火荞花",
+  "recipeCount": 1,
+  "recipes": [
+    {
+      "materials": [
+        {
+          "id": "41",
+          "count": "1"
+        }
+      ],
+      "products": [
+        {
+          "id": "508",
+          "count": "2"
+        }
+      ],
+      "manufacturingTime": null
+    }
+  ]
+}

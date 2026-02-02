@@ -1,0 +1,37 @@
+{
+  "deviceId": "539",
+  "deviceName": " 纯晶多齿叶",
+  "recipeCount": 2,
+  "recipes": [
+    {
+      "materials": [
+        {
+          "id": "539",
+          "count": "1"
+        }
+      ],
+      "products": [
+        {
+          "id": "232",
+          "count": "3"
+        }
+      ],
+      "manufacturingTime": null
+    },
+    {
+      "materials": [
+        {
+          "id": "232",
+          "count": "1"
+        }
+      ],
+      "products": [
+        {
+          "id": "539",
+          "count": "1"
+        }
+      ],
+      "manufacturingTime": null
+    }
+  ]
+}

@@ -1,0 +1,141 @@
+{
+  "deviceId": "138",
+  "deviceName": "虫肉",
+  "recipeCount": 6,
+  "recipes": [
+    {
+      "materials": [
+        {
+          "id": "138",
+          "count": "1"
+        },
+        {
+          "id": "34",
+          "count": "1"
+        }
+      ],
+      "products": [
+        {
+          "id": "521",
+          "count": "1"
+        }
+      ],
+      "manufacturingTime": null
+    },
+    {
+      "materials": [
+        {
+          "id": "138",
+          "count": "1"
+        },
+        {
+          "id": "533",
+          "count": "1"
+        },
+        {
+          "id": "34",
+          "count": "1"
+        }
+      ],
+      "products": [
+        {
+          "id": "537",
+          "count": "1"
+        }
+      ],
+      "manufacturingTime": null
+    },
+    {
+      "materials": [
+        {
+          "id": "138",
+          "count": "1"
+        },
+        {
+          "id": "380",
+          "count": "0"
+        },
+        {
+          "id": "35",
+          "count": "0"
+        }
+      ],
+      "products": [
+        {
+          "id": "522",
+          "count": "1"
+        }
+      ],
+      "manufacturingTime": null
+    },
+    {
+      "materials": [
+        {
+          "id": "138",
+          "count": "1"
+        },
+        {
+          "id": "36",
+          "count": "1"
+        },
+        {
+          "id": "530",
+          "count": "1"
+        }
+      ],
+      "products": [
+        {
+          "id": "563",
+          "count": "1"
+        }
+      ],
+      "manufacturingTime": null
+    },
+    {
+      "materials": [
+        {
+          "id": "138",
+          "count": "1"
+        },
+        {
+          "id": "198",
+          "count": "1"
+        },
+        {
+          "id": "342",
+          "count": "1"
+        }
+      ],
+      "products": [
+        {
+          "id": "140",
+          "count": "1"
+        }
+      ],
+      "manufacturingTime": null
+    },
+    {
+      "materials": [
+        {
+          "id": "138",
+          "count": "1"
+        },
+        {
+          "id": "581",
+          "count": "1"
+        },
+        {
+          "id": "142",
+          "count": "1"
+        }
+      ],
+      "products": [
+        {
+          "id": "770",
+          "count": "1"
+        }
+      ],
+      "manufacturingTime": null
+    }
+  ]
+}

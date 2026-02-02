@@ -1,0 +1,26 @@
+{
+  "deviceId": "596",
+  "deviceName": "锦草凉茶",
+  "recipeCount": 1,
+  "recipes": [
+    {
+      "materials": [
+        {
+          "id": "588",
+          "count": "5"
+        },
+        {
+          "id": "371",
+          "count": "10"
+        }
+      ],
+      "products": [
+        {
+          "id": "596",
+          "count": "1"
+        }
+      ],
+      "manufacturingTime": null
+    }
+  ]
+}

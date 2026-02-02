@@ -1,0 +1,60 @@
+{
+  "deviceId": "576",
+  "deviceName": "琼叶参",
+  "recipeCount": 3,
+  "recipes": [
+    {
+      "materials": [
+        {
+          "id": "576",
+          "count": "1"
+        }
+      ],
+      "products": [
+        {
+          "id": "577",
+          "count": "2"
+        }
+      ],
+      "manufacturingTime": null
+    },
+    {
+      "materials": [
+        {
+          "id": "576",
+          "count": "8"
+        },
+        {
+          "id": "586",
+          "count": "8"
+        }
+      ],
+      "products": [
+        {
+          "id": "595",
+          "count": "1"
+        }
+      ],
+      "manufacturingTime": null
+    },
+    {
+      "materials": [
+        {
+          "id": "576",
+          "count": "8"
+        },
+        {
+          "id": "34",
+          "count": "4"
+        }
+      ],
+      "products": [
+        {
+          "id": "894",
+          "count": "1"
+        }
+      ],
+      "manufacturingTime": null
+    }
+  ]
+}

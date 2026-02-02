@@ -1,0 +1,30 @@
+{
+  "deviceId": "20",
+  "deviceName": "简易镇痛药膏",
+  "recipeCount": 1,
+  "recipes": [
+    {
+      "materials": [
+        {
+          "id": "35",
+          "count": "1"
+        },
+        {
+          "id": "137",
+          "count": "1"
+        },
+        {
+          "id": "370",
+          "count": "1"
+        }
+      ],
+      "products": [
+        {
+          "id": "20",
+          "count": "1"
+        }
+      ],
+      "manufacturingTime": null
+    }
+  ]
+}

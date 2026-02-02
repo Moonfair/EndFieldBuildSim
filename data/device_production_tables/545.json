@@ -1,0 +1,56 @@
+{
+  "deviceId": "545",
+  "deviceName": "致密晶体粉末",
+  "recipeCount": 3,
+  "recipes": [
+    {
+      "materials": [
+        {
+          "id": "38",
+          "count": "2"
+        },
+        {
+          "id": "543",
+          "count": "1"
+        }
+      ],
+      "products": [
+        {
+          "id": "545",
+          "count": "1"
+        }
+      ],
+      "manufacturingTime": null
+    },
+    {
+      "materials": [
+        {
+          "id": "544",
+          "count": "1"
+        }
+      ],
+      "products": [
+        {
+          "id": "545",
+          "count": "1"
+        }
+      ],
+      "manufacturingTime": null
+    },
+    {
+      "materials": [
+        {
+          "id": "545",
+          "count": "1"
+        }
+      ],
+      "products": [
+        {
+          "id": "557",
+          "count": "1"
+        }
+      ],
+      "manufacturingTime": null
+    }
+  ]
+}

@@ -1,0 +1,60 @@
+{
+  "deviceId": "588",
+  "deviceName": "蓬茸锦草粉末",
+  "recipeCount": 3,
+  "recipes": [
+    {
+      "materials": [
+        {
+          "id": "571",
+          "count": "1"
+        }
+      ],
+      "products": [
+        {
+          "id": "588",
+          "count": "2"
+        }
+      ],
+      "manufacturingTime": null
+    },
+    {
+      "materials": [
+        {
+          "id": "588",
+          "count": "5"
+        },
+        {
+          "id": "371",
+          "count": "10"
+        }
+      ],
+      "products": [
+        {
+          "id": "596",
+          "count": "1"
+        }
+      ],
+      "manufacturingTime": null
+    },
+    {
+      "materials": [
+        {
+          "id": "588",
+          "count": "5"
+        },
+        {
+          "id": "552",
+          "count": "10"
+        }
+      ],
+      "products": [
+        {
+          "id": "899",
+          "count": "1"
+        }
+      ],
+      "manufacturingTime": null
+    }
+  ]
+}

@@ -1,0 +1,30 @@
+{
+  "deviceId": "768",
+  "deviceName": "龙泡泡蔬菜冻",
+  "recipeCount": 1,
+  "recipes": [
+    {
+      "materials": [
+        {
+          "id": "582",
+          "count": "1"
+        },
+        {
+          "id": "581",
+          "count": "1"
+        },
+        {
+          "id": "587",
+          "count": "1"
+        }
+      ],
+      "products": [
+        {
+          "id": "768",
+          "count": "1"
+        }
+      ],
+      "manufacturingTime": null
+    }
+  ]
+}

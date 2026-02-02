@@ -1,0 +1,56 @@
+{
+  "deviceId": "29",
+  "deviceName": "紫晶粉末",
+  "recipeCount": 3,
+  "recipes": [
+    {
+      "materials": [
+        {
+          "id": "193",
+          "count": "1"
+        }
+      ],
+      "products": [
+        {
+          "id": "29",
+          "count": "1"
+        }
+      ],
+      "manufacturingTime": null
+    },
+    {
+      "materials": [
+        {
+          "id": "29",
+          "count": "1"
+        }
+      ],
+      "products": [
+        {
+          "id": "193",
+          "count": "1"
+        }
+      ],
+      "manufacturingTime": null
+    },
+    {
+      "materials": [
+        {
+          "id": "29",
+          "count": "2"
+        },
+        {
+          "id": "543",
+          "count": "1"
+        }
+      ],
+      "products": [
+        {
+          "id": "546",
+          "count": "1"
+        }
+      ],
+      "manufacturingTime": null
+    }
+  ]
+}

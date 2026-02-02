@@ -1,0 +1,30 @@
+{
+  "deviceId": "522",
+  "deviceName": "小蜜虫布丁",
+  "recipeCount": 1,
+  "recipes": [
+    {
+      "materials": [
+        {
+          "id": "138",
+          "count": "1"
+        },
+        {
+          "id": "380",
+          "count": "1"
+        },
+        {
+          "id": "35",
+          "count": "1"
+        }
+      ],
+      "products": [
+        {
+          "id": "522",
+          "count": "1"
+        }
+      ],
+      "manufacturingTime": null
+    }
+  ]
+}

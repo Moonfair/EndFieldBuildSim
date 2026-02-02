@@ -280,14 +280,14 @@
       "deviceName": "天有洪炉",
       "materials": [
         {
-          "id": "381",
-          "name": "清水",
-          "count": "1"
-        },
-        {
           "id": "542",
           "name": "稳定碳块",
           "count": "2"
+        },
+        {
+          "id": "381",
+          "name": "清水",
+          "count": "1"
         }
       ],
       "products": [
@@ -298,6 +298,7 @@
         }
       ],
       "source": "device_production_tables",
+      "manufacturingTime": 2,
       "id": "recipe_13"
     },
     "recipe_14": {
@@ -305,13 +306,13 @@
       "deviceName": "天有洪炉",
       "materials": [
         {
-          "id": "892",
-          "name": "液化息壤",
+          "id": "22",
+          "name": "驮兽粪便",
           "count": "1"
         },
         {
-          "id": "22",
-          "name": "驮兽粪便",
+          "id": "892",
+          "name": "液化息壤",
           "count": "1"
         }
       ],
@@ -323,34 +324,10 @@
         }
       ],
       "source": "device_production_tables",
+      "manufacturingTime": 2,
       "id": "recipe_14"
     },
     "recipe_15": {
-      "deviceId": "752",
-      "deviceName": "天有洪炉",
-      "materials": [
-        {
-          "id": "542",
-          "name": "稳定碳块",
-          "count": "1"
-        },
-        {
-          "id": "381",
-          "name": "清水",
-          "count": "1"
-        }
-      ],
-      "products": [
-        {
-          "id": "771",
-          "name": "息壤",
-          "count": "1"
-        }
-      ],
-      "source": "device_production_tables",
-      "id": "recipe_15"
-    },
-    "recipe_16": {
       "deviceId": "174",
       "deviceName": "种植机",
       "materials": [
@@ -373,9 +350,10 @@
         }
       ],
       "source": "device_production_tables",
-      "id": "recipe_16"
+      "manufacturingTime": 2,
+      "id": "recipe_15"
     },
-    "recipe_17": {
+    "recipe_16": {
       "deviceId": "174",
       "deviceName": "种植机",
       "materials": [
@@ -398,6 +376,28 @@
         }
       ],
       "source": "device_production_tables",
+      "manufacturingTime": 2,
+      "id": "recipe_16"
+    },
+    "recipe_17": {
+      "deviceId": "174",
+      "deviceName": "种植机",
+      "materials": [
+        {
+          "id": "204",
+          "name": "荞花种子",
+          "count": "1"
+        }
+      ],
+      "products": [
+        {
+          "id": "31",
+          "name": "荞花",
+          "count": "1"
+        }
+      ],
+      "source": "device_production_tables",
+      "manufacturingTime": 2,
       "id": "recipe_17"
     },
     "recipe_18": {
@@ -405,19 +405,20 @@
       "deviceName": "种植机",
       "materials": [
         {
-          "id": "202",
-          "name": "酮化树种",
+          "id": "203",
+          "name": "柑实种子",
           "count": "1"
         }
       ],
       "products": [
         {
-          "id": "46",
-          "name": "酮化灌木",
+          "id": "42",
+          "name": "柑实",
           "count": "1"
         }
       ],
       "source": "device_production_tables",
+      "manufacturingTime": 2,
       "id": "recipe_18"
     },
     "recipe_19": {
@@ -438,6 +439,7 @@
         }
       ],
       "source": "device_production_tables",
+      "manufacturingTime": 2,
       "id": "recipe_19"
     },
     "recipe_20": {
@@ -445,106 +447,23 @@
       "deviceName": "种植机",
       "materials": [
         {
-          "id": "203",
-          "name": "柑实种子",
+          "id": "202",
+          "name": "酮化树种",
           "count": "1"
         }
       ],
       "products": [
         {
-          "id": "42",
-          "name": "柑实",
+          "id": "46",
+          "name": "酮化灌木",
           "count": "1"
         }
       ],
       "source": "device_production_tables",
+      "manufacturingTime": 2,
       "id": "recipe_20"
     },
     "recipe_21": {
-      "deviceId": "174",
-      "deviceName": "种植机",
-      "materials": [],
-      "products": [
-        {
-          "id": "31",
-          "name": "荞花",
-          "count": "1"
-        }
-      ],
-      "source": "device_production_tables",
-      "id": "recipe_21"
-    },
-    "recipe_22": {
-      "deviceId": "174",
-      "deviceName": "种植机",
-      "materials": [
-        {
-          "id": "481",
-          "name": "砂叶种子",
-          "count": "1"
-        }
-      ],
-      "products": [
-        {
-          "id": "42",
-          "name": "柑实",
-          "count": "1"
-        }
-      ],
-      "source": "device_production_tables",
-      "id": "recipe_22"
-    },
-    "recipe_23": {
-      "deviceId": "174",
-      "deviceName": "种植机",
-      "materials": [
-        {
-          "id": "570",
-          "name": "芽针种子",
-          "count": "0"
-        },
-        {
-          "id": "381",
-          "name": "清水",
-          "count": "1"
-        }
-      ],
-      "products": [
-        {
-          "id": "575",
-          "name": "芽针",
-          "count": "2"
-        }
-      ],
-      "source": "device_production_tables",
-      "id": "recipe_23"
-    },
-    "recipe_24": {
-      "deviceId": "175",
-      "deviceName": "装备原件机",
-      "materials": [
-        {
-          "id": "194",
-          "name": "蓝铁块",
-          "count": "10"
-        },
-        {
-          "id": "33",
-          "name": "晶体外壳",
-          "count": "10"
-        }
-      ],
-      "products": [
-        {
-          "id": "375",
-          "name": "蓝铁装备原件",
-          "count": "1"
-        }
-      ],
-      "source": "device_production_tables",
-      "id": "recipe_24"
-    },
-    "recipe_25": {
       "deviceId": "175",
       "deviceName": "装备原件机",
       "materials": [
@@ -567,9 +486,36 @@
         }
       ],
       "source": "device_production_tables",
-      "id": "recipe_25"
+      "manufacturingTime": 10,
+      "id": "recipe_21"
     },
-    "recipe_26": {
+    "recipe_22": {
+      "deviceId": "175",
+      "deviceName": "装备原件机",
+      "materials": [
+        {
+          "id": "33",
+          "name": "晶体外壳",
+          "count": "10"
+        },
+        {
+          "id": "194",
+          "name": "蓝铁块",
+          "count": "10"
+        }
+      ],
+      "products": [
+        {
+          "id": "375",
+          "name": "蓝铁装备原件",
+          "count": "1"
+        }
+      ],
+      "source": "device_production_tables",
+      "manufacturingTime": 10,
+      "id": "recipe_22"
+    },
+    "recipe_23": {
       "deviceId": "175",
       "deviceName": "装备原件机",
       "materials": [
@@ -592,9 +538,10 @@
         }
       ],
       "source": "device_production_tables",
-      "id": "recipe_26"
+      "manufacturingTime": 10,
+      "id": "recipe_23"
     },
-    "recipe_27": {
+    "recipe_24": {
       "deviceId": "175",
       "deviceName": "装备原件机",
       "materials": [
@@ -617,6 +564,100 @@
         }
       ],
       "source": "device_production_tables",
+      "manufacturingTime": 10,
+      "id": "recipe_24"
+    },
+    "recipe_25": {
+      "deviceId": "745",
+      "deviceName": "拆解机",
+      "materials": [
+        {
+          "id": "371",
+          "name": "蓝铁瓶",
+          "count": "1"
+        },
+        {
+          "id": "381",
+          "name": "清水",
+          "count": "0"
+        }
+      ],
+      "products": [
+        {
+          "id": "371",
+          "name": "蓝铁瓶",
+          "count": "1"
+        },
+        {
+          "id": "381",
+          "name": "清水",
+          "count": "1"
+        }
+      ],
+      "source": "device_production_tables",
+      "manufacturingTime": 2,
+      "id": "recipe_25"
+    },
+    "recipe_26": {
+      "deviceId": "745",
+      "deviceName": "拆解机",
+      "materials": [
+        {
+          "id": "371",
+          "name": "蓝铁瓶",
+          "count": "1"
+        },
+        {
+          "id": "201",
+          "name": "锦草溶液",
+          "count": "0"
+        }
+      ],
+      "products": [
+        {
+          "id": "371",
+          "name": "蓝铁瓶",
+          "count": "1"
+        },
+        {
+          "id": "201",
+          "name": "锦草溶液",
+          "count": "1"
+        }
+      ],
+      "source": "device_production_tables",
+      "manufacturingTime": 2,
+      "id": "recipe_26"
+    },
+    "recipe_27": {
+      "deviceId": "745",
+      "deviceName": "拆解机",
+      "materials": [
+        {
+          "id": "371",
+          "name": "蓝铁瓶",
+          "count": "1"
+        },
+        {
+          "id": "769",
+          "name": "芽针溶液",
+          "count": "0"
+        }
+      ],
+      "products": [
+        {
+          "id": "371",
+          "name": "蓝铁瓶",
+          "count": "1"
+        },
+        {
+          "id": "769",
+          "name": "芽针溶液",
+          "count": "1"
+        }
+      ],
+      "source": "device_production_tables",
+      "manufacturingTime": 2,
       "id": "recipe_27"
     },
     "recipe_28": {
@@ -624,24 +665,30 @@
       "deviceName": "拆解机",
       "materials": [
         {
-          "id": "552",
-          "name": "钢质瓶",
+          "id": "371",
+          "name": "蓝铁瓶",
           "count": "1"
+        },
+        {
+          "id": "892",
+          "name": "液化息壤",
+          "count": "0"
         }
       ],
       "products": [
         {
-          "id": "552",
-          "name": "钢质瓶",
+          "id": "371",
+          "name": "蓝铁瓶",
           "count": "1"
         },
         {
-          "id": "381",
-          "name": "清水",
+          "id": "892",
+          "name": "液化息壤",
           "count": "1"
         }
       ],
       "source": "device_production_tables",
+      "manufacturingTime": 2,
       "id": "recipe_28"
     },
     "recipe_29": {
@@ -649,6 +696,11 @@
       "deviceName": "拆解机",
       "materials": [
         {
+          "id": "370",
+          "name": "紫晶质瓶",
+          "count": "1"
+        },
+        {
           "id": "381",
           "name": "清水",
           "count": "0"
@@ -656,12 +708,18 @@
       ],
       "products": [
         {
+          "id": "370",
+          "name": "紫晶质瓶",
+          "count": "1"
+        },
+        {
           "id": "381",
           "name": "清水",
           "count": "1"
         }
       ],
       "source": "device_production_tables",
+      "manufacturingTime": 2,
       "id": "recipe_29"
     },
     "recipe_30": {
@@ -669,19 +727,30 @@
       "deviceName": "拆解机",
       "materials": [
         {
-          "id": "769",
-          "name": "芽针溶液",
+          "id": "370",
+          "name": "紫晶质瓶",
+          "count": "1"
+        },
+        {
+          "id": "201",
+          "name": "锦草溶液",
           "count": "0"
         }
       ],
       "products": [
         {
-          "id": "769",
-          "name": "芽针溶液",
+          "id": "370",
+          "name": "紫晶质瓶",
+          "count": "1"
+        },
+        {
+          "id": "201",
+          "name": "锦草溶液",
           "count": "1"
         }
       ],
       "source": "device_production_tables",
+      "manufacturingTime": 2,
       "id": "recipe_30"
     },
     "recipe_31": {
@@ -689,19 +758,30 @@
       "deviceName": "拆解机",
       "materials": [
         {
-          "id": "892",
-          "name": "液化息壤",
+          "id": "370",
+          "name": "紫晶质瓶",
+          "count": "1"
+        },
+        {
+          "id": "769",
+          "name": "芽针溶液",
           "count": "0"
         }
       ],
       "products": [
         {
-          "id": "892",
-          "name": "液化息壤",
+          "id": "370",
+          "name": "紫晶质瓶",
+          "count": "1"
+        },
+        {
+          "id": "769",
+          "name": "芽针溶液",
           "count": "1"
         }
       ],
       "source": "device_production_tables",
+      "manufacturingTime": 2,
       "id": "recipe_31"
     },
     "recipe_32": {
@@ -709,19 +789,30 @@
       "deviceName": "拆解机",
       "materials": [
         {
-          "id": "201",
-          "name": "锦草溶液",
+          "id": "370",
+          "name": "紫晶质瓶",
+          "count": "1"
+        },
+        {
+          "id": "892",
+          "name": "液化息壤",
           "count": "0"
         }
       ],
       "products": [
         {
-          "id": "201",
-          "name": "锦草溶液",
+          "id": "370",
+          "name": "紫晶质瓶",
+          "count": "1"
+        },
+        {
+          "id": "892",
+          "name": "液化息壤",
           "count": "1"
         }
       ],
       "source": "device_production_tables",
+      "manufacturingTime": 2,
       "id": "recipe_32"
     },
     "recipe_33": {
@@ -729,29 +820,30 @@
       "deviceName": "拆解机",
       "materials": [
         {
-          "id": "371",
-          "name": "蓝铁瓶",
+          "id": "551",
+          "name": "高晶质瓶",
           "count": "1"
         },
         {
-          "id": "769",
-          "name": "芽针溶液",
+          "id": "381",
+          "name": "清水",
           "count": "0"
         }
       ],
       "products": [
         {
-          "id": "371",
-          "name": "蓝铁瓶",
+          "id": "551",
+          "name": "高晶质瓶",
           "count": "1"
         },
         {
-          "id": "769",
-          "name": "芽针溶液",
-          "count": "0"
+          "id": "381",
+          "name": "清水",
+          "count": "1"
         }
       ],
       "source": "device_production_tables",
+      "manufacturingTime": 2,
       "id": "recipe_33"
     },
     "recipe_34": {
@@ -759,29 +851,30 @@
       "deviceName": "拆解机",
       "materials": [
         {
-          "id": "371",
-          "name": "蓝铁瓶",
+          "id": "551",
+          "name": "高晶质瓶",
           "count": "1"
         },
         {
-          "id": "381",
-          "name": "清水",
+          "id": "201",
+          "name": "锦草溶液",
           "count": "0"
         }
       ],
       "products": [
         {
-          "id": "371",
-          "name": "蓝铁瓶",
+          "id": "551",
+          "name": "高晶质瓶",
           "count": "1"
         },
         {
-          "id": "381",
-          "name": "清水",
+          "id": "201",
+          "name": "锦草溶液",
           "count": "1"
         }
       ],
       "source": "device_production_tables",
+      "manufacturingTime": 2,
       "id": "recipe_34"
     },
     "recipe_35": {
@@ -789,29 +882,30 @@
       "deviceName": "拆解机",
       "materials": [
         {
-          "id": "371",
-          "name": "蓝铁瓶",
+          "id": "551",
+          "name": "高晶质瓶",
           "count": "1"
         },
         {
-          "id": "201",
-          "name": "锦草溶液",
+          "id": "769",
+          "name": "芽针溶液",
           "count": "0"
         }
       ],
       "products": [
         {
-          "id": "371",
-          "name": "蓝铁瓶",
+          "id": "551",
+          "name": "高晶质瓶",
           "count": "1"
         },
         {
-          "id": "201",
-          "name": "锦草溶液",
-          "count": "0"
+          "id": "769",
+          "name": "芽针溶液",
+          "count": "1"
         }
       ],
       "source": "device_production_tables",
+      "manufacturingTime": 2,
       "id": "recipe_35"
     },
     "recipe_36": {
@@ -819,8 +913,8 @@
       "deviceName": "拆解机",
       "materials": [
         {
-          "id": "371",
-          "name": "蓝铁瓶",
+          "id": "551",
+          "name": "高晶质瓶",
           "count": "1"
         },
         {
@@ -831,17 +925,18 @@
       ],
       "products": [
         {
-          "id": "371",
-          "name": "蓝铁瓶",
+          "id": "551",
+          "name": "高晶质瓶",
           "count": "1"
         },
         {
           "id": "892",
           "name": "液化息壤",
-          "count": "0"
+          "count": "1"
         }
       ],
       "source": "device_production_tables",
+      "manufacturingTime": 2,
       "id": "recipe_36"
     },
     "recipe_37": {
@@ -849,154 +944,14 @@
       "deviceName": "拆解机",
       "materials": [
         {
-          "id": "370",
-          "name": "紫晶质瓶",
+          "id": "552",
+          "name": "钢质瓶",
           "count": "1"
         },
         {
           "id": "381",
           "name": "清水",
           "count": "0"
-        }
-      ],
-      "products": [
-        {
-          "id": "370",
-          "name": "紫晶质瓶",
-          "count": "1"
-        },
-        {
-          "id": "381",
-          "name": "清水",
-          "count": "1"
-        }
-      ],
-      "source": "device_production_tables",
-      "id": "recipe_37"
-    },
-    "recipe_38": {
-      "deviceId": "745",
-      "deviceName": "拆解机",
-      "materials": [
-        {
-          "id": "370",
-          "name": "紫晶质瓶",
-          "count": "1"
-        },
-        {
-          "id": "201",
-          "name": "锦草溶液",
-          "count": "0"
-        }
-      ],
-      "products": [
-        {
-          "id": "370",
-          "name": "紫晶质瓶",
-          "count": "1"
-        },
-        {
-          "id": "201",
-          "name": "锦草溶液",
-          "count": "1"
-        }
-      ],
-      "source": "device_production_tables",
-      "id": "recipe_38"
-    },
-    "recipe_39": {
-      "deviceId": "745",
-      "deviceName": "拆解机",
-      "materials": [
-        {
-          "id": "370",
-          "name": "紫晶质瓶",
-          "count": "1"
-        },
-        {
-          "id": "769",
-          "name": "芽针溶液",
-          "count": "0"
-        }
-      ],
-      "products": [
-        {
-          "id": "370",
-          "name": "紫晶质瓶",
-          "count": "1"
-        },
-        {
-          "id": "769",
-          "name": "芽针溶液",
-          "count": "0"
-        }
-      ],
-      "source": "device_production_tables",
-      "id": "recipe_39"
-    },
-    "recipe_40": {
-      "deviceId": "745",
-      "deviceName": "拆解机",
-      "materials": [
-        {
-          "id": "370",
-          "name": "紫晶质瓶",
-          "count": "1"
-        },
-        {
-          "id": "892",
-          "name": "液化息壤",
-          "count": "0"
-        }
-      ],
-      "products": [
-        {
-          "id": "370",
-          "name": "紫晶质瓶",
-          "count": "1"
-        },
-        {
-          "id": "892",
-          "name": "液化息壤",
-          "count": "0"
-        }
-      ],
-      "source": "device_production_tables",
-      "id": "recipe_40"
-    },
-    "recipe_41": {
-      "deviceId": "745",
-      "deviceName": "拆解机",
-      "materials": [
-        {
-          "id": "551",
-          "name": "高晶质瓶",
-          "count": "1"
-        }
-      ],
-      "products": [
-        {
-          "id": "551",
-          "name": "高晶质瓶",
-          "count": "1"
-        },
-        {
-          "id": "381",
-          "name": "清水",
-          "count": "1"
-        }
-      ],
-      "source": "device_production_tables",
-      "id": "recipe_41"
-    },
-    "recipe_42": {
-      "deviceId": "172",
-      "deviceName": "塑形机",
-      "materials": [
-        {
-          "id": "555",
-          "name": "钢块",
-          "count": "2"
         }
       ],
       "products": [
@@ -1004,12 +959,111 @@
           "id": "552",
           "name": "钢质瓶",
           "count": "1"
+        },
+        {
+          "id": "381",
+          "name": "清水",
+          "count": "1"
         }
       ],
       "source": "device_production_tables",
-      "id": "recipe_42"
+      "manufacturingTime": 2,
+      "id": "recipe_37"
     },
-    "recipe_43": {
+    "recipe_38": {
+      "deviceId": "745",
+      "deviceName": "拆解机",
+      "materials": [
+        {
+          "id": "552",
+          "name": "钢质瓶",
+          "count": "1"
+        },
+        {
+          "id": "201",
+          "name": "锦草溶液",
+          "count": "0"
+        }
+      ],
+      "products": [
+        {
+          "id": "552",
+          "name": "钢质瓶",
+          "count": "1"
+        },
+        {
+          "id": "201",
+          "name": "锦草溶液",
+          "count": "1"
+        }
+      ],
+      "source": "device_production_tables",
+      "manufacturingTime": 2,
+      "id": "recipe_38"
+    },
+    "recipe_39": {
+      "deviceId": "745",
+      "deviceName": "拆解机",
+      "materials": [
+        {
+          "id": "552",
+          "name": "钢质瓶",
+          "count": "1"
+        },
+        {
+          "id": "769",
+          "name": "芽针溶液",
+          "count": "0"
+        }
+      ],
+      "products": [
+        {
+          "id": "552",
+          "name": "钢质瓶",
+          "count": "1"
+        },
+        {
+          "id": "769",
+          "name": "芽针溶液",
+          "count": "1"
+        }
+      ],
+      "source": "device_production_tables",
+      "manufacturingTime": 2,
+      "id": "recipe_39"
+    },
+    "recipe_40": {
+      "deviceId": "745",
+      "deviceName": "拆解机",
+      "materials": [
+        {
+          "id": "552",
+          "name": "钢质瓶",
+          "count": "1"
+        },
+        {
+          "id": "892",
+          "name": "液化息壤",
+          "count": "0"
+        }
+      ],
+      "products": [
+        {
+          "id": "552",
+          "name": "钢质瓶",
+          "count": "1"
+        },
+        {
+          "id": "892",
+          "name": "液化息壤",
+          "count": "1"
+        }
+      ],
+      "source": "device_production_tables",
+      "manufacturingTime": 2,
+      "id": "recipe_40"
+    },
+    "recipe_41": {
       "deviceId": "172",
       "deviceName": "塑形机",
       "materials": [
@@ -1027,9 +1081,10 @@
         }
       ],
       "source": "device_production_tables",
-      "id": "recipe_43"
+      "manufacturingTime": 2,
+      "id": "recipe_41"
     },
-    "recipe_44": {
+    "recipe_42": {
       "deviceId": "172",
       "deviceName": "塑形机",
       "materials": [
@@ -1047,9 +1102,31 @@
         }
       ],
       "source": "device_production_tables",
-      "id": "recipe_44"
+      "manufacturingTime": 2,
+      "id": "recipe_42"
     },
-    "recipe_45": {
+    "recipe_43": {
+      "deviceId": "172",
+      "deviceName": "塑形机",
+      "materials": [
+        {
+          "id": "555",
+          "name": "钢块",
+          "count": "2"
+        }
+      ],
+      "products": [
+        {
+          "id": "552",
+          "name": "钢质瓶",
+          "count": "1"
+        }
+      ],
+      "source": "device_production_tables",
+      "manufacturingTime": 2,
+      "id": "recipe_43"
+    },
+    "recipe_44": {
       "deviceId": "172",
       "deviceName": "塑形机",
       "materials": [
@@ -1067,9 +1144,62 @@
         }
       ],
       "source": "device_production_tables",
+      "manufacturingTime": 2,
+      "id": "recipe_44"
+    },
+    "recipe_45": {
+      "deviceId": "349",
+      "deviceName": "芽针田块",
+      "materials": [
+        {
+          "id": "570",
+          "name": "芽针种子",
+          "count": "1"
+        },
+        {
+          "id": "192",
+          "name": "碳块",
+          "count": "1"
+        }
+      ],
+      "products": [
+        {
+          "id": "349",
+          "name": "芽针田块",
+          "count": "1"
+        }
+      ],
+      "source": "device_production_tables",
+      "manufacturingTime": null,
       "id": "recipe_45"
     },
     "recipe_46": {
+      "deviceId": "345",
+      "deviceName": "柑实田块",
+      "materials": [
+        {
+          "id": "203",
+          "name": "柑实种子",
+          "count": "1"
+        },
+        {
+          "id": "192",
+          "name": "碳块",
+          "count": "1"
+        }
+      ],
+      "products": [
+        {
+          "id": "345",
+          "name": "柑实田块",
+          "count": "1"
+        }
+      ],
+      "source": "device_production_tables",
+      "manufacturingTime": null,
+      "id": "recipe_46"
+    },
+    "recipe_47": {
       "deviceId": "text_液体模式",
       "deviceName": "Unknown Device (text_液体模式)",
       "materials": [
@@ -1092,88 +1222,105 @@
         }
       ],
       "source": "device_production_tables",
-      "id": "recipe_46"
+      "id": "recipe_47"
     },
-    "recipe_47": {
-      "deviceId": "173",
-      "deviceName": "采种机",
-      "materials": [],
+    "recipe_48": {
+      "deviceId": "352",
+      "deviceName": "金石稻田块",
+      "materials": [
+        {
+          "id": "574",
+          "name": "金石稻种子",
+          "count": "1"
+        },
+        {
+          "id": "192",
+          "name": "碳块",
+          "count": "1"
+        }
+      ],
       "products": [
+        {
+          "id": "352",
+          "name": "金石稻田块",
+          "count": "1"
+        }
+      ],
+      "source": "device_production_tables",
+      "manufacturingTime": null,
+      "id": "recipe_48"
+    },
+    "recipe_49": {
+      "deviceId": "344",
+      "deviceName": "荞花田块",
+      "materials": [
+        {
+          "id": "204",
+          "name": "荞花种子",
+          "count": "1"
+        },
+        {
+          "id": "192",
+          "name": "碳块",
+          "count": "1"
+        }
+      ],
+      "products": [
+        {
+          "id": "344",
+          "name": "荞花田块",
+          "count": "1"
+        }
+      ],
+      "source": "device_production_tables",
+      "manufacturingTime": null,
+      "id": "recipe_49"
+    },
+    "recipe_50": {
+      "deviceId": "348",
+      "deviceName": "锦草田块",
+      "materials": [
         {
           "id": "566",
           "name": "锦草种子",
           "count": "1"
-        }
-      ],
-      "source": "device_production_tables",
-      "id": "recipe_47"
-    },
-    "recipe_48": {
-      "deviceId": "173",
-      "deviceName": "采种机",
-      "materials": [
+        },
         {
-          "id": "573",
-          "name": "金石稻",
+          "id": "192",
+          "name": "碳块",
           "count": "1"
         }
       ],
       "products": [
         {
-          "id": "574",
-          "name": "金石稻种子",
-          "count": "2"
-        }
-      ],
-      "source": "device_production_tables",
-      "id": "recipe_48"
-    },
-    "recipe_49": {
-      "deviceId": "173",
-      "deviceName": "采种机",
-      "materials": [],
-      "products": [
-        {
-          "id": "570",
-          "name": "芽针种子",
+          "id": "348",
+          "name": "锦草田块",
           "count": "1"
         }
       ],
       "source": "device_production_tables",
-      "id": "recipe_49"
-    },
-    "recipe_50": {
-      "deviceId": "173",
-      "deviceName": "采种机",
-      "materials": [
-        {
-          "id": "200",
-          "name": "灰芦麦",
-          "count": "1"
-        }
-      ],
-      "products": [
-        {
-          "id": "199",
-          "name": "灰芦麦种子",
-          "count": "2"
-        }
-      ],
-      "source": "device_production_tables",
+      "manufacturingTime": null,
       "id": "recipe_50"
     },
     "recipe_51": {
       "deviceId": "173",
       "deviceName": "采种机",
-      "materials": [],
+      "materials": [
+        {
+          "id": "31",
+          "name": "荞花",
+          "count": "1"
+        }
+      ],
       "products": [
         {
-          "id": "202",
-          "name": "酮化树种",
+          "id": "204",
+          "name": "荞花种子",
           "count": "2"
         }
       ],
       "source": "device_production_tables",
+      "manufacturingTime": 2,
       "id": "recipe_51"
     },
     "recipe_52": {
@@ -1181,19 +1328,20 @@
       "deviceName": "采种机",
       "materials": [
         {
-          "id": "576",
-          "name": "琼叶参",
+          "id": "42",
+          "name": "柑实",
           "count": "1"
         }
       ],
       "products": [
         {
-          "id": "577",
-          "name": "琼叶参种子",
+          "id": "203",
+          "name": "柑实种子",
           "count": "2"
         }
       ],
       "source": "device_production_tables",
+      "manufacturingTime": 2,
       "id": "recipe_52"
     },
     "recipe_53": {
@@ -1214,6 +1362,7 @@
         }
       ],
       "source": "device_production_tables",
+      "manufacturingTime": 2,
       "id": "recipe_53"
     },
     "recipe_54": {
@@ -1234,83 +1383,10 @@
         }
       ],
       "source": "device_production_tables",
+      "manufacturingTime": 2,
       "id": "recipe_54"
     },
     "recipe_55": {
-      "deviceId": "173",
-      "deviceName": "采种机",
-      "materials": [
-        {
-          "id": "31",
-          "name": "荞花",
-          "count": "1"
-        }
-      ],
-      "products": [
-        {
-          "id": "204",
-          "name": "荞花种子",
-          "count": "2"
-        }
-      ],
-      "source": "device_production_tables",
-      "id": "recipe_55"
-    },
-    "recipe_56": {
-      "deviceId": "173",
-      "deviceName": "采种机",
-      "materials": [
-        {
-          "id": "530",
-          "name": "苦叶椒",
-          "count": "1"
-        }
-      ],
-      "products": [
-        {
-          "id": "531",
-          "name": "苦叶椒种子",
-          "count": "2"
-        }
-      ],
-      "source": "device_production_tables",
-      "id": "recipe_56"
-    },
-    "recipe_57": {
-      "deviceId": "173",
-      "deviceName": "采种机",
-      "materials": [],
-      "products": [
-        {
-          "id": "481",
-          "name": "砂叶种子",
-          "count": "2"
-        }
-      ],
-      "source": "device_production_tables",
-      "id": "recipe_57"
-    },
-    "recipe_58": {
-      "deviceId": "173",
-      "deviceName": "采种机",
-      "materials": [
-        {
-          "id": "575",
-          "name": "芽针",
-          "count": "1"
-        }
-      ],
-      "products": [
-        {
-          "id": "570",
-          "name": "芽针种子",
-          "count": "1"
-        }
-      ],
-      "source": "device_production_tables",
-      "id": "recipe_58"
-    },
-    "recipe_59": {
       "deviceId": "173",
       "deviceName": "采种机",
       "materials": [
@@ -1328,6 +1404,91 @@
         }
       ],
       "source": "device_production_tables",
+      "manufacturingTime": 2,
+      "id": "recipe_55"
+    },
+    "recipe_56": {
+      "deviceId": "173",
+      "deviceName": "采种机",
+      "materials": [
+        {
+          "id": "575",
+          "name": "芽针",
+          "count": "1"
+        }
+      ],
+      "products": [
+        {
+          "id": "570",
+          "name": "芽针种子",
+          "count": "1"
+        }
+      ],
+      "source": "device_production_tables",
+      "manufacturingTime": 2,
+      "id": "recipe_56"
+    },
+    "recipe_57": {
+      "deviceId": "173",
+      "deviceName": "采种机",
+      "materials": [
+        {
+          "id": "200",
+          "name": "灰芦麦",
+          "count": "1"
+        }
+      ],
+      "products": [
+        {
+          "id": "199",
+          "name": "灰芦麦种子",
+          "count": "2"
+        }
+      ],
+      "source": "device_production_tables",
+      "manufacturingTime": 2,
+      "id": "recipe_57"
+    },
+    "recipe_58": {
+      "deviceId": "173",
+      "deviceName": "采种机",
+      "materials": [
+        {
+          "id": "530",
+          "name": "苦叶椒",
+          "count": "1"
+        }
+      ],
+      "products": [
+        {
+          "id": "531",
+          "name": "苦叶椒种子",
+          "count": "2"
+        }
+      ],
+      "source": "device_production_tables",
+      "manufacturingTime": 2,
+      "id": "recipe_58"
+    },
+    "recipe_59": {
+      "deviceId": "173",
+      "deviceName": "采种机",
+      "materials": [
+        {
+          "id": "573",
+          "name": "金石稻",
+          "count": "1"
+        }
+      ],
+      "products": [
+        {
+          "id": "574",
+          "name": "金石稻种子",
+          "count": "2"
+        }
+      ],
+      "source": "device_production_tables",
+      "manufacturingTime": 2,
       "id": "recipe_59"
     },
     "recipe_60": {
@@ -1335,19 +1496,20 @@
       "deviceName": "精炼炉",
       "materials": [
         {
-          "id": "379",
-          "name": "荞花粉末",
+          "id": "205",
+          "name": "蓝铁矿",
           "count": "1"
         }
       ],
       "products": [
         {
-          "id": "195",
-          "name": "碳粉末",
+          "id": "194",
+          "name": "蓝铁块",
           "count": "1"
         }
       ],
       "source": "device_production_tables",
+      "manufacturingTime": 2,
       "id": "recipe_60"
     },
     "recipe_61": {
@@ -1355,19 +1517,20 @@
       "deviceName": "精炼炉",
       "materials": [
         {
-          "id": "544",
-          "name": "致密源石粉末",
+          "id": "49",
+          "name": "紫晶矿",
           "count": "1"
         }
       ],
       "products": [
         {
-          "id": "545",
-          "name": "致密晶体粉末",
+          "id": "193",
+          "name": "紫晶纤维",
           "count": "1"
         }
       ],
       "source": "device_production_tables",
+      "manufacturingTime": 2,
       "id": "recipe_61"
     },
     "recipe_62": {
@@ -1375,19 +1538,20 @@
       "deviceName": "精炼炉",
       "materials": [
         {
-          "id": "380",
-          "name": "柑实粉末",
+          "id": "48",
+          "name": "源矿",
           "count": "1"
         }
       ],
       "products": [
         {
-          "id": "195",
-          "name": "碳粉末",
+          "id": "33",
+          "name": "晶体外壳",
           "count": "1"
         }
       ],
       "source": "device_production_tables",
+      "manufacturingTime": 2,
       "id": "recipe_62"
     },
     "recipe_63": {
@@ -1395,19 +1559,20 @@
       "deviceName": "精炼炉",
       "materials": [
         {
-          "id": "553",
-          "name": "细磨荞花粉末",
+          "id": "545",
+          "name": "致密晶体粉末",
           "count": "1"
         }
       ],
       "products": [
         {
-          "id": "548",
-          "name": "致密碳粉末",
+          "id": "557",
+          "name": "密制晶体",
           "count": "1"
         }
       ],
       "source": "device_production_tables",
+      "manufacturingTime": 2,
       "id": "recipe_63"
     },
     "recipe_64": {
@@ -1415,19 +1580,20 @@
       "deviceName": "精炼炉",
       "materials": [
         {
-          "id": "586",
-          "name": "锦草粉末",
+          "id": "547",
+          "name": "致密蓝铁粉末",
           "count": "1"
         }
       ],
       "products": [
         {
-          "id": "195",
-          "name": "碳粉末",
-          "count": "2"
+          "id": "555",
+          "name": "钢块",
+          "count": "1"
         }
       ],
       "source": "device_production_tables",
+      "manufacturingTime": 2,
       "id": "recipe_64"
     },
     "recipe_65": {
@@ -1435,19 +1601,20 @@
       "deviceName": "精炼炉",
       "materials": [
         {
-          "id": "494",
-          "name": "锦草",
+          "id": "546",
+          "name": "高晶粉末",
           "count": "1"
         }
       ],
       "products": [
         {
-          "id": "192",
-          "name": "碳块",
-          "count": "2"
+          "id": "556",
+          "name": "高晶纤维",
+          "count": "1"
         }
       ],
       "source": "device_production_tables",
+      "manufacturingTime": 2,
       "id": "recipe_65"
     },
     "recipe_66": {
@@ -1468,6 +1635,7 @@
         }
       ],
       "source": "device_production_tables",
+      "manufacturingTime": 2,
       "id": "recipe_66"
     },
     "recipe_67": {
@@ -1475,19 +1643,20 @@
       "deviceName": "精炼炉",
       "materials": [
         {
-          "id": "554",
-          "name": "细磨柑实粉末",
+          "id": "544",
+          "name": "致密源石粉末",
           "count": "1"
         }
       ],
       "products": [
         {
-          "id": "548",
-          "name": "致密碳粉末",
+          "id": "545",
+          "name": "致密晶体粉末",
           "count": "1"
         }
       ],
       "source": "device_production_tables",
+      "manufacturingTime": 2,
       "id": "recipe_67"
     },
     "recipe_68": {
@@ -1495,48 +1664,8 @@
       "deviceName": "精炼炉",
       "materials": [
         {
-          "id": "587",
-          "name": "芽针粉末",
-          "count": "1"
-        }
-      ],
-      "products": [
-        {
-          "id": "195",
-          "name": "碳粉末",
-          "count": "2"
-        }
-      ],
-      "source": "device_production_tables",
-      "id": "recipe_68"
-    },
-    "recipe_69": {
-      "deviceId": "53",
-      "deviceName": "精炼炉",
-      "materials": [
-        {
-          "id": "47",
-          "name": "源石粉末",
-          "count": "1"
-        }
-      ],
-      "products": [
-        {
-          "id": "38",
-          "name": "晶体外壳粉末",
-          "count": "1"
-        }
-      ],
-      "source": "device_production_tables",
-      "id": "recipe_69"
-    },
-    "recipe_70": {
-      "deviceId": "53",
-      "deviceName": "精炼炉",
-      "materials": [
-        {
-          "id": "575",
-          "name": "芽针",
+          "id": "31",
+          "name": "荞花",
           "count": "1"
         }
       ],
@@ -1544,53 +1673,14 @@
         {
           "id": "192",
           "name": "碳块",
-          "count": "2"
-        }
-      ],
-      "source": "device_production_tables",
-      "id": "recipe_70"
-    },
-    "recipe_71": {
-      "deviceId": "53",
-      "deviceName": "精炼炉",
-      "materials": [
-        {
-          "id": "543",
-          "name": "砂叶粉末",
-          "count": "3"
-        }
-      ],
-      "products": [
-        {
-          "id": "195",
-          "name": "碳粉末",
-          "count": "2"
-        }
-      ],
-      "source": "device_production_tables",
-      "id": "recipe_71"
-    },
-    "recipe_72": {
-      "deviceId": "53",
-      "deviceName": "精炼炉",
-      "materials": [
-        {
-          "id": "547",
-          "name": "致密蓝铁粉末",
-          "count": "1"
-        }
-      ],
-      "products": [
-        {
-          "id": "555",
-          "name": "钢块",
           "count": "1"
         }
       ],
       "source": "device_production_tables",
-      "id": "recipe_72"
+      "manufacturingTime": 2,
+      "id": "recipe_68"
     },
-    "recipe_73": {
+    "recipe_69": {
       "deviceId": "53",
       "deviceName": "精炼炉",
       "materials": [
@@ -1608,6 +1698,91 @@
         }
       ],
       "source": "device_production_tables",
+      "manufacturingTime": 2,
+      "id": "recipe_69"
+    },
+    "recipe_70": {
+      "deviceId": "53",
+      "deviceName": "精炼炉",
+      "materials": [
+        {
+          "id": "29",
+          "name": "紫晶粉末",
+          "count": "1"
+        }
+      ],
+      "products": [
+        {
+          "id": "193",
+          "name": "紫晶纤维",
+          "count": "1"
+        }
+      ],
+      "source": "device_production_tables",
+      "manufacturingTime": 2,
+      "id": "recipe_70"
+    },
+    "recipe_71": {
+      "deviceId": "53",
+      "deviceName": "精炼炉",
+      "materials": [
+        {
+          "id": "38",
+          "name": "晶体外壳粉末",
+          "count": "1"
+        }
+      ],
+      "products": [
+        {
+          "id": "33",
+          "name": "晶体外壳",
+          "count": "1"
+        }
+      ],
+      "source": "device_production_tables",
+      "manufacturingTime": 2,
+      "id": "recipe_71"
+    },
+    "recipe_72": {
+      "deviceId": "53",
+      "deviceName": "精炼炉",
+      "materials": [
+        {
+          "id": "47",
+          "name": "源石粉末",
+          "count": "1"
+        }
+      ],
+      "products": [
+        {
+          "id": "38",
+          "name": "晶体外壳粉末",
+          "count": "1"
+        }
+      ],
+      "source": "device_production_tables",
+      "manufacturingTime": 2,
+      "id": "recipe_72"
+    },
+    "recipe_73": {
+      "deviceId": "53",
+      "deviceName": "精炼炉",
+      "materials": [
+        {
+          "id": "42",
+          "name": "柑实",
+          "count": "1"
+        }
+      ],
+      "products": [
+        {
+          "id": "192",
+          "name": "碳块",
+          "count": "1"
+        }
+      ],
+      "source": "device_production_tables",
+      "manufacturingTime": 2,
       "id": "recipe_73"
     },
     "recipe_74": {
@@ -1628,6 +1803,7 @@
         }
       ],
       "source": "device_production_tables",
+      "manufacturingTime": 2,
       "id": "recipe_74"
     },
     "recipe_75": {
@@ -1635,19 +1811,20 @@
       "deviceName": "精炼炉",
       "materials": [
         {
-          "id": "29",
-          "name": "紫晶粉末",
+          "id": "494",
+          "name": "锦草",
           "count": "1"
         }
       ],
       "products": [
         {
-          "id": "193",
-          "name": "紫晶纤维",
-          "count": "1"
+          "id": "192",
+          "name": "碳块",
+          "count": "2"
         }
       ],
       "source": "device_production_tables",
+      "manufacturingTime": 2,
       "id": "recipe_75"
     },
     "recipe_76": {
@@ -1655,62 +1832,23 @@
       "deviceName": "精炼炉",
       "materials": [
         {
-          "id": "545",
-          "name": "致密晶体粉末",
+          "id": "575",
+          "name": "芽针",
           "count": "1"
         }
       ],
       "products": [
         {
-          "id": "557",
-          "name": "密制晶体",
-          "count": "1"
+          "id": "192",
+          "name": "碳块",
+          "count": "2"
         }
       ],
       "source": "device_production_tables",
+      "manufacturingTime": 2,
       "id": "recipe_76"
     },
     "recipe_77": {
-      "deviceId": "53",
-      "deviceName": "精炼炉",
-      "materials": [
-        {
-          "id": "49",
-          "name": "紫晶矿",
-          "count": "1"
-        }
-      ],
-      "products": [
-        {
-          "id": "193",
-          "name": "紫晶纤维",
-          "count": "1"
-        }
-      ],
-      "source": "device_production_tables",
-      "id": "recipe_77"
-    },
-    "recipe_78": {
-      "deviceId": "53",
-      "deviceName": "精炼炉",
-      "materials": [
-        {
-          "id": "546",
-          "name": "高晶粉末",
-          "count": "1"
-        }
-      ],
-      "products": [
-        {
-          "id": "556",
-          "name": "高晶纤维",
-          "count": "1"
-        }
-      ],
-      "source": "device_production_tables",
-      "id": "recipe_78"
-    },
-    "recipe_79": {
       "deviceId": "53",
       "deviceName": "精炼炉",
       "materials": [
@@ -1728,6 +1866,49 @@
         }
       ],
       "source": "device_production_tables",
+      "manufacturingTime": 2,
+      "id": "recipe_77"
+    },
+    "recipe_78": {
+      "deviceId": "53",
+      "deviceName": "精炼炉",
+      "materials": [
+        {
+          "id": "379",
+          "name": "荞花粉末",
+          "count": "1"
+        }
+      ],
+      "products": [
+        {
+          "id": "195",
+          "name": "碳粉末",
+          "count": "1"
+        }
+      ],
+      "source": "device_production_tables",
+      "manufacturingTime": 2,
+      "id": "recipe_78"
+    },
+    "recipe_79": {
+      "deviceId": "53",
+      "deviceName": "精炼炉",
+      "materials": [
+        {
+          "id": "380",
+          "name": "柑实粉末",
+          "count": "1"
+        }
+      ],
+      "products": [
+        {
+          "id": "195",
+          "name": "碳粉末",
+          "count": "1"
+        }
+      ],
+      "source": "device_production_tables",
+      "manufacturingTime": 2,
       "id": "recipe_79"
     },
     "recipe_80": {
@@ -1735,19 +1916,20 @@
       "deviceName": "精炼炉",
       "materials": [
         {
-          "id": "48",
-          "name": "源矿",
-          "count": "1"
+          "id": "543",
+          "name": "砂叶粉末",
+          "count": "3"
         }
       ],
       "products": [
         {
-          "id": "33",
-          "name": "晶体外壳",
-          "count": "1"
+          "id": "195",
+          "name": "碳粉末",
+          "count": "2"
         }
       ],
       "source": "device_production_tables",
+      "manufacturingTime": 2,
       "id": "recipe_80"
     },
     "recipe_81": {
@@ -1755,19 +1937,20 @@
       "deviceName": "精炼炉",
       "materials": [
         {
-          "id": "38",
-          "name": "晶体外壳粉末",
+          "id": "586",
+          "name": "锦草粉末",
           "count": "1"
         }
       ],
       "products": [
         {
-          "id": "33",
-          "name": "晶体外壳",
-          "count": "1"
+          "id": "195",
+          "name": "碳粉末",
+          "count": "2"
         }
       ],
       "source": "device_production_tables",
+      "manufacturingTime": 2,
       "id": "recipe_81"
     },
     "recipe_82": {
@@ -1775,22 +1958,169 @@
       "deviceName": "精炼炉",
       "materials": [
         {
-          "id": "205",
-          "name": "蓝铁矿",
+          "id": "587",
+          "name": "芽针粉末",
           "count": "1"
         }
       ],
       "products": [
         {
-          "id": "194",
-          "name": "蓝铁块",
+          "id": "195",
+          "name": "碳粉末",
+          "count": "2"
+        }
+      ],
+      "source": "device_production_tables",
+      "manufacturingTime": 2,
+      "id": "recipe_82"
+    },
+    "recipe_83": {
+      "deviceId": "53",
+      "deviceName": "精炼炉",
+      "materials": [
+        {
+          "id": "553",
+          "name": "细磨荞花粉末",
+          "count": "1"
+        }
+      ],
+      "products": [
+        {
+          "id": "548",
+          "name": "致密碳粉末",
           "count": "1"
         }
       ],
       "source": "device_production_tables",
-      "id": "recipe_82"
+      "manufacturingTime": 2,
+      "id": "recipe_83"
     },
-    "recipe_83": {
+    "recipe_84": {
+      "deviceId": "53",
+      "deviceName": "精炼炉",
+      "materials": [
+        {
+          "id": "554",
+          "name": "细磨柑实粉末",
+          "count": "1"
+        }
+      ],
+      "products": [
+        {
+          "id": "548",
+          "name": "致密碳粉末",
+          "count": "1"
+        }
+      ],
+      "source": "device_production_tables",
+      "manufacturingTime": 2,
+      "id": "recipe_84"
+    },
+    "recipe_85": {
+      "deviceId": "351",
+      "deviceName": "苦叶椒田块",
+      "materials": [
+        {
+          "id": "531",
+          "name": "苦叶椒种子",
+          "count": "1"
+        },
+        {
+          "id": "192",
+          "name": "碳块",
+          "count": "1"
+        }
+      ],
+      "products": [
+        {
+          "id": "351",
+          "name": "苦叶椒田块",
+          "count": "1"
+        }
+      ],
+      "source": "device_production_tables",
+      "manufacturingTime": null,
+      "id": "recipe_85"
+    },
+    "recipe_86": {
+      "deviceId": "347",
+      "deviceName": "酮化灌木田块",
+      "materials": [
+        {
+          "id": "202",
+          "name": "酮化树种",
+          "count": "1"
+        },
+        {
+          "id": "192",
+          "name": "碳块",
+          "count": "1"
+        }
+      ],
+      "products": [
+        {
+          "id": "347",
+          "name": "酮化灌木田块",
+          "count": "1"
+        }
+      ],
+      "source": "device_production_tables",
+      "manufacturingTime": null,
+      "id": "recipe_86"
+    },
+    "recipe_87": {
+      "deviceId": "346",
+      "deviceName": "砂叶田块",
+      "materials": [
+        {
+          "id": "481",
+          "name": "砂叶种子",
+          "count": "1"
+        },
+        {
+          "id": "192",
+          "name": "碳块",
+          "count": "1"
+        }
+      ],
+      "products": [
+        {
+          "id": "346",
+          "name": "砂叶田块",
+          "count": "1"
+        }
+      ],
+      "source": "device_production_tables",
+      "manufacturingTime": null,
+      "id": "recipe_87"
+    },
+    "recipe_88": {
+      "deviceId": "350",
+      "deviceName": "灰芦麦田块",
+      "materials": [
+        {
+          "id": "199",
+          "name": "灰芦麦种子",
+          "count": "1"
+        },
+        {
+          "id": "192",
+          "name": "碳块",
+          "count": "1"
+        }
+      ],
+      "products": [
+        {
+          "id": "350",
+          "name": "灰芦麦田块",
+          "count": "1"
+        }
+      ],
+      "source": "device_production_tables",
+      "manufacturingTime": null,
+      "id": "recipe_88"
+    },
+    "recipe_89": {
       "deviceId": "171",
       "deviceName": "配件机",
       "materials": [
@@ -1808,29 +2138,10 @@
         }
       ],
       "source": "device_production_tables",
-      "id": "recipe_83"
+      "manufacturingTime": 2,
+      "id": "recipe_89"
     },
-    "recipe_84": {
-      "deviceId": "171",
-      "deviceName": "配件机",
-      "materials": [
-        {
-          "id": "555",
-          "name": "钢块",
-          "count": "1"
-        }
-      ],
-      "products": [
-        {
-          "id": "541",
-          "name": "钢制零件",
-          "count": "1"
-        }
-      ],
-      "source": "device_production_tables",
-      "id": "recipe_84"
-    },
-    "recipe_85": {
+    "recipe_90": {
       "deviceId": "171",
       "deviceName": "配件机",
       "materials": [
@@ -1848,9 +2159,31 @@
         }
       ],
       "source": "device_production_tables",
-      "id": "recipe_85"
+      "manufacturingTime": 2,
+      "id": "recipe_90"
     },
-    "recipe_86": {
+    "recipe_91": {
+      "deviceId": "171",
+      "deviceName": "配件机",
+      "materials": [
+        {
+          "id": "555",
+          "name": "钢块",
+          "count": "1"
+        }
+      ],
+      "products": [
+        {
+          "id": "541",
+          "name": "钢制零件",
+          "count": "1"
+        }
+      ],
+      "source": "device_production_tables",
+      "manufacturingTime": 2,
+      "id": "recipe_91"
+    },
+    "recipe_92": {
       "deviceId": "171",
       "deviceName": "配件机",
       "materials": [
@@ -1868,15 +2201,16 @@
         }
       ],
       "source": "device_production_tables",
-      "id": "recipe_86"
+      "manufacturingTime": 2,
+      "id": "recipe_92"
     },
-    "recipe_87": {
+    "recipe_93": {
       "deviceId": "188",
       "deviceName": "研磨机",
       "materials": [
         {
-          "id": "379",
-          "name": "荞花粉末",
+          "id": "368",
+          "name": "蓝铁粉末",
           "count": "2"
         },
         {
@@ -1887,21 +2221,22 @@
       ],
       "products": [
         {
-          "id": "553",
-          "name": "细磨荞花粉末",
+          "id": "547",
+          "name": "致密蓝铁粉末",
           "count": "1"
         }
       ],
       "source": "device_production_tables",
-      "id": "recipe_87"
+      "manufacturingTime": 2,
+      "id": "recipe_93"
     },
-    "recipe_88": {
+    "recipe_94": {
       "deviceId": "188",
       "deviceName": "研磨机",
       "materials": [
         {
-          "id": "38",
-          "name": "晶体外壳粉末",
+          "id": "29",
+          "name": "紫晶粉末",
           "count": "2"
         },
         {
@@ -1912,40 +2247,16 @@
       ],
       "products": [
         {
-          "id": "545",
-          "name": "致密晶体粉末",
+          "id": "546",
+          "name": "高晶粉末",
           "count": "1"
         }
       ],
       "source": "device_production_tables",
-      "id": "recipe_88"
+      "manufacturingTime": 2,
+      "id": "recipe_94"
     },
-    "recipe_89": {
-      "deviceId": "188",
-      "deviceName": "研磨机",
-      "materials": [
-        {
-          "id": "380",
-          "name": "柑实粉末",
-          "count": "2"
-        },
-        {
-          "id": "543",
-          "name": "砂叶粉末",
-          "count": "1"
-        }
-      ],
-      "products": [
-        {
-          "id": "554",
-          "name": "细磨柑实粉末",
-          "count": "1"
-        }
-      ],
-      "source": "device_production_tables",
-      "id": "recipe_89"
-    },
-    "recipe_90": {
+    "recipe_95": {
       "deviceId": "188",
       "deviceName": "研磨机",
       "materials": [
@@ -1968,59 +2279,10 @@
         }
       ],
       "source": "device_production_tables",
-      "id": "recipe_90"
+      "manufacturingTime": 2,
+      "id": "recipe_95"
     },
-    "recipe_91": {
-      "deviceId": "188",
-      "deviceName": "研磨机",
-      "materials": [
-        {
-          "id": "368",
-          "name": "蓝铁粉末",
-          "count": "2"
-        },
-        {
-          "id": "543",
-          "name": "砂叶粉末",
-          "count": "1"
-        }
-      ],
-      "products": [
-        {
-          "id": "547",
-          "name": "致密蓝铁粉末",
-          "count": "1"
-        }
-      ],
-      "source": "device_production_tables",
-      "id": "recipe_91"
-    },
-    "recipe_92": {
-      "deviceId": "188",
-      "deviceName": "研磨机",
-      "materials": [
-        {
-          "id": "29",
-          "name": "紫晶粉末",
-          "count": "2"
-        },
-        {
-          "id": "543",
-          "name": "砂叶粉末",
-          "count": "1"
-        }
-      ],
-      "products": [
-        {
-          "id": "546",
-          "name": "高晶粉末",
-          "count": "1"
-        }
-      ],
-      "source": "device_production_tables",
-      "id": "recipe_92"
-    },
-    "recipe_93": {
+    "recipe_96": {
       "deviceId": "188",
       "deviceName": "研磨机",
       "materials": [
@@ -2043,9 +2305,88 @@
         }
       ],
       "source": "device_production_tables",
-      "id": "recipe_93"
+      "manufacturingTime": 2,
+      "id": "recipe_96"
     },
-    "recipe_94": {
+    "recipe_97": {
+      "deviceId": "188",
+      "deviceName": "研磨机",
+      "materials": [
+        {
+          "id": "38",
+          "name": "晶体外壳粉末",
+          "count": "2"
+        },
+        {
+          "id": "543",
+          "name": "砂叶粉末",
+          "count": "1"
+        }
+      ],
+      "products": [
+        {
+          "id": "545",
+          "name": "致密晶体粉末",
+          "count": "1"
+        }
+      ],
+      "source": "device_production_tables",
+      "manufacturingTime": 2,
+      "id": "recipe_97"
+    },
+    "recipe_98": {
+      "deviceId": "188",
+      "deviceName": "研磨机",
+      "materials": [
+        {
+          "id": "379",
+          "name": "荞花粉末",
+          "count": "2"
+        },
+        {
+          "id": "543",
+          "name": "砂叶粉末",
+          "count": "1"
+        }
+      ],
+      "products": [
+        {
+          "id": "553",
+          "name": "细磨荞花粉末",
+          "count": "1"
+        }
+      ],
+      "source": "device_production_tables",
+      "manufacturingTime": 2,
+      "id": "recipe_98"
+    },
+    "recipe_99": {
+      "deviceId": "188",
+      "deviceName": "研磨机",
+      "materials": [
+        {
+          "id": "380",
+          "name": "柑实粉末",
+          "count": "2"
+        },
+        {
+          "id": "543",
+          "name": "砂叶粉末",
+          "count": "1"
+        }
+      ],
+      "products": [
+        {
+          "id": "554",
+          "name": "细磨柑实粉末",
+          "count": "1"
+        }
+      ],
+      "source": "device_production_tables",
+      "manufacturingTime": 2,
+      "id": "recipe_99"
+    },
+    "recipe_100": {
       "deviceId": "746",
       "deviceName": "反应池",
       "materials": [
@@ -2068,9 +2409,9 @@
         }
       ],
       "source": "device_production_tables",
-      "id": "recipe_94"
+      "id": "recipe_100"
     },
-    "recipe_95": {
+    "recipe_101": {
       "deviceId": "746",
       "deviceName": "反应池",
       "materials": [
@@ -2093,9 +2434,9 @@
         }
       ],
       "source": "device_production_tables",
-      "id": "recipe_95"
+      "id": "recipe_101"
     },
-    "recipe_96": {
+    "recipe_102": {
       "deviceId": "746",
       "deviceName": "反应池",
       "materials": [
@@ -2118,70 +2459,516 @@
         }
       ],
       "source": "device_production_tables",
-      "id": "recipe_96"
+      "id": "recipe_102"
     },
-    "recipe_97": {
+    "recipe_103": {
       "deviceId": "176",
       "deviceName": "灌装机",
       "materials": [
         {
-          "id": "379",
-          "name": "荞花粉末",
-          "count": "5"
-        },
-        {
           "id": "370",
           "name": "紫晶质瓶",
-          "count": "5"
+          "count": "1"
+        },
+        {
+          "id": "381",
+          "name": "清水",
+          "count": "1"
         }
       ],
       "products": [
         {
-          "id": "510",
-          "name": "荞愈胶囊",
+          "id": "370",
+          "name": "紫晶质瓶",
           "count": "1"
+        },
+        {
+          "id": "381",
+          "name": "清水",
+          "count": "0"
         }
       ],
       "source": "device_production_tables",
-      "id": "recipe_97"
+      "manufacturingTime": 2,
+      "id": "recipe_103"
     },
-    "recipe_98": {
+    "recipe_104": {
       "deviceId": "176",
       "deviceName": "灌装机",
       "materials": [
         {
-          "id": "379",
-          "name": "荞花粉末",
-          "count": "10"
+          "id": "370",
+          "name": "紫晶质瓶",
+          "count": "1"
         },
+        {
+          "id": "201",
+          "name": "锦草溶液",
+          "count": "1"
+        }
+      ],
+      "products": [
+        {
+          "id": "370",
+          "name": "紫晶质瓶",
+          "count": "1"
+        },
+        {
+          "id": "201",
+          "name": "锦草溶液",
+          "count": "0"
+        }
+      ],
+      "source": "device_production_tables",
+      "manufacturingTime": 2,
+      "id": "recipe_104"
+    },
+    "recipe_105": {
+      "deviceId": "176",
+      "deviceName": "灌装机",
+      "materials": [
+        {
+          "id": "370",
+          "name": "紫晶质瓶",
+          "count": "1"
+        },
+        {
+          "id": "769",
+          "name": "芽针溶液",
+          "count": "1"
+        }
+      ],
+      "products": [
+        {
+          "id": "370",
+          "name": "紫晶质瓶",
+          "count": "1"
+        },
+        {
+          "id": "769",
+          "name": "芽针溶液",
+          "count": "0"
+        }
+      ],
+      "source": "device_production_tables",
+      "manufacturingTime": 2,
+      "id": "recipe_105"
+    },
+    "recipe_106": {
+      "deviceId": "176",
+      "deviceName": "灌装机",
+      "materials": [
+        {
+          "id": "370",
+          "name": "紫晶质瓶",
+          "count": "1"
+        },
+        {
+          "id": "892",
+          "name": "液化息壤",
+          "count": "1"
+        }
+      ],
+      "products": [
+        {
+          "id": "370",
+          "name": "紫晶质瓶",
+          "count": "1"
+        },
+        {
+          "id": "892",
+          "name": "液化息壤",
+          "count": "0"
+        }
+      ],
+      "source": "device_production_tables",
+      "manufacturingTime": 2,
+      "id": "recipe_106"
+    },
+    "recipe_107": {
+      "deviceId": "176",
+      "deviceName": "灌装机",
+      "materials": [
+        {
+          "id": "551",
+          "name": "高晶质瓶",
+          "count": "1"
+        },
+        {
+          "id": "381",
+          "name": "清水",
+          "count": "1"
+        }
+      ],
+      "products": [
+        {
+          "id": "551",
+          "name": "高晶质瓶",
+          "count": "1"
+        },
+        {
+          "id": "381",
+          "name": "清水",
+          "count": "0"
+        }
+      ],
+      "source": "device_production_tables",
+      "manufacturingTime": 2,
+      "id": "recipe_107"
+    },
+    "recipe_108": {
+      "deviceId": "176",
+      "deviceName": "灌装机",
+      "materials": [
+        {
+          "id": "551",
+          "name": "高晶质瓶",
+          "count": "1"
+        },
+        {
+          "id": "201",
+          "name": "锦草溶液",
+          "count": "1"
+        }
+      ],
+      "products": [
+        {
+          "id": "551",
+          "name": "高晶质瓶",
+          "count": "1"
+        },
+        {
+          "id": "201",
+          "name": "锦草溶液",
+          "count": "0"
+        }
+      ],
+      "source": "device_production_tables",
+      "manufacturingTime": 2,
+      "id": "recipe_108"
+    },
+    "recipe_109": {
+      "deviceId": "176",
+      "deviceName": "灌装机",
+      "materials": [
+        {
+          "id": "551",
+          "name": "高晶质瓶",
+          "count": "1"
+        },
+        {
+          "id": "769",
+          "name": "芽针溶液",
+          "count": "1"
+        }
+      ],
+      "products": [
+        {
+          "id": "551",
+          "name": "高晶质瓶",
+          "count": "1"
+        },
+        {
+          "id": "769",
+          "name": "芽针溶液",
+          "count": "0"
+        }
+      ],
+      "source": "device_production_tables",
+      "manufacturingTime": 2,
+      "id": "recipe_109"
+    },
+    "recipe_110": {
+      "deviceId": "176",
+      "deviceName": "灌装机",
+      "materials": [
+        {
+          "id": "551",
+          "name": "高晶质瓶",
+          "count": "1"
+        },
+        {
+          "id": "892",
+          "name": "液化息壤",
+          "count": "1"
+        }
+      ],
+      "products": [
+        {
+          "id": "551",
+          "name": "高晶质瓶",
+          "count": "1"
+        },
+        {
+          "id": "892",
+          "name": "液化息壤",
+          "count": "0"
+        }
+      ],
+      "source": "device_production_tables",
+      "manufacturingTime": 2,
+      "id": "recipe_110"
+    },
+    "recipe_111": {
+      "deviceId": "176",
+      "deviceName": "灌装机",
+      "materials": [
+        {
+          "id": "552",
+          "name": "钢质瓶",
+          "count": "1"
+        },
+        {
+          "id": "381",
+          "name": "清水",
+          "count": "1"
+        }
+      ],
+      "products": [
+        {
+          "id": "552",
+          "name": "钢质瓶",
+          "count": "1"
+        },
+        {
+          "id": "381",
+          "name": "清水",
+          "count": "0"
+        }
+      ],
+      "source": "device_production_tables",
+      "manufacturingTime": 2,
+      "id": "recipe_111"
+    },
+    "recipe_112": {
+      "deviceId": "176",
+      "deviceName": "灌装机",
+      "materials": [
+        {
+          "id": "552",
+          "name": "钢质瓶",
+          "count": "1"
+        },
+        {
+          "id": "201",
+          "name": "锦草溶液",
+          "count": "1"
+        }
+      ],
+      "products": [
+        {
+          "id": "552",
+          "name": "钢质瓶",
+          "count": "1"
+        },
+        {
+          "id": "201",
+          "name": "锦草溶液",
+          "count": "0"
+        }
+      ],
+      "source": "device_production_tables",
+      "manufacturingTime": 2,
+      "id": "recipe_112"
+    },
+    "recipe_113": {
+      "deviceId": "176",
+      "deviceName": "灌装机",
+      "materials": [
+        {
+          "id": "552",
+          "name": "钢质瓶",
+          "count": "1"
+        },
+        {
+          "id": "769",
+          "name": "芽针溶液",
+          "count": "1"
+        }
+      ],
+      "products": [
+        {
+          "id": "552",
+          "name": "钢质瓶",
+          "count": "1"
+        },
+        {
+          "id": "769",
+          "name": "芽针溶液",
+          "count": "0"
+        }
+      ],
+      "source": "device_production_tables",
+      "manufacturingTime": 2,
+      "id": "recipe_113"
+    },
+    "recipe_114": {
+      "deviceId": "176",
+      "deviceName": "灌装机",
+      "materials": [
+        {
+          "id": "552",
+          "name": "钢质瓶",
+          "count": "1"
+        },
+        {
+          "id": "892",
+          "name": "液化息壤",
+          "count": "1"
+        }
+      ],
+      "products": [
+        {
+          "id": "552",
+          "name": "钢质瓶",
+          "count": "1"
+        },
+        {
+          "id": "892",
+          "name": "液化息壤",
+          "count": "0"
+        }
+      ],
+      "source": "device_production_tables",
+      "manufacturingTime": 2,
+      "id": "recipe_114"
+    },
+    "recipe_115": {
+      "deviceId": "176",
+      "deviceName": "灌装机",
+      "materials": [
         {
           "id": "371",
           "name": "蓝铁瓶",
-          "count": "10"
+          "count": "1"
+        },
+        {
+          "id": "381",
+          "name": "清水",
+          "count": "1"
         }
       ],
       "products": [
         {
-          "id": "511",
-          "name": "优质荞愈胶囊",
+          "id": "371",
+          "name": "蓝铁瓶",
           "count": "1"
+        },
+        {
+          "id": "381",
+          "name": "清水",
+          "count": "0"
         }
       ],
       "source": "device_production_tables",
-      "id": "recipe_98"
+      "manufacturingTime": 2,
+      "id": "recipe_115"
     },
-    "recipe_99": {
+    "recipe_116": {
       "deviceId": "176",
       "deviceName": "灌装机",
       "materials": [
         {
-          "id": "380",
-          "name": "柑实粉末",
-          "count": "5"
+          "id": "371",
+          "name": "蓝铁瓶",
+          "count": "1"
         },
+        {
+          "id": "201",
+          "name": "锦草溶液",
+          "count": "1"
+        }
+      ],
+      "products": [
+        {
+          "id": "371",
+          "name": "蓝铁瓶",
+          "count": "1"
+        },
+        {
+          "id": "201",
+          "name": "锦草溶液",
+          "count": "0"
+        }
+      ],
+      "source": "device_production_tables",
+      "manufacturingTime": 2,
+      "id": "recipe_116"
+    },
+    "recipe_117": {
+      "deviceId": "176",
+      "deviceName": "灌装机",
+      "materials": [
+        {
+          "id": "371",
+          "name": "蓝铁瓶",
+          "count": "1"
+        },
+        {
+          "id": "769",
+          "name": "芽针溶液",
+          "count": "1"
+        }
+      ],
+      "products": [
+        {
+          "id": "371",
+          "name": "蓝铁瓶",
+          "count": "1"
+        },
+        {
+          "id": "769",
+          "name": "芽针溶液",
+          "count": "0"
+        }
+      ],
+      "source": "device_production_tables",
+      "manufacturingTime": 2,
+      "id": "recipe_117"
+    },
+    "recipe_118": {
+      "deviceId": "176",
+      "deviceName": "灌装机",
+      "materials": [
+        {
+          "id": "371",
+          "name": "蓝铁瓶",
+          "count": "1"
+        },
+        {
+          "id": "892",
+          "name": "液化息壤",
+          "count": "1"
+        }
+      ],
+      "products": [
+        {
+          "id": "371",
+          "name": "蓝铁瓶",
+          "count": "1"
+        },
+        {
+          "id": "892",
+          "name": "液化息壤",
+          "count": "0"
+        }
+      ],
+      "source": "device_production_tables",
+      "manufacturingTime": 2,
+      "id": "recipe_118"
+    },
+    "recipe_119": {
+      "deviceId": "176",
+      "deviceName": "灌装机",
+      "materials": [
         {
           "id": "370",
           "name": "紫晶质瓶",
+          "count": "5"
+        },
+        {
+          "id": "380",
+          "name": "柑实粉末",
           "count": "5"
         }
       ],
@@ -2193,20 +2980,21 @@
         }
       ],
       "source": "device_production_tables",
-      "id": "recipe_99"
+      "manufacturingTime": 10,
+      "id": "recipe_119"
     },
-    "recipe_100": {
+    "recipe_120": {
       "deviceId": "176",
       "deviceName": "灌装机",
       "materials": [
         {
-          "id": "380",
-          "name": "柑实粉末",
+          "id": "371",
+          "name": "蓝铁瓶",
           "count": "10"
         },
         {
-          "id": "371",
-          "name": "蓝铁瓶",
+          "id": "380",
+          "name": "柑实粉末",
           "count": "10"
         }
       ],
@@ -2218,210 +3006,21 @@
         }
       ],
       "source": "device_production_tables",
-      "id": "recipe_100"
+      "manufacturingTime": 10,
+      "id": "recipe_120"
     },
-    "recipe_101": {
+    "recipe_121": {
       "deviceId": "176",
       "deviceName": "灌装机",
       "materials": [
-        {
-          "id": "553",
-          "name": "细磨荞花粉末",
-          "count": "10"
-        },
         {
           "id": "552",
           "name": "钢质瓶",
           "count": "10"
-        }
-      ],
-      "products": [
-        {
-          "id": "526",
-          "name": "精选荞愈胶囊",
-          "count": "1"
-        }
-      ],
-      "source": "device_production_tables",
-      "id": "recipe_101"
-    },
-    "recipe_102": {
-      "deviceId": "176",
-      "deviceName": "灌装机",
-      "materials": [
-        {
-          "id": "552",
-          "name": "钢质瓶",
-          "count": "1"
         },
-        {
-          "id": "381",
-          "name": "清水",
-          "count": "1"
-        }
-      ],
-      "products": [
-        {
-          "id": "552",
-          "name": "钢质瓶",
-          "count": "1"
-        }
-      ],
-      "source": "device_production_tables",
-      "id": "recipe_102"
-    },
-    "recipe_103": {
-      "deviceId": "176",
-      "deviceName": "灌装机",
-      "materials": [
-        {
-          "id": "381",
-          "name": "清水",
-          "count": "1"
-        }
-      ],
-      "products": [
-        {
-          "id": "370",
-          "name": "紫晶质瓶",
-          "count": "1"
-        },
-        {
-          "id": "371",
-          "name": "蓝铁瓶",
-          "count": "1"
-        },
-        {
-          "id": "552",
-          "name": "钢质瓶",
-          "count": "1"
-        },
-        {
-          "id": "551",
-          "name": "高晶质瓶",
-          "count": "1"
-        }
-      ],
-      "source": "device_production_tables",
-      "id": "recipe_103"
-    },
-    "recipe_104": {
-      "deviceId": "176",
-      "deviceName": "灌装机",
-      "materials": [
-        {
-          "id": "769",
-          "name": "芽针溶液",
-          "count": "1"
-        }
-      ],
-      "products": [
-        {
-          "id": "370",
-          "name": "紫晶质瓶",
-          "count": "1"
-        },
-        {
-          "id": "371",
-          "name": "蓝铁瓶",
-          "count": "1"
-        },
-        {
-          "id": "552",
-          "name": "钢质瓶",
-          "count": "1"
-        },
-        {
-          "id": "551",
-          "name": "高晶质瓶",
-          "count": "1"
-        }
-      ],
-      "source": "device_production_tables",
-      "id": "recipe_104"
-    },
-    "recipe_105": {
-      "deviceId": "176",
-      "deviceName": "灌装机",
-      "materials": [
-        {
-          "id": "892",
-          "name": "液化息壤",
-          "count": "1"
-        }
-      ],
-      "products": [
-        {
-          "id": "370",
-          "name": "紫晶质瓶",
-          "count": "1"
-        },
-        {
-          "id": "371",
-          "name": "蓝铁瓶",
-          "count": "1"
-        },
-        {
-          "id": "552",
-          "name": "钢质瓶",
-          "count": "1"
-        },
-        {
-          "id": "551",
-          "name": "高晶质瓶",
-          "count": "1"
-        }
-      ],
-      "source": "device_production_tables",
-      "id": "recipe_105"
-    },
-    "recipe_106": {
-      "deviceId": "176",
-      "deviceName": "灌装机",
-      "materials": [
-        {
-          "id": "201",
-          "name": "锦草溶液",
-          "count": "1"
-        }
-      ],
-      "products": [
-        {
-          "id": "370",
-          "name": "紫晶质瓶",
-          "count": "1"
-        },
-        {
-          "id": "371",
-          "name": "蓝铁瓶",
-          "count": "1"
-        },
-        {
-          "id": "552",
-          "name": "钢质瓶",
-          "count": "1"
-        },
-        {
-          "id": "551",
-          "name": "高晶质瓶",
-          "count": "1"
-        }
-      ],
-      "source": "device_production_tables",
-      "id": "recipe_106"
-    },
-    "recipe_107": {
-      "deviceId": "176",
-      "deviceName": "灌装机",
-      "materials": [
         {
           "id": "554",
           "name": "细磨柑实粉末",
-          "count": "10"
-        },
-        {
-          "id": "552",
-          "name": "钢质瓶",
           "count": "10"
         }
       ],
@@ -2433,414 +3032,114 @@
         }
       ],
       "source": "device_production_tables",
-      "id": "recipe_107"
-    },
-    "recipe_108": {
-      "deviceId": "176",
-      "deviceName": "灌装机",
-      "materials": [
-        {
-          "id": "371",
-          "name": "蓝铁瓶",
-          "count": "1"
-        },
-        {
-          "id": "769",
-          "name": "芽针溶液",
-          "count": "0"
-        }
-      ],
-      "products": [
-        {
-          "id": "371",
-          "name": "蓝铁瓶",
-          "count": "1"
-        },
-        {
-          "id": "769",
-          "name": "芽针溶液",
-          "count": "0"
-        }
-      ],
-      "source": "device_production_tables",
-      "id": "recipe_108"
-    },
-    "recipe_109": {
-      "deviceId": "176",
-      "deviceName": "灌装机",
-      "materials": [
-        {
-          "id": "371",
-          "name": "蓝铁瓶",
-          "count": "1"
-        },
-        {
-          "id": "381",
-          "name": "清水",
-          "count": "1"
-        }
-      ],
-      "products": [
-        {
-          "id": "371",
-          "name": "蓝铁瓶",
-          "count": "1"
-        },
-        {
-          "id": "381",
-          "name": "清水",
-          "count": "0"
-        }
-      ],
-      "source": "device_production_tables",
-      "id": "recipe_109"
-    },
-    "recipe_110": {
-      "deviceId": "176",
-      "deviceName": "灌装机",
-      "materials": [
-        {
-          "id": "371",
-          "name": "蓝铁瓶",
-          "count": "1"
-        },
-        {
-          "id": "201",
-          "name": "锦草溶液",
-          "count": "0"
-        }
-      ],
-      "products": [
-        {
-          "id": "371",
-          "name": "蓝铁瓶",
-          "count": "1"
-        },
-        {
-          "id": "201",
-          "name": "锦草溶液",
-          "count": "0"
-        }
-      ],
-      "source": "device_production_tables",
-      "id": "recipe_110"
-    },
-    "recipe_111": {
-      "deviceId": "176",
-      "deviceName": "灌装机",
-      "materials": [
-        {
-          "id": "371",
-          "name": "蓝铁瓶",
-          "count": "1"
-        },
-        {
-          "id": "892",
-          "name": "液化息壤",
-          "count": "0"
-        }
-      ],
-      "products": [
-        {
-          "id": "371",
-          "name": "蓝铁瓶",
-          "count": "1"
-        },
-        {
-          "id": "892",
-          "name": "液化息壤",
-          "count": "0"
-        }
-      ],
-      "source": "device_production_tables",
-      "id": "recipe_111"
-    },
-    "recipe_112": {
-      "deviceId": "176",
-      "deviceName": "灌装机",
-      "materials": [
-        {
-          "id": "370",
-          "name": "紫晶质瓶",
-          "count": "1"
-        },
-        {
-          "id": "381",
-          "name": "清水",
-          "count": "1"
-        }
-      ],
-      "products": [
-        {
-          "id": "370",
-          "name": "紫晶质瓶",
-          "count": "1"
-        },
-        {
-          "id": "381",
-          "name": "清水",
-          "count": "0"
-        }
-      ],
-      "source": "device_production_tables",
-      "id": "recipe_112"
-    },
-    "recipe_113": {
-      "deviceId": "176",
-      "deviceName": "灌装机",
-      "materials": [
-        {
-          "id": "370",
-          "name": "紫晶质瓶",
-          "count": "1"
-        },
-        {
-          "id": "201",
-          "name": "锦草溶液",
-          "count": "1"
-        }
-      ],
-      "products": [
-        {
-          "id": "370",
-          "name": "紫晶质瓶",
-          "count": "1"
-        },
-        {
-          "id": "201",
-          "name": "锦草溶液",
-          "count": "0"
-        }
-      ],
-      "source": "device_production_tables",
-      "id": "recipe_113"
-    },
-    "recipe_114": {
-      "deviceId": "176",
-      "deviceName": "灌装机",
-      "materials": [
-        {
-          "id": "370",
-          "name": "紫晶质瓶",
-          "count": "1"
-        },
-        {
-          "id": "769",
-          "name": "芽针溶液",
-          "count": "0"
-        }
-      ],
-      "products": [
-        {
-          "id": "370",
-          "name": "紫晶质瓶",
-          "count": "1"
-        },
-        {
-          "id": "769",
-          "name": "芽针溶液",
-          "count": "0"
-        }
-      ],
-      "source": "device_production_tables",
-      "id": "recipe_114"
-    },
-    "recipe_115": {
-      "deviceId": "176",
-      "deviceName": "灌装机",
-      "materials": [
-        {
-          "id": "370",
-          "name": "紫晶质瓶",
-          "count": "1"
-        },
-        {
-          "id": "892",
-          "name": "液化息壤",
-          "count": "0"
-        }
-      ],
-      "products": [
-        {
-          "id": "370",
-          "name": "紫晶质瓶",
-          "count": "1"
-        },
-        {
-          "id": "892",
-          "name": "液化息壤",
-          "count": "0"
-        }
-      ],
-      "source": "device_production_tables",
-      "id": "recipe_115"
-    },
-    "recipe_116": {
-      "deviceId": "176",
-      "deviceName": "灌装机",
-      "materials": [
-        {
-          "id": "551",
-          "name": "高晶质瓶",
-          "count": "1"
-        },
-        {
-          "id": "381",
-          "name": "清水",
-          "count": "1"
-        }
-      ],
-      "products": [
-        {
-          "id": "381",
-          "name": "清水",
-          "count": "0"
-        }
-      ],
-      "source": "device_production_tables",
-      "id": "recipe_116"
-    },
-    "recipe_117": {
-      "deviceId": "54",
-      "deviceName": "粉碎机",
-      "materials": [
-        {
-          "id": "31",
-          "name": "荞花",
-          "count": "1"
-        }
-      ],
-      "products": [
-        {
-          "id": "379",
-          "name": "荞花粉末",
-          "count": "2"
-        }
-      ],
-      "source": "device_production_tables",
-      "id": "recipe_117"
-    },
-    "recipe_118": {
-      "deviceId": "54",
-      "deviceName": "粉碎机",
-      "materials": [
-        {
-          "id": "42",
-          "name": "柑实",
-          "count": "1"
-        }
-      ],
-      "products": [
-        {
-          "id": "380",
-          "name": "柑实粉末",
-          "count": "2"
-        }
-      ],
-      "source": "device_production_tables",
-      "id": "recipe_118"
-    },
-    "recipe_119": {
-      "deviceId": "54",
-      "deviceName": "粉碎机",
-      "materials": [
-        {
-          "id": "494",
-          "name": "锦草",
-          "count": "1"
-        }
-      ],
-      "products": [
-        {
-          "id": "586",
-          "name": "锦草粉末",
-          "count": "2"
-        }
-      ],
-      "source": "device_production_tables",
-      "id": "recipe_119"
-    },
-    "recipe_120": {
-      "deviceId": "54",
-      "deviceName": "粉碎机",
-      "materials": [
-        {
-          "id": "575",
-          "name": "芽针",
-          "count": "1"
-        }
-      ],
-      "products": [
-        {
-          "id": "587",
-          "name": "芽针粉末",
-          "count": "2"
-        }
-      ],
-      "source": "device_production_tables",
-      "id": "recipe_120"
-    },
-    "recipe_121": {
-      "deviceId": "54",
-      "deviceName": "粉碎机",
-      "materials": [
-        {
-          "id": "48",
-          "name": "源矿",
-          "count": "1"
-        }
-      ],
-      "products": [
-        {
-          "id": "47",
-          "name": "源石粉末",
-          "count": "1"
-        }
-      ],
-      "source": "device_production_tables",
+      "manufacturingTime": 10,
       "id": "recipe_121"
     },
     "recipe_122": {
-      "deviceId": "54",
-      "deviceName": "粉碎机",
+      "deviceId": "176",
+      "deviceName": "灌装机",
       "materials": [
         {
-          "id": "367",
-          "name": "砂叶",
-          "count": "1"
+          "id": "370",
+          "name": "紫晶质瓶",
+          "count": "5"
+        },
+        {
+          "id": "379",
+          "name": "荞花粉末",
+          "count": "5"
         }
       ],
       "products": [
         {
-          "id": "543",
-          "name": "砂叶粉末",
-          "count": "3"
+          "id": "510",
+          "name": "荞愈胶囊",
+          "count": "1"
         }
       ],
       "source": "device_production_tables",
+      "manufacturingTime": 10,
       "id": "recipe_122"
     },
     "recipe_123": {
-      "deviceId": "54",
-      "deviceName": "粉碎机",
+      "deviceId": "176",
+      "deviceName": "灌装机",
       "materials": [
         {
-          "id": "46",
-          "name": "酮化灌木",
+          "id": "371",
+          "name": "蓝铁瓶",
+          "count": "10"
+        },
+        {
+          "id": "379",
+          "name": "荞花粉末",
+          "count": "10"
+        }
+      ],
+      "products": [
+        {
+          "id": "511",
+          "name": "优质荞愈胶囊",
+          "count": "1"
+        }
+      ],
+      "source": "device_production_tables",
+      "manufacturingTime": 10,
+      "id": "recipe_123"
+    },
+    "recipe_124": {
+      "deviceId": "176",
+      "deviceName": "灌装机",
+      "materials": [
+        {
+          "id": "552",
+          "name": "钢质瓶",
+          "count": "10"
+        },
+        {
+          "id": "553",
+          "name": "细磨荞花粉末",
+          "count": "10"
+        }
+      ],
+      "products": [
+        {
+          "id": "526",
+          "name": "精选荞愈胶囊",
+          "count": "1"
+        }
+      ],
+      "source": "device_production_tables",
+      "manufacturingTime": 10,
+      "id": "recipe_124"
+    },
+    "recipe_125": {
+      "deviceId": "766",
+      "deviceName": "琼叶参田块",
+      "materials": [
+        {
+          "id": "577",
+          "name": "琼叶参种子",
+          "count": "1"
+        },
+        {
+          "id": "192",
+          "name": "碳块",
           "count": "1"
         }
       ],
       "products": [
         {
-          "id": "369",
-          "name": "酮化灌木粉末",
-          "count": "2"
+          "id": "766",
+          "name": "琼叶参田块",
+          "count": "1"
         }
       ],
       "source": "device_production_tables",
-      "id": "recipe_123"
+      "manufacturingTime": null,
+      "id": "recipe_125"
     },
-    "recipe_124": {
+    "recipe_126": {
       "deviceId": "54",
       "deviceName": "粉碎机",
       "materials": [
@@ -2858,9 +3157,10 @@
         }
       ],
       "source": "device_production_tables",
-      "id": "recipe_124"
+      "manufacturingTime": 2,
+      "id": "recipe_126"
     },
-    "recipe_125": {
+    "recipe_127": {
       "deviceId": "54",
       "deviceName": "粉碎机",
       "materials": [
@@ -2878,9 +3178,31 @@
         }
       ],
       "source": "device_production_tables",
-      "id": "recipe_125"
+      "manufacturingTime": 2,
+      "id": "recipe_127"
     },
-    "recipe_126": {
+    "recipe_128": {
+      "deviceId": "54",
+      "deviceName": "粉碎机",
+      "materials": [
+        {
+          "id": "48",
+          "name": "源矿",
+          "count": "1"
+        }
+      ],
+      "products": [
+        {
+          "id": "47",
+          "name": "源石粉末",
+          "count": "1"
+        }
+      ],
+      "source": "device_production_tables",
+      "manufacturingTime": 2,
+      "id": "recipe_128"
+    },
+    "recipe_129": {
       "deviceId": "54",
       "deviceName": "粉碎机",
       "materials": [
@@ -2898,9 +3220,10 @@
         }
       ],
       "source": "device_production_tables",
-      "id": "recipe_126"
+      "manufacturingTime": 2,
+      "id": "recipe_129"
     },
-    "recipe_127": {
+    "recipe_130": {
       "deviceId": "54",
       "deviceName": "粉碎机",
       "materials": [
@@ -2918,46 +3241,148 @@
         }
       ],
       "source": "device_production_tables",
-      "id": "recipe_127"
+      "manufacturingTime": 2,
+      "id": "recipe_130"
     },
-    "recipe_128": {
-      "deviceId": "177",
-      "deviceName": "封装机",
+    "recipe_131": {
+      "deviceId": "54",
+      "deviceName": "粉碎机",
       "materials": [
         {
-          "id": "541",
-          "name": "钢制零件",
-          "count": "10"
-        },
-        {
-          "id": "544",
-          "name": "致密源石粉末",
-          "count": "15"
+          "id": "31",
+          "name": "荞花",
+          "count": "1"
         }
       ],
       "products": [
         {
-          "id": "549",
-          "name": "高容谷地电池",
-          "count": "1"
+          "id": "379",
+          "name": "荞花粉末",
+          "count": "2"
         }
       ],
       "source": "device_production_tables",
-      "id": "recipe_128"
+      "manufacturingTime": 2,
+      "id": "recipe_131"
     },
-    "recipe_129": {
+    "recipe_132": {
+      "deviceId": "54",
+      "deviceName": "粉碎机",
+      "materials": [
+        {
+          "id": "42",
+          "name": "柑实",
+          "count": "1"
+        }
+      ],
+      "products": [
+        {
+          "id": "380",
+          "name": "柑实粉末",
+          "count": "2"
+        }
+      ],
+      "source": "device_production_tables",
+      "manufacturingTime": 2,
+      "id": "recipe_132"
+    },
+    "recipe_133": {
+      "deviceId": "54",
+      "deviceName": "粉碎机",
+      "materials": [
+        {
+          "id": "367",
+          "name": "砂叶",
+          "count": "1"
+        }
+      ],
+      "products": [
+        {
+          "id": "543",
+          "name": "砂叶粉末",
+          "count": "3"
+        }
+      ],
+      "source": "device_production_tables",
+      "manufacturingTime": 2,
+      "id": "recipe_133"
+    },
+    "recipe_134": {
+      "deviceId": "54",
+      "deviceName": "粉碎机",
+      "materials": [
+        {
+          "id": "46",
+          "name": "酮化灌木",
+          "count": "1"
+        }
+      ],
+      "products": [
+        {
+          "id": "369",
+          "name": "酮化灌木粉末",
+          "count": "2"
+        }
+      ],
+      "source": "device_production_tables",
+      "manufacturingTime": 2,
+      "id": "recipe_134"
+    },
+    "recipe_135": {
+      "deviceId": "54",
+      "deviceName": "粉碎机",
+      "materials": [
+        {
+          "id": "494",
+          "name": "锦草",
+          "count": "1"
+        }
+      ],
+      "products": [
+        {
+          "id": "586",
+          "name": "锦草粉末",
+          "count": "2"
+        }
+      ],
+      "source": "device_production_tables",
+      "manufacturingTime": 2,
+      "id": "recipe_135"
+    },
+    "recipe_136": {
+      "deviceId": "54",
+      "deviceName": "粉碎机",
+      "materials": [
+        {
+          "id": "575",
+          "name": "芽针",
+          "count": "1"
+        }
+      ],
+      "products": [
+        {
+          "id": "587",
+          "name": "芽针粉末",
+          "count": "2"
+        }
+      ],
+      "source": "device_production_tables",
+      "manufacturingTime": 2,
+      "id": "recipe_136"
+    },
+    "recipe_137": {
       "deviceId": "177",
       "deviceName": "封装机",
       "materials": [
         {
-          "id": "369",
-          "name": "酮化灌木粉末",
-          "count": "1"
-        },
-        {
           "id": "377",
           "name": "紫晶零件",
           "count": "5"
+        },
+        {
+          "id": "369",
+          "name": "酮化灌木粉末",
+          "count": "1"
         }
       ],
       "products": [
@@ -2968,9 +3393,36 @@
         }
       ],
       "source": "device_production_tables",
-      "id": "recipe_129"
+      "manufacturingTime": 10,
+      "id": "recipe_137"
     },
-    "recipe_130": {
+    "recipe_138": {
+      "deviceId": "177",
+      "deviceName": "封装机",
+      "materials": [
+        {
+          "id": "377",
+          "name": "紫晶零件",
+          "count": "5"
+        },
+        {
+          "id": "47",
+          "name": "源石粉末",
+          "count": "10"
+        }
+      ],
+      "products": [
+        {
+          "id": "376",
+          "name": "低容谷地电池",
+          "count": "1"
+        }
+      ],
+      "source": "device_production_tables",
+      "manufacturingTime": 10,
+      "id": "recipe_138"
+    },
+    "recipe_139": {
       "deviceId": "177",
       "deviceName": "封装机",
       "materials": [
@@ -2993,59 +3445,36 @@
         }
       ],
       "source": "device_production_tables",
-      "id": "recipe_130"
+      "manufacturingTime": 10,
+      "id": "recipe_139"
     },
-    "recipe_131": {
-      "deviceId": "177",
-      "deviceName": "封装机",
-      "materials": [
-        {
-          "id": "47",
-          "name": "源石粉末",
-          "count": "10"
-        },
-        {
-          "id": "377",
-          "name": "紫晶零件",
-          "count": "5"
-        }
-      ],
-      "products": [
-        {
-          "id": "376",
-          "name": "低容谷地电池",
-          "count": "1"
-        }
-      ],
-      "source": "device_production_tables",
-      "id": "recipe_131"
-    },
-    "recipe_132": {
+    "recipe_140": {
       "deviceId": "177",
       "deviceName": "封装机",
       "materials": [
         {
           "id": "373",
           "name": "铁制零件",
-          "count": "0"
+          "count": "10"
         },
         {
-          "id": "371",
-          "name": "蓝铁瓶",
-          "count": "5"
+          "id": "544",
+          "name": "致密源石粉末",
+          "count": "15"
         }
       ],
       "products": [
         {
-          "id": "593",
-          "name": "芽针针剂",
+          "id": "549",
+          "name": "高容谷地电池",
           "count": "1"
         }
       ],
       "source": "device_production_tables",
-      "id": "recipe_132"
+      "manufacturingTime": 10,
+      "id": "recipe_140"
     },
-    "recipe_133": {
+    "recipe_141": {
       "deviceId": "177",
       "deviceName": "封装机",
       "materials": [
@@ -3062,38 +3491,29 @@
       ],
       "products": [
         {
-          "id": "594",
-          "name": "锦草软饮",
-          "count": "1"
-        }
-      ],
-      "source": "device_production_tables",
-      "id": "recipe_133"
-    },
-    "recipe_134": {
-      "deviceId": "177",
-      "deviceName": "封装机",
-      "materials": [
-        {
-          "id": "769",
-          "name": "芽针溶液",
-          "count": "0"
-        }
-      ],
-      "products": [
-        {
           "id": "593",
           "name": "芽针针剂",
           "count": "1"
         }
       ],
       "source": "device_production_tables",
-      "id": "recipe_134"
+      "manufacturingTime": 10,
+      "id": "recipe_141"
     },
-    "recipe_135": {
+    "recipe_142": {
       "deviceId": "177",
       "deviceName": "封装机",
       "materials": [
+        {
+          "id": "373",
+          "name": "铁制零件",
+          "count": "10"
+        },
+        {
+          "id": "371",
+          "name": "蓝铁瓶",
+          "count": "5"
+        },
         {
           "id": "201",
           "name": "锦草溶液",
@@ -3108,9 +3528,10 @@
         }
       ],
       "source": "device_production_tables",
-      "id": "recipe_135"
+      "manufacturingTime": 10,
+      "id": "recipe_142"
     },
-    "recipe_136": {
+    "recipe_143": {
       "deviceId": "177",
       "deviceName": "封装机",
       "materials": [
@@ -3133,9 +3554,10 @@
         }
       ],
       "source": "device_production_tables",
-      "id": "recipe_136"
+      "manufacturingTime": 10,
+      "id": "recipe_143"
     },
-    "recipe_137": {
+    "recipe_144": {
       "deviceId": "text_协议核心_设备制造",
       "deviceName": "Unknown Device (text_协议核心_设备制造)",
       "materials": [
@@ -3158,9 +3580,9 @@
         }
       ],
       "source": "device_production_tables",
-      "id": "recipe_137"
+      "id": "recipe_144"
     },
-    "recipe_138": {
+    "recipe_145": {
       "deviceId": "text_协议核心_设备制造",
       "deviceName": "Unknown Device (text_协议核心_设备制造)",
       "materials": [
@@ -3178,9 +3600,9 @@
         }
       ],
       "source": "device_production_tables",
-      "id": "recipe_138"
+      "id": "recipe_145"
     },
-    "recipe_139": {
+    "recipe_146": {
       "deviceId": "text_协议核心_设备制造",
       "deviceName": "Unknown Device (text_协议核心_设备制造)",
       "materials": [
@@ -3198,9 +3620,9 @@
         }
       ],
       "source": "device_production_tables",
-      "id": "recipe_139"
+      "id": "recipe_146"
     },
-    "recipe_140": {
+    "recipe_147": {
       "deviceId": "text_协议核心_设备制造",
       "deviceName": "Unknown Device (text_协议核心_设备制造)",
       "materials": [
@@ -3218,9 +3640,9 @@
         }
       ],
       "source": "device_production_tables",
-      "id": "recipe_140"
+      "id": "recipe_147"
     },
-    "recipe_141": {
+    "recipe_148": {
       "deviceId": "text_协议核心_设备制造",
       "deviceName": "Unknown Device (text_协议核心_设备制造)",
       "materials": [
@@ -3238,9 +3660,9 @@
         }
       ],
       "source": "device_production_tables",
-      "id": "recipe_141"
+      "id": "recipe_148"
     },
-    "recipe_142": {
+    "recipe_149": {
       "deviceId": "text_协议核心_设备制造",
       "deviceName": "Unknown Device (text_协议核心_设备制造)",
       "materials": [
@@ -3258,9 +3680,9 @@
         }
       ],
       "source": "device_production_tables",
-      "id": "recipe_142"
+      "id": "recipe_149"
     },
-    "recipe_143": {
+    "recipe_150": {
       "deviceId": "text_协议核心_设备制造",
       "deviceName": "Unknown Device (text_协议核心_设备制造)",
       "materials": [
@@ -3278,9 +3700,9 @@
         }
       ],
       "source": "device_production_tables",
-      "id": "recipe_143"
+      "id": "recipe_150"
     },
-    "recipe_144": {
+    "recipe_151": {
       "deviceId": "text_协议核心_设备制造",
       "deviceName": "Unknown Device (text_协议核心_设备制造)",
       "materials": [
@@ -3298,9 +3720,9 @@
         }
       ],
       "source": "device_production_tables",
-      "id": "recipe_144"
+      "id": "recipe_151"
     },
-    "recipe_145": {
+    "recipe_152": {
       "deviceId": "text_协议核心_设备制造",
       "deviceName": "Unknown Device (text_协议核心_设备制造)",
       "materials": [
@@ -3318,9 +3740,9 @@
         }
       ],
       "source": "device_production_tables",
-      "id": "recipe_145"
+      "id": "recipe_152"
     },
-    "recipe_146": {
+    "recipe_153": {
       "deviceId": "text_协议核心_设备制造",
       "deviceName": "Unknown Device (text_协议核心_设备制造)",
       "materials": [
@@ -3338,9 +3760,9 @@
         }
       ],
       "source": "device_production_tables",
-      "id": "recipe_146"
+      "id": "recipe_153"
     },
-    "recipe_147": {
+    "recipe_154": {
       "deviceId": "text_协议核心_设备制造",
       "deviceName": "Unknown Device (text_协议核心_设备制造)",
       "materials": [
@@ -3358,9 +3780,9 @@
         }
       ],
       "source": "device_production_tables",
-      "id": "recipe_147"
+      "id": "recipe_154"
     },
-    "recipe_148": {
+    "recipe_155": {
       "deviceId": "text_协议核心_设备制造",
       "deviceName": "Unknown Device (text_协议核心_设备制造)",
       "materials": [
@@ -3383,7 +3805,7 @@
         }
       ],
       "source": "device_production_tables",
-      "id": "recipe_148"
+      "id": "recipe_155"
     }
   },
   "asMaterials": {
@@ -3392,25 +3814,24 @@
       "recipe_13",
       "recipe_15",
       "recipe_16",
-      "recipe_17",
-      "recipe_23",
+      "recipe_25",
       "recipe_29",
-      "recipe_34",
+      "recipe_33",
       "recipe_37",
-      "recipe_46",
-      "recipe_94",
-      "recipe_95",
-      "recipe_96",
+      "recipe_47",
+      "recipe_100",
+      "recipe_101",
       "recipe_102",
       "recipe_103",
-      "recipe_109",
-      "recipe_112",
-      "recipe_116"
+      "recipe_107",
+      "recipe_111",
+      "recipe_115"
     ],
     "566": [
       "recipe_0",
-      "recipe_16",
-      "recipe_46"
+      "recipe_15",
+      "recipe_47",
+      "recipe_50"
     ],
     "373": [
       "recipe_1",
@@ -3423,639 +3844,710 @@
       "recipe_8",
       "recipe_9",
       "recipe_10",
-      "recipe_130",
-      "recipe_132",
-      "recipe_133",
-      "recipe_137",
-      "recipe_138",
       "recipe_139",
       "recipe_140",
       "recipe_141",
       "recipe_142",
-      "recipe_143",
       "recipe_144",
       "recipe_145",
-      "recipe_146"
+      "recipe_146",
+      "recipe_147",
+      "recipe_148",
+      "recipe_149",
+      "recipe_150",
+      "recipe_151",
+      "recipe_152",
+      "recipe_153"
     ],
     "55": [
       "recipe_1",
-      "recipe_137"
+      "recipe_144"
     ],
     "540": [
       "recipe_11",
-      "recipe_147"
+      "recipe_154"
     ],
     "192": [
       "recipe_12",
-      "recipe_126",
-      "recipe_148"
+      "recipe_45",
+      "recipe_46",
+      "recipe_48",
+      "recipe_49",
+      "recipe_50",
+      "recipe_85",
+      "recipe_86",
+      "recipe_87",
+      "recipe_88",
+      "recipe_125",
+      "recipe_129",
+      "recipe_155"
     ],
     "377": [
       "recipe_12",
-      "recipe_129",
-      "recipe_131",
-      "recipe_148"
+      "recipe_137",
+      "recipe_138",
+      "recipe_155"
     ],
     "542": [
-      "recipe_13",
-      "recipe_15"
-    ],
-    "892": [
-      "recipe_14",
-      "recipe_31",
-      "recipe_36",
-      "recipe_40",
-      "recipe_105",
-      "recipe_111",
-      "recipe_115"
+      "recipe_13"
     ],
     "22": [
       "recipe_14"
     ],
-    "570": [
-      "recipe_17",
-      "recipe_23"
+    "892": [
+      "recipe_14",
+      "recipe_28",
+      "recipe_32",
+      "recipe_36",
+      "recipe_40",
+      "recipe_106",
+      "recipe_110",
+      "recipe_114",
+      "recipe_118"
     ],
-    "202": [
-      "recipe_18"
+    "570": [
+      "recipe_16",
+      "recipe_45"
+    ],
+    "204": [
+      "recipe_17",
+      "recipe_49"
+    ],
+    "203": [
+      "recipe_18",
+      "recipe_46"
     ],
     "481": [
       "recipe_19",
-      "recipe_22"
+      "recipe_87"
     ],
-    "203": [
-      "recipe_20"
-    ],
-    "194": [
-      "recipe_24",
-      "recipe_43",
-      "recipe_83",
-      "recipe_124"
-    ],
-    "33": [
-      "recipe_24",
-      "recipe_25",
-      "recipe_127"
-    ],
-    "193": [
-      "recipe_25",
-      "recipe_44",
-      "recipe_85",
-      "recipe_125"
-    ],
-    "557": [
-      "recipe_26",
-      "recipe_27"
-    ],
-    "556": [
-      "recipe_26",
-      "recipe_45",
+    "202": [
+      "recipe_20",
       "recipe_86"
     ],
+    "33": [
+      "recipe_21",
+      "recipe_22",
+      "recipe_130"
+    ],
+    "193": [
+      "recipe_21",
+      "recipe_42",
+      "recipe_90",
+      "recipe_127"
+    ],
+    "194": [
+      "recipe_22",
+      "recipe_41",
+      "recipe_89",
+      "recipe_126"
+    ],
+    "557": [
+      "recipe_23",
+      "recipe_24"
+    ],
+    "556": [
+      "recipe_23",
+      "recipe_44",
+      "recipe_92"
+    ],
     "771": [
-      "recipe_27",
-      "recipe_96",
-      "recipe_136"
-    ],
-    "552": [
-      "recipe_28",
-      "recipe_101",
+      "recipe_24",
       "recipe_102",
-      "recipe_107"
-    ],
-    "769": [
-      "recipe_30",
-      "recipe_33",
-      "recipe_39",
-      "recipe_104",
-      "recipe_108",
-      "recipe_114",
-      "recipe_134"
-    ],
-    "201": [
-      "recipe_32",
-      "recipe_35",
-      "recipe_38",
-      "recipe_106",
-      "recipe_110",
-      "recipe_113",
-      "recipe_135"
+      "recipe_143"
     ],
     "371": [
+      "recipe_25",
+      "recipe_26",
+      "recipe_27",
+      "recipe_28",
+      "recipe_115",
+      "recipe_116",
+      "recipe_117",
+      "recipe_118",
+      "recipe_120",
+      "recipe_123",
+      "recipe_141",
+      "recipe_142"
+    ],
+    "201": [
+      "recipe_26",
+      "recipe_30",
+      "recipe_34",
+      "recipe_38",
+      "recipe_104",
+      "recipe_108",
+      "recipe_112",
+      "recipe_116",
+      "recipe_142"
+    ],
+    "769": [
+      "recipe_27",
+      "recipe_31",
+      "recipe_35",
+      "recipe_39",
+      "recipe_105",
+      "recipe_109",
+      "recipe_113",
+      "recipe_117"
+    ],
+    "370": [
+      "recipe_29",
+      "recipe_30",
+      "recipe_31",
+      "recipe_32",
+      "recipe_103",
+      "recipe_104",
+      "recipe_105",
+      "recipe_106",
+      "recipe_119",
+      "recipe_122"
+    ],
+    "551": [
       "recipe_33",
       "recipe_34",
       "recipe_35",
       "recipe_36",
-      "recipe_98",
-      "recipe_100",
+      "recipe_107",
       "recipe_108",
       "recipe_109",
-      "recipe_110",
-      "recipe_111",
-      "recipe_132",
-      "recipe_133"
+      "recipe_110"
     ],
-    "370": [
+    "552": [
       "recipe_37",
       "recipe_38",
       "recipe_39",
       "recipe_40",
-      "recipe_97",
-      "recipe_99",
+      "recipe_111",
       "recipe_112",
       "recipe_113",
       "recipe_114",
-      "recipe_115"
-    ],
-    "551": [
-      "recipe_41",
-      "recipe_116"
+      "recipe_121",
+      "recipe_124"
     ],
     "555": [
-      "recipe_42",
-      "recipe_84"
+      "recipe_43",
+      "recipe_91"
     ],
-    "573": [
+    "574": [
       "recipe_48"
     ],
-    "200": [
-      "recipe_50"
+    "31": [
+      "recipe_51",
+      "recipe_68",
+      "recipe_131"
     ],
-    "576": [
-      "recipe_52"
+    "42": [
+      "recipe_52",
+      "recipe_73",
+      "recipe_132"
     ],
     "367": [
       "recipe_53",
       "recipe_74",
-      "recipe_122"
+      "recipe_133"
     ],
     "46": [
       "recipe_54",
-      "recipe_123"
-    ],
-    "31": [
-      "recipe_55",
-      "recipe_117"
-    ],
-    "530": [
-      "recipe_56"
-    ],
-    "575": [
-      "recipe_58",
-      "recipe_70",
-      "recipe_120"
+      "recipe_134"
     ],
     "494": [
-      "recipe_59",
-      "recipe_65",
-      "recipe_119"
+      "recipe_55",
+      "recipe_75",
+      "recipe_135"
     ],
-    "379": [
-      "recipe_60",
-      "recipe_87",
-      "recipe_97",
-      "recipe_98"
-    ],
-    "544": [
-      "recipe_61",
-      "recipe_128",
+    "575": [
+      "recipe_56",
+      "recipe_76",
       "recipe_136"
     ],
-    "380": [
+    "200": [
+      "recipe_57"
+    ],
+    "530": [
+      "recipe_58"
+    ],
+    "573": [
+      "recipe_59"
+    ],
+    "205": [
+      "recipe_60"
+    ],
+    "49": [
+      "recipe_61"
+    ],
+    "48": [
       "recipe_62",
-      "recipe_89",
-      "recipe_99",
-      "recipe_100"
+      "recipe_128"
     ],
-    "553": [
-      "recipe_63",
-      "recipe_101"
+    "545": [
+      "recipe_63"
     ],
-    "586": [
-      "recipe_64",
-      "recipe_94"
+    "547": [
+      "recipe_64"
+    ],
+    "546": [
+      "recipe_65"
     ],
     "548": [
       "recipe_66"
     ],
-    "554": [
+    "544": [
       "recipe_67",
-      "recipe_107"
-    ],
-    "587": [
-      "recipe_68",
-      "recipe_95"
-    ],
-    "47": [
-      "recipe_69",
-      "recipe_90",
-      "recipe_130",
-      "recipe_131"
-    ],
-    "543": [
-      "recipe_71",
-      "recipe_87",
-      "recipe_88",
-      "recipe_89",
-      "recipe_90",
-      "recipe_91",
-      "recipe_92",
-      "recipe_93"
-    ],
-    "547": [
-      "recipe_72"
+      "recipe_140",
+      "recipe_143"
     ],
     "368": [
-      "recipe_73",
-      "recipe_91"
-    ],
-    "29": [
-      "recipe_75",
-      "recipe_92"
-    ],
-    "545": [
-      "recipe_76"
-    ],
-    "49": [
-      "recipe_77"
-    ],
-    "546": [
-      "recipe_78"
-    ],
-    "45": [
-      "recipe_79"
-    ],
-    "48": [
-      "recipe_80",
-      "recipe_121"
-    ],
-    "38": [
-      "recipe_81",
-      "recipe_88"
-    ],
-    "205": [
-      "recipe_82"
-    ],
-    "195": [
+      "recipe_69",
       "recipe_93"
     ],
-    "42": [
-      "recipe_118"
+    "29": [
+      "recipe_70",
+      "recipe_94"
     ],
-    "541": [
-      "recipe_128"
+    "38": [
+      "recipe_71",
+      "recipe_97"
+    ],
+    "47": [
+      "recipe_72",
+      "recipe_95",
+      "recipe_138",
+      "recipe_139"
+    ],
+    "45": [
+      "recipe_77"
+    ],
+    "379": [
+      "recipe_78",
+      "recipe_98",
+      "recipe_122",
+      "recipe_123"
+    ],
+    "380": [
+      "recipe_79",
+      "recipe_99",
+      "recipe_119",
+      "recipe_120"
+    ],
+    "543": [
+      "recipe_80",
+      "recipe_93",
+      "recipe_94",
+      "recipe_95",
+      "recipe_96",
+      "recipe_97",
+      "recipe_98",
+      "recipe_99"
+    ],
+    "586": [
+      "recipe_81",
+      "recipe_100"
+    ],
+    "587": [
+      "recipe_82",
+      "recipe_101"
+    ],
+    "553": [
+      "recipe_83",
+      "recipe_124"
+    ],
+    "554": [
+      "recipe_84",
+      "recipe_121"
+    ],
+    "531": [
+      "recipe_85"
+    ],
+    "199": [
+      "recipe_88"
+    ],
+    "195": [
+      "recipe_96"
+    ],
+    "577": [
+      "recipe_125"
     ],
     "369": [
-      "recipe_129"
+      "recipe_137"
     ]
   },
   "asProducts": {
     "494": [
       "recipe_0",
-      "recipe_16",
-      "recipe_46"
+      "recipe_15",
+      "recipe_47"
     ],
     "167": [
       "recipe_1",
-      "recipe_137"
+      "recipe_144"
     ],
     "188": [
       "recipe_2",
-      "recipe_138"
+      "recipe_145"
     ],
     "742": [
       "recipe_3",
-      "recipe_139"
+      "recipe_146"
     ],
     "736": [
       "recipe_4",
-      "recipe_140"
+      "recipe_147"
     ],
     "185": [
       "recipe_5",
-      "recipe_141"
+      "recipe_148"
     ],
     "746": [
       "recipe_6",
-      "recipe_142"
+      "recipe_149"
     ],
     "744": [
       "recipe_7",
-      "recipe_143"
+      "recipe_150"
     ],
     "743": [
       "recipe_8",
-      "recipe_144"
+      "recipe_151"
     ],
     "752": [
       "recipe_9",
-      "recipe_145"
+      "recipe_152"
     ],
     "745": [
       "recipe_10",
-      "recipe_146"
+      "recipe_153"
     ],
     "180": [
       "recipe_11",
-      "recipe_147"
+      "recipe_154"
     ],
     "174": [
       "recipe_12",
-      "recipe_148"
+      "recipe_155"
     ],
     "771": [
-      "recipe_13",
-      "recipe_15"
+      "recipe_13"
     ],
     "558": [
       "recipe_14"
     ],
     "575": [
-      "recipe_17",
-      "recipe_23"
+      "recipe_16"
     ],
-    "46": [
+    "31": [
+      "recipe_17"
+    ],
+    "42": [
       "recipe_18"
     ],
     "367": [
       "recipe_19"
     ],
-    "42": [
-      "recipe_20",
-      "recipe_22"
+    "46": [
+      "recipe_20"
     ],
-    "31": [
+    "374": [
       "recipe_21"
     ],
     "375": [
-      "recipe_24"
-    ],
-    "374": [
-      "recipe_25"
+      "recipe_22"
     ],
     "479": [
-      "recipe_26"
+      "recipe_23"
     ],
     "480": [
-      "recipe_27"
+      "recipe_24"
     ],
-    "552": [
+    "371": [
+      "recipe_25",
+      "recipe_26",
+      "recipe_27",
       "recipe_28",
-      "recipe_42",
-      "recipe_102",
-      "recipe_103",
-      "recipe_104",
-      "recipe_105",
-      "recipe_106"
+      "recipe_41",
+      "recipe_115",
+      "recipe_116",
+      "recipe_117",
+      "recipe_118"
     ],
     "381": [
-      "recipe_28",
+      "recipe_25",
       "recipe_29",
-      "recipe_34",
-      "recipe_37",
-      "recipe_41",
-      "recipe_109",
-      "recipe_112",
-      "recipe_116"
-    ],
-    "769": [
-      "recipe_30",
       "recipe_33",
-      "recipe_39",
-      "recipe_95",
-      "recipe_108",
-      "recipe_114"
-    ],
-    "892": [
-      "recipe_31",
-      "recipe_36",
-      "recipe_40",
-      "recipe_96",
+      "recipe_37",
+      "recipe_103",
+      "recipe_107",
       "recipe_111",
       "recipe_115"
     ],
     "201": [
-      "recipe_32",
-      "recipe_35",
-      "recipe_38",
-      "recipe_94",
-      "recipe_110",
-      "recipe_113"
-    ],
-    "371": [
-      "recipe_33",
+      "recipe_26",
+      "recipe_30",
       "recipe_34",
-      "recipe_35",
-      "recipe_36",
-      "recipe_43",
-      "recipe_103",
+      "recipe_38",
+      "recipe_100",
       "recipe_104",
-      "recipe_105",
-      "recipe_106",
       "recipe_108",
+      "recipe_112",
+      "recipe_116"
+    ],
+    "769": [
+      "recipe_27",
+      "recipe_31",
+      "recipe_35",
+      "recipe_39",
+      "recipe_101",
+      "recipe_105",
       "recipe_109",
+      "recipe_113",
+      "recipe_117"
+    ],
+    "892": [
+      "recipe_28",
+      "recipe_32",
+      "recipe_36",
+      "recipe_40",
+      "recipe_102",
+      "recipe_106",
       "recipe_110",
-      "recipe_111"
+      "recipe_114",
+      "recipe_118"
     ],
     "370": [
-      "recipe_37",
-      "recipe_38",
-      "recipe_39",
-      "recipe_40",
-      "recipe_44",
-      "recipe_103",
-      "recipe_104",
-      "recipe_105",
-      "recipe_106",
-      "recipe_112",
-      "recipe_113",
-      "recipe_114",
-      "recipe_115"
-    ],
-    "551": [
-      "recipe_41",
-      "recipe_45",
+      "recipe_29",
+      "recipe_30",
+      "recipe_31",
+      "recipe_32",
+      "recipe_42",
       "recipe_103",
       "recipe_104",
       "recipe_105",
       "recipe_106"
     ],
-    "566": [
-      "recipe_47",
-      "recipe_59"
+    "551": [
+      "recipe_33",
+      "recipe_34",
+      "recipe_35",
+      "recipe_36",
+      "recipe_44",
+      "recipe_107",
+      "recipe_108",
+      "recipe_109",
+      "recipe_110"
     ],
-    "574": [
+    "552": [
+      "recipe_37",
+      "recipe_38",
+      "recipe_39",
+      "recipe_40",
+      "recipe_43",
+      "recipe_111",
+      "recipe_112",
+      "recipe_113",
+      "recipe_114"
+    ],
+    "349": [
+      "recipe_45"
+    ],
+    "345": [
+      "recipe_46"
+    ],
+    "352": [
       "recipe_48"
     ],
-    "570": [
-      "recipe_49",
-      "recipe_58"
+    "344": [
+      "recipe_49"
     ],
-    "199": [
+    "348": [
       "recipe_50"
     ],
-    "202": [
-      "recipe_51",
-      "recipe_54"
+    "204": [
+      "recipe_51"
     ],
-    "577": [
+    "203": [
       "recipe_52"
     ],
     "481": [
-      "recipe_53",
-      "recipe_57"
+      "recipe_53"
     ],
-    "204": [
+    "202": [
+      "recipe_54"
+    ],
+    "566": [
       "recipe_55"
     ],
-    "531": [
+    "570": [
       "recipe_56"
     ],
-    "195": [
+    "199": [
+      "recipe_57"
+    ],
+    "531": [
+      "recipe_58"
+    ],
+    "574": [
+      "recipe_59"
+    ],
+    "194": [
       "recipe_60",
-      "recipe_62",
-      "recipe_64",
-      "recipe_68",
-      "recipe_71",
-      "recipe_126"
+      "recipe_69"
     ],
-    "545": [
+    "193": [
       "recipe_61",
-      "recipe_88"
+      "recipe_70"
     ],
-    "548": [
-      "recipe_63",
-      "recipe_67",
-      "recipe_93"
+    "33": [
+      "recipe_62",
+      "recipe_71"
     ],
-    "192": [
-      "recipe_65",
-      "recipe_70",
-      "recipe_74",
-      "recipe_79"
+    "557": [
+      "recipe_63"
+    ],
+    "555": [
+      "recipe_64"
+    ],
+    "556": [
+      "recipe_65"
     ],
     "542": [
       "recipe_66"
     ],
-    "38": [
-      "recipe_69",
-      "recipe_127"
-    ],
-    "555": [
-      "recipe_72"
-    ],
-    "194": [
-      "recipe_73",
-      "recipe_82"
-    ],
-    "193": [
-      "recipe_75",
-      "recipe_77"
-    ],
-    "557": [
-      "recipe_76"
-    ],
-    "556": [
-      "recipe_78"
-    ],
-    "33": [
-      "recipe_80",
-      "recipe_81"
-    ],
-    "373": [
-      "recipe_83"
-    ],
-    "541": [
-      "recipe_84"
-    ],
-    "377": [
-      "recipe_85"
-    ],
-    "540": [
-      "recipe_86"
-    ],
-    "553": [
-      "recipe_87"
-    ],
-    "554": [
-      "recipe_89"
-    ],
-    "544": [
-      "recipe_90"
-    ],
-    "547": [
-      "recipe_91"
-    ],
-    "546": [
-      "recipe_92"
-    ],
-    "510": [
+    "545": [
+      "recipe_67",
       "recipe_97"
     ],
-    "511": [
-      "recipe_98"
+    "192": [
+      "recipe_68",
+      "recipe_73",
+      "recipe_74",
+      "recipe_75",
+      "recipe_76",
+      "recipe_77"
     ],
-    "512": [
-      "recipe_99"
-    ],
-    "513": [
-      "recipe_100"
-    ],
-    "526": [
-      "recipe_101"
-    ],
-    "527": [
-      "recipe_107"
-    ],
-    "379": [
-      "recipe_117"
-    ],
-    "380": [
-      "recipe_118"
-    ],
-    "586": [
-      "recipe_119"
-    ],
-    "587": [
-      "recipe_120"
-    ],
-    "47": [
-      "recipe_121"
-    ],
-    "543": [
-      "recipe_122"
-    ],
-    "369": [
-      "recipe_123"
-    ],
-    "368": [
-      "recipe_124"
-    ],
-    "29": [
-      "recipe_125"
-    ],
-    "549": [
-      "recipe_128"
-    ],
-    "196": [
-      "recipe_129"
-    ],
-    "378": [
+    "38": [
+      "recipe_72",
       "recipe_130"
     ],
-    "376": [
+    "195": [
+      "recipe_78",
+      "recipe_79",
+      "recipe_80",
+      "recipe_81",
+      "recipe_82",
+      "recipe_129"
+    ],
+    "548": [
+      "recipe_83",
+      "recipe_84",
+      "recipe_96"
+    ],
+    "351": [
+      "recipe_85"
+    ],
+    "347": [
+      "recipe_86"
+    ],
+    "346": [
+      "recipe_87"
+    ],
+    "350": [
+      "recipe_88"
+    ],
+    "373": [
+      "recipe_89"
+    ],
+    "377": [
+      "recipe_90"
+    ],
+    "541": [
+      "recipe_91"
+    ],
+    "540": [
+      "recipe_92"
+    ],
+    "547": [
+      "recipe_93"
+    ],
+    "546": [
+      "recipe_94"
+    ],
+    "544": [
+      "recipe_95"
+    ],
+    "553": [
+      "recipe_98"
+    ],
+    "554": [
+      "recipe_99"
+    ],
+    "512": [
+      "recipe_119"
+    ],
+    "513": [
+      "recipe_120"
+    ],
+    "527": [
+      "recipe_121"
+    ],
+    "510": [
+      "recipe_122"
+    ],
+    "511": [
+      "recipe_123"
+    ],
+    "526": [
+      "recipe_124"
+    ],
+    "766": [
+      "recipe_125"
+    ],
+    "368": [
+      "recipe_126"
+    ],
+    "29": [
+      "recipe_127"
+    ],
+    "47": [
+      "recipe_128"
+    ],
+    "379": [
       "recipe_131"
     ],
-    "593": [
-      "recipe_132",
+    "380": [
+      "recipe_132"
+    ],
+    "543": [
+      "recipe_133"
+    ],
+    "369": [
       "recipe_134"
     ],
-    "594": [
-      "recipe_133",
+    "586": [
       "recipe_135"
     ],
-    "767": [
+    "587": [
       "recipe_136"
+    ],
+    "196": [
+      "recipe_137"
+    ],
+    "376": [
+      "recipe_138"
+    ],
+    "378": [
+      "recipe_139"
+    ],
+    "549": [
+      "recipe_140"
+    ],
+    "593": [
+      "recipe_141"
+    ],
+    "594": [
+      "recipe_142"
+    ],
+    "767": [
+      "recipe_143"
     ]
   },
   "byDevice": {
@@ -4078,26 +4570,26 @@
     ],
     "752": [
       "recipe_13",
-      "recipe_14",
-      "recipe_15"
+      "recipe_14"
     ],
     "174": [
+      "recipe_15",
       "recipe_16",
       "recipe_17",
       "recipe_18",
       "recipe_19",
-      "recipe_20",
-      "recipe_21",
-      "recipe_22",
-      "recipe_23"
+      "recipe_20"
     ],
     "175": [
-      "recipe_24",
-      "recipe_25",
-      "recipe_26",
-      "recipe_27"
+      "recipe_21",
+      "recipe_22",
+      "recipe_23",
+      "recipe_24"
     ],
     "745": [
+      "recipe_25",
+      "recipe_26",
+      "recipe_27",
       "recipe_28",
       "recipe_29",
       "recipe_30",
@@ -4110,23 +4602,33 @@
       "recipe_37",
       "recipe_38",
       "recipe_39",
-      "recipe_40",
-      "recipe_41"
+      "recipe_40"
     ],
     "172": [
+      "recipe_41",
       "recipe_42",
       "recipe_43",
-      "recipe_44",
+      "recipe_44"
+    ],
+    "349": [
       "recipe_45"
     ],
-    "text_液体模式": [
+    "345": [
       "recipe_46"
     ],
+    "text_液体模式": [
+      "recipe_47"
+    ],
+    "352": [
+      "recipe_48"
+    ],
+    "344": [
+      "recipe_49"
+    ],
+    "348": [
+      "recipe_50"
+    ],
     "173": [
-      "recipe_47",
-      "recipe_48",
-      "recipe_49",
-      "recipe_50",
       "recipe_51",
       "recipe_52",
       "recipe_53",
@@ -4160,35 +4662,43 @@
       "recipe_79",
       "recipe_80",
       "recipe_81",
-      "recipe_82"
-    ],
-    "171": [
+      "recipe_82",
       "recipe_83",
-      "recipe_84",
-      "recipe_85",
+      "recipe_84"
+    ],
+    "351": [
+      "recipe_85"
+    ],
+    "347": [
       "recipe_86"
     ],
-    "188": [
-      "recipe_87",
-      "recipe_88",
+    "346": [
+      "recipe_87"
+    ],
+    "350": [
+      "recipe_88"
+    ],
+    "171": [
       "recipe_89",
       "recipe_90",
       "recipe_91",
-      "recipe_92",
-      "recipe_93"
+      "recipe_92"
     ],
-    "746": [
+    "188": [
+      "recipe_93",
       "recipe_94",
       "recipe_95",
-      "recipe_96"
-    ],
-    "176": [
+      "recipe_96",
       "recipe_97",
       "recipe_98",
-      "recipe_99",
+      "recipe_99"
+    ],
+    "746": [
       "recipe_100",
       "recipe_101",
-      "recipe_102",
+      "recipe_102"
+    ],
+    "176": [
       "recipe_103",
       "recipe_104",
       "recipe_105",
@@ -4202,9 +4712,7 @@
       "recipe_113",
       "recipe_114",
       "recipe_115",
-      "recipe_116"
-    ],
-    "54": [
+      "recipe_116",
       "recipe_117",
       "recipe_118",
       "recipe_119",
@@ -4212,12 +4720,14 @@
       "recipe_121",
       "recipe_122",
       "recipe_123",
-      "recipe_124",
-      "recipe_125",
-      "recipe_126",
-      "recipe_127"
+      "recipe_124"
     ],
-    "177": [
+    "766": [
+      "recipe_125"
+    ],
+    "54": [
+      "recipe_126",
+      "recipe_127",
       "recipe_128",
       "recipe_129",
       "recipe_130",
@@ -4228,19 +4738,28 @@
       "recipe_135",
       "recipe_136"
     ],
-    "text_协议核心_设备制造": [
+    "177": [
       "recipe_137",
       "recipe_138",
       "recipe_139",
       "recipe_140",
       "recipe_141",
       "recipe_142",
-      "recipe_143",
+      "recipe_143"
+    ],
+    "text_协议核心_设备制造": [
       "recipe_144",
       "recipe_145",
       "recipe_146",
       "recipe_147",
-      "recipe_148"
+      "recipe_148",
+      "recipe_149",
+      "recipe_150",
+      "recipe_151",
+      "recipe_152",
+      "recipe_153",
+      "recipe_154",
+      "recipe_155"
     ]
   }
 }

@@ -1,0 +1,30 @@
+{
+  "deviceId": "519",
+  "deviceName": "塞什卡风肉排",
+  "recipeCount": 1,
+  "recipes": [
+    {
+      "materials": [
+        {
+          "id": "30",
+          "count": "1"
+        },
+        {
+          "id": "34",
+          "count": "1"
+        },
+        {
+          "id": "379",
+          "count": "1"
+        }
+      ],
+      "products": [
+        {
+          "id": "519",
+          "count": "1"
+        }
+      ],
+      "manufacturingTime": null
+    }
+  ]
+}

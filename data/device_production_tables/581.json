@@ -1,0 +1,99 @@
+{
+  "deviceId": "581",
+  "deviceName": "新笋",
+  "recipeCount": 4,
+  "recipes": [
+    {
+      "materials": [
+        {
+          "id": "142",
+          "count": "1"
+        },
+        {
+          "id": "581",
+          "count": "1"
+        },
+        {
+          "id": "138",
+          "count": "1"
+        }
+      ],
+      "products": [
+        {
+          "id": "770",
+          "count": "1"
+        }
+      ],
+      "manufacturingTime": null
+    },
+    {
+      "materials": [
+        {
+          "id": "583",
+          "count": "1"
+        },
+        {
+          "id": "584",
+          "count": "1"
+        },
+        {
+          "id": "581",
+          "count": "1"
+        }
+      ],
+      "products": [
+        {
+          "id": "896",
+          "count": "1"
+        }
+      ],
+      "manufacturingTime": null
+    },
+    {
+      "materials": [
+        {
+          "id": "584",
+          "count": "1"
+        },
+        {
+          "id": "581",
+          "count": "1"
+        },
+        {
+          "id": "573",
+          "count": "1"
+        }
+      ],
+      "products": [
+        {
+          "id": "580",
+          "count": "1"
+        }
+      ],
+      "manufacturingTime": null
+    },
+    {
+      "materials": [
+        {
+          "id": "582",
+          "count": "1"
+        },
+        {
+          "id": "581",
+          "count": "1"
+        },
+        {
+          "id": "587",
+          "count": "1"
+        }
+      ],
+      "products": [
+        {
+          "id": "768",
+          "count": "1"
+        }
+      ],
+      "manufacturingTime": null
+    }
+  ]
+}

@@ -1,0 +1,30 @@
+{
+  "deviceId": "896",
+  "deviceName": "油爆“双脆”",
+  "recipeCount": 1,
+  "recipes": [
+    {
+      "materials": [
+        {
+          "id": "583",
+          "count": "1"
+        },
+        {
+          "id": "584",
+          "count": "1"
+        },
+        {
+          "id": "581",
+          "count": "1"
+        }
+      ],
+      "products": [
+        {
+          "id": "896",
+          "count": "1"
+        }
+      ],
+      "manufacturingTime": null
+    }
+  ]
+}

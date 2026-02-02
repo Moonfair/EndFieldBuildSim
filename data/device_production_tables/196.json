@@ -1,0 +1,26 @@
+{
+  "deviceId": "196",
+  "deviceName": "工业爆炸物",
+  "recipeCount": 1,
+  "recipes": [
+    {
+      "materials": [
+        {
+          "id": "369",
+          "count": "1"
+        },
+        {
+          "id": "377",
+          "count": "5"
+        }
+      ],
+      "products": [
+        {
+          "id": "196",
+          "count": "1"
+        }
+      ],
+      "manufacturingTime": null
+    }
+  ]
+}

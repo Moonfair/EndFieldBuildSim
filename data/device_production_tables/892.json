@@ -1,0 +1,107 @@
+{
+  "deviceId": "892",
+  "deviceName": "液化息壤",
+  "recipeCount": 4,
+  "recipes": [
+    {
+      "materials": [
+        {
+          "id": "892",
+          "count": "1"
+        }
+      ],
+      "products": [
+        {
+          "id": "370",
+          "count": "1"
+        },
+        {
+          "id": "371",
+          "count": "1"
+        },
+        {
+          "id": "552",
+          "count": "1"
+        },
+        {
+          "id": "551",
+          "count": "1"
+        },
+        {
+          "id": "892",
+          "count": "0"
+        }
+      ],
+      "manufacturingTime": null
+    },
+    {
+      "materials": [
+        {
+          "id": "370",
+          "count": "1"
+        },
+        {
+          "id": "371",
+          "count": "1"
+        },
+        {
+          "id": "552",
+          "count": "1"
+        },
+        {
+          "id": "551",
+          "count": "1"
+        },
+        {
+          "id": "892",
+          "count": "0"
+        }
+      ],
+      "products": [
+        {
+          "id": "892",
+          "count": "1"
+        }
+      ],
+      "manufacturingTime": null
+    },
+    {
+      "materials": [
+        {
+          "id": "771",
+          "count": "1"
+        },
+        {
+          "id": "381",
+          "count": "1"
+        }
+      ],
+      "products": [
+        {
+          "id": "892",
+          "count": "1"
+        }
+      ],
+      "manufacturingTime": null
+    },
+    {
+      "materials": [
+        {
+          "id": "892",
+          "count": "1"
+        },
+        {
+          "id": "22",
+          "count": "1"
+        }
+      ],
+      "products": [
+        {
+          "id": "558",
+          "count": "1"
+        }
+      ],
+      "manufacturingTime": null
+    }
+  ]
+}

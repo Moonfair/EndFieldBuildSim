@@ -1,0 +1,56 @@
+{
+  "deviceId": "202",
+  "deviceName": "酮化树种",
+  "recipeCount": 3,
+  "recipes": [
+    {
+      "materials": [
+        {
+          "id": "46",
+          "count": "1"
+        }
+      ],
+      "products": [
+        {
+          "id": "202",
+          "count": "2"
+        }
+      ],
+      "manufacturingTime": null
+    },
+    {
+      "materials": [
+        {
+          "id": "202",
+          "count": "1"
+        }
+      ],
+      "products": [
+        {
+          "id": "46",
+          "count": "1"
+        }
+      ],
+      "manufacturingTime": null
+    },
+    {
+      "materials": [
+        {
+          "id": "202",
+          "count": "1"
+        },
+        {
+          "id": "192",
+          "count": "1"
+        }
+      ],
+      "products": [
+        {
+          "id": "347",
+          "count": "1"
+        }
+      ],
+      "manufacturingTime": null
+    }
+  ]
+}

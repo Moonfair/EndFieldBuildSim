@@ -1,0 +1,26 @@
+{
+  "deviceId": "521",
+  "deviceName": "炖肉会议",
+  "recipeCount": 1,
+  "recipes": [
+    {
+      "materials": [
+        {
+          "id": "34",
+          "count": "1"
+        },
+        {
+          "id": "138",
+          "count": "1"
+        }
+      ],
+      "products": [
+        {
+          "id": "521",
+          "count": "1"
+        }
+      ],
+      "manufacturingTime": null
+    }
+  ]
+}

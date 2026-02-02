@@ -6,149 +6,135 @@
     {
       "materials": [
         {
-          "id": "379",
-          "name": "荞花粉末",
-          "count": "2"
-        },
-        {
-          "id": "543",
-          "name": "砂叶粉末",
-          "count": "1"
-        }
-      ],
-      "products": [
-        {
-          "id": "553",
-          "name": "细磨荞花粉末",
-          "count": "1"
-        }
-      ]
-    },
-    {
-      "materials": [
-        {
-          "id": "38",
-          "name": "晶体外壳粉末",
-          "count": "2"
-        },
-        {
-          "id": "543",
-          "name": "砂叶粉末",
-          "count": "1"
-        }
-      ],
-      "products": [
-        {
-          "id": "545",
-          "name": "致密晶体粉末",
-          "count": "1"
-        }
-      ]
-    },
-    {
-      "materials": [
-        {
-          "id": "380",
-          "name": "柑实粉末",
-          "count": "2"
-        },
-        {
-          "id": "543",
-          "name": "砂叶粉末",
-          "count": "1"
-        }
-      ],
-      "products": [
-        {
-          "id": "554",
-          "name": "细磨柑实粉末",
-          "count": "1"
-        }
-      ]
-    },
-    {
-      "materials": [
-        {
-          "id": "47",
-          "name": "源石粉末",
-          "count": "2"
-        },
-        {
-          "id": "543",
-          "name": "砂叶粉末",
-          "count": "1"
-        }
-      ],
-      "products": [
-        {
-          "id": "544",
-          "name": "致密源石粉末",
-          "count": "1"
-        }
-      ]
-    },
-    {
-      "materials": [
-        {
           "id": "368",
-          "name": "蓝铁粉末",
           "count": "2"
         },
         {
           "id": "543",
-          "name": "砂叶粉末",
           "count": "1"
         }
       ],
       "products": [
         {
           "id": "547",
-          "name": "致密蓝铁粉末",
           "count": "1"
         }
-      ]
+      ],
+      "manufacturingTime": 2
     },
     {
       "materials": [
         {
           "id": "29",
-          "name": "紫晶粉末",
           "count": "2"
         },
         {
           "id": "543",
-          "name": "砂叶粉末",
           "count": "1"
         }
       ],
       "products": [
         {
           "id": "546",
-          "name": "高晶粉末",
           "count": "1"
         }
-      ]
+      ],
+      "manufacturingTime": 2
+    },
+    {
+      "materials": [
+        {
+          "id": "47",
+          "count": "2"
+        },
+        {
+          "id": "543",
+          "count": "1"
+        }
+      ],
+      "products": [
+        {
+          "id": "544",
+          "count": "1"
+        }
+      ],
+      "manufacturingTime": 2
     },
     {
       "materials": [
         {
           "id": "195",
-          "name": "碳粉末",
           "count": "2"
         },
         {
           "id": "543",
-          "name": "砂叶粉末",
           "count": "1"
         }
       ],
       "products": [
         {
           "id": "548",
-          "name": "致密碳粉末",
           "count": "1"
         }
-      ]
+      ],
+      "manufacturingTime": 2
+    },
+    {
+      "materials": [
+        {
+          "id": "38",
+          "count": "2"
+        },
+        {
+          "id": "543",
+          "count": "1"
+        }
+      ],
+      "products": [
+        {
+          "id": "545",
+          "count": "1"
+        }
+      ],
+      "manufacturingTime": 2
+    },
+    {
+      "materials": [
+        {
+          "id": "379",
+          "count": "2"
+        },
+        {
+          "id": "543",
+          "count": "1"
+        }
+      ],
+      "products": [
+        {
+          "id": "553",
+          "count": "1"
+        }
+      ],
+      "manufacturingTime": 2
+    },
+    {
+      "materials": [
+        {
+          "id": "380",
+          "count": "2"
+        },
+        {
+          "id": "543",
+          "count": "1"
+        }
+      ],
+      "products": [
+        {
+          "id": "554",
+          "count": "1"
+        }
+      ],
+      "manufacturingTime": 2
     }
   ]
 }

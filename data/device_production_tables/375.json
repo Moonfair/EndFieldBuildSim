@@ -1,0 +1,26 @@
+{
+  "deviceId": "375",
+  "deviceName": "蓝铁装备原件",
+  "recipeCount": 1,
+  "recipes": [
+    {
+      "materials": [
+        {
+          "id": "194",
+          "count": "10"
+        },
+        {
+          "id": "33",
+          "count": "10"
+        }
+      ],
+      "products": [
+        {
+          "id": "375",
+          "count": "1"
+        }
+      ],
+      "manufacturingTime": null
+    }
+  ]
+}

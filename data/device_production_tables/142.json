@@ -1,0 +1,30 @@
+{
+  "deviceId": "142",
+  "deviceName": "水灯虫的灯坠",
+  "recipeCount": 1,
+  "recipes": [
+    {
+      "materials": [
+        {
+          "id": "142",
+          "count": "1"
+        },
+        {
+          "id": "581",
+          "count": "1"
+        },
+        {
+          "id": "138",
+          "count": "1"
+        }
+      ],
+      "products": [
+        {
+          "id": "770",
+          "count": "1"
+        }
+      ],
+      "manufacturingTime": null
+    }
+  ]
+}

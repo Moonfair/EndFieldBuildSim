@@ -1,0 +1,136 @@
+{
+  "deviceId": "587",
+  "deviceName": "芽针粉末",
+  "recipeCount": 7,
+  "recipes": [
+    {
+      "materials": [
+        {
+          "id": "575",
+          "count": "1"
+        }
+      ],
+      "products": [
+        {
+          "id": "587",
+          "count": "2"
+        }
+      ],
+      "manufacturingTime": null
+    },
+    {
+      "materials": [
+        {
+          "id": "587",
+          "count": "1"
+        },
+        {
+          "id": "586",
+          "count": "0"
+        },
+        {
+          "id": "569",
+          "count": "1"
+        }
+      ],
+      "products": [
+        {
+          "id": "924",
+          "count": "1"
+        }
+      ],
+      "manufacturingTime": null
+    },
+    {
+      "materials": [
+        {
+          "id": "587",
+          "count": "8"
+        },
+        {
+          "id": "573",
+          "count": "8"
+        }
+      ],
+      "products": [
+        {
+          "id": "591",
+          "count": "1"
+        }
+      ],
+      "manufacturingTime": null
+    },
+    {
+      "materials": [
+        {
+          "id": "587",
+          "count": "1"
+        },
+        {
+          "id": "581",
+          "count": "1"
+        },
+        {
+          "id": "582",
+          "count": "1"
+        }
+      ],
+      "products": [
+        {
+          "id": "768",
+          "count": "1"
+        }
+      ],
+      "manufacturingTime": null
+    },
+    {
+      "materials": [
+        {
+          "id": "575",
+          "count": "1"
+        }
+      ],
+      "products": [
+        {
+          "id": "587",
+          "count": "2"
+        }
+      ],
+      "manufacturingTime": null
+    },
+    {
+      "materials": [
+        {
+          "id": "587",
+          "count": "1"
+        }
+      ],
+      "products": [
+        {
+          "id": "195",
+          "count": "2"
+        }
+      ],
+      "manufacturingTime": null
+    },
+    {
+      "materials": [
+        {
+          "id": "587",
+          "count": "1"
+        },
+        {
+          "id": "381",
+          "count": "1"
+        }
+      ],
+      "products": [
+        {
+          "id": "769",
+          "count": "1"
+        }
+      ],
+      "manufacturingTime": null
+    }
+  ]
+}

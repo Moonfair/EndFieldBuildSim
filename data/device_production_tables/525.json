@@ -1,0 +1,30 @@
+{
+  "deviceId": "525",
+  "deviceName": "雾火之花",
+  "recipeCount": 1,
+  "recipes": [
+    {
+      "materials": [
+        {
+          "id": "198",
+          "count": "1"
+        },
+        {
+          "id": "36",
+          "count": "1"
+        },
+        {
+          "id": "379",
+          "count": "1"
+        }
+      ],
+      "products": [
+        {
+          "id": "525",
+          "count": "1"
+        }
+      ],
+      "manufacturingTime": null
+    }
+  ]
+}

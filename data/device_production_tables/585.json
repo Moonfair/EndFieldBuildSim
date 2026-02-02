@@ -1,0 +1,26 @@
+{
+  "deviceId": "585",
+  "deviceName": "附术铁瓶",
+  "recipeCount": 1,
+  "recipes": [
+    {
+      "materials": [
+        {
+          "id": "532",
+          "count": "2"
+        },
+        {
+          "id": "371",
+          "count": "1"
+        }
+      ],
+      "products": [
+        {
+          "id": "585",
+          "count": "1"
+        }
+      ],
+      "manufacturingTime": null
+    }
+  ]
+}

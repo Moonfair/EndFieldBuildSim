@@ -1,0 +1,37 @@
+{
+  "deviceId": "324",
+  "deviceName": "星门菌",
+  "recipeCount": 2,
+  "recipes": [
+    {
+      "materials": [
+        {
+          "id": "324",
+          "count": "1"
+        }
+      ],
+      "products": [
+        {
+          "id": "322",
+          "count": "3"
+        }
+      ],
+      "manufacturingTime": null
+    },
+    {
+      "materials": [
+        {
+          "id": "322",
+          "count": "1"
+        }
+      ],
+      "products": [
+        {
+          "id": "324",
+          "count": "1"
+        }
+      ],
+      "manufacturingTime": null
+    }
+  ]
+}

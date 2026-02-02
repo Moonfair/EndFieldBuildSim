@@ -1,0 +1,30 @@
+{
+  "deviceId": "523",
+  "deviceName": "软骨饼干",
+  "recipeCount": 1,
+  "recipes": [
+    {
+      "materials": [
+        {
+          "id": "30",
+          "count": "1"
+        },
+        {
+          "id": "137",
+          "count": "1"
+        },
+        {
+          "id": "200",
+          "count": "1"
+        }
+      ],
+      "products": [
+        {
+          "id": "523",
+          "count": "1"
+        }
+      ],
+      "manufacturingTime": null
+    }
+  ]
+}

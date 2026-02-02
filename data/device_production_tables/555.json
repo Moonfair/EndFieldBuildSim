@@ -1,0 +1,52 @@
+{
+  "deviceId": "555",
+  "deviceName": "钢块",
+  "recipeCount": 3,
+  "recipes": [
+    {
+      "materials": [
+        {
+          "id": "547",
+          "count": "1"
+        }
+      ],
+      "products": [
+        {
+          "id": "555",
+          "count": "1"
+        }
+      ],
+      "manufacturingTime": null
+    },
+    {
+      "materials": [
+        {
+          "id": "555",
+          "count": "1"
+        }
+      ],
+      "products": [
+        {
+          "id": "541",
+          "count": "1"
+        }
+      ],
+      "manufacturingTime": null
+    },
+    {
+      "materials": [
+        {
+          "id": "555",
+          "count": "2"
+        }
+      ],
+      "products": [
+        {
+          "id": "552",
+          "count": "1"
+        }
+      ],
+      "manufacturingTime": null
+    }
+  ]
+}

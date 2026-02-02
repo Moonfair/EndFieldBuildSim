@@ -1,0 +1,26 @@
+{
+  "deviceId": "595",
+  "deviceName": "正本补元汤剂",
+  "recipeCount": 1,
+  "recipes": [
+    {
+      "materials": [
+        {
+          "id": "576",
+          "count": "8"
+        },
+        {
+          "id": "586",
+          "count": "8"
+        }
+      ],
+      "products": [
+        {
+          "id": "595",
+          "count": "1"
+        }
+      ],
+      "manufacturingTime": null
+    }
+  ]
+}

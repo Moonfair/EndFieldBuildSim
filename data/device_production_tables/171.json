@@ -7,65 +7,61 @@
       "materials": [
         {
           "id": "194",
-          "name": "蓝铁块",
           "count": "1"
         }
       ],
       "products": [
         {
           "id": "373",
-          "name": "铁制零件",
-          "count": "1"
-        }
-      ]
-    },
-    {
-      "materials": [
-        {
-          "id": "555",
-          "name": "钢块",
           "count": "1"
         }
       ],
-      "products": [
-        {
-          "id": "541",
-          "name": "钢制零件",
-          "count": "1"
-        }
-      ]
+      "manufacturingTime": 2
     },
     {
       "materials": [
         {
           "id": "193",
-          "name": "紫晶纤维",
           "count": "1"
         }
       ],
       "products": [
         {
           "id": "377",
-          "name": "紫晶零件",
           "count": "1"
         }
-      ]
+      ],
+      "manufacturingTime": 2
+    },
+    {
+      "materials": [
+        {
+          "id": "555",
+          "count": "1"
+        }
+      ],
+      "products": [
+        {
+          "id": "541",
+          "count": "1"
+        }
+      ],
+      "manufacturingTime": 2
     },
     {
       "materials": [
         {
           "id": "556",
-          "name": "高晶纤维",
           "count": "1"
         }
       ],
       "products": [
         {
           "id": "540",
-          "name": "高晶零件",
           "count": "1"
         }
-      ]
+      ],
+      "manufacturingTime": 2
     }
   ]
 }

@@ -1,0 +1,26 @@
+{
+  "deviceId": "515",
+  "deviceName": "小瓶柑实冲剂",
+  "recipeCount": 1,
+  "recipes": [
+    {
+      "materials": [
+        {
+          "id": "509",
+          "count": "5"
+        },
+        {
+          "id": "370",
+          "count": "5"
+        }
+      ],
+      "products": [
+        {
+          "id": "515",
+          "count": "1"
+        }
+      ],
+      "manufacturingTime": null
+    }
+  ]
+}

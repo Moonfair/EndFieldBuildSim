@@ -1,0 +1,30 @@
+{
+  "deviceId": "922",
+  "deviceName": "怪味肉酱",
+  "recipeCount": 1,
+  "recipes": [
+    {
+      "materials": [
+        {
+          "id": "380",
+          "count": "2"
+        },
+        {
+          "id": "34",
+          "count": "2"
+        },
+        {
+          "id": "370",
+          "count": "1"
+        }
+      ],
+      "products": [
+        {
+          "id": "922",
+          "count": "1"
+        }
+      ],
+      "manufacturingTime": null
+    }
+  ]
+}

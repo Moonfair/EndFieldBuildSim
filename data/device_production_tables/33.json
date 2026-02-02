@@ -1,0 +1,263 @@
+{
+  "deviceId": "33",
+  "deviceName": "晶体外壳",
+  "recipeCount": 16,
+  "recipes": [
+    {
+      "materials": [
+        {
+          "id": "33",
+          "count": "5"
+        }
+      ],
+      "products": [
+        {
+          "id": "55",
+          "count": "1"
+        }
+      ],
+      "manufacturingTime": null
+    },
+    {
+      "materials": [
+        {
+          "id": "33",
+          "count": "5"
+        },
+        {
+          "id": "55",
+          "count": "1"
+        }
+      ],
+      "products": [
+        {
+          "id": "166",
+          "count": "1"
+        }
+      ],
+      "manufacturingTime": null
+    },
+    {
+      "materials": [
+        {
+          "id": "33",
+          "count": "10"
+        },
+        {
+          "id": "377",
+          "count": "10"
+        }
+      ],
+      "products": [
+        {
+          "id": "178",
+          "count": "1"
+        }
+      ],
+      "manufacturingTime": null
+    },
+    {
+      "materials": [
+        {
+          "id": "33",
+          "count": "20"
+        }
+      ],
+      "products": [
+        {
+          "id": "52",
+          "count": "1"
+        }
+      ],
+      "manufacturingTime": null
+    },
+    {
+      "materials": [
+        {
+          "id": "33",
+          "count": "5"
+        }
+      ],
+      "products": [
+        {
+          "id": "54",
+          "count": "1"
+        }
+      ],
+      "manufacturingTime": null
+    },
+    {
+      "materials": [
+        {
+          "id": "33",
+          "count": "10"
+        }
+      ],
+      "products": [
+        {
+          "id": "175",
+          "count": "1"
+        }
+      ],
+      "manufacturingTime": null
+    },
+    {
+      "materials": [
+        {
+          "id": "33",
+          "count": "10"
+        }
+      ],
+      "products": [
+        {
+          "id": "171",
+          "count": "1"
+        }
+      ],
+      "manufacturingTime": null
+    },
+    {
+      "materials": [
+        {
+          "id": "33",
+          "count": "10"
+        }
+      ],
+      "products": [
+        {
+          "id": "172",
+          "count": "1"
+        }
+      ],
+      "manufacturingTime": null
+    },
+    {
+      "materials": [
+        {
+          "id": "33",
+          "count": "20"
+        }
+      ],
+      "products": [
+        {
+          "id": "168",
+          "count": "1"
+        }
+      ],
+      "manufacturingTime": null
+    },
+    {
+      "materials": [
+        {
+          "id": "33",
+          "count": "10"
+        }
+      ],
+      "products": [
+        {
+          "id": "50",
+          "count": "1"
+        }
+      ],
+      "manufacturingTime": null
+    },
+    {
+      "materials": [
+        {
+          "id": "33",
+          "count": "20"
+        }
+      ],
+      "products": [
+        {
+          "id": "183",
+          "count": "1"
+        }
+      ],
+      "manufacturingTime": null
+    },
+    {
+      "materials": [
+        {
+          "id": "48",
+          "count": "1"
+        }
+      ],
+      "products": [
+        {
+          "id": "33",
+          "count": "1"
+        }
+      ],
+      "manufacturingTime": null
+    },
+    {
+      "materials": [
+        {
+          "id": "38",
+          "count": "1"
+        }
+      ],
+      "products": [
+        {
+          "id": "33",
+          "count": "1"
+        }
+      ],
+      "manufacturingTime": null
+    },
+    {
+      "materials": [
+        {
+          "id": "33",
+          "count": "5"
+        },
+        {
+          "id": "193",
+          "count": "5"
+        }
+      ],
+      "products": [
+        {
+          "id": "374",
+          "count": "1"
+        }
+      ],
+      "manufacturingTime": null
+    },
+    {
+      "materials": [
+        {
+          "id": "33",
+          "count": "10"
+        },
+        {
+          "id": "194",
+          "count": "10"
+        }
+      ],
+      "products": [
+        {
+          "id": "375",
+          "count": "1"
+        }
+      ],
+      "manufacturingTime": null
+    },
+    {
+      "materials": [
+        {
+          "id": "33",
+          "count": "1"
+        }
+      ],
+      "products": [
+        {
+          "id": "38",
+          "count": "1"
+        }
+      ],
+      "manufacturingTime": null
+    }
+  ]
+}

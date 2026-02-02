@@ -1,0 +1,45 @@
+{
+  "deviceId": "511",
+  "deviceName": "优质荞愈胶囊",
+  "recipeCount": 2,
+  "recipes": [
+    {
+      "materials": [
+        {
+          "id": "379",
+          "count": "10"
+        },
+        {
+          "id": "371",
+          "count": "10"
+        }
+      ],
+      "products": [
+        {
+          "id": "511",
+          "count": "1"
+        }
+      ],
+      "manufacturingTime": null
+    },
+    {
+      "materials": [
+        {
+          "id": "379",
+          "count": "10"
+        },
+        {
+          "id": "371",
+          "count": "10"
+        }
+      ],
+      "products": [
+        {
+          "id": "511",
+          "count": "1"
+        }
+      ],
+      "manufacturingTime": null
+    }
+  ]
+}

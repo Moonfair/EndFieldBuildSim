@@ -1,0 +1,26 @@
+{
+  "deviceId": "894",
+  "deviceName": "清炖兽排参须汤",
+  "recipeCount": 1,
+  "recipes": [
+    {
+      "materials": [
+        {
+          "id": "576",
+          "count": "8"
+        },
+        {
+          "id": "34",
+          "count": "4"
+        }
+      ],
+      "products": [
+        {
+          "id": "894",
+          "count": "1"
+        }
+      ],
+      "manufacturingTime": null
+    }
+  ]
+}

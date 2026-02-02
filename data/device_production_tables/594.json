@@ -1,0 +1,30 @@
+{
+  "deviceId": "594",
+  "deviceName": "锦草软饮",
+  "recipeCount": 1,
+  "recipes": [
+    {
+      "materials": [
+        {
+          "id": "373",
+          "count": "10"
+        },
+        {
+          "id": "371",
+          "count": "5"
+        },
+        {
+          "id": "201",
+          "count": "0"
+        }
+      ],
+      "products": [
+        {
+          "id": "594",
+          "count": "1"
+        }
+      ],
+      "manufacturingTime": null
+    }
+  ]
+}

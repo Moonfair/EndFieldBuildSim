@@ -1,0 +1,37 @@
+{
+  "deviceId": "197",
+  "deviceName": "武陵石",
+  "recipeCount": 2,
+  "recipes": [
+    {
+      "materials": [
+        {
+          "id": "197",
+          "count": "1"
+        }
+      ],
+      "products": [
+        {
+          "id": "318",
+          "count": "3"
+        }
+      ],
+      "manufacturingTime": null
+    },
+    {
+      "materials": [
+        {
+          "id": "318",
+          "count": "1"
+        }
+      ],
+      "products": [
+        {
+          "id": "197",
+          "count": "1"
+        }
+      ],
+      "manufacturingTime": null
+    }
+  ]
+}

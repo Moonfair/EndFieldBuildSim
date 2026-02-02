@@ -1,0 +1,22 @@
+{
+  "deviceId": "45",
+  "deviceName": "原木",
+  "recipeCount": 1,
+  "recipes": [
+    {
+      "materials": [
+        {
+          "id": "45",
+          "count": "1"
+        }
+      ],
+      "products": [
+        {
+          "id": "192",
+          "count": "1"
+        }
+      ],
+      "manufacturingTime": null
+    }
+  ]
+}

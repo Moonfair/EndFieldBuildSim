@@ -1,0 +1,68 @@
+{
+  "deviceId": "200",
+  "deviceName": "灰芦麦",
+  "recipeCount": 3,
+  "recipes": [
+    {
+      "materials": [
+        {
+          "id": "200",
+          "count": "1"
+        }
+      ],
+      "products": [
+        {
+          "id": "199",
+          "count": "2"
+        }
+      ],
+      "manufacturingTime": null
+    },
+    {
+      "materials": [
+        {
+          "id": "200",
+          "count": "1"
+        },
+        {
+          "id": "30",
+          "count": "1"
+        },
+        {
+          "id": "137",
+          "count": "1"
+        }
+      ],
+      "products": [
+        {
+          "id": "523",
+          "count": "1"
+        }
+      ],
+      "manufacturingTime": null
+    },
+    {
+      "materials": [
+        {
+          "id": "200",
+          "count": "1"
+        },
+        {
+          "id": "36",
+          "count": "1"
+        },
+        {
+          "id": "379",
+          "count": "1"
+        }
+      ],
+      "products": [
+        {
+          "id": "528",
+          "count": "1"
+        }
+      ],
+      "manufacturingTime": null
+    }
+  ]
+}

@@ -1,0 +1,26 @@
+{
+  "deviceId": "527",
+  "deviceName": "精选柑实罐头",
+  "recipeCount": 1,
+  "recipes": [
+    {
+      "materials": [
+        {
+          "id": "554",
+          "count": "10"
+        },
+        {
+          "id": "552",
+          "count": "10"
+        }
+      ],
+      "products": [
+        {
+          "id": "527",
+          "count": "1"
+        }
+      ],
+      "manufacturingTime": null
+    }
+  ]
+}

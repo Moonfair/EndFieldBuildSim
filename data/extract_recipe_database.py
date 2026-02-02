@@ -31,6 +31,12 @@ def load_device_text_map() -> Dict[str, str]:
     return {}
 
 
+def load_real_device_ids() -> set:
+    with open('type5_devices.json', 'r', encoding='utf-8') as f:
+        devices = json.load(f)
+    return set(d['itemId'] for d in devices)
+
+
 def parse_synthesis_tables(synthesis_dir: str, item_lookup: Dict[str, str],
                           device_text_map: Dict[str, str]) -> Dict[str, Dict]:
     """
@@ -163,7 +169,8 @@ def parse_synthesis_tables(synthesis_dir: str, item_lookup: Dict[str, str],
 
 def parse_device_production_tables(device_prod_dir: str, item_lookup: Dict[str, str],
                                   device_text_map: Dict[str, str],
-                                  existing_recipes: Dict[str, Dict]) -> Dict[str, Dict]:
+                                  existing_recipes: Dict[str, Dict],
+                                  real_device_ids: set = set()) -> Dict[str, Dict]:
     """
     Parse device production tables and merge with existing recipes.
 
@@ -172,6 +179,9 @@ def parse_device_production_tables(device_prod_dir: str, item_lookup: Dict[str, 
     if not os.path.exists(device_prod_dir):
         print(f"警告: {device_prod_dir} 目录不存在")
         return existing_recipes
+
+    if real_device_ids is None:
+        real_device_ids = set()
 
     for filename in os.listdir(device_prod_dir):
         if not filename.endswith('.json'):
@@ -183,18 +193,46 @@ def parse_device_production_tables(device_prod_dir: str, item_lookup: Dict[str, 
             data = json.load(f)
 
         device_id = data['deviceId']
+
+        if device_id.isdigit() and real_device_ids and device_id not in real_device_ids:
+            continue
+
+        device_id = data['deviceId']
         device_name = data.get('deviceName', item_lookup.get(device_id, device_id))
 
         for recipe in data.get('recipes', []):
-            materials = recipe.get('materials', [])
-            products = recipe.get('products', [])
+            # 提取原料并添加名称
+            materials = []
+            material_ids = []
+            for mat in recipe.get('materials', []):
+                mat_id = mat.get('id', '')
+                mat_name = item_lookup.get(mat_id, f"Unknown({mat_id})")
+                mat_count = mat.get('count', '1')
+                materials.append({
+                    'id': mat_id,
+                    'name': mat_name,
+                    'count': mat_count
+                })
+                material_ids.append(f"{mat_id}:{mat_count}")
+
+            # 提取产物并添加名称
+            products = []
+            product_ids = []
+            for prod in recipe.get('products', []):
+                prod_id = prod.get('id', '')
+                prod_name = item_lookup.get(prod_id, f"Unknown({prod_id})")
+                prod_count = prod.get('count', '1')
+                products.append({
+                    'id': prod_id,
+                    'name': prod_name,
+                    'count': prod_count
+                })
+                product_ids.append(f"{prod_id}:{prod_count}")
 
             if not products:
                 continue
 
             # 创建配方指纹用于去重
-            material_ids = [f"{m['id']}:{m.get('count', '1')}" for m in materials]
-            product_ids = [f"{p['id']}:{p.get('count', '1')}" for p in products]
             recipe_key = f"{device_id}|{','.join(sorted(material_ids))}|{','.join(sorted(product_ids))}"
 
             recipe_data = {
@@ -204,6 +242,10 @@ def parse_device_production_tables(device_prod_dir: str, item_lookup: Dict[str, 
                 'products': products,
                 'source': 'device_production_tables'
             }
+
+            # Preserve manufacturing time if available
+            if 'manufacturingTime' in recipe:
+                recipe_data['manufacturingTime'] = recipe['manufacturingTime']
 
             # 如果已存在相同配方，保留信息更全的
             if recipe_key in existing_recipes:
@@ -339,12 +381,16 @@ def main():
     recipes = parse_synthesis_tables('synthesis_tables', item_lookup, device_text_map)
     print(f"      从合成表格提取了 {len(recipes)} 个配方")
 
-    print("\n[4/5] 解析设备生产表格...")
+    print("\n[4/5] 加载设备ID列表...")
+    real_device_ids = load_real_device_ids()
+    print(f"      真实设备数: {len(real_device_ids)}")
+
+    print("\n[4/6] 解析设备生产表格...")
     recipes = parse_device_production_tables('device_production_tables', item_lookup,
-                                            device_text_map, recipes)
+                                            device_text_map, recipes, real_device_ids)
     print(f"      合并后总配方数: {len(recipes)}")
 
-    print("\n[5/5] 构建配方数据库...")
+    print("\n[6/6] 构建配方数据库...")
     db = build_recipe_database(recipes)
 
     print("\n保存配方数据库...")

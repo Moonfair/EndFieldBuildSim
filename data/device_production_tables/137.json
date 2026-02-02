@@ -1,0 +1,72 @@
+{
+  "deviceId": "137",
+  "deviceName": "软骨碎屑",
+  "recipeCount": 3,
+  "recipes": [
+    {
+      "materials": [
+        {
+          "id": "137",
+          "count": "1"
+        },
+        {
+          "id": "200",
+          "count": "1"
+        },
+        {
+          "id": "30",
+          "count": "1"
+        }
+      ],
+      "products": [
+        {
+          "id": "523",
+          "count": "1"
+        }
+      ],
+      "manufacturingTime": null
+    },
+    {
+      "materials": [
+        {
+          "id": "137",
+          "count": "1"
+        },
+        {
+          "id": "36",
+          "count": "1"
+        }
+      ],
+      "products": [
+        {
+          "id": "520",
+          "count": "1"
+        }
+      ],
+      "manufacturingTime": null
+    },
+    {
+      "materials": [
+        {
+          "id": "137",
+          "count": "1"
+        },
+        {
+          "id": "35",
+          "count": "1"
+        },
+        {
+          "id": "370",
+          "count": "1"
+        }
+      ],
+      "products": [
+        {
+          "id": "20",
+          "count": "1"
+        }
+      ],
+      "manufacturingTime": null
+    }
+  ]
+}

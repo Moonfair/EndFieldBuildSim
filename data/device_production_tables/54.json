@@ -6,178 +6,167 @@
     {
       "materials": [
         {
-          "id": "31",
-          "name": "荞花",
-          "count": "1"
-        }
-      ],
-      "products": [
-        {
-          "id": "379",
-          "name": "荞花粉末",
-          "count": "2"
-        }
-      ]
-    },
-    {
-      "materials": [
-        {
-          "id": "42",
-          "name": "柑实",
-          "count": "1"
-        }
-      ],
-      "products": [
-        {
-          "id": "380",
-          "name": "柑实粉末",
-          "count": "2"
-        }
-      ]
-    },
-    {
-      "materials": [
-        {
-          "id": "494",
-          "name": "锦草",
-          "count": "1"
-        }
-      ],
-      "products": [
-        {
-          "id": "586",
-          "name": "锦草粉末",
-          "count": "2"
-        }
-      ]
-    },
-    {
-      "materials": [
-        {
-          "id": "575",
-          "name": "芽针",
-          "count": "1"
-        }
-      ],
-      "products": [
-        {
-          "id": "587",
-          "name": "芽针粉末",
-          "count": "2"
-        }
-      ]
-    },
-    {
-      "materials": [
-        {
-          "id": "48",
-          "name": "源矿",
-          "count": "1"
-        }
-      ],
-      "products": [
-        {
-          "id": "47",
-          "name": "源石粉末",
-          "count": "1"
-        }
-      ]
-    },
-    {
-      "materials": [
-        {
-          "id": "367",
-          "name": "砂叶",
-          "count": "1"
-        }
-      ],
-      "products": [
-        {
-          "id": "543",
-          "name": "砂叶粉末",
-          "count": "3"
-        }
-      ]
-    },
-    {
-      "materials": [
-        {
-          "id": "46",
-          "name": "酮化灌木",
-          "count": "1"
-        }
-      ],
-      "products": [
-        {
-          "id": "369",
-          "name": "酮化灌木粉末",
-          "count": "2"
-        }
-      ]
-    },
-    {
-      "materials": [
-        {
           "id": "194",
-          "name": "蓝铁块",
           "count": "1"
         }
       ],
       "products": [
         {
           "id": "368",
-          "name": "蓝铁粉末",
           "count": "1"
         }
-      ]
+      ],
+      "manufacturingTime": 2
     },
     {
       "materials": [
         {
           "id": "193",
-          "name": "紫晶纤维",
           "count": "1"
         }
       ],
       "products": [
         {
           "id": "29",
-          "name": "紫晶粉末",
           "count": "1"
         }
-      ]
+      ],
+      "manufacturingTime": 2
+    },
+    {
+      "materials": [
+        {
+          "id": "48",
+          "count": "1"
+        }
+      ],
+      "products": [
+        {
+          "id": "47",
+          "count": "1"
+        }
+      ],
+      "manufacturingTime": 2
     },
     {
       "materials": [
         {
           "id": "192",
-          "name": "碳块",
           "count": "1"
         }
       ],
       "products": [
         {
           "id": "195",
-          "name": "碳粉末",
           "count": "2"
         }
-      ]
+      ],
+      "manufacturingTime": 2
     },
     {
       "materials": [
         {
           "id": "33",
-          "name": "晶体外壳",
           "count": "1"
         }
       ],
       "products": [
         {
           "id": "38",
-          "name": "晶体外壳粉末",
           "count": "1"
         }
-      ]
+      ],
+      "manufacturingTime": 2
+    },
+    {
+      "materials": [
+        {
+          "id": "31",
+          "count": "1"
+        }
+      ],
+      "products": [
+        {
+          "id": "379",
+          "count": "2"
+        }
+      ],
+      "manufacturingTime": 2
+    },
+    {
+      "materials": [
+        {
+          "id": "42",
+          "count": "1"
+        }
+      ],
+      "products": [
+        {
+          "id": "380",
+          "count": "2"
+        }
+      ],
+      "manufacturingTime": 2
+    },
+    {
+      "materials": [
+        {
+          "id": "367",
+          "count": "1"
+        }
+      ],
+      "products": [
+        {
+          "id": "543",
+          "count": "3"
+        }
+      ],
+      "manufacturingTime": 2
+    },
+    {
+      "materials": [
+        {
+          "id": "46",
+          "count": "1"
+        }
+      ],
+      "products": [
+        {
+          "id": "369",
+          "count": "2"
+        }
+      ],
+      "manufacturingTime": 2
+    },
+    {
+      "materials": [
+        {
+          "id": "494",
+          "count": "1"
+        }
+      ],
+      "products": [
+        {
+          "id": "586",
+          "count": "2"
+        }
+      ],
+      "manufacturingTime": 2
+    },
+    {
+      "materials": [
+        {
+          "id": "575",
+          "count": "1"
+        }
+      ],
+      "products": [
+        {
+          "id": "587",
+          "count": "2"
+        }
+      ],
+      "manufacturingTime": 2
     }
   ]
 }

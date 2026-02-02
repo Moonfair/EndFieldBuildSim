@@ -1,0 +1,53 @@
+{
+  "deviceId": "584",
+  "deviceName": "球刺兽的肝脏",
+  "recipeCount": 2,
+  "recipes": [
+    {
+      "materials": [
+        {
+          "id": "583",
+          "count": "1"
+        },
+        {
+          "id": "584",
+          "count": "1"
+        },
+        {
+          "id": "581",
+          "count": "1"
+        }
+      ],
+      "products": [
+        {
+          "id": "896",
+          "count": "1"
+        }
+      ],
+      "manufacturingTime": null
+    },
+    {
+      "materials": [
+        {
+          "id": "584",
+          "count": "1"
+        },
+        {
+          "id": "581",
+          "count": "1"
+        },
+        {
+          "id": "573",
+          "count": "1"
+        }
+      ],
+      "products": [
+        {
+          "id": "580",
+          "count": "1"
+        }
+      ],
+      "manufacturingTime": null
+    }
+  ]
+}

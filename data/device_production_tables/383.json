@@ -1,0 +1,37 @@
+{
+  "deviceId": "383",
+  "deviceName": "中黯石",
+  "recipeCount": 2,
+  "recipes": [
+    {
+      "materials": [
+        {
+          "id": "383",
+          "count": "1"
+        }
+      ],
+      "products": [
+        {
+          "id": "230",
+          "count": "3"
+        }
+      ],
+      "manufacturingTime": null
+    },
+    {
+      "materials": [
+        {
+          "id": "230",
+          "count": "1"
+        }
+      ],
+      "products": [
+        {
+          "id": "383",
+          "count": "1"
+        }
+      ],
+      "manufacturingTime": null
+    }
+  ]
+}

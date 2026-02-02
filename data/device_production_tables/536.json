@@ -1,0 +1,26 @@
+{
+  "deviceId": "536",
+  "deviceName": "刻术铁瓶",
+  "recipeCount": 1,
+  "recipes": [
+    {
+      "materials": [
+        {
+          "id": "26",
+          "count": "2"
+        },
+        {
+          "id": "371",
+          "count": "1"
+        }
+      ],
+      "products": [
+        {
+          "id": "536",
+          "count": "1"
+        }
+      ],
+      "manufacturingTime": null
+    }
+  ]
+}

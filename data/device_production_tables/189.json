@@ -1,0 +1,26 @@
+{
+  "deviceId": "189",
+  "deviceName": "异色油脂",
+  "recipeCount": 1,
+  "recipes": [
+    {
+      "materials": [
+        {
+          "id": "189",
+          "count": "1"
+        },
+        {
+          "id": "35",
+          "count": "1"
+        }
+      ],
+      "products": [
+        {
+          "id": "524",
+          "count": "1"
+        }
+      ],
+      "manufacturingTime": null
+    }
+  ]
+}

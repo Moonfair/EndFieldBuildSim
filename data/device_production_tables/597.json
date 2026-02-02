@@ -1,0 +1,26 @@
+{
+  "deviceId": "597",
+  "deviceName": "芽针喷剂",
+  "recipeCount": 1,
+  "recipes": [
+    {
+      "materials": [
+        {
+          "id": "589",
+          "count": "5"
+        },
+        {
+          "id": "371",
+          "count": "10"
+        }
+      ],
+      "products": [
+        {
+          "id": "597",
+          "count": "1"
+        }
+      ],
+      "manufacturingTime": null
+    }
+  ]
+}

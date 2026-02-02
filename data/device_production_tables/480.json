@@ -1,0 +1,26 @@
+{
+  "deviceId": "480",
+  "deviceName": "息壤装备原件",
+  "recipeCount": 1,
+  "recipes": [
+    {
+      "materials": [
+        {
+          "id": "557",
+          "count": "10"
+        },
+        {
+          "id": "771",
+          "count": "10"
+        }
+      ],
+      "products": [
+        {
+          "id": "480",
+          "count": "1"
+        }
+      ],
+      "manufacturingTime": null
+    }
+  ]
+}

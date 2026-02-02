@@ -1,0 +1,30 @@
+{
+  "deviceId": "563",
+  "deviceName": "爆辣焗烤源石虫",
+  "recipeCount": 1,
+  "recipes": [
+    {
+      "materials": [
+        {
+          "id": "36",
+          "count": "1"
+        },
+        {
+          "id": "138",
+          "count": "1"
+        },
+        {
+          "id": "530",
+          "count": "1"
+        }
+      ],
+      "products": [
+        {
+          "id": "563",
+          "count": "1"
+        }
+      ],
+      "manufacturingTime": null
+    }
+  ]
+}

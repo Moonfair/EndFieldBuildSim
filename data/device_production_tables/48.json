@@ -1,0 +1,37 @@
+{
+  "deviceId": "48",
+  "deviceName": "源矿",
+  "recipeCount": 2,
+  "recipes": [
+    {
+      "materials": [
+        {
+          "id": "48",
+          "count": "1"
+        }
+      ],
+      "products": [
+        {
+          "id": "47",
+          "count": "1"
+        }
+      ],
+      "manufacturingTime": null
+    },
+    {
+      "materials": [
+        {
+          "id": "48",
+          "count": "1"
+        }
+      ],
+      "products": [
+        {
+          "id": "33",
+          "count": "1"
+        }
+      ],
+      "manufacturingTime": null
+    }
+  ]
+}

@@ -1,0 +1,88 @@
+{
+  "deviceId": "769",
+  "deviceName": "芽针溶液",
+  "recipeCount": 3,
+  "recipes": [
+    {
+      "materials": [
+        {
+          "id": "587",
+          "count": "1"
+        },
+        {
+          "id": "381",
+          "count": "1"
+        }
+      ],
+      "products": [
+        {
+          "id": "769",
+          "count": "1"
+        }
+      ],
+      "manufacturingTime": null
+    },
+    {
+      "materials": [
+        {
+          "id": "769",
+          "count": "1"
+        }
+      ],
+      "products": [
+        {
+          "id": "370",
+          "count": "1"
+        },
+        {
+          "id": "371",
+          "count": "1"
+        },
+        {
+          "id": "552",
+          "count": "1"
+        },
+        {
+          "id": "551",
+          "count": "1"
+        },
+        {
+          "id": "769",
+          "count": "0"
+        }
+      ],
+      "manufacturingTime": null
+    },
+    {
+      "materials": [
+        {
+          "id": "370",
+          "count": "1"
+        },
+        {
+          "id": "371",
+          "count": "1"
+        },
+        {
+          "id": "552",
+          "count": "1"
+        },
+        {
+          "id": "551",
+          "count": "1"
+        },
+        {
+          "id": "769",
+          "count": "0"
+        }
+      ],
+      "products": [
+        {
+          "id": "769",
+          "count": "1"
+        }
+      ],
+      "manufacturingTime": null
+    }
+  ]
+}

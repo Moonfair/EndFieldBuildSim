@@ -1,0 +1,122 @@
+{
+  "deviceId": "30",
+  "deviceName": "草籽干粉",
+  "recipeCount": 5,
+  "recipes": [
+    {
+      "materials": [
+        {
+          "id": "30",
+          "count": "1"
+        },
+        {
+          "id": "137",
+          "count": "1"
+        },
+        {
+          "id": "200",
+          "count": "1"
+        }
+      ],
+      "products": [
+        {
+          "id": "523",
+          "count": "1"
+        }
+      ],
+      "manufacturingTime": null
+    },
+    {
+      "materials": [
+        {
+          "id": "30",
+          "count": "1"
+        },
+        {
+          "id": "36",
+          "count": "1"
+        },
+        {
+          "id": "31",
+          "count": "1"
+        }
+      ],
+      "products": [
+        {
+          "id": "517",
+          "count": "1"
+        }
+      ],
+      "manufacturingTime": null
+    },
+    {
+      "materials": [
+        {
+          "id": "30",
+          "count": "1"
+        },
+        {
+          "id": "34",
+          "count": "1"
+        },
+        {
+          "id": "379",
+          "count": "1"
+        }
+      ],
+      "products": [
+        {
+          "id": "519",
+          "count": "1"
+        }
+      ],
+      "manufacturingTime": null
+    },
+    {
+      "materials": [
+        {
+          "id": "30",
+          "count": "1"
+        },
+        {
+          "id": "35",
+          "count": "1"
+        },
+        {
+          "id": "380",
+          "count": "1"
+        }
+      ],
+      "products": [
+        {
+          "id": "518",
+          "count": "1"
+        }
+      ],
+      "manufacturingTime": null
+    },
+    {
+      "materials": [
+        {
+          "id": "30",
+          "count": "1"
+        },
+        {
+          "id": "380",
+          "count": "1"
+        },
+        {
+          "id": "370",
+          "count": "1"
+        }
+      ],
+      "products": [
+        {
+          "id": "21",
+          "count": "1"
+        }
+      ],
+      "manufacturingTime": null
+    }
+  ]
+}

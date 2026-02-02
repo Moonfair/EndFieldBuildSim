@@ -1,0 +1,183 @@
+{
+  "deviceId": "381",
+  "deviceName": "清水",
+  "recipeCount": 8,
+  "recipes": [
+    {
+      "materials": [
+        {
+          "id": "381",
+          "count": "1"
+        },
+        {
+          "id": "566",
+          "count": "1"
+        }
+      ],
+      "products": [
+        {
+          "id": "494",
+          "count": "2"
+        }
+      ],
+      "manufacturingTime": null
+    },
+    {
+      "materials": [
+        {
+          "id": "381",
+          "count": "1"
+        },
+        {
+          "id": "570",
+          "count": "1"
+        }
+      ],
+      "products": [
+        {
+          "id": "575",
+          "count": "2"
+        }
+      ],
+      "manufacturingTime": null
+    },
+    {
+      "materials": [
+        {
+          "id": "381",
+          "count": "1"
+        },
+        {
+          "id": "586",
+          "count": "1"
+        }
+      ],
+      "products": [
+        {
+          "id": "201",
+          "count": "1"
+        }
+      ],
+      "manufacturingTime": null
+    },
+    {
+      "materials": [
+        {
+          "id": "381",
+          "count": "1"
+        },
+        {
+          "id": "587",
+          "count": "1"
+        }
+      ],
+      "products": [
+        {
+          "id": "769",
+          "count": "1"
+        }
+      ],
+      "manufacturingTime": null
+    },
+    {
+      "materials": [
+        {
+          "id": "381",
+          "count": "1"
+        },
+        {
+          "id": "771",
+          "count": "1"
+        }
+      ],
+      "products": [
+        {
+          "id": "892",
+          "count": "1"
+        }
+      ],
+      "manufacturingTime": null
+    },
+    {
+      "materials": [
+        {
+          "id": "381",
+          "count": "1"
+        },
+        {
+          "id": "542",
+          "count": "2"
+        }
+      ],
+      "products": [
+        {
+          "id": "771",
+          "count": "1"
+        }
+      ],
+      "manufacturingTime": null
+    },
+    {
+      "materials": [
+        {
+          "id": "381",
+          "count": "1"
+        }
+      ],
+      "products": [
+        {
+          "id": "370",
+          "count": "1"
+        },
+        {
+          "id": "371",
+          "count": "1"
+        },
+        {
+          "id": "552",
+          "count": "1"
+        },
+        {
+          "id": "551",
+          "count": "1"
+        },
+        {
+          "id": "381",
+          "count": "0"
+        }
+      ],
+      "manufacturingTime": null
+    },
+    {
+      "materials": [
+        {
+          "id": "370",
+          "count": "1"
+        },
+        {
+          "id": "371",
+          "count": "1"
+        },
+        {
+          "id": "552",
+          "count": "1"
+        },
+        {
+          "id": "551",
+          "count": "1"
+        },
+        {
+          "id": "381",
+          "count": "0"
+        }
+      ],
+      "products": [
+        {
+          "id": "381",
+          "count": "1"
+        }
+      ],
+      "manufacturingTime": null
+    }
+  ]
+}

@@ -1,0 +1,56 @@
+{
+  "deviceId": "204",
+  "deviceName": "荞花种子",
+  "recipeCount": 3,
+  "recipes": [
+    {
+      "materials": [
+        {
+          "id": "204",
+          "count": "2"
+        }
+      ],
+      "products": [
+        {
+          "id": "31",
+          "count": "1"
+        }
+      ],
+      "manufacturingTime": null
+    },
+    {
+      "materials": [
+        {
+          "id": "31",
+          "count": "1"
+        }
+      ],
+      "products": [
+        {
+          "id": "204",
+          "count": "2"
+        }
+      ],
+      "manufacturingTime": null
+    },
+    {
+      "materials": [
+        {
+          "id": "204",
+          "count": "1"
+        },
+        {
+          "id": "192",
+          "count": "1"
+        }
+      ],
+      "products": [
+        {
+          "id": "344",
+          "count": "1"
+        }
+      ],
+      "manufacturingTime": null
+    }
+  ]
+}

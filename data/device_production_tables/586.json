@@ -1,0 +1,113 @@
+{
+  "deviceId": "586",
+  "deviceName": "锦草粉末",
+  "recipeCount": 6,
+  "recipes": [
+    {
+      "materials": [
+        {
+          "id": "494",
+          "count": "1"
+        }
+      ],
+      "products": [
+        {
+          "id": "586",
+          "count": "2"
+        }
+      ],
+      "manufacturingTime": null
+    },
+    {
+      "materials": [
+        {
+          "id": "586",
+          "count": "1"
+        }
+      ],
+      "products": [
+        {
+          "id": "195",
+          "count": "2"
+        }
+      ],
+      "manufacturingTime": null
+    },
+    {
+      "materials": [
+        {
+          "id": "586",
+          "count": "1"
+        },
+        {
+          "id": "381",
+          "count": "1"
+        }
+      ],
+      "products": [
+        {
+          "id": "201",
+          "count": "1"
+        }
+      ],
+      "manufacturingTime": null
+    },
+    {
+      "materials": [
+        {
+          "id": "494",
+          "count": "1"
+        }
+      ],
+      "products": [
+        {
+          "id": "586",
+          "count": "2"
+        }
+      ],
+      "manufacturingTime": null
+    },
+    {
+      "materials": [
+        {
+          "id": "586",
+          "count": "1"
+        },
+        {
+          "id": "587",
+          "count": "1"
+        },
+        {
+          "id": "569",
+          "count": "1"
+        }
+      ],
+      "products": [
+        {
+          "id": "924",
+          "count": "1"
+        }
+      ],
+      "manufacturingTime": null
+    },
+    {
+      "materials": [
+        {
+          "id": "586",
+          "count": "8"
+        },
+        {
+          "id": "576",
+          "count": "8"
+        }
+      ],
+      "products": [
+        {
+          "id": "595",
+          "count": "1"
+        }
+      ],
+      "manufacturingTime": null
+    }
+  ]
+}

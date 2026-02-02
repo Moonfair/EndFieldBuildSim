@@ -1,0 +1,41 @@
+{
+  "deviceId": "531",
+  "deviceName": "苦叶椒种子",
+  "recipeCount": 2,
+  "recipes": [
+    {
+      "materials": [
+        {
+          "id": "531",
+          "count": "1"
+        },
+        {
+          "id": "192",
+          "count": "1"
+        }
+      ],
+      "products": [
+        {
+          "id": "351",
+          "count": "1"
+        }
+      ],
+      "manufacturingTime": null
+    },
+    {
+      "materials": [
+        {
+          "id": "530",
+          "count": "1"
+        }
+      ],
+      "products": [
+        {
+          "id": "531",
+          "count": "2"
+        }
+      ],
+      "manufacturingTime": null
+    }
+  ]
+}

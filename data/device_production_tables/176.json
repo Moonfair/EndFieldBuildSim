@@ -1,507 +1,489 @@
 {
   "deviceId": "176",
   "deviceName": "灌装机",
-  "recipeCount": 20,
+  "recipeCount": 22,
   "recipes": [
     {
       "materials": [
         {
-          "id": "379",
-          "name": "荞花粉末",
-          "count": "5"
+          "id": "370",
+          "count": "1"
         },
         {
-          "id": "370",
-          "name": "紫晶质瓶",
-          "count": "5"
+          "id": "381",
+          "count": "1"
         }
       ],
       "products": [
         {
-          "id": "510",
-          "name": "荞愈胶囊",
+          "id": "370",
           "count": "1"
+        },
+        {
+          "id": "381",
+          "count": "0"
         }
-      ]
+      ],
+      "manufacturingTime": 2
     },
     {
       "materials": [
         {
-          "id": "379",
-          "name": "荞花粉末",
-          "count": "10"
+          "id": "370",
+          "count": "1"
         },
+        {
+          "id": "201",
+          "count": "1"
+        }
+      ],
+      "products": [
+        {
+          "id": "370",
+          "count": "1"
+        },
+        {
+          "id": "201",
+          "count": "0"
+        }
+      ],
+      "manufacturingTime": 2
+    },
+    {
+      "materials": [
+        {
+          "id": "370",
+          "count": "1"
+        },
+        {
+          "id": "769",
+          "count": "1"
+        }
+      ],
+      "products": [
+        {
+          "id": "370",
+          "count": "1"
+        },
+        {
+          "id": "769",
+          "count": "0"
+        }
+      ],
+      "manufacturingTime": 2
+    },
+    {
+      "materials": [
+        {
+          "id": "370",
+          "count": "1"
+        },
+        {
+          "id": "892",
+          "count": "1"
+        }
+      ],
+      "products": [
+        {
+          "id": "370",
+          "count": "1"
+        },
+        {
+          "id": "892",
+          "count": "0"
+        }
+      ],
+      "manufacturingTime": 2
+    },
+    {
+      "materials": [
+        {
+          "id": "551",
+          "count": "1"
+        },
+        {
+          "id": "381",
+          "count": "1"
+        }
+      ],
+      "products": [
+        {
+          "id": "551",
+          "count": "1"
+        },
+        {
+          "id": "381",
+          "count": "0"
+        }
+      ],
+      "manufacturingTime": 2
+    },
+    {
+      "materials": [
+        {
+          "id": "551",
+          "count": "1"
+        },
+        {
+          "id": "201",
+          "count": "1"
+        }
+      ],
+      "products": [
+        {
+          "id": "551",
+          "count": "1"
+        },
+        {
+          "id": "201",
+          "count": "0"
+        }
+      ],
+      "manufacturingTime": 2
+    },
+    {
+      "materials": [
+        {
+          "id": "551",
+          "count": "1"
+        },
+        {
+          "id": "769",
+          "count": "1"
+        }
+      ],
+      "products": [
+        {
+          "id": "551",
+          "count": "1"
+        },
+        {
+          "id": "769",
+          "count": "0"
+        }
+      ],
+      "manufacturingTime": 2
+    },
+    {
+      "materials": [
+        {
+          "id": "551",
+          "count": "1"
+        },
+        {
+          "id": "892",
+          "count": "1"
+        }
+      ],
+      "products": [
+        {
+          "id": "551",
+          "count": "1"
+        },
+        {
+          "id": "892",
+          "count": "0"
+        }
+      ],
+      "manufacturingTime": 2
+    },
+    {
+      "materials": [
+        {
+          "id": "552",
+          "count": "1"
+        },
+        {
+          "id": "381",
+          "count": "1"
+        }
+      ],
+      "products": [
+        {
+          "id": "552",
+          "count": "1"
+        },
+        {
+          "id": "381",
+          "count": "0"
+        }
+      ],
+      "manufacturingTime": 2
+    },
+    {
+      "materials": [
+        {
+          "id": "552",
+          "count": "1"
+        },
+        {
+          "id": "201",
+          "count": "1"
+        }
+      ],
+      "products": [
+        {
+          "id": "552",
+          "count": "1"
+        },
+        {
+          "id": "201",
+          "count": "0"
+        }
+      ],
+      "manufacturingTime": 2
+    },
+    {
+      "materials": [
+        {
+          "id": "552",
+          "count": "1"
+        },
+        {
+          "id": "769",
+          "count": "1"
+        }
+      ],
+      "products": [
+        {
+          "id": "552",
+          "count": "1"
+        },
+        {
+          "id": "769",
+          "count": "0"
+        }
+      ],
+      "manufacturingTime": 2
+    },
+    {
+      "materials": [
+        {
+          "id": "552",
+          "count": "1"
+        },
+        {
+          "id": "892",
+          "count": "1"
+        }
+      ],
+      "products": [
+        {
+          "id": "552",
+          "count": "1"
+        },
+        {
+          "id": "892",
+          "count": "0"
+        }
+      ],
+      "manufacturingTime": 2
+    },
+    {
+      "materials": [
         {
           "id": "371",
-          "name": "蓝铁瓶",
-          "count": "10"
+          "count": "1"
+        },
+        {
+          "id": "381",
+          "count": "1"
         }
       ],
       "products": [
         {
-          "id": "511",
-          "name": "优质荞愈胶囊",
+          "id": "371",
           "count": "1"
+        },
+        {
+          "id": "381",
+          "count": "0"
         }
-      ]
+      ],
+      "manufacturingTime": 2
     },
     {
       "materials": [
         {
-          "id": "380",
-          "name": "柑实粉末",
+          "id": "371",
+          "count": "1"
+        },
+        {
+          "id": "201",
+          "count": "1"
+        }
+      ],
+      "products": [
+        {
+          "id": "371",
+          "count": "1"
+        },
+        {
+          "id": "201",
+          "count": "0"
+        }
+      ],
+      "manufacturingTime": 2
+    },
+    {
+      "materials": [
+        {
+          "id": "371",
+          "count": "1"
+        },
+        {
+          "id": "769",
+          "count": "1"
+        }
+      ],
+      "products": [
+        {
+          "id": "371",
+          "count": "1"
+        },
+        {
+          "id": "769",
+          "count": "0"
+        }
+      ],
+      "manufacturingTime": 2
+    },
+    {
+      "materials": [
+        {
+          "id": "371",
+          "count": "1"
+        },
+        {
+          "id": "892",
+          "count": "1"
+        }
+      ],
+      "products": [
+        {
+          "id": "371",
+          "count": "1"
+        },
+        {
+          "id": "892",
+          "count": "0"
+        }
+      ],
+      "manufacturingTime": 2
+    },
+    {
+      "materials": [
+        {
+          "id": "370",
           "count": "5"
         },
         {
-          "id": "370",
-          "name": "紫晶质瓶",
+          "id": "380",
           "count": "5"
         }
       ],
       "products": [
         {
           "id": "512",
-          "name": "柑实罐头",
           "count": "1"
         }
-      ]
+      ],
+      "manufacturingTime": 10
     },
     {
       "materials": [
         {
-          "id": "380",
-          "name": "柑实粉末",
+          "id": "371",
           "count": "10"
         },
         {
-          "id": "371",
-          "name": "蓝铁瓶",
+          "id": "380",
           "count": "10"
         }
       ],
       "products": [
         {
           "id": "513",
-          "name": "优质柑实罐头",
           "count": "1"
         }
-      ]
+      ],
+      "manufacturingTime": 10
     },
     {
       "materials": [
         {
-          "id": "553",
-          "name": "细磨荞花粉末",
+          "id": "552",
           "count": "10"
         },
-        {
-          "id": "552",
-          "name": "钢质瓶",
-          "count": "10"
-        }
-      ],
-      "products": [
-        {
-          "id": "526",
-          "name": "精选荞愈胶囊",
-          "count": "1"
-        }
-      ]
-    },
-    {
-      "materials": [
-        {
-          "id": "552",
-          "name": "钢质瓶",
-          "count": "1"
-        },
-        {
-          "id": "381",
-          "name": "清水",
-          "count": "1"
-        }
-      ],
-      "products": [
-        {
-          "id": "552",
-          "name": "钢质瓶",
-          "count": "1"
-        }
-      ]
-    },
-    {
-      "materials": [
-        {
-          "id": "381",
-          "name": "清水",
-          "count": "1"
-        }
-      ],
-      "products": [
-        {
-          "id": "370",
-          "name": "紫晶质瓶",
-          "count": "1"
-        },
-        {
-          "id": "371",
-          "name": "蓝铁瓶",
-          "count": "1"
-        },
-        {
-          "id": "552",
-          "name": "钢质瓶",
-          "count": "1"
-        },
-        {
-          "id": "551",
-          "name": "高晶质瓶",
-          "count": "1"
-        }
-      ]
-    },
-    {
-      "materials": [
-        {
-          "id": "769",
-          "name": "芽针溶液",
-          "count": "1"
-        }
-      ],
-      "products": [
-        {
-          "id": "370",
-          "name": "紫晶质瓶",
-          "count": "1"
-        },
-        {
-          "id": "371",
-          "name": "蓝铁瓶",
-          "count": "1"
-        },
-        {
-          "id": "552",
-          "name": "钢质瓶",
-          "count": "1"
-        },
-        {
-          "id": "551",
-          "name": "高晶质瓶",
-          "count": "1"
-        }
-      ]
-    },
-    {
-      "materials": [
-        {
-          "id": "892",
-          "name": "液化息壤",
-          "count": "1"
-        }
-      ],
-      "products": [
-        {
-          "id": "370",
-          "name": "紫晶质瓶",
-          "count": "1"
-        },
-        {
-          "id": "371",
-          "name": "蓝铁瓶",
-          "count": "1"
-        },
-        {
-          "id": "552",
-          "name": "钢质瓶",
-          "count": "1"
-        },
-        {
-          "id": "551",
-          "name": "高晶质瓶",
-          "count": "1"
-        }
-      ]
-    },
-    {
-      "materials": [
-        {
-          "id": "201",
-          "name": "锦草溶液",
-          "count": "1"
-        }
-      ],
-      "products": [
-        {
-          "id": "370",
-          "name": "紫晶质瓶",
-          "count": "1"
-        },
-        {
-          "id": "371",
-          "name": "蓝铁瓶",
-          "count": "1"
-        },
-        {
-          "id": "552",
-          "name": "钢质瓶",
-          "count": "1"
-        },
-        {
-          "id": "551",
-          "name": "高晶质瓶",
-          "count": "1"
-        }
-      ]
-    },
-    {
-      "materials": [
         {
           "id": "554",
-          "name": "细磨柑实粉末",
-          "count": "10"
-        },
-        {
-          "id": "552",
-          "name": "钢质瓶",
           "count": "10"
         }
       ],
       "products": [
         {
           "id": "527",
-          "name": "精选柑实罐头",
-          "count": "1"
-        }
-      ]
-    },
-    {
-      "materials": [
-        {
-          "id": "371",
-          "name": "蓝铁瓶",
-          "count": "1"
-        },
-        {
-          "id": "769",
-          "name": "芽针溶液",
-          "count": "0"
-        }
-      ],
-      "products": [
-        {
-          "id": "371",
-          "name": "蓝铁瓶",
-          "count": "1"
-        },
-        {
-          "id": "769",
-          "name": "芽针溶液",
-          "count": "0"
-        }
-      ]
-    },
-    {
-      "materials": [
-        {
-          "id": "371",
-          "name": "蓝铁瓶",
-          "count": "1"
-        },
-        {
-          "id": "381",
-          "name": "清水",
           "count": "1"
         }
       ],
-      "products": [
-        {
-          "id": "371",
-          "name": "蓝铁瓶",
-          "count": "1"
-        },
-        {
-          "id": "381",
-          "name": "清水",
-          "count": "0"
-        }
-      ]
-    },
-    {
-      "materials": [
-        {
-          "id": "371",
-          "name": "蓝铁瓶",
-          "count": "1"
-        },
-        {
-          "id": "201",
-          "name": "锦草溶液",
-          "count": "0"
-        }
-      ],
-      "products": [
-        {
-          "id": "371",
-          "name": "蓝铁瓶",
-          "count": "1"
-        },
-        {
-          "id": "201",
-          "name": "锦草溶液",
-          "count": "0"
-        }
-      ]
-    },
-    {
-      "materials": [
-        {
-          "id": "371",
-          "name": "蓝铁瓶",
-          "count": "1"
-        },
-        {
-          "id": "892",
-          "name": "液化息壤",
-          "count": "0"
-        }
-      ],
-      "products": [
-        {
-          "id": "371",
-          "name": "蓝铁瓶",
-          "count": "1"
-        },
-        {
-          "id": "892",
-          "name": "液化息壤",
-          "count": "0"
-        }
-      ]
+      "manufacturingTime": 10
     },
     {
       "materials": [
         {
           "id": "370",
-          "name": "紫晶质瓶",
-          "count": "1"
+          "count": "5"
         },
         {
-          "id": "381",
-          "name": "清水",
-          "count": "1"
+          "id": "379",
+          "count": "5"
         }
       ],
       "products": [
         {
-          "id": "370",
-          "name": "紫晶质瓶",
+          "id": "510",
           "count": "1"
-        },
-        {
-          "id": "381",
-          "name": "清水",
-          "count": "0"
         }
-      ]
+      ],
+      "manufacturingTime": 10
     },
     {
       "materials": [
         {
-          "id": "370",
-          "name": "紫晶质瓶",
-          "count": "1"
+          "id": "371",
+          "count": "10"
         },
         {
-          "id": "201",
-          "name": "锦草溶液",
-          "count": "1"
+          "id": "379",
+          "count": "10"
         }
       ],
       "products": [
         {
-          "id": "370",
-          "name": "紫晶质瓶",
+          "id": "511",
           "count": "1"
-        },
-        {
-          "id": "201",
-          "name": "锦草溶液",
-          "count": "0"
         }
-      ]
+      ],
+      "manufacturingTime": 10
     },
     {
       "materials": [
         {
-          "id": "370",
-          "name": "紫晶质瓶",
-          "count": "1"
+          "id": "552",
+          "count": "10"
         },
         {
-          "id": "769",
-          "name": "芽针溶液",
-          "count": "0"
+          "id": "553",
+          "count": "10"
         }
       ],
       "products": [
         {
-          "id": "370",
-          "name": "紫晶质瓶",
-          "count": "1"
-        },
-        {
-          "id": "769",
-          "name": "芽针溶液",
-          "count": "0"
-        }
-      ]
-    },
-    {
-      "materials": [
-        {
-          "id": "370",
-          "name": "紫晶质瓶",
-          "count": "1"
-        },
-        {
-          "id": "892",
-          "name": "液化息壤",
-          "count": "0"
-        }
-      ],
-      "products": [
-        {
-          "id": "370",
-          "name": "紫晶质瓶",
-          "count": "1"
-        },
-        {
-          "id": "892",
-          "name": "液化息壤",
-          "count": "0"
-        }
-      ]
-    },
-    {
-      "materials": [
-        {
-          "id": "551",
-          "name": "高晶质瓶",
-          "count": "1"
-        },
-        {
-          "id": "381",
-          "name": "清水",
+          "id": "526",
           "count": "1"
         }
       ],
-      "products": [
-        {
-          "id": "381",
-          "name": "清水",
-          "count": "0"
-        }
-      ]
+      "manufacturingTime": 10
     }
   ]
 }

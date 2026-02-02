@@ -1,0 +1,26 @@
+{
+  "deviceId": "590",
+  "deviceName": "神秘气泡饮料",
+  "recipeCount": 1,
+  "recipes": [
+    {
+      "materials": [
+        {
+          "id": "582",
+          "count": "1"
+        },
+        {
+          "id": "583",
+          "count": "1"
+        }
+      ],
+      "products": [
+        {
+          "id": "590",
+          "count": "1"
+        }
+      ],
+      "manufacturingTime": null
+    }
+  ]
+}

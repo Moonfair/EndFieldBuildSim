@@ -1,0 +1,79 @@
+{
+  "deviceId": "544",
+  "deviceName": "致密源石粉末",
+  "recipeCount": 4,
+  "recipes": [
+    {
+      "materials": [
+        {
+          "id": "47",
+          "count": "2"
+        },
+        {
+          "id": "543",
+          "count": "1"
+        }
+      ],
+      "products": [
+        {
+          "id": "544",
+          "count": "1"
+        }
+      ],
+      "manufacturingTime": null
+    },
+    {
+      "materials": [
+        {
+          "id": "544",
+          "count": "1"
+        }
+      ],
+      "products": [
+        {
+          "id": "545",
+          "count": "1"
+        }
+      ],
+      "manufacturingTime": null
+    },
+    {
+      "materials": [
+        {
+          "id": "544",
+          "count": "15"
+        },
+        {
+          "id": "541",
+          "count": "10"
+        }
+      ],
+      "products": [
+        {
+          "id": "549",
+          "count": "1"
+        }
+      ],
+      "manufacturingTime": null
+    },
+    {
+      "materials": [
+        {
+          "id": "544",
+          "count": "15"
+        },
+        {
+          "id": "771",
+          "count": "5"
+        }
+      ],
+      "products": [
+        {
+          "id": "767",
+          "count": "1"
+        }
+      ],
+      "manufacturingTime": null
+    }
+  ]
+}

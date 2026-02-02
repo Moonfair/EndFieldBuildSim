@@ -1,0 +1,26 @@
+{
+  "deviceId": "899",
+  "deviceName": "大碗锦草凉茶",
+  "recipeCount": 1,
+  "recipes": [
+    {
+      "materials": [
+        {
+          "id": "588",
+          "count": "5"
+        },
+        {
+          "id": "552",
+          "count": "10"
+        }
+      ],
+      "products": [
+        {
+          "id": "899",
+          "count": "1"
+        }
+      ],
+      "manufacturingTime": null
+    }
+  ]
+}

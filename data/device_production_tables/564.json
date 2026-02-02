@@ -1,0 +1,26 @@
+{
+  "deviceId": "564",
+  "deviceName": "辣炒肉丁",
+  "recipeCount": 1,
+  "recipes": [
+    {
+      "materials": [
+        {
+          "id": "34",
+          "count": "4"
+        },
+        {
+          "id": "530",
+          "count": "8"
+        }
+      ],
+      "products": [
+        {
+          "id": "564",
+          "count": "1"
+        }
+      ],
+      "manufacturingTime": null
+    }
+  ]
+}

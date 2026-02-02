@@ -1,0 +1,26 @@
+{
+  "deviceId": "767",
+  "deviceName": "低容武陵电池",
+  "recipeCount": 1,
+  "recipes": [
+    {
+      "materials": [
+        {
+          "id": "771",
+          "count": "5"
+        },
+        {
+          "id": "544",
+          "count": "15"
+        }
+      ],
+      "products": [
+        {
+          "id": "767",
+          "count": "1"
+        }
+      ],
+      "manufacturingTime": null
+    }
+  ]
+}

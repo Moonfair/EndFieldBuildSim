@@ -1,0 +1,26 @@
+{
+  "deviceId": "374",
+  "deviceName": "紫晶装备原件",
+  "recipeCount": 1,
+  "recipes": [
+    {
+      "materials": [
+        {
+          "id": "33",
+          "count": "5"
+        },
+        {
+          "id": "193",
+          "count": "5"
+        }
+      ],
+      "products": [
+        {
+          "id": "374",
+          "count": "1"
+        }
+      ],
+      "manufacturingTime": null
+    }
+  ]
+}

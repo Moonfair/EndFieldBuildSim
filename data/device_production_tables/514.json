@@ -1,0 +1,26 @@
+{
+  "deviceId": "514",
+  "deviceName": "小瓶荞复锭剂",
+  "recipeCount": 1,
+  "recipes": [
+    {
+      "materials": [
+        {
+          "id": "508",
+          "count": "5"
+        },
+        {
+          "id": "370",
+          "count": "5"
+        }
+      ],
+      "products": [
+        {
+          "id": "514",
+          "count": "1"
+        }
+      ],
+      "manufacturingTime": null
+    }
+  ]
+}

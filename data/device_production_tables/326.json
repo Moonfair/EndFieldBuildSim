@@ -1,0 +1,37 @@
+{
+  "deviceId": "326",
+  "deviceName": "受蚀玉化叶",
+  "recipeCount": 2,
+  "recipes": [
+    {
+      "materials": [
+        {
+          "id": "326",
+          "count": "1"
+        }
+      ],
+      "products": [
+        {
+          "id": "321",
+          "count": "3"
+        }
+      ],
+      "manufacturingTime": null
+    },
+    {
+      "materials": [
+        {
+          "id": "321",
+          "count": "1"
+        }
+      ],
+      "products": [
+        {
+          "id": "326",
+          "count": "1"
+        }
+      ],
+      "manufacturingTime": null
+    }
+  ]
+}

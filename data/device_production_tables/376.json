@@ -1,0 +1,26 @@
+{
+  "deviceId": "376",
+  "deviceName": "低容谷地电池",
+  "recipeCount": 1,
+  "recipes": [
+    {
+      "materials": [
+        {
+          "id": "377",
+          "count": "5"
+        },
+        {
+          "id": "47",
+          "count": "10"
+        }
+      ],
+      "products": [
+        {
+          "id": "376",
+          "count": "1"
+        }
+      ],
+      "manufacturingTime": null
+    }
+  ]
+}

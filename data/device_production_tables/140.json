@@ -1,0 +1,30 @@
+{
+  "deviceId": "140",
+  "deviceName": "手撕虫肉",
+  "recipeCount": 1,
+  "recipes": [
+    {
+      "materials": [
+        {
+          "id": "138",
+          "count": "1"
+        },
+        {
+          "id": "198",
+          "count": "1"
+        },
+        {
+          "id": "342",
+          "count": "1"
+        }
+      ],
+      "products": [
+        {
+          "id": "140",
+          "count": "1"
+        }
+      ],
+      "manufacturingTime": null
+    }
+  ]
+}

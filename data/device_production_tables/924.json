@@ -1,0 +1,30 @@
+{
+  "deviceId": "924",
+  "deviceName": "小糖画",
+  "recipeCount": 1,
+  "recipes": [
+    {
+      "materials": [
+        {
+          "id": "569",
+          "count": "1"
+        },
+        {
+          "id": "586",
+          "count": "1"
+        },
+        {
+          "id": "587",
+          "count": "1"
+        }
+      ],
+      "products": [
+        {
+          "id": "924",
+          "count": "1"
+        }
+      ],
+      "manufacturingTime": null
+    }
+  ]
+}
