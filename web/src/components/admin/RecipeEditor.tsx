@@ -3,18 +3,19 @@ import React, { useState } from 'react';
 export interface RecipeEditorProps {
   recipeId?: string;
   recipe?: any;
+  apiRecipe?: any;
   onSave: (id: string, data: any) => Promise<void>;
   onCancel: () => void;
 }
 
-export default function RecipeEditor({ recipeId, recipe, onSave, onCancel }: RecipeEditorProps) {
+export default function RecipeEditor({ recipeId, recipe, apiRecipe, onSave, onCancel }: RecipeEditorProps) {
   const [formData, setFormData] = useState({
     id: recipeId || '',
-    deviceId: recipe?.deviceId || '174',
-    deviceName: recipe?.deviceName || '',
-    manufacturingTime: recipe?.manufacturingTime || 2,
-    materials: recipe?.materials || [{id: '', name: '', count: 1}],
-    products: recipe?.products || [{id: '', name: '', count: 1}]
+    deviceId: recipe?.deviceId || apiRecipe?.deviceId || '174',
+    deviceName: recipe?.deviceName || apiRecipe?.deviceName || '',
+    manufacturingTime: recipe?.manufacturingTime || apiRecipe?.manufacturingTime || 2,
+    materials: recipe?.materials || apiRecipe?.materials || [{id: '', name: '', count: 1}],
+    products: recipe?.products || apiRecipe?.products || [{id: '', name: '', count: 1}]
   });
 
   const handleMaterialChange = (index: number, field: string, value: string | number) => {
@@ -80,8 +81,25 @@ export default function RecipeEditor({ recipeId, recipe, onSave, onCancel }: Rec
   return (
     <div className="bg-white border border-gray-300 rounded-lg p-6 max-w-2xl">
       <h3 className="text-lg font-semibold mb-4">
-        {recipeId ? '编辑配方' : '新增配方'}
+        {recipeId ? '编辑配方' : '新增配方'} {(apiRecipe && '(从API数据编辑)')}
       </h3>
+      <div className="mb-4 p-3 bg-gray-50 rounded text-sm text-gray-600">
+        <p><strong>提示：</strong></p>
+        <ul className="list-disc pl-5 mt-2">
+          <li>灰色文字 = API原始数据</li>
+          <li>黑色文字 = 自定义数据（未修改则显示API数据）</li>
+          <li>编辑后保存只更新自定义字段</li>
+        </ul>
+        {apiRecipe && (
+          <div className="mt-2 pt-2 border-t border-gray-200">
+            <p className="font-semibold">API原始配方数据：</p>
+            <div className="text-xs mt-1">
+              <p>原料: {(apiRecipe.materials || []).map((m: any) => m.name || m.id).join(', ') || '-'}</p>
+              <p>产物: {(apiRecipe.products || []).map((p: any) => p.name || p.id).join(', ') || '-'}</p>
+            </div>
+          </div>
+        )}
+      </div>
       <form onSubmit={handleSubmit}>
         <div className="space-y-4">
           <div className="grid grid-cols-2 gap-4">
@@ -95,19 +113,25 @@ export default function RecipeEditor({ recipeId, recipe, onSave, onCancel }: Rec
                 className="w-full border border-gray-300 rounded p-2"
               />
             </div>
-            <div>
-              <label className="block text-sm font-medium text-gray-700 mb-1">设备ID</label>
-              <input
-                type="text"
-                value={formData.deviceId}
-                onChange={(e) => setFormData({...formData, deviceId: e.target.value})}
-                className="w-full border border-gray-300 rounded p-2"
-                placeholder="例如: 174"
-              />
-            </div>
+<div>
+            <label className="block text-sm font-medium text-gray-700 mb-1">设备ID</label>
+            {apiRecipe?.deviceId && (
+              <div className="text-gray-400 text-sm mb-1">API原始值: {apiRecipe.deviceId}</div>
+            )}
+            <input
+              type="text"
+              value={formData.deviceId}
+              onChange={(e) => setFormData({...formData, deviceId: e.target.value})}
+              className="w-full border border-gray-300 rounded p-2"
+              placeholder="例如: 174"
+            />
+          </div>
           </div>
           <div>
             <label className="block text-sm font-medium text-gray-700 mb-1">设备名称</label>
+            {apiRecipe?.deviceName && (
+              <div className="text-gray-400 text-sm mb-1">API原始值: {apiRecipe.deviceName}</div>
+            )}
             <input
               type="text"
               value={formData.deviceName}
@@ -118,6 +142,9 @@ export default function RecipeEditor({ recipeId, recipe, onSave, onCancel }: Rec
           </div>
           <div>
             <label className="block text-sm font-medium text-gray-700 mb-1">制造时间(秒)</label>
+            {apiRecipe?.manufacturingTime && apiRecipe?.manufacturingTime !== undefined && (
+              <div className="text-gray-400 text-sm mb-1">API原始值: {apiRecipe.manufacturingTime}</div>
+            )}
             <input
               type="number"
               value={formData.manufacturingTime}

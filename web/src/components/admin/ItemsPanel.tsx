@@ -10,6 +10,7 @@ export default function ItemsPanel({ customItems, onLoad }: ItemsPanelProps) {
   const [mergedItems, setMergedItems] = useState<Record<string, any>>({});
   const [loading, setLoading] = useState(true);
   const [editingItem, setEditingItem] = useState<{id?: string; item?: any; apiItem?: any} | null>(null);
+  const [searchQuery, setSearchQuery] = useState('');
 
   useEffect(() => {
     fetchMergedItems();
@@ -52,6 +53,19 @@ export default function ItemsPanel({ customItems, onLoad }: ItemsPanelProps) {
     }
   };
 
+  const filteredItems = Object.entries(mergedItems).filter(([id, item]: any) => {
+    if (!searchQuery.trim()) return true;
+    const query = searchQuery.toLowerCase();
+    const searchFields = [
+      id,
+      item.api?.name,
+      item.api?.subTypeName,
+      item.custom?.name,
+      item.custom?.subTypeName,
+    ].filter(Boolean).map(String).join(' ').toLowerCase();
+    return searchFields.includes(query);
+  });
+
   if (editingItem) {
     return (
       <ItemEditor
@@ -72,12 +86,21 @@ export default function ItemsPanel({ customItems, onLoad }: ItemsPanelProps) {
     <div>
       <div className="flex justify-between items-center mb-4">
         <h2 className="text-lg font-semibold">物品管理（API数据 + 自定义数据对比）</h2>
-        <button
-          onClick={() => setEditingItem({})}
-          className="px-4 py-2 bg-blue-600 text-white rounded hover:bg-blue-700 text-sm"
-        >
-          + 新增物品
-        </button>
+        <div className="flex gap-2">
+          <input
+            type="text"
+            placeholder="搜索..."
+            value={searchQuery}
+            onChange={(e) => setSearchQuery(e.target.value)}
+            className="px-3 py-2 border border-gray-300 rounded text-sm w-64"
+          />
+          <button
+            onClick={() => setEditingItem({})}
+            className="px-4 py-2 bg-blue-600 text-white rounded hover:bg-blue-700 text-sm"
+          >
+            + 新增物品
+          </button>
+        </div>
       </div>
       <div className="overflow-x-auto">
         <table className="min-w-full border border-gray-300 bg-white">
@@ -92,14 +115,14 @@ export default function ItemsPanel({ customItems, onLoad }: ItemsPanelProps) {
             </tr>
           </thead>
           <tbody>
-            {Object.keys(mergedItems).length === 0 ? (
+            {filteredItems.length === 0 ? (
               <tr>
-                <td colSpan={7} className="border border-gray-300 p-4 text-center text-gray-500">
-                  暂无数据（API数据或自定义数据）
+                <td colSpan={6} className="border border-gray-300 p-4 text-center text-gray-500">
+                  {Object.keys(mergedItems).length === 0 ? '暂无数据（API数据或自定义数据）' : '未找到匹配的结果'}
                 </td>
               </tr>
             ) : (
-              Object.entries(mergedItems).map(([id, item]: any) => (
+              filteredItems.map(([id, item]: any) => (
                 <tr key={id}>
                   <td className="border border-gray-300 p-2 font-mono text-sm">{id}</td>
                   <td className="border border-gray-300 p-2">
