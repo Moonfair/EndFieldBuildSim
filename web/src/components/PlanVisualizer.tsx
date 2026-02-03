@@ -8,6 +8,14 @@ interface PlanVisualizerProps {
 }
 
 export default function PlanVisualizer({ plan, itemLookup }: PlanVisualizerProps) {
+  console.log('[VISUALIZER] Rendering plan:', { 
+    name: plan.name, 
+    devices: plan.devices.length, 
+    connections: plan.connections.length,
+    baseMaterials: plan.baseMaterials.length,
+    calculatedOutputRate: plan.calculatedOutputRate
+  });
+  
   return (
     <div className="space-y-6">
       <div className="bg-blue-50 border border-blue-200 rounded-lg p-4">

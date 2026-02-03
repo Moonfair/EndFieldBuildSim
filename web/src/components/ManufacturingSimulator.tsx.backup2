@@ -78,7 +78,8 @@ export default function ManufacturingSimulator({
         targetItemId,
         targetItemName,
         dependencyTree,
-        itemLookup
+        itemLookup,
+        1
       );
 
       const scalePlan = calculateMinimumScalePlan(

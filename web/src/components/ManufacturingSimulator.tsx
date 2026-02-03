@@ -36,13 +36,17 @@ export default function ManufacturingSimulator({
   const [dependencyTree, setDependencyTree] = useState<DependencyNode | null>(null);
 
   useEffect(() => {
+    console.log('[INIT EFFECT] Running, isOpen:', isOpen);
     if (!isOpen) return;
 
     const initializeSimulator = async () => {
+      console.log('[INIT] Starting initialization for', targetItemName, targetItemId);
       setState((prev) => ({ ...prev, loading: true, error: null }));
 
       try {
         const recipeLookup = await loadRecipeLookup(itemLookup);
+        console.log('[INIT] Recipe lookup loaded');
+        
         const tree = buildDependencyTree({
           targetItemId,
           targetItemName,
@@ -50,13 +54,31 @@ export default function ManufacturingSimulator({
           recipeLookup,
           cycleGroups: recipeLookup.cycleGroups,
         });
+        console.log('[INIT] Tree built:', { isBase: tree.isBase, recipes: tree.recipes.length, children: tree.children.length });
 
         setDependencyTree(tree);
+        
+        console.log('[INIT] Calculating efficiency plan with targetRate:', targetRate);
+        const efficiencyPlan = calculateMaximumEfficiencyPlan(
+          targetItemId,
+          targetItemName,
+          tree,
+          itemLookup,
+          targetRate
+        );
+        console.log('[INIT] Efficiency plan calculated:', { devices: efficiencyPlan.devices.length, rate: efficiencyPlan.calculatedOutputRate });
+        
+        const scalePlan = calculateMinimumScalePlan(targetItemId, targetItemName, tree, itemLookup);
+        console.log('[INIT] Scale plan calculated:', { devices: scalePlan.devices.length });
+        
         setState((prev) => ({
           ...prev,
           dependencyTree: tree,
+          efficiencyPlan,
+          scalePlan,
           loading: false,
         }));
+        console.log('[INIT] State updated with plans');
       } catch (error) {
         console.error('Failed to initialize simulator:', error);
         setState((prev) => ({
@@ -68,12 +90,14 @@ export default function ManufacturingSimulator({
     };
 
     initializeSimulator();
-  }, [isOpen, targetItemId, targetItemName, itemLookup]);
+  }, [isOpen, targetItemId, targetItemName, itemLookup, targetRate]);
 
   useEffect(() => {
+    console.log('[REFRESH EFFECT] Running, isOpen:', isOpen, 'dependencyTree:', !!dependencyTree);
     if (!isOpen || !dependencyTree) return;
 
     const timeoutId = setTimeout(async () => {
+      console.log('[REFRESH] Recalculating with base materials:', state.baseMaterialIds.size);
       try {
         const recipeLookup = await loadRecipeLookup(itemLookup);
         const allBaseMaterials = new Set([...state.baseMaterialIds]);
@@ -85,11 +109,22 @@ export default function ManufacturingSimulator({
           recipeLookup,
           cycleGroups: recipeLookup.cycleGroups,
         });
+        console.log('[REFRESH] Tree rebuilt');
 
         setDependencyTree(tree);
         
-        const efficiencyPlan = calculateMaximumEfficiencyPlan(targetItemId, targetItemName, tree, itemLookup);
+        console.log('[REFRESH] Calculating efficiency plan with targetRate:', targetRate);
+        const efficiencyPlan = calculateMaximumEfficiencyPlan(
+          targetItemId,
+          targetItemName,
+          tree,
+          itemLookup,
+          targetRate
+        );
+        console.log('[REFRESH] Efficiency plan:', { devices: efficiencyPlan.devices.length, rate: efficiencyPlan.calculatedOutputRate });
+        
         const scalePlan = calculateMinimumScalePlan(targetItemId, targetItemName, tree, itemLookup);
+        console.log('[REFRESH] Scale plan:', { devices: scalePlan.devices.length });
 
         setState((prev) => ({
           ...prev,
@@ -97,13 +132,14 @@ export default function ManufacturingSimulator({
           efficiencyPlan,
           scalePlan,
         }));
+        console.log('[REFRESH] State updated');
       } catch (error) {
         console.error('Auto-refresh failed:', error);
       }
     }, 300);
 
     return () => clearTimeout(timeoutId);
-  }, [state.baseMaterialIds, isOpen]);
+  }, [state.baseMaterialIds, isOpen, targetRate, targetItemId, targetItemName, itemLookup]);
 
   const handleCalculatePlans = () => {
     if (!dependencyTree) return;
@@ -115,7 +151,8 @@ export default function ManufacturingSimulator({
         targetItemId,
         targetItemName,
         dependencyTree,
-        itemLookup
+        itemLookup,
+        targetRate
       );
 
       const scalePlan = calculateMinimumScalePlan(
@@ -183,6 +220,11 @@ export default function ManufacturingSimulator({
   };
 
   const activePlan = activeTab === 'efficiency' ? state.efficiencyPlan : state.scalePlan;
+  
+  console.log('[RENDER] Active tab:', activeTab);
+  console.log('[RENDER] State.efficiencyPlan:', state.efficiencyPlan ? `${state.efficiencyPlan.devices.length} devices` : 'null');
+  console.log('[RENDER] State.scalePlan:', state.scalePlan ? `${state.scalePlan.devices.length} devices` : 'null');
+  console.log('[RENDER] Active plan:', activePlan ? `${activePlan.devices.length} devices, rate: ${activePlan.calculatedOutputRate}` : 'null');
 
   if (!isOpen) {
     return (

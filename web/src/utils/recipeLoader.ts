@@ -134,8 +134,14 @@ export async function loadRecipeLookup(_itemLookup?: ItemLookup): Promise<Recipe
     const manufacturingRecipe: ManufacturingRecipe = {
       deviceId: recipe.deviceId,
       deviceName: recipe.deviceName,
-      materials: recipe.materials,
-      products: recipe.products,
+      materials: recipe.materials.map(m => ({
+        ...m,
+        count: typeof m.count === 'string' ? parseFloat(m.count) : m.count
+      })),
+      products: recipe.products.map(p => ({
+        ...p,
+        count: typeof p.count === 'string' ? parseFloat(p.count) : p.count
+      })),
       manufacturingTime: recipe.manufacturingTime || 2,
     };
 
