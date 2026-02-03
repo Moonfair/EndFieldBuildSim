@@ -1,6 +1,88 @@
 import type { ManufacturingRecipe, RecipeLookup } from '../types/manufacturing';
 import type { ItemLookup } from '../types/catalog';
 
+function tarjanSCC(adj: Map<string, Set<string>>): string[][] {
+  let index = 0;
+  const stack: string[] = [];
+  const onStack = new Set<string>();
+  const idx = new Map<string, number>();
+  const low = new Map<string, number>();
+  const sccs: string[][] = [];
+
+  function strongConnect(v: string) {
+    idx.set(v, index);
+    low.set(v, index);
+    index++;
+    stack.push(v);
+    onStack.add(v);
+
+    for (const w of (adj.get(v) ?? [])) {
+      if (!idx.has(w)) {
+        strongConnect(w);
+        low.set(v, Math.min(low.get(v)!, low.get(w)!));
+      } else if (onStack.has(w)) {
+        low.set(v, Math.min(low.get(v)!, idx.get(w)!));
+      }
+    }
+
+    if (low.get(v) === idx.get(v)) {
+      const component: string[] = [];
+      while (true) {
+        const x = stack.pop()!;
+        onStack.delete(x);
+        component.push(x);
+        if (x === v) break;
+      }
+      sccs.push(component);
+    }
+  }
+
+  for (const v of adj.keys()) {
+    if (!idx.has(v)) strongConnect(v);
+  }
+
+  return sccs;
+}
+
+function buildItemAdjacency(recipes: ManufacturingRecipe[]): Map<string, Set<string>> {
+  const adj = new Map<string, Set<string>>();
+
+  const ensure = (id: string) => {
+    if (!adj.has(id)) adj.set(id, new Set());
+  };
+
+  for (const r of recipes) {
+    for (const p of r.products) {
+      ensure(p.id);
+      for (const m of r.materials) {
+        ensure(m.id);
+        adj.get(p.id)!.add(m.id);
+      }
+    }
+  }
+
+  return adj;
+}
+
+function buildCycleGroups(adj: Map<string, Set<string>>): Map<string, Set<string>> {
+  const sccs = tarjanSCC(adj);
+  const cycleGroupByItem = new Map<string, Set<string>>();
+
+  const hasSelfLoop = (v: string) => (adj.get(v)?.has(v) ?? false);
+
+  for (const comp of sccs) {
+    const cyclic = comp.length > 1 || (comp.length === 1 && hasSelfLoop(comp[0]));
+    if (!cyclic) continue;
+
+    const set = new Set(comp);
+    for (const v of comp) {
+      cycleGroupByItem.set(v, set);
+    }
+  }
+
+  return cycleGroupByItem;
+}
+
 interface RecipeEntry {
   deviceId: string;
   deviceName: string;
@@ -19,6 +101,17 @@ interface RecipeDatabase {
 let cachedRecipeLookup: RecipeLookup | null = null;
 let cachedRecipes: Map<string, ManufacturingRecipe> | null = null;
 
+function hasNetOutput(recipe: ManufacturingRecipe): boolean {
+  for (const product of recipe.products) {
+    const matchingMaterial = recipe.materials.find(m => m.id === product.id);
+    const netOutput = product.count - (matchingMaterial?.count || 0);
+    if (netOutput > 0) {
+      return true;
+    }
+  }
+  return false;
+}
+
 export async function loadRecipeLookup(_itemLookup?: ItemLookup): Promise<RecipeLookup> {
   if (cachedRecipeLookup) {
     return cachedRecipeLookup;
@@ -32,7 +125,7 @@ export async function loadRecipeLookup(_itemLookup?: ItemLookup): Promise<Recipe
   const response = await fetch(`${import.meta.env.BASE_URL}data/recipe_database.json`);
   if (!response.ok) {
     console.error('Failed to load recipe_database.json');
-    return { asMaterials, asProducts, byDevice };
+    return { asMaterials, asProducts, byDevice, cycleGroups: new Map() };
   }
 
   const database: RecipeDatabase = await response.json();
@@ -50,6 +143,10 @@ export async function loadRecipeLookup(_itemLookup?: ItemLookup): Promise<Recipe
 
   }
 
+  const recipesArray = Array.from(cachedRecipes?.values() ?? []);
+  const adj = buildItemAdjacency(recipesArray);
+  const cycleGroups = buildCycleGroups(adj);
+
   const populateLookup = (
     source: Record<string, string[]>,
     target: Map<string, ManufacturingRecipe[]>
@@ -57,7 +154,8 @@ export async function loadRecipeLookup(_itemLookup?: ItemLookup): Promise<Recipe
     for (const [key, recipeIds] of Object.entries(source)) {
       const recipes = recipeIds
         .map((recipeId) => cachedRecipes?.get(recipeId))
-        .filter((recipe): recipe is ManufacturingRecipe => Boolean(recipe));
+        .filter((recipe): recipe is ManufacturingRecipe => Boolean(recipe))
+        .filter((recipe) => hasNetOutput(recipe));
       if (recipes.length > 0) {
         target.set(key, recipes);
       }
@@ -68,7 +166,7 @@ export async function loadRecipeLookup(_itemLookup?: ItemLookup): Promise<Recipe
   populateLookup(database.asProducts, asProducts);
   populateLookup(database.byDevice, byDevice);
 
-  cachedRecipeLookup = { asMaterials, asProducts, byDevice };
+  cachedRecipeLookup = { asMaterials, asProducts, byDevice, cycleGroups };
   return cachedRecipeLookup;
 }
 

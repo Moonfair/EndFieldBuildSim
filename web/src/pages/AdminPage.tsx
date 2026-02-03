@@ -1,28 +1,39 @@
 import { useState, useEffect } from 'react';
 import ItemsPanel from '../components/admin/ItemsPanel';
 import RecipesPanel from '../components/admin/RecipesPanel';
+import BaseMaterialsPanel from '../components/admin/BaseMaterialsPanel';
 
 type Tab = 'items' | 'recipes' | 'settings';
 
 export default function AdminPage() {
   const [activeTab, setActiveTab] = useState<Tab>('items');
   const [customItems, setCustomItems] = useState<Record<string, any>>({ items: {} });
-  const [customRecipes, setCustomRecipes] = useState({ recipes: {}, deletedRecipes: [] });
+  const [customRecipes, setCustomRecipes] = useState({ recipes: {}, deletedRecipes: [], fixedBaseMaterials: [] });
+  const [_fixedBaseMaterials, setFixedBaseMaterials] = useState<string[]>([]);
   const [loading, setLoading] = useState(true);
 
   const fetchCustomData = async () => {
     try {
-      const [itemsRes, recipesRes] = await Promise.all([
+      const [itemsRes, recipesRes, materialsRes] = await Promise.all([
         fetch('http://localhost:3001/api/custom/items'),
-        fetch('http://localhost:3001/api/custom/recipes')
+        fetch('http://localhost:3001/api/custom/recipes'),
+        fetch('http://localhost:3001/api/custom/base-materials')
       ]);
+      const recipesData = await recipesRes.json();
+      const materialsData = await materialsRes.json();
+      
       setCustomItems(await itemsRes.json());
-      setCustomRecipes(await recipesRes.json());
+      setCustomRecipes(recipesData);
+      setFixedBaseMaterials(materialsData.fixedBaseMaterials || []);
     } catch (error) {
       console.error('Failed to load custom data:', error);
     } finally {
       setLoading(false);
     }
+  };
+
+  const handleFixedMaterialsChange = (materials: string[]) => {
+    setFixedBaseMaterials(materials);
   };
 
   useEffect(() => {
@@ -40,7 +51,7 @@ export default function AdminPage() {
             <button
               key={tab}
               onClick={() => setActiveTab(tab)}
-              className={`px-4 py-2 \${activeTab === tab ? 'border-b-2 border-blue-600 font-semibold' : ''}`}
+              className={`px-4 py-2 ${activeTab === tab ? 'border-b-2 border-blue-600 font-semibold' : ''}`}
             >
               {tab.charAt(0).toUpperCase() + tab.slice(1)}
             </button>
@@ -61,7 +72,11 @@ export default function AdminPage() {
       {!loading && activeTab === 'settings' && (
         <div>
           <h2 className="text-lg font-semibold mb-3">Settings</h2>
-          <p className="text-gray-600">Run Python data collection scripts to update API data</p>
+          <p className="text-gray-600 mb-6">Run Python data collection scripts to update API data</p>
+          
+          <BaseMaterialsPanel 
+            onSettingsChange={handleFixedMaterialsChange}
+          />
         </div>
       )}
     </div>

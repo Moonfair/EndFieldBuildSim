@@ -125,8 +125,14 @@ interface FlatItem {
 
 function flattenDependencyTree(tree: DependencyNode): FlatItem[] {
   const items: FlatItem[] = [];
+  const visited = new Set<string>();
 
   function traverse(node: DependencyNode, depth: number = 0) {
+    if (visited.has(node.itemId)) {
+      return;
+    }
+    visited.add(node.itemId);
+
     items.push({
       itemId: node.itemId,
       itemName: node.itemName,

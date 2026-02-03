@@ -5,7 +5,6 @@ interface BuildOptions {
   targetItemName: string;
   baseMaterialIds: Set<string>;
   recipeLookup: RecipeLookup;
-  cycleGroups?: Map<string, Set<string>>;
   maxDepth?: number;
   visited?: Set<string>;
 }
@@ -16,7 +15,6 @@ export function buildDependencyTree(options: BuildOptions): DependencyNode {
     targetItemName,
     baseMaterialIds,
     recipeLookup,
-    cycleGroups,
     maxDepth = 50,
     visited = new Set(),
   } = options;
@@ -26,7 +24,7 @@ export function buildDependencyTree(options: BuildOptions): DependencyNode {
     return {
       itemId: targetItemId,
       itemName: targetItemName,
-      isBase: true,
+      isBase: false,
       recipes: [],
       children: [],
     };
@@ -45,36 +43,12 @@ export function buildDependencyTree(options: BuildOptions): DependencyNode {
   visited.add(targetItemId);
 
   const isBaseMaterial = baseMaterialIds.has(targetItemId);
-
-  if (isBaseMaterial) {
-    return {
-      itemId: targetItemId,
-      itemName: targetItemName,
-      isBase: true,
-      recipes: [],
-      children: [],
-    };
-  }
-
   const recipes = recipeLookup.asProducts.get(targetItemId) || [];
-  let filteredRecipes = recipes;
-
-  if (cycleGroups) {
-    const cycleGroup = cycleGroups.get(targetItemId);
-    if (cycleGroup) {
-      filteredRecipes = recipes.filter((recipe) =>
-        recipe.materials.every((material) => !cycleGroup.has(material.id))
-      );
-      console.log(
-        `[Cycle Filter] ${targetItemName}: ${recipes.length} → ${filteredRecipes.length} recipes`
-      );
-    }
-  }
 
   const children: DependencyNode[] = [];
   const uniqueMaterialIds = new Set<string>();
 
-  for (const recipe of filteredRecipes) {
+  for (const recipe of recipes) {
     for (const material of recipe.materials) {
       if (uniqueMaterialIds.has(material.id)) continue;
       uniqueMaterialIds.add(material.id);
@@ -85,7 +59,6 @@ export function buildDependencyTree(options: BuildOptions): DependencyNode {
           targetItemName: material.name,
           baseMaterialIds,
           recipeLookup,
-          cycleGroups,
           maxDepth: maxDepth - 1,
           visited: new Set(visited),
         });
@@ -97,8 +70,8 @@ export function buildDependencyTree(options: BuildOptions): DependencyNode {
   return {
     itemId: targetItemId,
     itemName: targetItemName,
-    isBase: isBaseMaterial || filteredRecipes.length === 0,
-    recipes: filteredRecipes,
+    isBase: isBaseMaterial || recipes.length === 0,
+    recipes,
     children,
   };
 }

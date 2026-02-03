@@ -21,14 +21,13 @@ export default function ManufacturingSimulator({
 }: ManufacturingSimulatorProps) {
   const [isOpen, setIsOpen] = useState(false);
   const [activeTab, setActiveTab] = useState<'efficiency' | 'scale'>('efficiency');
-  const [targetRate, setTargetRate] = useState(1);
+
   const [state, setState] = useState<SimulatorState>({
     targetItemId,
     baseMaterialIds: new Set(),
     dependencyTree: null,
     efficiencyPlan: null,
     scalePlan: null,
-    targetRate: 1,
     loading: false,
     error: null,
   });
@@ -48,7 +47,6 @@ export default function ManufacturingSimulator({
           targetItemName,
           baseMaterialIds: new Set(),
           recipeLookup,
-          cycleGroups: recipeLookup.cycleGroups,
         });
 
         setDependencyTree(tree);
@@ -69,47 +67,6 @@ export default function ManufacturingSimulator({
 
     initializeSimulator();
   }, [isOpen, targetItemId, targetItemName, itemLookup]);
-
-  useEffect(() => {
-    if (!isOpen || !dependencyTree) return;
-
-    const timeoutId = setTimeout(async () => {
-      try {
-        const recipeLookup = await loadRecipeLookup(itemLookup);
-        const allBaseMaterials = new Set([...state.baseMaterialIds]);
-
-        const tree = buildDependencyTree({
-          targetItemId,
-          targetItemName,
-          baseMaterialIds: allBaseMaterials,
-          recipeLookup,
-          cycleGroups: recipeLookup.cycleGroups,
-        });
-
-        setDependencyTree(tree);
-        
-        console.log('[DEBUG Tree]', targetItemName, '- children:', tree.children.map(c => c.itemName));
-        console.log('[DEBUG Tree]', targetItemName, '- recipes count:', tree.recipes.length);
-
-        const efficiencyPlan = calculateMaximumEfficiencyPlan(targetItemId, targetItemName, tree);
-        const scalePlan = calculateMinimumScalePlan(targetItemId, targetItemName, tree);
-        
-        console.log('[DEBUG Plan] Scale devices:', scalePlan.devices.map(d => `${d.deviceName}(${d.deviceId})`));
-        console.log('[DEBUG Plan] Scale selected recipes:', Array.from(scalePlan.devices).map(d => d.recipe.deviceName + ':' + d.recipe.materials.map(m => m.name).join('+')));
-
-        setState((prev) => ({
-          ...prev,
-          dependencyTree: tree,
-          efficiencyPlan,
-          scalePlan,
-        }));
-      } catch (error) {
-        console.error('Auto-refresh failed:', error);
-      }
-    }, 300);
-
-    return () => clearTimeout(timeoutId);
-  }, [state.baseMaterialIds, isOpen]);
 
   const handleCalculatePlans = () => {
     if (!dependencyTree) return;
@@ -173,7 +130,6 @@ export default function ManufacturingSimulator({
         targetItemName,
         baseMaterialIds: state.baseMaterialIds,
         recipeLookup,
-        cycleGroups: recipeLookup.cycleGroups,
       });
 
       setDependencyTree(tree);
@@ -214,19 +170,6 @@ export default function ManufacturingSimulator({
           </div>
 
           <div className="flex items-center gap-4 flex-wrap">
-            <div className="flex items-center gap-2">
-              <label className="text-sm font-medium text-gray-700">
-                目标产出率（个/秒）：
-              </label>
-              <input
-                type="number"
-                min="0.1"
-                step="0.1"
-                value={targetRate}
-                onChange={(e) => setTargetRate(parseFloat(e.target.value) || 1)}
-                className="w-24 px-3 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent"
-              />
-            </div>
 
             <button
               onClick={handleCalculatePlans}
@@ -284,7 +227,7 @@ export default function ManufacturingSimulator({
                 <PlanVisualizer plan={activePlan} itemLookup={itemLookup} />
               ) : (
                 <div className="text-center py-12 text-gray-500">
-                  <p>选择目标产出率并点击"计算方案"查看结果</p>
+                  <p>请先在"基础原料选择"中选择基础原料，然后点击"计算方案"查看结果</p>
                 </div>
               )}
             </div>

@@ -1,6 +1,6 @@
 /**
  * Express admin server for custom data management
- * Provides CRUD API for items and recipes
+ * Provides CRUD API for items, recipes, and base materials
  */
 
 import express from 'express';
@@ -18,7 +18,7 @@ const PORT = 3001;
 const CUSTOM_DATA_DIR = path.join(__dirname, '../public/data/custom');
 const API_DATA_DIR = path.join(__dirname, '../public/data');
 
-app.use(cors({ origin: ['http://localhost:5173', 'http://localhost:5174'] }));
+app.use(cors({ origin: ['http://localhost:5173', 'http://localhost:5174', 'http://localhost:3000'] }));
 app.use(express.json());
 
 app.use((err: any, req: Request, res: Response, next: any) => {
@@ -42,7 +42,7 @@ async function loadCustomRecipes() {
     const data = await fs.readFile(file, 'utf-8');
     return JSON.parse(data);
   } catch (error) {
-    return { recipes: {}, deletedRecipes: [] };
+    return { recipes: {}, deletedRecipes: [], fixedBaseMaterials: [] };
   }
 }
 
@@ -76,6 +76,41 @@ async function saveCustomRecipes(data: any) {
   await fs.writeFile(file, JSON.stringify(data, null, 2), 'utf-8');
 }
 
+// Base Materials Settings API
+app.get('/api/custom/base-materials', async (req, res) => {
+  try {
+    const data = await loadCustomRecipes();
+    const fixedBaseMaterials: string[] = data.fixedBaseMaterials || [];
+    res.json({ fixedBaseMaterials });
+  } catch (error: any) {
+    res.status(500).json({ error: error.message });
+  }
+});
+
+app.post('/api/custom/base-materials', async (req, res) => {
+  try {
+    const { itemId, isFixed } = req.body;
+    const data = await loadCustomRecipes();
+    
+    if (!data.fixedBaseMaterials) {
+      data.fixedBaseMaterials = [];
+    }
+    
+    if (isFixed) {
+      if (!data.fixedBaseMaterials.includes(itemId)) {
+        data.fixedBaseMaterials.push(itemId);
+      }
+    } else {
+      data.fixedBaseMaterials = data.fixedBaseMaterials.filter((id: string) => id !== itemId);
+    }
+    
+    await saveCustomRecipes(data);
+    res.json({ success: true, fixedBaseMaterials: data.fixedBaseMaterials });
+  } catch (error: any) {
+    res.status(500).json({ error: error.message });
+  }
+});
+
 // Recipes with comparison
 app.get('/api/custom/recipes', async (req, res) => {
   const [customRecipes, apiRecipes] = await Promise.all([
@@ -101,7 +136,8 @@ app.get('/api/custom/recipes', async (req, res) => {
     }
   }
   res.json({
-    recipes: merged
+    recipes: merged,
+    fixedBaseMaterials: customRecipes.fixedBaseMaterials || []
   });
 });
 

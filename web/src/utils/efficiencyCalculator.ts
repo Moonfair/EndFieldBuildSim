@@ -6,29 +6,26 @@ import type {
   ManufacturingRecipe,
 } from '../types/manufacturing';
 
-const TRANSFER_RATE_PER_PIPE = 0.5;
+import { TRANSFER_RATE_PER_PIPE, BASE_MATERIAL_EXTRACTION_RATE } from './constants';
 
 export function calculateMaximumEfficiencyPlan(
   targetItemId: string,
   targetItemName: string,
-  dependencyTree: DependencyNode,
-  targetRate: number = 1
+  dependencyTree: DependencyNode
 ): ProductionPlan {
   const selectedRecipes = new Map<string, ManufacturingRecipe>();
   selectRecipesForEfficiency(dependencyTree, selectedRecipes);
 
-  const { devices, connections, baseMaterials, bottleneck } = optimizeForEfficiency(
-    selectedRecipes,
-    targetItemId,
-    targetRate,
-    dependencyTree
-  );
+  const { devices, connections, baseMaterials, calculatedOutputRate } =
+    balanceZeroWasteFlows(selectedRecipes, dependencyTree, targetItemId);
+
+  const bottleneck = findBottleneck(devices);
 
   return {
     type: 'efficiency',
     name: '最高效率生产方案',
     targetProduct: { id: targetItemId, name: targetItemName },
-    targetRate,
+    calculatedOutputRate,
     devices,
     totalDeviceCount: devices.reduce((sum, d) => sum + d.count, 0),
     bottleneck,
@@ -56,63 +53,58 @@ function selectRecipesForEfficiency(
   }
 }
 
-function optimizeForEfficiency(
+function balanceZeroWasteFlows(
   selectedRecipes: Map<string, ManufacturingRecipe>,
-  targetItemId: string,
-  targetRate: number,
-  dependencyTree: DependencyNode
+  dependencyTree: DependencyNode,
+  targetItemId: string
 ): {
   devices: DeviceConfig[];
   connections: Connection[];
   baseMaterials: Array<{ id: string; name: string; requiredRate: number }>;
-  bottleneck: { itemId: string; description: string } | null;
+  calculatedOutputRate: number;
 } {
   const devices: DeviceConfig[] = [];
   const connections: Connection[] = [];
   const baseMaterialsMap = new Map<string, number>();
+  const outputRates = new Map<string, number>();
 
-  const requiredProductionRates = calculateRequiredRates(
-    targetItemId,
-    targetRate,
-    selectedRecipes
-  );
+  const nodesInOrder = collectNodesInPostOrder(dependencyTree);
 
-  for (const [itemId, recipe] of selectedRecipes) {
-    const requiredRate = requiredProductionRates.get(itemId) || 0;
-    const deviceProductionRate = 1 / recipe.manufacturingTime;
+  for (const node of nodesInOrder) {
+    if (node.isBase || !selectedRecipes.has(node.itemId)) {
+      outputRates.set(node.itemId, BASE_MATERIAL_EXTRACTION_RATE);
+      baseMaterialsMap.set(node.itemId, BASE_MATERIAL_EXTRACTION_RATE);
+      continue;
+    }
 
-    const deviceCount = Math.ceil(requiredRate / deviceProductionRate);
+    const recipe = selectedRecipes.get(node.itemId)!;
+    const maxInputRate = calculateMaxInputRate(recipe, outputRates);
+    const singleDeviceRate =
+      recipe.manufacturingTime > 0 ? 1 / recipe.manufacturingTime : 0;
+    const deviceCount =
+      maxInputRate > 0 && singleDeviceRate > 0
+        ? Math.ceil(maxInputRate / singleDeviceRate)
+        : 0;
+    const outputRate = Math.min(maxInputRate, deviceCount * singleDeviceRate);
+
+    outputRates.set(node.itemId, outputRate);
 
     const device: DeviceConfig = {
       deviceId: recipe.deviceId,
       deviceName: recipe.deviceName,
       recipe,
       count: deviceCount,
-      productionRate: deviceProductionRate * deviceCount,
+      productionRate: outputRate,
       inputs: [],
       outputs: [],
     };
 
     for (const material of recipe.materials) {
-      const materialRequiredRate = requiredRate * material.count;
       const isBaseMaterial = isItemBaseMaterial(material.id, dependencyTree);
-
-      if (isBaseMaterial) {
-        const totalSupplyNeeded = materialRequiredRate * deviceCount;
-        baseMaterialsMap.set(
-          material.id,
-          (baseMaterialsMap.get(material.id) || 0) + totalSupplyNeeded
-        );
-        device.inputs.push({
-          itemId: material.id,
-          source: 'warehouse',
-        });
-      } else {
-        device.inputs.push({
-          itemId: material.id,
-          source: `device-${material.id}`,
-        });
-      }
+      device.inputs.push({
+        itemId: material.id,
+        source: isBaseMaterial ? 'warehouse' : `device-${material.id}`,
+      });
     }
 
     for (const product of recipe.products) {
@@ -122,24 +114,12 @@ function optimizeForEfficiency(
       });
     }
 
-    devices.push(device);
-  }
-
-  for (const device of devices) {
-    for (const output of device.outputs) {
-      if (output.destination !== 'output') {
-        connections.push({
-          from: device.deviceId,
-          to: output.destination.replace('device-', ''),
-          itemId: output.itemId,
-          count: 1,
-          rate: TRANSFER_RATE_PER_PIPE,
-        });
-      }
+    if (deviceCount > 0) {
+      devices.push(device);
     }
   }
 
-  const bottleneck = findBottleneck(devices);
+  buildConnections(devices, connections);
 
   const baseMaterials = Array.from(baseMaterialsMap.entries()).map(
     ([id, rate]) => ({
@@ -149,37 +129,34 @@ function optimizeForEfficiency(
     })
   );
 
-  return { devices, connections, baseMaterials, bottleneck };
+  return {
+    devices,
+    connections,
+    baseMaterials,
+    calculatedOutputRate: outputRates.get(targetItemId) || 0,
+  };
 }
 
-function calculateRequiredRates(
-  targetItemId: string,
-  targetRate: number,
-  selectedRecipes: Map<string, ManufacturingRecipe>
-): Map<string, number> {
-  const rates = new Map<string, number>();
-  const queue: Array<{ itemId: string; rate: number }> = [
-    { itemId: targetItemId, rate: targetRate },
-  ];
-
-  while (queue.length > 0) {
-    const { itemId, rate } = queue.shift()!;
-    rates.set(itemId, rate);
-
-    const recipe = selectedRecipes.get(itemId);
-    if (!recipe) continue;
-
-    for (const material of recipe.materials) {
-      const materialRate = rate * material.count;
-      if (!rates.has(material.id)) {
-        queue.push({ itemId: material.id, rate: materialRate });
-      } else {
-        rates.set(material.id, rates.get(material.id)! + materialRate);
-      }
-    }
+function calculateMaxInputRate(
+  recipe: ManufacturingRecipe,
+  outputRates: Map<string, number>
+): number {
+  if (recipe.materials.length === 0) {
+    return 0;
   }
 
-  return rates;
+  let maxInputRate = Number.POSITIVE_INFINITY;
+
+  for (const material of recipe.materials) {
+    if (material.count <= 0) {
+      continue;
+    }
+    const availableRate = outputRates.get(material.id) || 0;
+    const materialRate = availableRate / material.count;
+    maxInputRate = Math.min(maxInputRate, materialRate);
+  }
+
+  return Number.isFinite(maxInputRate) ? maxInputRate : 0;
 }
 
 function isItemBaseMaterial(
@@ -208,6 +185,44 @@ function getItemName(itemId: string, tree: DependencyNode): string {
     }
   }
   return `物品 ${itemId}`;
+}
+
+function collectNodesInPostOrder(node: DependencyNode): DependencyNode[] {
+  const result: DependencyNode[] = [];
+  const visited = new Set<string>();
+
+  const visit = (current: DependencyNode) => {
+    if (visited.has(current.itemId)) {
+      return;
+    }
+    visited.add(current.itemId);
+    for (const child of current.children) {
+      visit(child);
+    }
+    result.push(current);
+  };
+
+  visit(node);
+  return result;
+}
+
+function buildConnections(
+  devices: DeviceConfig[],
+  connections: Connection[]
+): void {
+  for (const device of devices) {
+    for (const output of device.outputs) {
+      if (output.destination !== 'output') {
+        connections.push({
+          from: device.deviceId,
+          to: output.destination.replace('device-', ''),
+          itemId: output.itemId,
+          count: 1,
+          rate: TRANSFER_RATE_PER_PIPE,
+        });
+      }
+    }
+  }
 }
 
 function findBottleneck(

@@ -61,7 +61,8 @@ export interface ProductionPlan {
   type: 'efficiency' | 'scale';
   name: string;
   targetProduct: { id: string; name: string };
-  targetRate: number; // 每秒产出目标数量
+  calculatedOutputRate: number;
+  bottleneckStage?: { stage: string; rate: number; limitedBy: string };
   devices: DeviceConfig[];
   totalDeviceCount: number;
   bottleneck: { itemId: string; description: string } | null;
@@ -85,11 +86,11 @@ export interface Connection {
  */
 export interface SimulatorState {
   targetItemId: string;
+  targetRate?: number;
   baseMaterialIds: Set<string>; // 用户标记为基础原料的物品ID
   dependencyTree: DependencyNode | null;
   efficiencyPlan: ProductionPlan | null;
   scalePlan: ProductionPlan | null;
-  targetRate: number; // 目标产出率（每秒）
   loading: boolean;
   error: string | null;
 }
@@ -101,4 +102,5 @@ export interface RecipeLookup {
   asMaterials: Map<string, ManufacturingRecipe[]>; // itemId -> recipes (as material)
   asProducts: Map<string, ManufacturingRecipe[]>; // itemId -> recipes (as product)
   byDevice: Map<string, ManufacturingRecipe[]>; // deviceId -> recipes
+  cycleGroups: Map<string, Set<string>>; // itemId -> cycle group ids
 }
