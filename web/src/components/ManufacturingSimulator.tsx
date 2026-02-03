@@ -21,7 +21,6 @@ export default function ManufacturingSimulator({
 }: ManufacturingSimulatorProps) {
   const [isOpen, setIsOpen] = useState(false);
   const [activeTab, setActiveTab] = useState<'efficiency' | 'scale'>('efficiency');
-  const [targetRate, setTargetRate] = useState(1);
   const [state, setState] = useState<SimulatorState>({
     targetItemId,
     baseMaterialIds: new Set(),
@@ -58,13 +57,12 @@ export default function ManufacturingSimulator({
 
         setDependencyTree(tree);
         
-        console.log('[INIT] Calculating efficiency plan with targetRate:', targetRate);
+        console.log('[INIT] Calculating efficiency plan (auto-rate mode)');
         const efficiencyPlan = calculateMaximumEfficiencyPlan(
           targetItemId,
           targetItemName,
           tree,
-          itemLookup,
-          targetRate
+          itemLookup
         );
         console.log('[INIT] Efficiency plan calculated:', { devices: efficiencyPlan.devices.length, rate: efficiencyPlan.calculatedOutputRate });
         
@@ -90,7 +88,7 @@ export default function ManufacturingSimulator({
     };
 
     initializeSimulator();
-  }, [isOpen, targetItemId, targetItemName, itemLookup, targetRate]);
+  }, [isOpen, targetItemId, targetItemName, itemLookup]);
 
   useEffect(() => {
     console.log('[REFRESH EFFECT] Running, isOpen:', isOpen, 'dependencyTree:', !!dependencyTree);
@@ -113,13 +111,12 @@ export default function ManufacturingSimulator({
 
         setDependencyTree(tree);
         
-        console.log('[REFRESH] Calculating efficiency plan with targetRate:', targetRate);
+        console.log('[REFRESH] Calculating efficiency plan (auto-rate mode)');
         const efficiencyPlan = calculateMaximumEfficiencyPlan(
           targetItemId,
           targetItemName,
           tree,
-          itemLookup,
-          targetRate
+          itemLookup
         );
         console.log('[REFRESH] Efficiency plan:', { devices: efficiencyPlan.devices.length, rate: efficiencyPlan.calculatedOutputRate });
         
@@ -139,44 +136,9 @@ export default function ManufacturingSimulator({
     }, 300);
 
     return () => clearTimeout(timeoutId);
-  }, [state.baseMaterialIds, isOpen, targetRate, targetItemId, targetItemName, itemLookup]);
+  }, [state.baseMaterialIds, isOpen, targetItemId, targetItemName, itemLookup]);
 
-  const handleCalculatePlans = () => {
-    if (!dependencyTree) return;
 
-    setState((prev) => ({ ...prev, loading: true }));
-
-    try {
-      const efficiencyPlan = calculateMaximumEfficiencyPlan(
-        targetItemId,
-        targetItemName,
-        dependencyTree,
-        itemLookup,
-        targetRate
-      );
-
-      const scalePlan = calculateMinimumScalePlan(
-        targetItemId,
-        targetItemName,
-        dependencyTree,
-        itemLookup
-      );
-
-      setState((prev) => ({
-        ...prev,
-        efficiencyPlan,
-        scalePlan,
-        loading: false,
-      }));
-    } catch (error) {
-      console.error('Failed to calculate plans:', error);
-      setState((prev) => ({
-        ...prev,
-        error: '计算失败，请稍后重试',
-        loading: false,
-      }));
-    }
-  };
 
   const handleBaseMaterialToggle = (itemId: string) => {
     setState((prev) => {
@@ -251,28 +213,8 @@ export default function ManufacturingSimulator({
             </button>
           </div>
 
-          <div className="flex items-center gap-4 flex-wrap">
-            <div className="flex items-center gap-2">
-              <label className="text-sm font-medium text-gray-700">
-                目标产出率（个/秒）：
-              </label>
-              <input
-                type="number"
-                min="0.1"
-                step="0.1"
-                value={targetRate}
-                onChange={(e) => setTargetRate(parseFloat(e.target.value) || 1)}
-                className="w-24 px-3 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent"
-              />
-            </div>
-
-            <button
-              onClick={handleCalculatePlans}
-              disabled={state.loading || !dependencyTree}
-              className="px-6 py-2 bg-green-600 hover:bg-green-700 disabled:bg-gray-400 text-white rounded-lg font-medium transition-colors"
-            >
-              {state.loading ? '计算中...' : '计算方案'}
-            </button>
+          <div className="text-sm text-gray-600">
+            ℹ️ 最高效率方案自动计算最小整数配比的产出率
           </div>
         </div>
 

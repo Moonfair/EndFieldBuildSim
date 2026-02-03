@@ -103,10 +103,9 @@ export function calculateMaximumEfficiencyPlan(
   targetItemId: string,
   targetItemName: string,
   dependencyTree: DependencyNode,
-  itemLookup: ItemLookup,
-  targetRatePerSecond: number
+  itemLookup: ItemLookup
 ): ProductionPlan {
-  console.log('[EFFICIENCY CALC] START:', { targetItemId, targetItemName, targetRatePerSecond });
+  console.log('[EFFICIENCY CALC] START:', { targetItemId, targetItemName });
   console.log('[EFFICIENCY CALC] Tree:', { isBase: dependencyTree.isBase, recipesCount: dependencyTree.recipes.length, childrenCount: dependencyTree.children.length });
   
   const selectedRecipes = new Map<string, ManufacturingRecipe>();
@@ -120,8 +119,7 @@ export function calculateMaximumEfficiencyPlan(
       selectedRecipes,
       dependencyTree,
       targetItemId,
-      itemLookup,
-      targetRatePerSecond
+      itemLookup
     );
 
   console.log('[EFFICIENCY CALC] After balancing:', { devicesCount: devices.length, baseMaterialsCount: baseMaterials.length, calculatedOutputRate });
@@ -233,16 +231,14 @@ function balanceZeroWasteFlows(
   selectedRecipes: Map<string, ManufacturingRecipe>,
   dependencyTree: DependencyNode,
   targetItemId: string,
-  itemLookup: ItemLookup,
-  targetRatePerSecond: number
+  itemLookup: ItemLookup
 ): {
   devices: DeviceConfig[];
   connections: Connection[];
   baseMaterials: Array<{ id: string; name: string; requiredRate: number }>;
   calculatedOutputRate: number;
 } {
-  const safeTargetRate = targetRatePerSecond > 0 ? targetRatePerSecond : 1;
-  const targetRatePerMinute = fractionFromNumber(safeTargetRate * 60);
+  const baseTargetRatePerMinute = fractionFromInt(1);
 
   const requirements = new Map<string, Fraction>();
   const baseRequirements = new Map<string, Fraction>();
@@ -250,7 +246,7 @@ function balanceZeroWasteFlows(
 
   propagateRequirements(
     dependencyTree,
-    targetRatePerMinute,
+    baseTargetRatePerMinute,
     selectedRecipes,
     requirements,
     baseRequirements,
@@ -294,8 +290,8 @@ function balanceZeroWasteFlows(
       denominators.push(fraction.denominator);
     }
   });
-  if (targetRatePerMinute.denominator > 0n) {
-    denominators.push(targetRatePerMinute.denominator);
+  if (baseTargetRatePerMinute.denominator > 0n) {
+    denominators.push(baseTargetRatePerMinute.denominator);
   }
 
   const scale = denominators.reduce<bigint>((acc, value) => {
@@ -368,7 +364,7 @@ function balanceZeroWasteFlows(
     })
     .filter((material) => material.requiredRate > 0);
 
-  const scaledTargetPerMinute = scaleFractionToInteger(targetRatePerMinute, scale);
+  const scaledTargetPerMinute = scaleFractionToInteger(baseTargetRatePerMinute, scale);
 
   return {
     devices,
