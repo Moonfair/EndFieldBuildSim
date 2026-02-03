@@ -88,14 +88,8 @@ export default function ManufacturingSimulator({
 
         setDependencyTree(tree);
         
-        console.log('[DEBUG Tree]', targetItemName, '- children:', tree.children.map(c => c.itemName));
-        console.log('[DEBUG Tree]', targetItemName, '- recipes count:', tree.recipes.length);
-
         const efficiencyPlan = calculateMaximumEfficiencyPlan(targetItemId, targetItemName, tree, itemLookup);
         const scalePlan = calculateMinimumScalePlan(targetItemId, targetItemName, tree, itemLookup);
-        
-        console.log('[DEBUG Plan] Scale devices:', scalePlan.devices.map(d => `${d.deviceName}(${d.deviceId})`));
-        console.log('[DEBUG Plan] Scale selected recipes:', Array.from(scalePlan.devices).map(d => d.recipe.deviceName + ':' + d.recipe.materials.map(m => m.name).join('+')));
 
         setState((prev) => ({
           ...prev,

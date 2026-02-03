@@ -214,6 +214,11 @@ type GraphEdge = {
   product: string;
 };
 
+type GraphDevice = {
+  graphId: string;
+  config: ProductionPlan['devices'][0];
+};
+
 function ConnectionGraph({
   connections,
   devices,
@@ -221,12 +226,25 @@ function ConnectionGraph({
   targetProduct,
   itemLookup,
 }: ConnectionGraphProps) {
-  console.log('[ConnectionGraph] Devices:', devices.map(d => `${d.deviceName}(${d.deviceId})`));
-  console.log('[ConnectionGraph] Connections:', connections.map(c => `${c.from}→${c.to} (${c.itemId})`));
-  console.log('[ConnectionGraph] Base Materials:', baseMaterials.map(b => b.name));
-  
   const hasPlanConnections = connections.length > 0;
-  const deviceMap = new Map(devices.map((d) => [d.deviceId, d]));
+  const graphDevices: GraphDevice[] = devices.map((device, index) => ({
+    graphId: `${device.deviceId}-${index}`,
+    config: device,
+  }));
+
+  const deviceMap = new Map<string, GraphDevice>();
+  graphDevices.forEach((entry) => {
+    deviceMap.set(entry.graphId, entry);
+  });
+
+  const outputToDevice = new Map<string, GraphDevice>();
+  graphDevices.forEach((entry) => {
+    entry.config.outputs.forEach((output) => {
+      if (!outputToDevice.has(output.itemId)) {
+        outputToDevice.set(output.itemId, entry);
+      }
+    });
+  });
 
   const baseMaterialMap = new Map<string, string>();
   baseMaterials.forEach((material) => {
@@ -234,9 +252,9 @@ function ConnectionGraph({
   });
 
   const finalDeviceIds = new Set(
-    devices
-      .filter((device) => device.outputs.some((output) => output.destination === 'output'))
-      .map((device) => device.deviceId)
+    graphDevices
+      .filter((entry) => entry.config.outputs.some((output) => output.destination === 'output'))
+      .map((entry) => entry.graphId)
   );
 
   const nodeMap = new Map<string, GraphNode>();
@@ -254,7 +272,7 @@ function ConnectionGraph({
   const ensureBaseNode = (itemId: string): string => {
     const nodeId = `base-${itemId}`;
     if (!nodeMap.has(nodeId)) {
-      const label = baseMaterialMap.get(itemId) || itemLookup[itemId]?.name || itemId;
+      const label = itemLookup[itemId]?.name || baseMaterialMap.get(itemId) || itemId;
       const row = baseMaterialRows.get(itemId) ?? 0;
       nodeMap.set(nodeId, {
         id: nodeId,
@@ -274,19 +292,20 @@ function ConnectionGraph({
   });
 
   // Compute dependency stages for devices
-  const computeStage = (deviceId: string, stack: Set<string>): number => {
-    if (stageMap.has(deviceId)) {
-      return stageMap.get(deviceId) as number;
+  const computeStage = (graphId: string, stack: Set<string>): number => {
+    if (stageMap.has(graphId)) {
+      return stageMap.get(graphId) as number;
     }
-    if (stack.has(deviceId)) {
+    if (stack.has(graphId)) {
       return 1;
     }
-    stack.add(deviceId);
+    stack.add(graphId);
 
-    const device = deviceMap.get(deviceId);
+    const entry = deviceMap.get(graphId);
+    const device = entry?.config;
     if (!device) {
-      stageMap.set(deviceId, 1);
-      stack.delete(deviceId);
+      stageMap.set(graphId, 1);
+      stack.delete(graphId);
       return 1;
     }
 
@@ -294,32 +313,36 @@ function ConnectionGraph({
     device.inputs.forEach((input) => {
       if (input.source && input.source.startsWith('device-')) {
         const upstreamId = input.source.replace('device-', '');
-        maxStage = Math.max(maxStage, computeStage(upstreamId, stack));
+        const upstreamDevice = outputToDevice.get(upstreamId);
+        if (upstreamDevice) {
+          maxStage = Math.max(maxStage, computeStage(upstreamDevice.graphId, stack));
+        }
       } else {
         maxStage = Math.max(maxStage, 0);
       }
     });
 
     const currentStage = maxStage + 1;
-    stageMap.set(deviceId, currentStage);
-    stack.delete(deviceId);
+    stageMap.set(graphId, currentStage);
+    stack.delete(graphId);
     return currentStage;
   };
 
   // Assign rows to devices based on which base material they primarily consume
-  const assignDeviceRow = (deviceId: string, visited: Set<string>): number => {
-    if (rowMap.has(deviceId)) {
-      return rowMap.get(deviceId) as number;
+  const assignDeviceRow = (graphId: string, visited: Set<string>): number => {
+    if (rowMap.has(graphId)) {
+      return rowMap.get(graphId) as number;
     }
-    if (visited.has(deviceId)) {
+    if (visited.has(graphId)) {
       return 0; // Fallback to row 0 for cycles
     }
-    visited.add(deviceId);
+    visited.add(graphId);
 
-    const device = deviceMap.get(deviceId);
+    const entry = deviceMap.get(graphId);
+    const device = entry?.config;
     if (!device) {
-      rowMap.set(deviceId, 0);
-      visited.delete(deviceId);
+      rowMap.set(graphId, 0);
+      visited.delete(graphId);
       return 0;
     }
 
@@ -330,8 +353,11 @@ function ConnectionGraph({
       if (input.source && input.source.startsWith('device-')) {
         // Trace upstream to find the base material
         const upstreamId = input.source.replace('device-', '');
-        const upstreamRow = assignDeviceRow(upstreamId, visited);
-        primaryRow = upstreamRow;
+        const upstreamDevice = outputToDevice.get(upstreamId);
+        if (upstreamDevice) {
+          const upstreamRow = assignDeviceRow(upstreamDevice.graphId, visited);
+          primaryRow = upstreamRow;
+        }
       } else {
         // Direct base material input
         const row = baseMaterialRows.get(input.itemId);
@@ -342,22 +368,22 @@ function ConnectionGraph({
       }
     }
 
-    rowMap.set(deviceId, primaryRow);
-    visited.delete(deviceId);
+    rowMap.set(graphId, primaryRow);
+    visited.delete(graphId);
     return primaryRow;
   };
 
   // Process all devices
-  devices.forEach((device) => {
-    computeStage(device.deviceId, new Set());
-    const row = assignDeviceRow(device.deviceId, new Set());
-    nodeMap.set(device.deviceId, {
-      id: device.deviceId,
-      label: device.deviceName,
-      stage: stageMap.get(device.deviceId) ?? 1,
+  graphDevices.forEach(({ graphId, config }) => {
+    computeStage(graphId, new Set());
+    const row = assignDeviceRow(graphId, new Set());
+    nodeMap.set(graphId, {
+      id: graphId,
+      label: config.deviceName,
+      stage: stageMap.get(graphId) ?? 1,
       row,
       type: 'device',
-      isFinal: finalDeviceIds.has(device.deviceId),
+      isFinal: finalDeviceIds.has(graphId),
     });
   });
 
@@ -373,27 +399,26 @@ function ConnectionGraph({
   });
 
   // Build edges
-  devices.forEach((device) => {
-    device.inputs.forEach((input) => {
+  graphDevices.forEach(({ graphId, config }) => {
+    config.inputs.forEach((input) => {
       let fromId: string;
       if (input.source && input.source.startsWith('device-')) {
         const itemId = input.source.replace('device-', '');
-        const producingDevice = devices.find((d) =>
-          d.outputs.some((o) => o.itemId === itemId)
-        );
-        fromId = producingDevice ? producingDevice.deviceId : ensureBaseNode(itemId);
+        const producingDevice = outputToDevice.get(itemId);
+        fromId = producingDevice ? producingDevice.graphId : ensureBaseNode(itemId);
       } else {
         fromId = ensureBaseNode(input.itemId);
       }
 
       const productName = itemLookup[input.itemId]?.name || input.itemId;
-      edges.push({ from: fromId, to: device.deviceId, product: productName });
+      edges.push({ from: fromId, to: graphId, product: productName });
     });
   });
 
   // Add edges from final devices to product node
   finalDeviceIds.forEach((deviceId) => {
-    const device = deviceMap.get(deviceId);
+    const entry = deviceMap.get(deviceId);
+    const device = entry?.config;
     if (device) {
       const output = device.outputs.find((o) => o.destination === 'output');
       if (output) {
@@ -431,26 +456,26 @@ function ConnectionGraph({
   });
 
   // Second pass: Adjust device positions to center on inputs
-  nodeMap.forEach((node) => {
-    if (node.type === 'device') {
-      const device = deviceMap.get(node.id);
-      if (device && device.inputs.length > 1) {
-        const inputNodeIds = device.inputs.map((input) => {
-          if (input.source && input.source.startsWith('device-')) {
-            return input.source.replace('device-', '');
-          } else {
-            return `base-${input.itemId}`;
-          }
-        });
-        
-        const inputPositions = inputNodeIds
-          .map((id) => basePositions.get(id))
-          .filter((pos): pos is { x: number; y: number } => pos !== undefined);
-        
-        if (inputPositions.length > 1) {
-          const avgY = inputPositions.reduce((sum, pos) => sum + pos.y, 0) / inputPositions.length;
-          const basePos = basePositions.get(node.id)!;
-          basePositions.set(node.id, { x: basePos.x, y: avgY });
+  graphDevices.forEach(({ graphId, config }) => {
+    if (config.inputs.length > 1) {
+      const inputNodeIds = config.inputs.map((input) => {
+        if (input.source && input.source.startsWith('device-')) {
+          const itemId = input.source.replace('device-', '');
+          const upstreamDevice = outputToDevice.get(itemId);
+          return upstreamDevice ? upstreamDevice.graphId : `base-${input.itemId}`;
+        }
+        return `base-${input.itemId}`;
+      });
+
+      const inputPositions = inputNodeIds
+        .map((id) => basePositions.get(id))
+        .filter((pos): pos is { x: number; y: number } => pos !== undefined);
+
+      if (inputPositions.length > 1) {
+        const avgY = inputPositions.reduce((sum, pos) => sum + pos.y, 0) / inputPositions.length;
+        const currentPos = basePositions.get(graphId);
+        if (currentPos) {
+          basePositions.set(graphId, { x: currentPos.x, y: avgY });
         }
       }
     }
@@ -534,7 +559,8 @@ function ConnectionGraph({
                   ? 'bg-amber-50 border-amber-300 text-amber-900'
                   : 'bg-white border-gray-200 text-gray-900';
 
-          const device = deviceMap.get(node.id);
+          const entry = deviceMap.get(node.id);
+          const device = entry?.config;
           const productionRate = device ? (device.productionRate * 60).toFixed(2) : null;
           const count = device?.count;
 
