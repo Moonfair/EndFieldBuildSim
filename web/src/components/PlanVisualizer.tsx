@@ -214,6 +214,8 @@ type GraphNode = {
   row: number;
   type: 'base' | 'device' | 'product';
   isFinal?: boolean;
+  deviceCount?: number;
+  productionRate?: number;
 };
 
 type GraphEdge = {
@@ -255,8 +257,10 @@ function ConnectionGraph({
   });
 
   const baseMaterialMap = new Map<string, string>();
+  const baseMaterialRates = new Map<string, number>();
   baseMaterials.forEach((material) => {
     baseMaterialMap.set(material.id, material.name);
+    baseMaterialRates.set(material.id, material.requiredRate);
   });
 
   const finalDeviceIds = new Set(
@@ -276,18 +280,24 @@ function ConnectionGraph({
     baseMaterialRows.set(material.id, index);
   });
 
-  // Ensure base material nodes exist
+  const BASE_EXTRACTION_RATE = 0.5;
+  
   const ensureBaseNode = (itemId: string): string => {
     const nodeId = `base-${itemId}`;
     if (!nodeMap.has(nodeId)) {
       const label = itemLookup[itemId]?.name || baseMaterialMap.get(itemId) || itemId;
       const row = baseMaterialRows.get(itemId) ?? 0;
+      const requiredRate = baseMaterialRates.get(itemId) ?? 0;
+      const deviceCount = requiredRate > 0 ? Math.ceil(requiredRate / BASE_EXTRACTION_RATE) : 0;
+      
       nodeMap.set(nodeId, {
         id: nodeId,
         label,
         stage: 0,
         row,
         type: 'base',
+        deviceCount,
+        productionRate: requiredRate,
       });
       stageMap.set(nodeId, 0);
       rowMap.set(nodeId, row);
@@ -395,16 +405,7 @@ function ConnectionGraph({
     });
   });
 
-  // Add final product node
-  const maxStage = Math.max(...Array.from(stageMap.values()));
-  const productNodeId = 'product-final';
-  nodeMap.set(productNodeId, {
-    id: productNodeId,
-    label: targetProduct.name,
-    stage: maxStage + 1,
-    row: 0, // Center row for final product
-    type: 'product',
-  });
+
 
   // Build edges
   graphDevices.forEach(({ graphId, config }) => {
@@ -423,18 +424,7 @@ function ConnectionGraph({
     });
   });
 
-  // Add edges from final devices to product node
-  finalDeviceIds.forEach((deviceId) => {
-    const entry = deviceMap.get(deviceId);
-    const device = entry?.config;
-    if (device) {
-      const output = device.outputs.find((o) => o.destination === 'output');
-      if (output) {
-        const productName = itemLookup[output.itemId]?.name || output.itemId;
-        edges.push({ from: deviceId, to: productNodeId, product: productName });
-      }
-    }
-  });
+
 
   if (edges.length === 0 && !hasPlanConnections) {
     return (
@@ -585,7 +575,17 @@ function ConnectionGraph({
             >
               <div className="text-sm font-semibold truncate mb-1">{node.label}</div>
               {node.type === 'base' && (
-                <div className="text-xs text-green-700">基础原料</div>
+                <>
+                  <div className="text-xs text-green-700 mb-1">基础原料</div>
+                  {node.deviceCount !== undefined && node.deviceCount > 0 && (
+                    <>
+                      <div className="text-xs text-green-600">{node.deviceCount} 台</div>
+                      <div className="text-xs text-gray-600">
+                        {((node.productionRate ?? 0) * 60).toFixed(2)} 个/分钟
+                      </div>
+                    </>
+                  )}
+                </>
               )}
               {node.type === 'product' && (
                 <div className="text-xs text-blue-700">最终产物</div>
