@@ -52,15 +52,6 @@ export default function PlanVisualizer({ plan, itemLookup }: PlanVisualizerProps
       )}
 
       <div>
-        <h4 className="font-semibold text-gray-900 mb-4">设备配置</h4>
-        <div className="space-y-4">
-          {plan.devices.map((device, index) => (
-            <DeviceCard key={`${device.deviceId}-${index}`} device={device} itemLookup={itemLookup} />
-          ))}
-        </div>
-      </div>
-
-      <div>
         <h4 className="font-semibold text-gray-900 mb-4">设备连接</h4>
         <ConnectionGraph
           connections={plan.connections}
@@ -99,6 +90,15 @@ export default function PlanVisualizer({ plan, itemLookup }: PlanVisualizerProps
           </div>
         </div>
       )}
+
+      <div>
+        <h4 className="font-semibold text-gray-900 mb-4">设备配置</h4>
+        <div className="space-y-4">
+          {plan.devices.map((device, index) => (
+            <DeviceCard key={`${device.deviceId}-${index}`} device={device} itemLookup={itemLookup} />
+          ))}
+        </div>
+      </div>
     </div>
   );
 }
@@ -436,7 +436,7 @@ function ConnectionGraph({
 
   const cardWidth = 180;
   const cardHeight = 90;
-  const columnGap = 60;
+  const columnGap = 100;
   const rowGap = 20;
 
   const layout = new Map<string, { x: number; y: number }>();
@@ -565,7 +565,7 @@ function ConnectionGraph({
           return (
             <div
               key={node.id}
-              className={`absolute rounded-lg p-3 shadow-sm border ${baseClasses}`}
+              className="absolute"
               style={{
                 left: pos.x,
                 top: pos.y,
@@ -573,32 +573,59 @@ function ConnectionGraph({
                 height: cardHeight,
               }}
             >
-              <div className="text-sm font-semibold truncate mb-1">{node.label}</div>
-              {node.type === 'base' && (
-                <>
-                  <div className="text-xs text-green-700 mb-1">基础原料</div>
-                  {node.deviceCount !== undefined && node.deviceCount > 0 && (
-                    <>
-                      <div className="text-xs text-green-600">{node.deviceCount} 台</div>
-                      <div className="text-xs text-gray-600">
-                        {((node.productionRate ?? 0) * 60).toFixed(2)} 个/分钟
-                      </div>
-                    </>
-                  )}
-                </>
-              )}
-              {node.type === 'product' && (
-                <div className="text-xs text-blue-700">最终产物</div>
-              )}
               {node.type === 'device' && device && (
                 <>
-                  <div className="text-xs text-blue-600 mb-1">{count} 台</div>
-                  <div className="text-xs text-gray-600">{productionRate} 个/分钟</div>
-                  {node.isFinal && (
-                    <div className="text-xs text-green-600 mt-1">产出: {targetProduct.name}</div>
-                  )}
+                  <div className="absolute left-0 top-1/2 -translate-x-full -translate-y-1/2 flex flex-col gap-1 pr-2">
+                    {device.inputs.map((input, idx) => {
+                      const item = itemLookup[input.itemId];
+                      return item ? (
+                        <div key={idx} title={item.name}>
+                          <ItemImage src={item.image} alt={item.name} className="w-6 h-6" />
+                        </div>
+                      ) : null;
+                    })}
+                  </div>
+                  <div className="absolute right-0 top-1/2 -translate-y-1/2 translate-x-full flex flex-col gap-1 pl-2">
+                    {device.outputs.map((output, idx) => {
+                      const item = itemLookup[output.itemId];
+                      return item ? (
+                        <div key={idx} title={item.name}>
+                          <ItemImage src={item.image} alt={item.name} className="w-6 h-6" />
+                        </div>
+                      ) : null;
+                    })}
+                  </div>
                 </>
               )}
+              
+              <div className={`rounded-lg p-3 shadow-sm border h-full ${baseClasses}`}>
+                <div className="text-sm font-semibold truncate mb-1">{node.label}</div>
+                {node.type === 'base' && (
+                  <>
+                    <div className="text-xs text-green-700 mb-1">基础原料</div>
+                    {node.deviceCount !== undefined && node.deviceCount > 0 && (
+                      <>
+                        <div className="text-xs text-green-600">{node.deviceCount} 台</div>
+                        <div className="text-xs text-gray-600">
+                          {((node.productionRate ?? 0) * 60).toFixed(2)} 个/分钟
+                        </div>
+                      </>
+                    )}
+                  </>
+                )}
+                {node.type === 'product' && (
+                  <div className="text-xs text-blue-700">最终产物</div>
+                )}
+                {node.type === 'device' && device && (
+                  <>
+                    <div className="text-xs text-blue-600 mb-1">{count} 台</div>
+                    <div className="text-xs text-gray-600">{productionRate} 个/分钟</div>
+                    {node.isFinal && (
+                      <div className="text-xs text-green-600 mt-1">产出: {targetProduct.name}</div>
+                    )}
+                  </>
+                )}
+              </div>
             </div>
           );
         })}
