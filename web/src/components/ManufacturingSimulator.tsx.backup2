@@ -77,13 +77,15 @@ export default function ManufacturingSimulator({
       const efficiencyPlan = calculateMaximumEfficiencyPlan(
         targetItemId,
         targetItemName,
-        dependencyTree
+        dependencyTree,
+        itemLookup
       );
 
       const scalePlan = calculateMinimumScalePlan(
         targetItemId,
         targetItemName,
-        dependencyTree
+        dependencyTree,
+        itemLookup
       );
 
       setState((prev) => ({

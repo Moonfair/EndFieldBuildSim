@@ -5,6 +5,7 @@ import type {
   DependencyNode,
   ManufacturingRecipe,
 } from '../types/manufacturing';
+import type { ItemLookup } from '../types/catalog';
 import { TRANSFER_RATE_PER_PIPE, BASE_MATERIAL_EXTRACTION_RATE } from './constants';
 
 type StageRate = { stage: string; rate: number; limitedBy: string };
@@ -12,7 +13,8 @@ type StageRate = { stage: string; rate: number; limitedBy: string };
 export function calculateMinimumScalePlan(
   targetItemId: string,
   targetItemName: string,
-  dependencyTree: DependencyNode
+  dependencyTree: DependencyNode,
+  itemLookup: ItemLookup
 ): ProductionPlan {
   const selectedRecipes = new Map<string, ManufacturingRecipe>();
   selectRecipesForMinScale(dependencyTree, selectedRecipes);
@@ -109,7 +111,7 @@ export function calculateMinimumScalePlan(
     connections,
     baseMaterials: Array.from(baseMaterialsMap.entries()).map(([id, rate]) => ({
       id,
-      name: getItemName(id, dependencyTree),
+      name: getItemName(id, dependencyTree, itemLookup),
       requiredRate: rate,
     })),
   };
@@ -359,17 +361,17 @@ function isItemBaseMaterial(
   return false;
 }
 
-function getItemName(itemId: string, tree: DependencyNode): string {
+function getItemName(itemId: string, tree: DependencyNode, itemLookup: ItemLookup): string {
   if (tree.itemId === itemId) {
     return tree.itemName;
   }
   for (const child of tree.children) {
-    const name = getItemName(itemId, child);
+    const name = getItemName(itemId, child, itemLookup);
     if (name) {
       return name;
     }
   }
-  return `物品 ${itemId}`;
+  return itemLookup[itemId]?.name || `物品 ${itemId}`;
 }
 
 function buildConnections(
