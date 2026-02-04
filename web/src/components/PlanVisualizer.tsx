@@ -1,7 +1,6 @@
 import type { ProductionPlan } from '../types/manufacturing';
 import type { ItemLookup } from '../types/catalog';
 import ItemImage from './ItemImage';
-import { getImagePath } from '../utils/imageUrl';
 
 interface PlanVisualizerProps {
   plan: ProductionPlan;
@@ -603,7 +602,7 @@ function ConnectionGraph({
                 )}
                 {node.type === 'base' && (
                   <div className="flex-shrink-0 h-full flex items-center pr-2">
-                    <img src={getImagePath('/placeholder.png')} alt="仓库取货口" className="h-full object-contain rounded" />
+                    <img src={itemLookup['170']?.image} alt="仓库取货口" className="h-full object-contain rounded" />
                   </div>
                 )}
 <div className="flex-1">
