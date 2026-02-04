@@ -137,6 +137,7 @@ export default function DetailPage() {
               </span>
             )}
             <h1 className="text-3xl font-bold mb-2">{itemName}</h1>
+
             {(mainType || subType) && (
               <div className="text-sm text-gray-600 mb-4">
                 {mainType && <span>{mainType}</span>}
@@ -155,7 +156,15 @@ export default function DetailPage() {
               </div>
             )}
           </div>
+
         </div>
+          {id && itemLookup && (
+            <ManufacturingSimulator
+              targetItemId={id}
+              targetItemName={itemName}
+              itemLookup={itemLookup}
+            />
+          )}
 
         {mainDoc && (
           <div className="border-t pt-6">
@@ -179,14 +188,6 @@ export default function DetailPage() {
         <div className="bg-white rounded-card shadow-card p-6">
           <MaterialRecipeTable recipes={materialRecipes} itemLookup={itemLookup} materialItemId={id || ''} />
         </div>
-      )}
-
-      {id && itemLookup && (
-        <ManufacturingSimulator
-          targetItemId={id}
-          targetItemName={itemName}
-          itemLookup={itemLookup}
-        />
       )}
     </div>
   );

@@ -1,6 +1,7 @@
 import type { ProductionPlan } from '../types/manufacturing';
 import type { ItemLookup } from '../types/catalog';
 import ItemImage from './ItemImage';
+import { getImagePath } from '../utils/imageUrl';
 
 interface PlanVisualizerProps {
   plan: ProductionPlan;
@@ -76,7 +77,7 @@ export default function PlanVisualizer({ plan, itemLookup }: PlanVisualizerProps
                     {item && (
                       <ItemImage src={item.image} alt={material.name} className="w-10 h-10" />
                     )}
-                    <div className="flex-1 min-w-0">
+<div className="flex-1">
                       <div className="font-medium text-sm truncate">{material.name}</div>
                       <div className="text-xs text-gray-600">
                         需求率：{(material.requiredRate * 60).toFixed(3)} 个/分钟
@@ -431,7 +432,7 @@ function ConnectionGraph({
     );
   }
 
-  const cardWidth = 200;
+  const cardWidth = 260;
   const cardHeight = 90;
   const columnGap = 100;
   const rowGap = 20;
@@ -595,14 +596,24 @@ function ConnectionGraph({
               }}
             >
               <div className={`rounded-lg p-3 shadow-sm border h-full ${baseClasses} flex gap-2`}>
-                <div className="flex-1 min-w-0">
-                  <div className="text-sm font-semibold truncate mb-1">{node.label}</div>
+                {node.type === 'device' && device && (
+                  <div className="flex-shrink-0 h-full flex items-center pr-2">
+                    <img src={itemLookup[device.deviceId]?.image} alt={device.deviceName} className="h-full object-contain rounded" />
+                  </div>
+                )}
+                {node.type === 'base' && (
+                  <div className="flex-shrink-0 h-full flex items-center pr-2">
+                    <img src={getImagePath('/placeholder.png')} alt="仓库取货口" className="h-full object-contain rounded" />
+                  </div>
+                )}
+<div className="flex-1">
+                  <div className="text-sm font-semibold mb-1 whitespace-nowrap">{node.label}</div>
                   {node.type === 'base' && (
                     <>
                       {node.deviceCount !== undefined && node.deviceCount > 0 && (
                         <>
-                          <div className="text-xs text-green-600 mb-2"><span className="px-2 py-0.5 bg-green-100 rounded-full">{node.deviceCount} 台</span></div>
-                          <div className="text-xs text-gray-600">
+                          <div className="text-xs text-green-600 mb-2 whitespace-nowrap"><span className="px-2 py-0.5 bg-green-100 rounded-full">{node.deviceCount} 台</span></div>
+                          <div className="text-xs text-gray-600 whitespace-nowrap">
                             {((node.productionRate ?? 0) * 60).toFixed(2)} 个/分钟
                           </div>
                         </>
@@ -610,12 +621,12 @@ function ConnectionGraph({
                     </>
                   )}
                   {node.type === 'product' && (
-                    <div className="text-xs text-blue-700">最终产物</div>
+                    <div className="text-xs text-blue-700 whitespace-nowrap">最终产物</div>
                   )}
                   {node.type === 'device' && device && (
                     <>
-                      <div className="text-xs text-blue-600 mb-2"><span className="px-2 py-0.5 bg-blue-100 rounded-full">{count} 台</span></div>
-                      <div className="text-xs text-gray-600">{productionRate} 个/分钟</div>
+                      <div className="text-xs text-blue-600 mb-2 whitespace-nowrap"><span className="px-2 py-0.5 bg-blue-100 rounded-full">{count} 台</span></div>
+                      <div className="text-xs text-gray-600 whitespace-nowrap">{productionRate} 个/分钟</div>
                     </>
                   )}
                 </div>
