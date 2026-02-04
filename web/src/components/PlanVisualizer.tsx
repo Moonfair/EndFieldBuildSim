@@ -487,6 +487,30 @@ function ConnectionGraph({
   containerWidth = Math.max(800, containerWidth + columnGap);
   containerHeight = Math.max(400, containerHeight + rowGap);
 
+  // Calculate midX for each target node
+  const targetNodeMidXMap = new Map<string, number>();
+  const edgesByTarget = new Map<string, Array<{ edge: typeof edges[0]; startX: number }>>();
+  
+  edges.forEach((edge) => {
+    const fromPos = layout.get(edge.from);
+    if (!fromPos) return;
+    
+    const startX = fromPos.x + cardWidth;
+    if (!edgesByTarget.has(edge.to)) {
+      edgesByTarget.set(edge.to, []);
+    }
+    edgesByTarget.get(edge.to)!.push({ edge, startX });
+  });
+  
+  edgesByTarget.forEach((edgeList, targetId) => {
+    const maxStartX = Math.max(...edgeList.map(e => e.startX));
+    const toPos = layout.get(targetId);
+    if (toPos) {
+      const midX = (maxStartX + toPos.x) / 2;
+      targetNodeMidXMap.set(targetId, midX);
+    }
+  });
+
   return (
     <div className="bg-gray-50 border border-gray-200 rounded-lg p-6 overflow-x-auto">
       <div className="relative" style={{ width: containerWidth, height: containerHeight }}>
@@ -510,13 +534,13 @@ function ConnectionGraph({
           {edges.map((edge, index) => {
             const fromPos = layout.get(edge.from);
             const toPos = layout.get(edge.to);
-            if (!fromPos || !toPos) return null;
+            const midX = targetNodeMidXMap.get(edge.to);
+            if (!fromPos || !toPos || midX === undefined) return null;
 
             const startX = fromPos.x + cardWidth;
             const startY = fromPos.y + cardHeight / 2;
             const endX = toPos.x;
             const endY = toPos.y + cardHeight / 2;
-            const midX = (startX + endX) / 2;
 
             const path = `M ${startX} ${startY} H ${midX} V ${endY} H ${endX}`;
 
