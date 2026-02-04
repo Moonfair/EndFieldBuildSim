@@ -57,7 +57,6 @@ export default function PlanVisualizer({ plan, itemLookup }: PlanVisualizerProps
           connections={plan.connections}
           devices={plan.devices}
           baseMaterials={plan.baseMaterials}
-          targetProduct={plan.targetProduct}
           itemLookup={itemLookup}
         />
       </div>
@@ -203,7 +202,6 @@ interface ConnectionGraphProps {
   connections: ProductionPlan['connections'];
   devices: ProductionPlan['devices'];
   baseMaterials: ProductionPlan['baseMaterials'];
-  targetProduct: ProductionPlan['targetProduct'];
   itemLookup: ItemLookup;
 }
 
@@ -233,7 +231,6 @@ function ConnectionGraph({
   connections,
   devices,
   baseMaterials,
-  targetProduct,
   itemLookup,
 }: ConnectionGraphProps) {
   const hasPlanConnections = connections.length > 0;
@@ -485,7 +482,7 @@ function ConnectionGraph({
   });
 
   containerWidth = Math.max(800, containerWidth + columnGap);
-  containerHeight = Math.max(400, containerHeight + rowGap);
+  containerHeight = containerHeight + rowGap;
 
   // Calculate midX for each target node
   const targetNodeMidXMap = new Map<string, number>();
@@ -641,10 +638,6 @@ function ConnectionGraph({
             </div>
           );
         })}
-      </div>
-
-      <div className="text-center text-gray-500 text-sm mt-4">
-        图例：每行代表一条从基础原料到最终产物的生产线，流程自左向右。
       </div>
     </div>
   );
