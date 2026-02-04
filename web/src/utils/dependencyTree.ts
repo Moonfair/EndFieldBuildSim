@@ -21,29 +21,6 @@ export function buildDependencyTree(options: BuildOptions): DependencyNode {
     visited = new Set(),
   } = options;
 
-  if (visited.has(targetItemId)) {
-    console.warn(`检测到循环依赖: ${targetItemName} (${targetItemId})`);
-    return {
-      itemId: targetItemId,
-      itemName: targetItemName,
-      isBase: true,
-      recipes: [],
-      children: [],
-    };
-  }
-
-  if (maxDepth <= 0) {
-    return {
-      itemId: targetItemId,
-      itemName: targetItemName,
-      isBase: true,
-      recipes: [],
-      children: [],
-    };
-  }
-
-  visited.add(targetItemId);
-
   const isBaseMaterial = baseMaterialIds.has(targetItemId);
 
   if (isBaseMaterial) {
@@ -55,6 +32,29 @@ export function buildDependencyTree(options: BuildOptions): DependencyNode {
       children: [],
     };
   }
+
+  if (visited.has(targetItemId)) {
+    console.warn(`检测到循环依赖: ${targetItemName} (${targetItemId})`);
+    return {
+      itemId: targetItemId,
+      itemName: targetItemName,
+      isBase: true,
+      recipes: [],
+      children: [],
+    };
+  }
+  visited.add(targetItemId);
+
+  if (maxDepth <= 0) {
+    return {
+      itemId: targetItemId,
+      itemName: targetItemName,
+      isBase: true,
+      recipes: [],
+      children: [],
+    };
+  }
+
 
   const recipes = recipeLookup.asProducts.get(targetItemId) || [];
   let filteredRecipes = recipes;

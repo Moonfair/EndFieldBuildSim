@@ -128,6 +128,36 @@ interface RecipeDatabase {
   byDevice: Record<string, string[]>;
 }
 
+const STORAGE_KEY = 'ignored_devices';
+
+const cacheUpdateListeners = new Set<() => void>();
+
+export function onCacheUpdate(listener: () => void): () => void {
+  cacheUpdateListeners.add(listener);
+  return () => {
+    cacheUpdateListeners.delete(listener);
+  };
+}
+
+export function notifyCacheUpdate(): void {
+  cacheUpdateListeners.forEach((listener) => {
+    listener();
+  });
+}
+
+function getIgnoredDevices(): Set<string> {
+  try {
+    const stored = localStorage.getItem(STORAGE_KEY);
+    if (stored) {
+      const deviceIds = JSON.parse(stored) as string[];
+      return new Set(deviceIds);
+    }
+  } catch (error) {
+    console.warn('Failed to load ignored devices:', error);
+  }
+  return new Set();
+}
+
 let cachedRecipeLookup: RecipeLookup | null = null;
 let cachedRecipes: Map<string, ManufacturingRecipe> | null = null;
 
@@ -147,6 +177,8 @@ export async function loadRecipeLookup(_itemLookup?: ItemLookup): Promise<Recipe
     return cachedRecipeLookup;
   }
 
+  const ignoredDevices = getIgnoredDevices();
+
   const asMaterials = new Map<string, ManufacturingRecipe[]>();
   const asProducts = new Map<string, ManufacturingRecipe[]>();
   const byDevice = new Map<string, ManufacturingRecipe[]>();
@@ -161,6 +193,9 @@ export async function loadRecipeLookup(_itemLookup?: ItemLookup): Promise<Recipe
   const database: RecipeDatabase = await response.json();
 
   for (const [recipeId, recipe] of Object.entries(database.recipes)) {
+    if (ignoredDevices.has(recipe.deviceId)) {
+      continue;
+    }
     const manufacturingRecipe: ManufacturingRecipe = {
       deviceId: recipe.deviceId,
       deviceName: recipe.deviceName,
@@ -209,4 +244,11 @@ export async function loadRecipeLookup(_itemLookup?: ItemLookup): Promise<Recipe
 
 export function getRecipes(): Map<string, ManufacturingRecipe> {
   return cachedRecipes || new Map();
+}
+
+export function clearRecipeCache(): void {
+  cachedRecipeLookup = null;
+  cachedRecipes = null;
+  notifyCacheUpdate();
+  console.log('[RecipeLoader] Cache cleared, will reload on next use');
 }
