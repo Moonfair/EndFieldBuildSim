@@ -27,7 +27,28 @@ export default function BaseMaterialSelector({
 
   const allItems = flattenDependencyTree(dependencyTree);
   const selectableItems = allItems.filter(
-    (item) => !item.isBase && item.recipes.length > 0
+    (item) =>
+      (item.recipes.length > 0 && !item.isBase) || selectedIds.has(item.itemId)
+  );
+
+  const allItemIds = new Set(allItems.map((item) => item.itemId));
+  selectedIds.forEach((id) => {
+    if (!allItemIds.has(id)) {
+      const itemInfo = itemLookup[id];
+      if (itemInfo) {
+        selectableItems.push({
+          itemId: id,
+          itemName: itemInfo.name,
+          isBase: true,
+          recipes: [],
+          depth: 0,
+        });
+      }
+    }
+  });
+
+  const uniqueItems = Array.from(
+    new Map(selectableItems.map((item) => [item.itemId, item])).values()
   );
   const selectedCount = selectedIds.size;
 
@@ -64,7 +85,7 @@ export default function BaseMaterialSelector({
       )}
 
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-3">
-        {selectableItems.map((item) => {
+        {uniqueItems.map((item) => {
           const isSelected = selectedIds.has(item.itemId);
           const itemInfo = itemLookup[item.itemId];
 
@@ -103,8 +124,8 @@ export default function BaseMaterialSelector({
         })}
       </div>
 
-      {selectableItems.length === 0 && (
-        <div className="text-center py-8 text-gray-500">
+{uniqueItems.length === 0 && (
+            <div className="text-center py-8 text-gray-500">
           <p>没有可选择的中间产物</p>
           <p className="text-sm mt-2">
             所有物品都是基础原料或没有可用配方
