@@ -578,7 +578,6 @@ function ConnectionGraph({
                   <div className="text-sm font-semibold truncate mb-1">{node.label}</div>
                   {node.type === 'base' && (
                     <>
-                      <div className="text-xs text-green-700 mb-1">基础原料</div>
                       {node.deviceCount !== undefined && node.deviceCount > 0 && (
                         <>
                           <div className="text-xs text-green-600">{node.deviceCount} 台</div>
@@ -596,9 +595,6 @@ function ConnectionGraph({
                     <>
                       <div className="text-xs text-blue-600 mb-1">{count} 台</div>
                       <div className="text-xs text-gray-600">{productionRate} 个/分钟</div>
-                      {node.isFinal && (
-                        <div className="text-xs text-green-600 mt-1">产出: {targetProduct.name}</div>
-                      )}
                     </>
                   )}
                 </div>
