@@ -1,4 +1,5 @@
 import type { ProductionPlan } from '../types/manufacturing';
+import { useNavigate } from 'react-router-dom';
 import type { ItemLookup } from '../types/catalog';
 import ItemImage from './ItemImage';
 
@@ -8,9 +9,11 @@ interface PlanVisualizerProps {
 }
 
 export default function PlanVisualizer({ plan, itemLookup }: PlanVisualizerProps) {
-  console.log('[VISUALIZER] Rendering plan:', { 
-    name: plan.name, 
-    devices: plan.devices.length, 
+  const navigate = useNavigate();
+
+  console.log('[VISUALIZER] Rendering plan:', {
+    name: plan.name,
+    devices: plan.devices.length,
     connections: plan.connections.length,
     baseMaterials: plan.baseMaterials.length,
     calculatedOutputRate: plan.calculatedOutputRate
@@ -58,6 +61,7 @@ export default function PlanVisualizer({ plan, itemLookup }: PlanVisualizerProps
           devices={plan.devices}
           baseMaterials={plan.baseMaterials}
           itemLookup={itemLookup}
+          navigate={navigate}
         />
       </div>
 
@@ -203,6 +207,7 @@ interface ConnectionGraphProps {
   devices: ProductionPlan['devices'];
   baseMaterials: ProductionPlan['baseMaterials'];
   itemLookup: ItemLookup;
+  navigate: ReturnType<typeof import('react-router-dom').useNavigate>;
 }
 
 type GraphNode = {
@@ -232,8 +237,21 @@ function ConnectionGraph({
   devices,
   baseMaterials,
   itemLookup,
+  navigate,
 }: ConnectionGraphProps) {
   const hasPlanConnections = connections.length > 0;
+
+  const handleItemClick = (itemId: string) => {
+    const item = itemLookup[itemId];
+    if (!item) return;
+
+    if (item.type === 'device') {
+      navigate(`/device/${itemId}`);
+    } else {
+      navigate(`/item/${itemId}`);
+    }
+  };
+
   const graphDevices: GraphDevice[] = devices.map((device, index) => ({
     graphId: `${device.deviceId}-${index}`,
     config: device,
@@ -245,7 +263,10 @@ function ConnectionGraph({
   });
 
   const outputToDevice = new Map<string, GraphDevice>();
+  const deviceIdToDevice = new Map<string, GraphDevice>();
+  
   graphDevices.forEach((entry) => {
+    deviceIdToDevice.set(entry.config.deviceId, entry);
     entry.config.outputs.forEach((output) => {
       if (!outputToDevice.has(output.itemId)) {
         outputToDevice.set(output.itemId, entry);
@@ -326,7 +347,12 @@ function ConnectionGraph({
 
     let maxStage = 0;
     device.inputs.forEach((input) => {
-      if (input.source && input.source.startsWith('device-')) {
+      if (input.source && input.source.startsWith('dev-')) {
+        const upstreamDevice = deviceIdToDevice.get(input.source);
+        if (upstreamDevice) {
+          maxStage = Math.max(maxStage, computeStage(upstreamDevice.graphId, stack));
+        }
+      } else if (input.source && input.source.startsWith('device-')) {
         const upstreamId = input.source.replace('device-', '');
         const upstreamDevice = outputToDevice.get(upstreamId);
         if (upstreamDevice) {
@@ -365,8 +391,13 @@ function ConnectionGraph({
     let primaryRow = 0;
 
     for (const input of device.inputs) {
-      if (input.source && input.source.startsWith('device-')) {
-        // Trace upstream to find the base material
+      if (input.source && input.source.startsWith('dev-')) {
+        const upstreamDevice = outputToDevice.get(input.source);
+        if (upstreamDevice) {
+          const upstreamRow = assignDeviceRow(upstreamDevice.graphId, visited);
+          primaryRow = upstreamRow;
+        }
+      } else if (input.source && input.source.startsWith('device-')) {
         const upstreamId = input.source.replace('device-', '');
         const upstreamDevice = outputToDevice.get(upstreamId);
         if (upstreamDevice) {
@@ -374,7 +405,6 @@ function ConnectionGraph({
           primaryRow = upstreamRow;
         }
       } else {
-        // Direct base material input
         const row = baseMaterialRows.get(input.itemId);
         if (row !== undefined) {
           primaryRow = row;
@@ -408,7 +438,9 @@ function ConnectionGraph({
   graphDevices.forEach(({ graphId, config }) => {
     config.inputs.forEach((input) => {
       let fromId: string;
-      if (input.source && input.source.startsWith('device-')) {
+      if (input.source && input.source.startsWith('dev-')) {
+        fromId = input.source;
+      } else if (input.source && input.source.startsWith('device-')) {
         const itemId = input.source.replace('device-', '');
         const producingDevice = outputToDevice.get(itemId);
         fromId = producingDevice ? producingDevice.graphId : ensureBaseNode(itemId);
@@ -458,7 +490,9 @@ function ConnectionGraph({
 
   sortedDevices.forEach(({ graphId, config }) => {
     const inputNodeIds = config.inputs.map((input) => {
-      if (input.source && input.source.startsWith('device-')) {
+      if (input.source && input.source.startsWith('dev-')) {
+        return input.source;
+      } else if (input.source && input.source.startsWith('device-')) {
         const itemId = input.source.replace('device-', '');
         const upstreamDevice = outputToDevice.get(itemId);
         return upstreamDevice ? upstreamDevice.graphId : `base-${input.itemId}`;
@@ -583,6 +617,23 @@ function ConnectionGraph({
           const productionRate = device ? (device.productionRate * 60).toFixed(2) : null;
           const count = device?.count;
 
+          const getItemIdForClick = () => {
+            if (node.type === 'base') {
+              return node.id.replace('base-', '');
+            }
+            if (node.type === 'device' && device) {
+              return device.deviceId;
+            }
+            return null;
+          };
+
+          const handleClick = () => {
+            const itemId = getItemIdForClick();
+            if (itemId) {
+              handleItemClick(itemId);
+            }
+          };
+
           return (
             <div
               key={node.id}
@@ -597,16 +648,29 @@ function ConnectionGraph({
               <div className={`rounded-lg p-3 shadow-sm border h-full ${baseClasses} flex gap-2`}>
                 {node.type === 'device' && device && (
                   <div className="flex-shrink-0 h-full flex items-center pr-2">
-                    <img src={itemLookup[device.deviceId]?.image} alt={device.deviceName} className="h-full object-contain rounded" />
+                    <img
+                      src={itemLookup[device.recipe.deviceId]?.image}
+                      alt={device.deviceName}
+                      className="h-full object-contain rounded cursor-pointer hover:opacity-80"
+                      onClick={() => handleItemClick(device.deviceId)}
+                    />
                   </div>
                 )}
                 {node.type === 'base' && (
                   <div className="flex-shrink-0 h-full flex items-center pr-2">
-                    <img src={itemLookup['170']?.image} alt="仓库取货口" className="h-full object-contain rounded" />
+                    <img
+                      src={itemLookup['170']?.image}
+                      alt="仓库取货口"
+                      className="h-full object-contain rounded cursor-pointer hover:opacity-80"
+                      onClick={() => handleItemClick('170')}
+                    />
                   </div>
                 )}
 <div className="flex-1">
-                  <div className="text-sm font-semibold mb-1 whitespace-nowrap">{node.label}</div>
+                  <div
+                    className="text-sm font-semibold mb-1 whitespace-nowrap cursor-pointer hover:text-blue-600"
+                    onClick={handleClick}
+                  >{node.label}</div>
                   {node.type === 'base' && (
                     <>
                       {node.deviceCount !== undefined && node.deviceCount > 0 && (
@@ -632,16 +696,27 @@ function ConnectionGraph({
                 <div className="flex-shrink-0 h-full flex items-center">
                   {node.type === 'device' && device && (
                     <>
-                      {device.outputs.length > 0 && device.outputs.map((output, idx) => {
+{device.outputs.length > 0 && device.outputs.map((output, idx) => {
                         const item = itemLookup[output.itemId];
                         return item ? (
-                          <img key={idx} src={item.image} alt={item.name} className="h-full object-contain rounded" />
+                          <img
+                            key={idx}
+                            src={item.image}
+                            alt={item.name}
+className="h-full object-contain rounded cursor-pointer hover:opacity-80"
+                            onClick={() => handleItemClick(output.itemId)}
+                          />
                         ) : null;
                       })}
                     </>
                   )}
                   {node.type === 'base' && (
-                    <img src={itemLookup[node.id.replace('base-', '')]?.image} alt={node.label} className="h-full object-contain rounded" />
+                    <img
+                      src={itemLookup[node.id.replace('base-', '')]?.image}
+                      alt={node.label}
+                      className="h-full object-contain rounded cursor-pointer hover:opacity-80"
+                      onClick={() => handleItemClick(node.id.replace('base-', ''))}
+                    />
                   )}
                 </div>
               </div>

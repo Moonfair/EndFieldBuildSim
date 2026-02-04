@@ -30,60 +30,57 @@ export function calculateMinimumScalePlan(
   const bottleneckStage = findBottleneckStage(stageRates);
   const calculatedOutputRate = bottleneckStage?.rate ?? targetNodeRate;
 
-  const deviceUsage = new Map<
-    string,
-    Array<{ itemId: string; recipe: ManufacturingRecipe }>
-  >();
-  for (const [itemId, recipe] of selectedRecipes) {
-    if (!deviceUsage.has(recipe.deviceId)) {
-      deviceUsage.set(recipe.deviceId, []);
-    }
-    deviceUsage.get(recipe.deviceId)!.push({ itemId, recipe });
-  }
-
   const devices: DeviceConfig[] = [];
   const connections: Connection[] = [];
 
-  for (const [deviceId, recipes] of deviceUsage) {
-    const primaryRecipe = recipes[0].recipe;
+  const itemIdToDeviceId = new Map<string, string>();
+
+  for (const [itemId, recipe] of selectedRecipes) {
+    const deviceId = `dev-${itemId}-${devices.length}`;
+    itemIdToDeviceId.set(itemId, deviceId);
 
     const deviceConfig: DeviceConfig = {
       deviceId,
-      deviceName: primaryRecipe.deviceName,
-      recipe: primaryRecipe,
+      deviceName: recipe.deviceName,
+      recipe,
       count: 1,
       productionRate: 0,
       inputs: [],
       outputs: [],
     };
 
-    for (const { recipe } of recipes) {
-      for (const material of recipe.materials) {
-        const isBaseMaterial = isItemBaseMaterial(material.id, dependencyTree);
-        if (isBaseMaterial) {
-          deviceConfig.inputs.push({
-            itemId: material.id,
-            source: 'warehouse',
-          });
-        } else {
-          deviceConfig.inputs.push({
-            itemId: material.id,
-            source: `device-${material.id}`,
-          });
-        }
-      }
-    }
-
-    for (const { recipe } of recipes) {
-      for (const product of recipe.products) {
-        deviceConfig.outputs.push({
-          itemId: product.id,
-          destination: product.id === targetItemId ? 'output' : `device-${product.id}`,
+    for (const material of recipe.materials) {
+      const isBaseMaterial = isItemBaseMaterial(material.id, dependencyTree);
+      if (isBaseMaterial) {
+        deviceConfig.inputs.push({
+          itemId: material.id,
+          source: 'warehouse',
+        });
+      } else {
+        const sourceDeviceId = itemIdToDeviceId.get(material.id);
+        deviceConfig.inputs.push({
+          itemId: material.id,
+          source: sourceDeviceId ? sourceDeviceId : `device-${material.id}`,
         });
       }
     }
 
-    deviceConfig.productionRate = calculateDeviceRate(recipes, effectiveRates);
+    for (const product of recipe.products) {
+      if (product.id === targetItemId) {
+        deviceConfig.outputs.push({
+          itemId: product.id,
+          destination: 'output',
+        });
+      } else {
+        const destDeviceId = itemIdToDeviceId.get(product.id);
+        deviceConfig.outputs.push({
+          itemId: product.id,
+          destination: destDeviceId ? destDeviceId : `device-${product.id}`,
+        });
+      }
+    }
+
+    deviceConfig.productionRate = effectiveRates.get(itemId) ?? 0;
 
     devices.push(deviceConfig);
   }
@@ -231,23 +228,6 @@ function findBottleneckStage(stageRates: StageRate[]): StageRate | undefined {
   );
 }
 
-function calculateDeviceRate(
-  recipes: Array<{ itemId: string; recipe: ManufacturingRecipe }>,
-  effectiveRates: Map<string, number>
-): number {
-  let deviceRate = Number.POSITIVE_INFINITY;
-
-  for (const recipeUsage of recipes) {
-    const rate = effectiveRates.get(recipeUsage.itemId);
-    if (rate === undefined) {
-      continue;
-    }
-    deviceRate = Math.min(deviceRate, rate);
-  }
-
-  return Number.isFinite(deviceRate) ? deviceRate : 0;
-}
-
 function calculateBaseMaterialConsumption(
   targetItemId: string,
   outputRate: number,
@@ -380,15 +360,13 @@ function buildConnections(
 ): void {
   for (const device of devices) {
     for (const output of device.outputs) {
-      if (output.destination !== 'output') {
-        connections.push({
-          from: device.deviceId,
-          to: output.destination.replace('device-', ''),
-          itemId: output.itemId,
-          count:1,
-          rate: TRANSFER_RATE_PER_PIPE,
-        });
-      }
+      connections.push({
+        from: device.deviceId,
+        to: output.destination,
+        itemId: output.itemId,
+        count: 1,
+        rate: TRANSFER_RATE_PER_PIPE,
+      });
     }
   }
 }
