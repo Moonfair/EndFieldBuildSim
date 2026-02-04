@@ -601,7 +601,7 @@ function ConnectionGraph({
                     <>
                       {node.deviceCount !== undefined && node.deviceCount > 0 && (
                         <>
-                          <div className="text-xs text-green-600">{node.deviceCount} 台</div>
+                          <div className="text-xs text-green-600 mb-2"><span className="px-2 py-0.5 bg-green-100 rounded-full">{node.deviceCount} 台</span></div>
                           <div className="text-xs text-gray-600">
                             {((node.productionRate ?? 0) * 60).toFixed(2)} 个/分钟
                           </div>
@@ -614,7 +614,7 @@ function ConnectionGraph({
                   )}
                   {node.type === 'device' && device && (
                     <>
-                      <div className="text-xs text-blue-600 mb-1">{count} 台</div>
+                      <div className="text-xs text-blue-600 mb-2"><span className="px-2 py-0.5 bg-blue-100 rounded-full">{count} 台</span></div>
                       <div className="text-xs text-gray-600">{productionRate} 个/分钟</div>
                     </>
                   )}
