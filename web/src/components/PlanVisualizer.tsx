@@ -434,7 +434,7 @@ function ConnectionGraph({
     );
   }
 
-  const cardWidth = 180;
+  const cardWidth = 200;
   const cardHeight = 90;
   const columnGap = 100;
   const rowGap = 20;
@@ -573,58 +573,50 @@ function ConnectionGraph({
                 height: cardHeight,
               }}
             >
-              {node.type === 'device' && device && (
-                <>
-                  <div className="absolute left-0 top-1/2 -translate-x-full -translate-y-1/2 flex flex-col gap-1 pr-2">
-                    {device.inputs.map((input, idx) => {
-                      const item = itemLookup[input.itemId];
-                      return item ? (
-                        <div key={idx} title={item.name}>
-                          <ItemImage src={item.image} alt={item.name} className="w-6 h-6" />
-                        </div>
-                      ) : null;
-                    })}
-                  </div>
-                  <div className="absolute right-0 top-1/2 -translate-y-1/2 translate-x-full flex flex-col gap-1 pl-2">
-                    {device.outputs.map((output, idx) => {
-                      const item = itemLookup[output.itemId];
-                      return item ? (
-                        <div key={idx} title={item.name}>
-                          <ItemImage src={item.image} alt={item.name} className="w-6 h-6" />
-                        </div>
-                      ) : null;
-                    })}
-                  </div>
-                </>
-              )}
-              
-              <div className={`rounded-lg p-3 shadow-sm border h-full ${baseClasses}`}>
-                <div className="text-sm font-semibold truncate mb-1">{node.label}</div>
-                {node.type === 'base' && (
-                  <>
-                    <div className="text-xs text-green-700 mb-1">基础原料</div>
-                    {node.deviceCount !== undefined && node.deviceCount > 0 && (
-                      <>
-                        <div className="text-xs text-green-600">{node.deviceCount} 台</div>
-                        <div className="text-xs text-gray-600">
-                          {((node.productionRate ?? 0) * 60).toFixed(2)} 个/分钟
-                        </div>
-                      </>
-                    )}
-                  </>
-                )}
-                {node.type === 'product' && (
-                  <div className="text-xs text-blue-700">最终产物</div>
-                )}
-                {node.type === 'device' && device && (
-                  <>
-                    <div className="text-xs text-blue-600 mb-1">{count} 台</div>
-                    <div className="text-xs text-gray-600">{productionRate} 个/分钟</div>
-                    {node.isFinal && (
-                      <div className="text-xs text-green-600 mt-1">产出: {targetProduct.name}</div>
-                    )}
-                  </>
-                )}
+              <div className={`rounded-lg p-3 shadow-sm border h-full ${baseClasses} flex gap-2`}>
+                <div className="flex-1 min-w-0">
+                  <div className="text-sm font-semibold truncate mb-1">{node.label}</div>
+                  {node.type === 'base' && (
+                    <>
+                      <div className="text-xs text-green-700 mb-1">基础原料</div>
+                      {node.deviceCount !== undefined && node.deviceCount > 0 && (
+                        <>
+                          <div className="text-xs text-green-600">{node.deviceCount} 台</div>
+                          <div className="text-xs text-gray-600">
+                            {((node.productionRate ?? 0) * 60).toFixed(2)} 个/分钟
+                          </div>
+                        </>
+                      )}
+                    </>
+                  )}
+                  {node.type === 'product' && (
+                    <div className="text-xs text-blue-700">最终产物</div>
+                  )}
+                  {node.type === 'device' && device && (
+                    <>
+                      <div className="text-xs text-blue-600 mb-1">{count} 台</div>
+                      <div className="text-xs text-gray-600">{productionRate} 个/分钟</div>
+                      {node.isFinal && (
+                        <div className="text-xs text-green-600 mt-1">产出: {targetProduct.name}</div>
+                      )}
+                    </>
+                  )}
+                </div>
+                <div className="flex-shrink-0 h-full flex items-center">
+                  {node.type === 'device' && device && (
+                    <>
+                      {device.outputs.length > 0 && device.outputs.map((output, idx) => {
+                        const item = itemLookup[output.itemId];
+                        return item ? (
+                          <img key={idx} src={item.image} alt={item.name} className="h-full object-contain rounded" />
+                        ) : null;
+                      })}
+                    </>
+                  )}
+                  {node.type === 'base' && (
+                    <img src={itemLookup[node.id.replace('base-', '')]?.image} alt={node.label} className="h-full object-contain rounded" />
+                  )}
+                </div>
               </div>
             </div>
           );
