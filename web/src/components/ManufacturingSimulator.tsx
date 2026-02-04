@@ -3,7 +3,6 @@ import type { SimulatorState, DependencyNode } from '../types/manufacturing';
 import type { ItemLookup } from '../types/catalog';
 import { loadRecipeLookup } from '../utils/recipeLoader';
 import { buildDependencyTree } from '../utils/dependencyTree';
-import { calculateMinimumScalePlan } from '../utils/minimumScaleCalculator';
 import { calculateMaximumEfficiencyPlan } from '../utils/efficiencyCalculator';
 import PlanVisualizer from './PlanVisualizer';
 import BaseMaterialSelector from './BaseMaterialSelector';
@@ -20,13 +19,11 @@ export default function ManufacturingSimulator({
   itemLookup,
 }: ManufacturingSimulatorProps) {
   const [isOpen, setIsOpen] = useState(false);
-  const [activeTab, setActiveTab] = useState<'efficiency' | 'scale'>('efficiency');
   const [state, setState] = useState<SimulatorState>({
     targetItemId,
     baseMaterialIds: new Set(),
     dependencyTree: null,
     efficiencyPlan: null,
-    scalePlan: null,
     targetRate: 1,
     loading: false,
     error: null,
@@ -81,15 +78,11 @@ export default function ManufacturingSimulator({
           itemLookup
         );
         console.log('[INIT] Efficiency plan calculated:', { devices: efficiencyPlan.devices.length, rate: efficiencyPlan.calculatedOutputRate });
-        
-        const scalePlan = calculateMinimumScalePlan(targetItemId, targetItemName, tree, itemLookup);
-        console.log('[INIT] Scale plan calculated:', { devices: scalePlan.devices.length });
-        
+
         setState((prev) => ({
           ...prev,
           dependencyTree: tree,
           efficiencyPlan,
-          scalePlan,
           loading: false,
         }));
         console.log('[INIT] State updated with plans');
@@ -135,15 +128,11 @@ export default function ManufacturingSimulator({
           itemLookup
         );
         console.log('[REFRESH] Efficiency plan:', { devices: efficiencyPlan.devices.length, rate: efficiencyPlan.calculatedOutputRate });
-        
-        const scalePlan = calculateMinimumScalePlan(targetItemId, targetItemName, tree, itemLookup);
-        console.log('[REFRESH] Scale plan:', { devices: scalePlan.devices.length });
 
         setState((prev) => ({
           ...prev,
           dependencyTree: tree,
           efficiencyPlan,
-          scalePlan,
         }));
         console.log('[REFRESH] State updated');
       } catch (error) {
@@ -168,7 +157,6 @@ export default function ManufacturingSimulator({
         ...prev,
         baseMaterialIds: newBaseMaterials,
         efficiencyPlan: null,
-        scalePlan: null,
       };
     });
   };
@@ -188,21 +176,15 @@ export default function ManufacturingSimulator({
       });
 
       setDependencyTree(tree);
-      setState((prev) => ({
-        ...prev,
-        dependencyTree: tree,
-        efficiencyPlan: null,
-        scalePlan: null,
-      }));
+setState((prev) => ({
+          ...prev,
+          dependencyTree: tree,
+          efficiencyPlan: null,
+        }));
     });
   };
 
-  const activePlan = activeTab === 'efficiency' ? state.efficiencyPlan : state.scalePlan;
-  
-  console.log('[RENDER] Active tab:', activeTab);
   console.log('[RENDER] State.efficiencyPlan:', state.efficiencyPlan ? `${state.efficiencyPlan.devices.length} devices` : 'null');
-  console.log('[RENDER] State.scalePlan:', state.scalePlan ? `${state.scalePlan.devices.length} devices` : 'null');
-  console.log('[RENDER] Active plan:', activePlan ? `${activePlan.devices.length} devices, rate: ${activePlan.calculatedOutputRate}` : 'null');
 
   if (!isOpen) {
     return (
@@ -253,31 +235,8 @@ export default function ManufacturingSimulator({
 
           {dependencyTree && (
             <div className="mb-6">
-              <div className="flex border-b mb-4">
-                <button
-                  onClick={() => setActiveTab('efficiency')}
-                  className={`px-6 py-3 font-medium transition-colors ${
-                    activeTab === 'efficiency'
-                      ? 'border-b-2 border-blue-600 text-blue-600'
-                      : 'text-gray-600 hover:text-gray-800'
-                  }`}
-                >
-                  最高效率
-                </button>
-                <button
-                  onClick={() => setActiveTab('scale')}
-                  className={`px-6 py-3 font-medium transition-colors ${
-                    activeTab === 'scale'
-                      ? 'border-b-2 border-blue-600 text-blue-600'
-                      : 'text-gray-600 hover:text-gray-800'
-                  }`}
-                >
-                  最小规模
-                </button>
-              </div>
-
-              {activePlan ? (
-                <PlanVisualizer plan={activePlan} itemLookup={itemLookup} />
+              {state.efficiencyPlan ? (
+                <PlanVisualizer plan={state.efficiencyPlan} itemLookup={itemLookup} />
               ) : (
                 <div className="text-center py-12 text-gray-500">
                   <p>选择目标产出率并点击"计算方案"查看结果</p>

@@ -38,12 +38,7 @@ export default function PlanVisualizer({ plan, itemLookup }: PlanVisualizerProps
             <div className="text-blue-700">设备总数</div>
             <div className="font-medium text-blue-900">{plan.totalDeviceCount}</div>
           </div>
-          <div>
-            <div className="text-blue-700">方案类型</div>
-            <div className="font-medium text-blue-900">
-              {plan.type === 'efficiency' ? '最高效率' : '最小规模'}
-            </div>
-          </div>
+          
         </div>
       </div>
 

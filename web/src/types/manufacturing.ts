@@ -58,7 +58,7 @@ export interface DeviceConfig {
  * 生产方案
  */
 export interface ProductionPlan {
-  type: 'efficiency' | 'scale';
+  type: 'efficiency';
   name: string;
   targetProduct: { id: string; name: string };
   calculatedOutputRate: number;
@@ -90,7 +90,6 @@ export interface SimulatorState {
   baseMaterialIds: Set<string>; // 用户标记为基础原料的物品ID
   dependencyTree: DependencyNode | null;
   efficiencyPlan: ProductionPlan | null;
-  scalePlan: ProductionPlan | null;
   loading: boolean;
   error: string | null;
 }
