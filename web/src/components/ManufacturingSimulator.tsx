@@ -1,4 +1,4 @@
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useRef } from 'react';
 import type { SimulatorState, DependencyNode } from '../types/manufacturing';
 import type { ItemLookup } from '../types/catalog';
 import { loadRecipeLookup } from '../utils/recipeLoader';
@@ -33,6 +33,22 @@ export default function ManufacturingSimulator({
   });
 
   const [dependencyTree, setDependencyTree] = useState<DependencyNode | null>(null);
+  const panelRef = useRef<HTMLDivElement>(null);
+
+  useEffect(() => {
+    if (!isOpen) return;
+
+    const handleClickOutside = (event: MouseEvent) => {
+      if (panelRef.current && !panelRef.current.contains(event.target as Node)) {
+        setIsOpen(false);
+      }
+    };
+
+    document.addEventListener('mousedown', handleClickOutside);
+    return () => {
+      document.removeEventListener('mousedown', handleClickOutside);
+    };
+  }, [isOpen]);
 
   useEffect(() => {
     console.log('[INIT EFFECT] Running, isOpen:', isOpen);
@@ -192,7 +208,7 @@ export default function ManufacturingSimulator({
     return (
       <button
         onClick={() => setIsOpen(true)}
-        className="w-full mt-4 px-4 py-3 bg-blue-600 hover:bg-blue-700 text-white rounded-lg font-medium transition-colors"
+        className="w-full mt-4 px-4 py-3 bg-blue-600 hover:bg-blue-700 text-white rounded-lg font-medium transition-colors cursor-pointer"
       >
         模拟制造配置
       </button>
@@ -201,7 +217,7 @@ export default function ManufacturingSimulator({
 
   return (
     <div className="fixed inset-0 bg-black/50 flex items-center justify-center p-4 z-50">
-      <div className="bg-white rounded-xl shadow-2xl max-w-6xl w-full max-h-[90vh] overflow-hidden flex flex-col">
+      <div ref={panelRef} className="bg-white rounded-xl shadow-2xl max-w-6xl w-full max-h-[90vh] overflow-hidden flex flex-col">
         <div className="p-6 border-b bg-gray-50">
           <div className="flex items-center justify-between mb-4">
             <h2 className="text-2xl font-bold">制造配置模拟器</h2>

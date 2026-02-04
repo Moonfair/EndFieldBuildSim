@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react';
-import { useParams, Link } from 'react-router-dom';
+import { useParams, useNavigate } from 'react-router-dom';
 import type { ItemResponse } from '../types/detail';
 import type { ItemLookup } from '../types/catalog';
 import type { Block } from '../types/document';
@@ -14,6 +14,7 @@ import { cn } from '@/lib/utils';
 
 export default function DetailPage() {
   const { id } = useParams<{ id: string }>();
+  const navigate = useNavigate();
   const [itemData, setItemData] = useState<ItemResponse | null>(null);
   const [itemLookup, setItemLookup] = useState<ItemLookup | null>(null);
   const [materialRecipes, setMaterialRecipes] = useState<ManufacturingRecipe[]>([]);
@@ -79,9 +80,9 @@ export default function DetailPage() {
       <div className="flex items-center justify-center min-h-screen">
         <div className="text-center">
           <div className="text-red-600 mb-4">{error || '物品不存在'}</div>
-          <Link to="/" className="text-blue-600 hover:text-blue-800 underline">
-            返回搜索
-          </Link>
+          <button onClick={() => navigate(-1)} className="text-blue-600 hover:text-blue-800 underline cursor-pointer">
+            返回上一页
+          </button>
         </div>
       </div>
     );
@@ -112,9 +113,9 @@ export default function DetailPage() {
   return (
     <div className="container mx-auto px-4 py-6 max-w-4xl" data-testid="detail-page">
       <div className="mb-6">
-        <Link to="/" className="text-blue-600 hover:text-blue-800 underline text-sm">
-          ← 返回搜索
-        </Link>
+        <button onClick={() => navigate(-1)} className="text-blue-600 hover:text-blue-800 underline cursor-pointer text-sm">
+          ← 返回上一页
+        </button>
       </div>
 
       <div className="bg-white rounded-card shadow-card p-6 mb-6">

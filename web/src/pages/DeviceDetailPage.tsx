@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react';
-import { useParams, Link } from 'react-router-dom';
+import { useParams, useNavigate } from 'react-router-dom';
 import type { ItemResponse } from '../types/detail';
 import type { DeviceProductionTable as DeviceProductionTableType } from '../types/device';
 import type { ItemLookup } from '../types/catalog';
@@ -13,6 +13,7 @@ import { cn } from '@/lib/utils';
 
 export default function DeviceDetailPage() {
   const { id } = useParams<{ id: string }>();
+  const navigate = useNavigate();
   const [deviceData, setDeviceData] = useState<ItemResponse | null>(null);
   const [recipeDatabase, setRecipeDatabase] = useState<RecipeDatabase | null>(null);
   const [itemLookup, setItemLookup] = useState<ItemLookup | null>(null);
@@ -72,9 +73,9 @@ export default function DeviceDetailPage() {
       <div className="flex items-center justify-center min-h-screen">
         <div className="text-center">
           <div className="text-red-600 mb-4">{error || '设备不存在'}</div>
-          <Link to="/" className="text-blue-600 hover:text-blue-800 underline">
-            返回搜索
-          </Link>
+          <button onClick={() => navigate(-1)} className="text-blue-600 hover:text-blue-800 underline cursor-pointer">
+            返回上一页
+          </button>
         </div>
       </div>
     );
@@ -125,9 +126,9 @@ export default function DeviceDetailPage() {
   return (
     <div className="container mx-auto px-4 py-6 max-w-4xl" data-testid="device-detail-page">
       <div className="mb-6">
-        <Link to="/" className="text-blue-600 hover:text-blue-800 underline text-sm">
-          ← 返回搜索
-        </Link>
+        <button onClick={() => navigate(-1)} className="text-blue-600 hover:text-blue-800 underline cursor-pointer text-sm">
+          ← 返回上一页
+        </button>
       </div>
 
       <div className="bg-white rounded-card shadow-card p-6 mb-6">
