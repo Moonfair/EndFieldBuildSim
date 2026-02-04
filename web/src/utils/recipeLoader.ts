@@ -64,7 +64,10 @@ function buildItemAdjacency(recipes: ManufacturingRecipe[]): Map<string, Set<str
   return adj;
 }
 
-function buildCycleGroups(adj: Map<string, Set<string>>): Map<string, Set<string>> {
+function buildCycleGroups(
+  adj: Map<string, Set<string>>,
+  asProducts: Map<string, ManufacturingRecipe[]>
+): Map<string, Set<string>> {
   const sccs = tarjanSCC(adj);
   const cycleGroupByItem = new Map<string, Set<string>>();
 
@@ -74,6 +77,33 @@ function buildCycleGroups(adj: Map<string, Set<string>>): Map<string, Set<string
     const cyclic = comp.length > 1 || (comp.length === 1 && hasSelfLoop(comp[0]));
     if (!cyclic) continue;
 
+    // Check if this SCC is a real deadlock (no base items)
+    // An SCC is safe if any item has a recipe with all materials outside the SCC
+    const sccSet = new Set(comp);
+    let isSafe = false;
+
+    for (const itemId of comp) {
+      const recipes = asProducts.get(itemId) ?? [];
+      for (const recipe of recipes) {
+        // Check if all materials are outside the SCC (or no materials)
+        const allMaterialsOutside = recipe.materials.every(m => !sccSet.has(m.id));
+        if (allMaterialsOutside) {
+          // This item can be produced from outside the SCC, so SCC is safe
+          isSafe = true;
+          break;
+        }
+      }
+      if (isSafe) break;
+    }
+
+    if (isSafe) {
+      // SCC has at least one base item, ignore it
+      console.log(`[Cycle Detection] SCC ignored (has base items): [${comp.join(', ')}]`);
+      continue;
+    }
+
+    // SCC is a real deadlock, add to cycle groups
+    console.log(`[Cycle Detection] SCC detected as deadlock: [${comp.join(', ')}]`);
     const set = new Set(comp);
     for (const v of comp) {
       cycleGroupByItem.set(v, set);
@@ -151,7 +181,6 @@ export async function loadRecipeLookup(_itemLookup?: ItemLookup): Promise<Recipe
 
   const recipesArray = Array.from(cachedRecipes?.values() ?? []);
   const adj = buildItemAdjacency(recipesArray);
-  const cycleGroups = buildCycleGroups(adj);
 
   const populateLookup = (
     source: Record<string, string[]>,
@@ -171,6 +200,8 @@ export async function loadRecipeLookup(_itemLookup?: ItemLookup): Promise<Recipe
   populateLookup(database.asMaterials, asMaterials);
   populateLookup(database.asProducts, asProducts);
   populateLookup(database.byDevice, byDevice);
+
+  const cycleGroups = buildCycleGroups(adj, asProducts);
 
   cachedRecipeLookup = { asMaterials, asProducts, byDevice, cycleGroups };
   return cachedRecipeLookup;

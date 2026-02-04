@@ -62,12 +62,10 @@ export function buildDependencyTree(options: BuildOptions): DependencyNode {
   if (cycleGroups) {
     const cycleGroup = cycleGroups.get(targetItemId);
     if (cycleGroup) {
-      filteredRecipes = recipes.filter((recipe) =>
-        recipe.materials.every((material) => !cycleGroup.has(material.id))
+      console.warn(
+        `[Deadlock] ${targetItemName} (${targetItemId}) is part of a deadlock cycle; no production recipes available.`
       );
-      console.log(
-        `[Cycle Filter] ${targetItemName}: ${recipes.length} → ${filteredRecipes.length} recipes`
-      );
+      filteredRecipes = [];
     }
   }
 
