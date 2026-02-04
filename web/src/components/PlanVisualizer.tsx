@@ -450,29 +450,29 @@ function ConnectionGraph({
     containerWidth = Math.max(containerWidth, x + cardWidth);
   });
 
-  // Second pass: Adjust device positions to center on inputs
-  graphDevices.forEach(({ graphId, config }) => {
-    if (config.inputs.length > 1) {
-      const inputNodeIds = config.inputs.map((input) => {
-        if (input.source && input.source.startsWith('device-')) {
-          const itemId = input.source.replace('device-', '');
-          const upstreamDevice = outputToDevice.get(itemId);
-          return upstreamDevice ? upstreamDevice.graphId : `base-${input.itemId}`;
-        }
-        return `base-${input.itemId}`;
-      });
+  const sortedDevices = [...graphDevices].sort((a, b) => {
+    const nodeA = nodeMap.get(a.graphId);
+    const nodeB = nodeMap.get(b.graphId);
+    return (nodeA?.stage ?? 0) - (nodeB?.stage ?? 0);
+  });
 
-      const inputPositions = inputNodeIds
-        .map((id) => basePositions.get(id))
-        .filter((pos): pos is { x: number; y: number } => pos !== undefined);
-
-      if (inputPositions.length > 1) {
-        const avgY = inputPositions.reduce((sum, pos) => sum + pos.y, 0) / inputPositions.length;
-        const currentPos = basePositions.get(graphId);
-        if (currentPos) {
-          basePositions.set(graphId, { x: currentPos.x, y: avgY });
-        }
+  sortedDevices.forEach(({ graphId, config }) => {
+    const inputNodeIds = config.inputs.map((input) => {
+      if (input.source && input.source.startsWith('device-')) {
+        const itemId = input.source.replace('device-', '');
+        const upstreamDevice = outputToDevice.get(itemId);
+        return upstreamDevice ? upstreamDevice.graphId : `base-${input.itemId}`;
       }
+      return `base-${input.itemId}`;
+    });
+
+    const inputPositions = inputNodeIds
+      .map((id) => basePositions.get(id))
+      .filter((pos): pos is { x: number; y: number } => pos !== undefined);
+
+    if (inputPositions.length > 0) {
+      const avgY = inputPositions.reduce((sum, pos) => sum + pos.y, 0) / inputPositions.length;
+      basePositions.set(graphId, { x: basePositions.get(graphId)!.x, y: avgY });
     }
   });
 
