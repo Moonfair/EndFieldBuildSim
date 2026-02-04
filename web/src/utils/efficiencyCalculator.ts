@@ -107,12 +107,14 @@ export function calculateMaximumEfficiencyPlan(
 ): ProductionPlan {
   console.log('[EFFICIENCY CALC] START:', { targetItemId, targetItemName });
   console.log('[EFFICIENCY CALC] Tree:', { isBase: dependencyTree.isBase, recipesCount: dependencyTree.recipes.length, childrenCount: dependencyTree.children.length });
-  
+
   const selectedRecipes = new Map<string, ManufacturingRecipe>();
   selectRecipesForEfficiency(dependencyTree, selectedRecipes);
-  
+
+  selectedRecipes.forEach((recipe) => {
+    console.log('[EFFICIENCY CALC] Selected recipe for', (recipe.products[0]?.name || 'unknown'), ':', recipe.deviceName);
+  });
   console.log('[EFFICIENCY CALC] Selected recipes count:', selectedRecipes.size);
-  console.log('[EFFICIENCY CALC] Selected recipe IDs:', Array.from(selectedRecipes.keys()));
 
   const { devices, connections, baseMaterials, calculatedOutputRate } =
     balanceZeroWasteFlows(
@@ -137,6 +139,14 @@ export function calculateMaximumEfficiencyPlan(
     connections,
     baseMaterials,
   };
+}
+
+export function getSelectedRecipes(
+  dependencyTree: DependencyNode
+): Map<string, ManufacturingRecipe> {
+  const selectedRecipes = new Map<string, ManufacturingRecipe>();
+  selectRecipesForEfficiency(dependencyTree, selectedRecipes);
+  return selectedRecipes;
 }
 
 function selectRecipesForEfficiency(

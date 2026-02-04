@@ -1,4 +1,4 @@
-import type { DependencyNode } from '../types/manufacturing';
+import type { DependencyNode, ManufacturingRecipe } from '../types/manufacturing';
 import type { ItemLookup } from '../types/catalog';
 import ItemImage from './ItemImage';
 
@@ -8,6 +8,7 @@ interface BaseMaterialSelectorProps {
   onToggle: (itemId: string) => void;
   onUpdateTree: () => void;
   itemLookup: ItemLookup;
+  selectedRecipes?: Map<string, ManufacturingRecipe>;
 }
 
 export default function BaseMaterialSelector({
@@ -16,6 +17,7 @@ export default function BaseMaterialSelector({
   onToggle,
   onUpdateTree,
   itemLookup,
+  selectedRecipes,
 }: BaseMaterialSelectorProps) {
   if (!dependencyTree) {
     return (
@@ -25,7 +27,10 @@ export default function BaseMaterialSelector({
     );
   }
 
-  const allItems = flattenDependencyTree(dependencyTree);
+  const allItems = selectedRecipes
+    ? flattenDependencyTreeForSelectedRecipes(dependencyTree, selectedRecipes)
+    : flattenDependencyTree(dependencyTree);
+
   const selectableItems = allItems.filter(
     (item) =>
       (item.recipes.length > 0 && !item.isBase) || selectedIds.has(item.itemId)
@@ -124,8 +129,8 @@ export default function BaseMaterialSelector({
         })}
       </div>
 
-{uniqueItems.length === 0 && (
-            <div className="text-center py-8 text-gray-500">
+      {uniqueItems.length === 0 && (
+        <div className="text-center py-8 text-gray-500">
           <p>没有可选择的中间产物</p>
           <p className="text-sm mt-2">
             所有物品都是基础原料或没有可用配方
@@ -168,5 +173,44 @@ function flattenDependencyTree(tree: DependencyNode): FlatItem[] {
   }
 
   traverse(tree);
+  return items;
+}
+
+function flattenDependencyTreeForSelectedRecipes(
+  tree: DependencyNode,
+  selectedRecipes: Map<string, ManufacturingRecipe>
+): FlatItem[] {
+  const items: FlatItem[] = [];
+  const visited = new Set<string>();
+
+  function traverse(node: DependencyNode, depth: number = 0, recipe: ManufacturingRecipe | null = null) {
+    if (visited.has(node.itemId)) {
+      return;
+    }
+
+    visited.add(node.itemId);
+    items.push({
+      itemId: node.itemId,
+      itemName: node.itemName,
+      isBase: node.isBase || (!recipe && node.recipes.length === 0),
+      recipes: recipe ? [recipe] : [],
+      depth,
+    });
+
+    if (node.isBase || !recipe) {
+      return;
+    }
+
+    for (const material of recipe.materials) {
+      const childNode = node.children.find((c) => c.itemId === material.id);
+      if (childNode) {
+        const childRecipe = selectedRecipes.get(material.id);
+        traverse(childNode, depth + 1, childRecipe);
+      }
+    }
+  }
+
+  const rootRecipe = selectedRecipes.get(tree.itemId);
+  traverse(tree, 0, rootRecipe);
   return items;
 }

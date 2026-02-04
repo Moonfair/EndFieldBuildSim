@@ -1,9 +1,9 @@
 import { useState, useEffect, useRef } from 'react';
-import type { SimulatorState, DependencyNode } from '../types/manufacturing';
+import type { SimulatorState, DependencyNode, ManufacturingRecipe } from '../types/manufacturing';
 import type { ItemLookup } from '../types/catalog';
 import { loadRecipeLookup } from '../utils/recipeLoader';
 import { buildDependencyTree } from '../utils/dependencyTree';
-import { calculateMaximumEfficiencyPlan } from '../utils/efficiencyCalculator';
+import { calculateMaximumEfficiencyPlan, getSelectedRecipes } from '../utils/efficiencyCalculator';
 import PlanVisualizer from './PlanVisualizer';
 import BaseMaterialSelector from './BaseMaterialSelector';
 
@@ -28,6 +28,7 @@ export default function ManufacturingSimulator({
     loading: false,
     error: null,
   });
+  const [selectedRecipes, setSelectedRecipes] = useState<Map<string, ManufacturingRecipe>>(new Map());
 
   const [dependencyTree, setDependencyTree] = useState<DependencyNode | null>(null);
   const panelRef = useRef<HTMLDivElement>(null);
@@ -79,6 +80,9 @@ export default function ManufacturingSimulator({
         );
         console.log('[INIT] Efficiency plan calculated:', { devices: efficiencyPlan.devices.length, rate: efficiencyPlan.calculatedOutputRate });
 
+        const selected = getSelectedRecipes(tree);
+        setSelectedRecipes(selected);
+
         setState((prev) => ({
           ...prev,
           dependencyTree: tree,
@@ -129,6 +133,9 @@ export default function ManufacturingSimulator({
         );
         console.log('[REFRESH] Efficiency plan:', { devices: efficiencyPlan.devices.length, rate: efficiencyPlan.calculatedOutputRate });
 
+        const selected = getSelectedRecipes(tree);
+        setSelectedRecipes(selected);
+
         setState((prev) => ({
           ...prev,
           dependencyTree: tree,
@@ -173,10 +180,14 @@ export default function ManufacturingSimulator({
         baseMaterialIds: state.baseMaterialIds,
         recipeLookup,
         cycleGroups: recipeLookup.cycleGroups,
-      });
+});
 
       setDependencyTree(tree);
-setState((prev) => ({
+
+      const selected = getSelectedRecipes(tree);
+      setSelectedRecipes(selected);
+
+      setState((prev) => ({
           ...prev,
           dependencyTree: tree,
           efficiencyPlan: null,
@@ -224,6 +235,7 @@ setState((prev) => ({
               onToggle={handleBaseMaterialToggle}
               onUpdateTree={handleUpdateDependencyTree}
               itemLookup={itemLookup}
+              selectedRecipes={selectedRecipes}
             />
           </div>
 
