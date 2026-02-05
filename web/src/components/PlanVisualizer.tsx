@@ -568,13 +568,13 @@ function ConnectionGraph({
           <defs>
             <marker
               id="arrowhead"
-              markerWidth="10"
-              markerHeight="7"
-              refX="9"
-              refY="3.5"
+              markerWidth="8"
+              markerHeight="6"
+              refX="7"
+              refY="3"
               orient="auto"
             >
-              <polygon points="0 0, 10 3.5, 0 7" fill="#6B7280" />
+              <polygon points="0 0, 8 3, 0 6" fill="#3B82F6" />
             </marker>
           </defs>
           {edges.map((edge, index) => {
@@ -588,24 +588,53 @@ function ConnectionGraph({
             const endX = toPos.x;
             const endY = toPos.y + cardHeight / 2;
 
-            const path = `M ${startX} ${startY} H ${midX} V ${endY} H ${endX}`;
+            // Create rounded corner path with smooth curves
+            const cornerRadius = 12;
+            let path = `M ${startX} ${startY}`;
+            
+            // If on same horizontal line, draw straight line
+            if (Math.abs(endY - startY) < 1) {
+              path += ` H ${endX}`;
+            } else {
+              // Path with rounded corners: H -> curve -> V -> curve -> H
+              const isGoingDown = endY > startY;
+              
+              // First horizontal segment to first corner
+              const firstCornerX = midX - cornerRadius;
+              path += ` H ${firstCornerX}`;
+              
+              // First rounded corner (horizontal to vertical)
+              const verticalStartY = startY + (isGoingDown ? cornerRadius : -cornerRadius);
+              path += ` Q ${midX} ${startY}, ${midX} ${verticalStartY}`;
+              
+              // Vertical segment
+              const verticalEndY = endY - (isGoingDown ? cornerRadius : -cornerRadius);
+              path += ` V ${verticalEndY}`;
+              
+              // Second rounded corner (vertical to horizontal)
+              const secondCornerX = midX + cornerRadius;
+              path += ` Q ${midX} ${endY}, ${secondCornerX} ${endY}`;
+              
+              // Final horizontal segment to endpoint
+              path += ` H ${endX}`;
+            }
 
             return (
               <g key={index}>
                 <path
                   d={path}
                   fill="none"
-                  stroke="#6B7280"
-                  strokeWidth={2}
-                  strokeLinejoin="round"
+                  stroke="#3B82F6"
+                  strokeWidth={1}
+                  strokeLinecap="round"
                   markerEnd="url(#arrowhead)"
                 />
                 <text
                   x={midX}
                   y={(startY + endY) / 2 - 6}
                   textAnchor="middle"
-                  className="text-xs fill-gray-600"
-                  style={{ fontSize: '11px' }}
+                  className="fill-gray-700"
+                  style={{ fontSize: '13px', fontWeight: 500 }}
                 >
                   {edge.product}
                 </text>
