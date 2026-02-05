@@ -6,7 +6,6 @@ interface BaseMaterialSelectorProps {
   dependencyTree: DependencyNode | null;
   selectedIds: Set<string>;
   onToggle: (itemId: string) => void;
-  onUpdateTree: () => void;
   itemLookup: ItemLookup;
   selectedRecipes?: Map<string, ManufacturingRecipe>;
 }
@@ -15,7 +14,6 @@ export default function BaseMaterialSelector({
   dependencyTree,
   selectedIds,
   onToggle,
-  onUpdateTree,
   itemLookup,
   selectedRecipes,
 }: BaseMaterialSelectorProps) {

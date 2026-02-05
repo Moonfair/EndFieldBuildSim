@@ -177,34 +177,6 @@ export default function ManufacturingSimulator({
     });
   };
 
-  const handleUpdateDependencyTree = () => {
-    if (!dependencyTree) return;
-
-    const recipeLookupPromise = loadRecipeLookup(itemLookup);
-
-    recipeLookupPromise.then((recipeLookup) => {
-      const tree = buildDependencyTree({
-        targetItemId,
-        targetItemName,
-        baseMaterialIds: state.baseMaterialIds,
-        recipeLookup,
-        cycleGroups: recipeLookup.cycleGroups,
-});
-
-      setDependencyTree(tree);
-
-      const selected = getSelectedRecipes(tree);
-      setSelectedRecipes(selected);
-
-      setState((prev) => ({
-          ...prev,
-          dependencyTree: tree,
-          efficiencyPlan: null,
-          minimumPlan: null,
-        }));
-    });
-  };
-
   console.log('[RENDER] State.efficiencyPlan:', state.efficiencyPlan ? `${state.efficiencyPlan.devices.length} devices` : 'null');
 
   if (!isOpen) {
@@ -267,7 +239,6 @@ export default function ManufacturingSimulator({
               dependencyTree={dependencyTree}
               selectedIds={state.baseMaterialIds}
               onToggle={handleBaseMaterialToggle}
-              onUpdateTree={handleUpdateDependencyTree}
               itemLookup={itemLookup}
               selectedRecipes={selectedRecipes}
             />
