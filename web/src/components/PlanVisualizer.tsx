@@ -896,22 +896,24 @@ function ConnectionGraph({
               <div className={`rounded-lg p-3 shadow-sm border h-full ${baseClasses} flex gap-2`}>
                 {node.type === 'device' && device && (
                   <div className="flex-shrink-0 h-full flex items-center pr-2">
-                    <img
-                      src={itemLookup[device.recipe.deviceId]?.image}
-                      alt={device.deviceName}
-                      className="h-full object-contain rounded cursor-pointer hover:opacity-80"
-                      onClick={() => handleItemClick(device.deviceId)}
-                    />
+                    <div className="h-full cursor-pointer hover:opacity-80" onClick={() => handleItemClick(device.deviceId)}>
+                      <ItemImage
+                        src={itemLookup[device.recipe.deviceId]?.image || ''}
+                        alt={device.deviceName}
+                        className="h-full object-contain rounded"
+                      />
+                    </div>
                   </div>
                 )}
                 {node.type === 'base' && (
                   <div className="flex-shrink-0 h-full flex items-center pr-2">
-                    <img
-                      src={itemLookup['170']?.image}
-                      alt="仓库取货口"
-                      className="h-full object-contain rounded cursor-pointer hover:opacity-80"
-                      onClick={() => handleItemClick('170')}
-                    />
+                    <div className="h-full cursor-pointer hover:opacity-80" onClick={() => handleItemClick('170')}>
+                      <ItemImage
+                        src={itemLookup['170']?.image || ''}
+                        alt="仓库取货口"
+                        className="h-full object-contain rounded"
+                      />
+                    </div>
                   </div>
                 )}
 <div className="flex-1">
@@ -954,24 +956,25 @@ function ConnectionGraph({
 {device.outputs.length > 0 && device.outputs.map((output, idx) => {
                         const item = itemLookup[output.itemId];
                         return item ? (
-                          <img
-                            key={idx}
-                            src={item.image}
-                            alt={item.name}
-className="h-full object-contain rounded cursor-pointer hover:opacity-80"
-                            onClick={() => handleItemClick(output.itemId)}
-                          />
+                          <div key={idx} className="h-full cursor-pointer hover:opacity-80" onClick={() => handleItemClick(output.itemId)}>
+                            <ItemImage
+                              src={item.image}
+                              alt={item.name}
+                              className="h-full object-contain rounded"
+                            />
+                          </div>
                         ) : null;
                       })}
                     </>
                   )}
                   {node.type === 'base' && (
-                    <img
-                      src={itemLookup[node.id.replace('base-', '')]?.image}
-                      alt={node.label}
-                      className="h-full object-contain rounded cursor-pointer hover:opacity-80"
-                      onClick={() => handleItemClick(node.id.replace('base-', ''))}
-                    />
+                    <div className="h-full cursor-pointer hover:opacity-80" onClick={() => handleItemClick(node.id.replace('base-', ''))}>
+                      <ItemImage
+                        src={itemLookup[node.id.replace('base-', '')]?.image || ''}
+                        alt={node.label}
+                        className="h-full object-contain rounded"
+                      />
+                    </div>
                   )}
                 </div>
               </div>
