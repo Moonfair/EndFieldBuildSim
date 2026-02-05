@@ -145,7 +145,32 @@ export function notifyCacheUpdate(): void {
   });
 }
 
-function getIgnoredDevices(): Set<string> {
+let defaultIgnoredDevicesCache: Set<string> | null = null;
+
+async function loadDefaultIgnoredDevices(): Promise<Set<string>> {
+  if (defaultIgnoredDevicesCache) {
+    return defaultIgnoredDevicesCache;
+  }
+  
+  try {
+    const response = await fetch(`${import.meta.env.BASE_URL}data/overrides/ignored_devices.json`);
+    if (response.ok) {
+      const data = await response.json();
+      if (Array.isArray(data.ignoredDevices)) {
+        defaultIgnoredDevicesCache = new Set(data.ignoredDevices);
+        return defaultIgnoredDevicesCache;
+      }
+    }
+  } catch (error) {
+    console.warn('Failed to load default ignored devices:', error);
+  }
+  
+  defaultIgnoredDevicesCache = new Set();
+  return defaultIgnoredDevicesCache;
+}
+
+async function getIgnoredDevices(): Promise<Set<string>> {
+  // First check localStorage
   try {
     const stored = localStorage.getItem(STORAGE_KEY);
     if (stored) {
@@ -153,9 +178,11 @@ function getIgnoredDevices(): Set<string> {
       return new Set(deviceIds);
     }
   } catch (error) {
-    console.warn('Failed to load ignored devices:', error);
+    console.warn('Failed to load ignored devices from localStorage:', error);
   }
-  return new Set();
+  
+  // If no localStorage, load defaults from config file
+  return loadDefaultIgnoredDevices();
 }
 
 let cachedRecipeLookup: RecipeLookup | null = null;
@@ -177,7 +204,7 @@ export async function loadRecipeLookup(_itemLookup?: ItemLookup): Promise<Recipe
     return cachedRecipeLookup;
   }
 
-  const ignoredDevices = getIgnoredDevices();
+  const ignoredDevices = await getIgnoredDevices();
 
   const asMaterials = new Map<string, ManufacturingRecipe[]>();
   const asProducts = new Map<string, ManufacturingRecipe[]>();

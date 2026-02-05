@@ -9,6 +9,7 @@ interface IgnoredDevicesPanelProps {
 export default function IgnoredDevicesPanel({ onIgnoredDevicesChange }: IgnoredDevicesPanelProps) {
   const [availableDevices, setAvailableDevices] = useState<Array<{ id: string; name: string }>>([]);
   const [ignoredDevices, setIgnoredDevices] = useState<Set<string>>(new Set());
+  const [defaultIgnoredDevices, setDefaultIgnoredDevices] = useState<Set<string>>(new Set());
   const [loading, setLoading] = useState(true);
   const [searchQuery, setSearchQuery] = useState('');
 
@@ -17,12 +18,31 @@ export default function IgnoredDevicesPanel({ onIgnoredDevicesChange }: IgnoredD
     loadAvailableDevices();
   }, []);
 
-  const loadIgnoredDevices = () => {
+  const loadIgnoredDevices = async () => {
     try {
+      // First load default ignored devices from config file
+      const defaultDevices = new Set<string>();
+      try {
+        const response = await fetch(`${import.meta.env.BASE_URL}data/overrides/ignored_devices.json`);
+        if (response.ok) {
+          const data = await response.json();
+          if (Array.isArray(data.ignoredDevices)) {
+            data.ignoredDevices.forEach((id: string) => defaultDevices.add(id));
+          }
+        }
+      } catch (error) {
+        console.warn('Failed to load default ignored devices:', error);
+      }
+      setDefaultIgnoredDevices(defaultDevices);
+
+      // Then load user's localStorage overrides
       const stored = localStorage.getItem(STORAGE_KEY);
       if (stored) {
         const deviceIds = JSON.parse(stored) as string[];
         setIgnoredDevices(new Set(deviceIds));
+      } else {
+        // If no localStorage, use defaults
+        setIgnoredDevices(defaultDevices);
       }
     } catch (error) {
       console.error('Failed to load ignored devices:', error);
@@ -111,6 +131,25 @@ export default function IgnoredDevicesPanel({ onIgnoredDevicesChange }: IgnoredD
     onIgnoredDevicesChange?.([]);
   };
 
+  const resetToDefaults = () => {
+    localStorage.removeItem(STORAGE_KEY);
+    setIgnoredDevices(new Set(defaultIgnoredDevices));
+    onIgnoredDevicesChange?.(Array.from(defaultIgnoredDevices));
+  };
+
+  const exportConfig = () => {
+    const config = {
+      ignoredDevices: Array.from(ignoredDevices).sort()
+    };
+    const blob = new Blob([JSON.stringify(config, null, 2)], { type: 'application/json' });
+    const url = URL.createObjectURL(blob);
+    const a = document.createElement('a');
+    a.href = url;
+    a.download = 'ignored_devices.json';
+    a.click();
+    URL.revokeObjectURL(url);
+  };
+
   const getFilteredDevices = () => {
     const query = searchQuery.toLowerCase();
     return availableDevices.filter((device) => {
@@ -166,11 +205,27 @@ export default function IgnoredDevicesPanel({ onIgnoredDevicesChange }: IgnoredD
         >
           清空全部
         </button>
+        <button
+          onClick={resetToDefaults}
+          className="px-3 py-1.5 bg-yellow-600 text-white rounded hover:bg-yellow-700 text-sm"
+        >
+          重置为默认
+        </button>
+        <button
+          onClick={exportConfig}
+          disabled={ignoredDevices.size === 0}
+          className="px-3 py-1.5 bg-green-600 text-white rounded hover:bg-green-700 disabled:opacity-50 disabled:cursor-not-allowed text-sm"
+        >
+          导出配置
+        </button>
       </div>
 
       <div className="mb-4 text-sm text-gray-600">
         已忽略 <span className="font-semibold text-gray-900">{ignoredDevices.size}</span> 个设备
-        {searchQuery && ` (当前显示 {visibleTotalCount} 个)`}
+        {defaultIgnoredDevices.size > 0 && (
+          <span className="ml-2">(默认配置: {defaultIgnoredDevices.size} 个)</span>
+        )}
+        {searchQuery && ` (当前显示 ${visibleTotalCount} 个)`}
       </div>
 
       <div className="border border-gray-300 rounded max-h-96 overflow-y-auto">
