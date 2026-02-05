@@ -3,7 +3,7 @@ import type { SimulatorState, DependencyNode, ManufacturingRecipe } from '../typ
 import type { ItemLookup } from '../types/catalog';
 import { loadRecipeLookup } from '../utils/recipeLoader';
 import { buildDependencyTree } from '../utils/dependencyTree';
-import { calculateMaximumEfficiencyPlan, getSelectedRecipes } from '../utils/efficiencyCalculator';
+import { calculateMaximumEfficiencyPlan, getSelectedRecipes, calculateMinimumScalePlan } from '../utils/efficiencyCalculator';
 import PlanVisualizer from './PlanVisualizer';
 import BaseMaterialSelector from './BaseMaterialSelector';
 
@@ -19,11 +19,13 @@ export default function ManufacturingSimulator({
   itemLookup,
 }: ManufacturingSimulatorProps) {
   const [isOpen, setIsOpen] = useState(false);
+  const [activeTab, setActiveTab] = useState<'efficiency' | 'minimum'>('efficiency');
   const [state, setState] = useState<SimulatorState>({
     targetItemId,
     baseMaterialIds: new Set(),
     dependencyTree: null,
     efficiencyPlan: null,
+    minimumPlan: null,
     targetRate: 1,
     loading: false,
     error: null,
@@ -80,6 +82,9 @@ export default function ManufacturingSimulator({
         );
         console.log('[INIT] Efficiency plan calculated:', { devices: efficiencyPlan.devices.length, rate: efficiencyPlan.calculatedOutputRate });
 
+        const minimumPlan = calculateMinimumScalePlan(efficiencyPlan);
+        console.log('[INIT] Minimum plan calculated:', { devices: minimumPlan.devices.length, rate: minimumPlan.calculatedOutputRate });
+
         const selected = getSelectedRecipes(tree);
         setSelectedRecipes(selected);
 
@@ -87,6 +92,7 @@ export default function ManufacturingSimulator({
           ...prev,
           dependencyTree: tree,
           efficiencyPlan,
+          minimumPlan,
           loading: false,
         }));
         console.log('[INIT] State updated with plans');
@@ -133,6 +139,9 @@ export default function ManufacturingSimulator({
         );
         console.log('[REFRESH] Efficiency plan:', { devices: efficiencyPlan.devices.length, rate: efficiencyPlan.calculatedOutputRate });
 
+        const minimumPlan = calculateMinimumScalePlan(efficiencyPlan);
+        console.log('[REFRESH] Minimum plan:', { devices: minimumPlan.devices.length, rate: minimumPlan.calculatedOutputRate });
+
         const selected = getSelectedRecipes(tree);
         setSelectedRecipes(selected);
 
@@ -140,6 +149,7 @@ export default function ManufacturingSimulator({
           ...prev,
           dependencyTree: tree,
           efficiencyPlan,
+          minimumPlan,
         }));
         console.log('[REFRESH] State updated');
       } catch (error) {
@@ -163,8 +173,7 @@ export default function ManufacturingSimulator({
       return {
         ...prev,
         baseMaterialIds: newBaseMaterials,
-        efficiencyPlan: null,
-      };
+        efficiencyPlan: null,        minimumPlan: null,      };
     });
   };
 
@@ -191,6 +200,7 @@ export default function ManufacturingSimulator({
           ...prev,
           dependencyTree: tree,
           efficiencyPlan: null,
+          minimumPlan: null,
         }));
     });
   };
@@ -222,8 +232,32 @@ export default function ManufacturingSimulator({
             </button>
           </div>
 
-          <div className="text-sm text-gray-600">
+          <div className="text-sm text-gray-600 mb-4">
             ℹ️ 最高效率方案自动计算最小整数配比的产出率
+          </div>
+          
+          {/* Tab 切换 */}
+          <div className="flex gap-1 border-b border-gray-200">
+            <button
+              onClick={() => setActiveTab('efficiency')}
+              className={`px-4 py-2 text-sm font-medium transition-colors rounded-t-lg ${
+                activeTab === 'efficiency'
+                  ? 'text-blue-600 bg-white border border-b-white border-gray-200 -mb-px'
+                  : 'text-gray-500 hover:text-gray-700 hover:bg-gray-100'
+              }`}
+            >
+              最高效率
+            </button>
+            <button
+              onClick={() => setActiveTab('minimum')}
+              className={`px-4 py-2 text-sm font-medium transition-colors rounded-t-lg ${
+                activeTab === 'minimum'
+                  ? 'text-blue-600 bg-white border border-b-white border-gray-200 -mb-px'
+                  : 'text-gray-500 hover:text-gray-700 hover:bg-gray-100'
+              }`}
+            >
+              最小规模
+            </button>
           </div>
         </div>
 
@@ -247,8 +281,10 @@ export default function ManufacturingSimulator({
 
           {dependencyTree && (
             <div className="mb-6">
-              {state.efficiencyPlan ? (
+              {activeTab === 'efficiency' && state.efficiencyPlan ? (
                 <PlanVisualizer plan={state.efficiencyPlan} itemLookup={itemLookup} />
+              ) : activeTab === 'minimum' && state.minimumPlan ? (
+                <PlanVisualizer plan={state.minimumPlan} itemLookup={itemLookup} />
               ) : (
                 <div className="text-center py-12 text-gray-500">
                   <p>选择目标产出率并点击"计算方案"查看结果</p>

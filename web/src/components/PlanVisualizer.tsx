@@ -108,7 +108,7 @@ interface DeviceCardProps {
 
 function DeviceCard({ device, itemLookup }: DeviceCardProps) {
   return (
-    <div className="bg-white border border-gray-200 rounded-lg p-4 shadow-sm">
+    <div className={`bg-white border rounded-lg p-4 shadow-sm ${device.hasOverflow ? 'border-red-300 bg-red-50' : 'border-gray-200'}`}>
       <div className="flex items-start justify-between mb-3">
         <div>
           <h5 className="font-semibold text-gray-900">{device.deviceName}</h5>
@@ -116,8 +116,15 @@ function DeviceCard({ device, itemLookup }: DeviceCardProps) {
             设备 ID：{device.deviceId}
           </div>
         </div>
-        <div className="bg-blue-100 text-blue-900 px-3 py-1 rounded-full text-sm font-medium">
-          {device.count} {device.count > 1 ? '台' : '台'}
+        <div className="flex items-center gap-2">
+          {device.hasOverflow && (
+            <div className="bg-red-100 text-red-800 px-2 py-1 rounded-full text-xs font-medium">
+              ⚠️ 浪费 -{((1 - 1 / device.overflowRate!) * 100).toFixed(1)}%
+            </div>
+          )}
+          <div className="bg-blue-100 text-blue-900 px-3 py-1 rounded-full text-sm font-medium">
+            {device.count} {device.count > 1 ? '台' : '台'}
+          </div>
         </div>
       </div>
 
@@ -635,6 +642,113 @@ function ConnectionGraph({
     }
   });
 
+  // ========== Step 11: Calculate edge geometries and crossings ==========
+  const cornerRadius = 12;
+  const jumpRadius = 6; // Size of the jump arc
+  
+  // Pre-calculate all edge segments for crossing detection
+  type EdgeSegment = {
+    edgeIndex: number;
+    type: 'horizontal' | 'vertical';
+    x1: number; y1: number; x2: number; y2: number;
+  };
+  
+  const allSegments: EdgeSegment[] = [];
+  const edgeGeometries: Array<{
+    startX: number; startY: number;
+    endX: number; endY: number;
+    midX: number;
+    isHorizontal: boolean;
+    verticalStartY: number;
+    verticalEndY: number;
+  }> = [];
+  
+  edges.forEach((edge, index) => {
+    const fromPos = layout.get(edge.from);
+    const toPos = layout.get(edge.to);
+    const midX = targetNodeMidXMap.get(edge.to);
+    if (!fromPos || !toPos || midX === undefined) return;
+
+    const startX = fromPos.x + cardWidth;
+    const startY = fromPos.y + cardHeight / 2;
+    const endX = toPos.x;
+    const endY = toPos.y + cardHeight / 2;
+    
+    const isHorizontal = Math.abs(endY - startY) < 1;
+    const isGoingDown = endY > startY;
+    
+    const verticalStartY = isHorizontal ? startY : startY + (isGoingDown ? cornerRadius : -cornerRadius);
+    const verticalEndY = isHorizontal ? endY : endY - (isGoingDown ? cornerRadius : -cornerRadius);
+    
+    edgeGeometries[index] = {
+      startX, startY, endX, endY, midX,
+      isHorizontal,
+      verticalStartY,
+      verticalEndY
+    };
+    
+    if (isHorizontal) {
+      // Single horizontal segment
+      allSegments.push({
+        edgeIndex: index,
+        type: 'horizontal',
+        x1: startX, y1: startY, x2: endX, y2: endY
+      });
+    } else {
+      // First horizontal segment
+      allSegments.push({
+        edgeIndex: index,
+        type: 'horizontal',
+        x1: startX, y1: startY, x2: midX, y2: startY
+      });
+      // Vertical segment
+      allSegments.push({
+        edgeIndex: index,
+        type: 'vertical',
+        x1: midX, y1: verticalStartY, x2: midX, y2: verticalEndY
+      });
+      // Second horizontal segment
+      allSegments.push({
+        edgeIndex: index,
+        type: 'horizontal',
+        x1: midX, y1: endY, x2: endX, y2: endY
+      });
+    }
+  });
+  
+  // Find crossings: vertical segments crossing horizontal segments from OTHER edges
+  const crossingsPerEdge = new Map<number, number[]>(); // edgeIndex -> array of Y positions where crossings occur
+  
+  allSegments.forEach((seg) => {
+    if (seg.type !== 'vertical') return;
+    
+    const crossings: number[] = [];
+    const vx = seg.x1; // x position of vertical segment
+    const vy1 = Math.min(seg.y1, seg.y2);
+    const vy2 = Math.max(seg.y1, seg.y2);
+    
+    allSegments.forEach((otherSeg) => {
+      if (otherSeg.edgeIndex === seg.edgeIndex) return; // Skip same edge
+      if (otherSeg.type !== 'horizontal') return;
+      
+      const hy = otherSeg.y1; // y position of horizontal segment
+      const hx1 = Math.min(otherSeg.x1, otherSeg.x2);
+      const hx2 = Math.max(otherSeg.x1, otherSeg.x2);
+      
+      // Check if they intersect
+      if (vx > hx1 && vx < hx2 && hy > vy1 && hy < vy2) {
+        crossings.push(hy);
+      }
+    });
+    
+    if (crossings.length > 0) {
+      // Sort crossings by Y position
+      crossings.sort((a, b) => a - b);
+      const existing = crossingsPerEdge.get(seg.edgeIndex) || [];
+      crossingsPerEdge.set(seg.edgeIndex, [...existing, ...crossings]);
+    }
+  });
+
   return (
     <div className="bg-gray-50 border border-gray-200 rounded-lg p-6 overflow-x-auto">
       <div className="relative" style={{ width: containerWidth, height: containerHeight }}>
@@ -656,25 +770,17 @@ function ConnectionGraph({
             </marker>
           </defs>
           {edges.map((edge, index) => {
-            const fromPos = layout.get(edge.from);
-            const toPos = layout.get(edge.to);
-            const midX = targetNodeMidXMap.get(edge.to);
-            if (!fromPos || !toPos || midX === undefined) return null;
-
-            const startX = fromPos.x + cardWidth;
-            const startY = fromPos.y + cardHeight / 2;
-            const endX = toPos.x;
-            const endY = toPos.y + cardHeight / 2;
-
-            // Create rounded corner path with smooth curves
-            const cornerRadius = 12;
+            const geom = edgeGeometries[index];
+            if (!geom) return null;
+            
+            const { startX, startY, endX, endY, midX, isHorizontal, verticalStartY, verticalEndY } = geom;
+            const crossings = crossingsPerEdge.get(index) || [];
+            
             let path = `M ${startX} ${startY}`;
             
-            // If on same horizontal line, draw straight line
-            if (Math.abs(endY - startY) < 1) {
+            if (isHorizontal) {
               path += ` H ${endX}`;
             } else {
-              // Path with rounded corners: H -> curve -> V -> curve -> H
               const isGoingDown = endY > startY;
               
               // First horizontal segment to first corner
@@ -682,12 +788,30 @@ function ConnectionGraph({
               path += ` H ${firstCornerX}`;
               
               // First rounded corner (horizontal to vertical)
-              const verticalStartY = startY + (isGoingDown ? cornerRadius : -cornerRadius);
               path += ` Q ${midX} ${startY}, ${midX} ${verticalStartY}`;
               
-              // Vertical segment
-              const verticalEndY = endY - (isGoingDown ? cornerRadius : -cornerRadius);
-              path += ` V ${verticalEndY}`;
+              // Vertical segment with jump arcs at crossings
+              if (crossings.length > 0) {
+                // Sort crossings in the direction of travel
+                const sortedCrossings = isGoingDown 
+                  ? crossings.filter(y => y > verticalStartY && y < verticalEndY).sort((a, b) => a - b)
+                  : crossings.filter(y => y < verticalStartY && y > verticalEndY).sort((a, b) => b - a);
+                
+                for (const crossY of sortedCrossings) {
+                  // Draw line to just before the crossing
+                  const beforeJump = isGoingDown ? crossY - jumpRadius : crossY + jumpRadius;
+                  path += ` V ${beforeJump}`;
+                  
+                  // Draw jump arc (semicircle to the right)
+                  const afterJump = isGoingDown ? crossY + jumpRadius : crossY - jumpRadius;
+                  path += ` A ${jumpRadius} ${jumpRadius} 0 0 ${isGoingDown ? 1 : 0} ${midX} ${afterJump}`;
+                }
+                
+                // Continue to vertical end
+                path += ` V ${verticalEndY}`;
+              } else {
+                path += ` V ${verticalEndY}`;
+              }
               
               // Second rounded corner (vertical to horizontal)
               const secondCornerX = midX + cornerRadius;
@@ -725,19 +849,21 @@ function ConnectionGraph({
           const pos = layout.get(node.id);
           if (!pos) return null;
 
-          const baseClasses =
-            node.type === 'base'
-              ? 'bg-green-50 border-green-300 text-green-900'
-              : node.type === 'product'
-                ? 'bg-blue-50 border-blue-300 text-blue-900'
-                : node.isFinal
-                  ? 'bg-amber-50 border-amber-300 text-amber-900'
-                  : 'bg-white border-gray-200 text-gray-900';
-
           const entry = deviceMap.get(node.id);
           const device = entry?.config;
           const productionRate = device ? (device.productionRate * 60).toFixed(2) : null;
           const count = device?.count;
+
+          const baseClasses =
+            node.type === 'base'
+              ? 'bg-blue-50 border-blue-300 text-blue-900'
+              : node.type === 'product'
+                ? 'bg-blue-50 border-blue-300 text-blue-900'
+                : node.isFinal
+                  ? 'bg-amber-50 border-amber-300 text-amber-900'
+                  : device?.hasOverflow
+                    ? 'bg-red-50 border-red-300 text-red-900'
+                    : 'bg-white border-gray-200 text-gray-900';
 
           const getItemIdForClick = () => {
             if (node.type === 'base') {
@@ -797,7 +923,7 @@ function ConnectionGraph({
                     <>
                       {node.deviceCount !== undefined && node.deviceCount > 0 && (
                         <>
-                          <div className="text-xs text-green-600 mb-2 whitespace-nowrap"><span className="px-2 py-0.5 bg-green-100 rounded-full">{node.deviceCount} 台</span></div>
+                          <div className="text-xs text-blue-600 mb-2 whitespace-nowrap"><span className="px-2 py-0.5 bg-blue-100 rounded-full">{node.deviceCount} 台</span></div>
                           <div className="text-xs text-gray-600 whitespace-nowrap">
                             {((node.productionRate ?? 0) * 60).toFixed(2)} 个/分钟
                           </div>
@@ -810,7 +936,14 @@ function ConnectionGraph({
                   )}
                   {node.type === 'device' && device && (
                     <>
-                      <div className="text-xs text-blue-600 mb-2 whitespace-nowrap"><span className="px-2 py-0.5 bg-blue-100 rounded-full">{count} 台</span></div>
+                      <div className="text-xs text-blue-600 mb-2 whitespace-nowrap">
+                        <span className="px-2 py-0.5 bg-blue-100 rounded-full">{count} 台</span>
+                        {device.hasOverflow && (
+                          <span className="ml-1 px-1.5 py-0.5 bg-red-100 text-red-700 rounded-full text-[10px]">
+                            -{((1 - 1 / device.overflowRate!) * 100).toFixed(0)}%
+                          </span>
+                        )}
+                      </div>
                       <div className="text-xs text-gray-600 whitespace-nowrap">{productionRate} 个/分钟</div>
                     </>
                   )}

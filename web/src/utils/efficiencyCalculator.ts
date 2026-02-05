@@ -459,3 +459,58 @@ function findBottleneck(
     description: `${slowestDevice.deviceName} 产能受限 (${slowestDevice.productionRate.toFixed(2)} 个/秒)`,
   };
 }
+
+/**
+ * 计算最小规模方案
+ * 将产线等比例缩小，使最终产物设备只有1台，其他设备向上取整
+ */
+export function calculateMinimumScalePlan(
+  efficiencyPlan: ProductionPlan
+): ProductionPlan {
+  // 找到最终产物设备
+  const finalDevice = efficiencyPlan.devices.find(
+    (d) => d.outputs.some((o) => o.destination === 'output')
+  );
+  
+  if (!finalDevice || finalDevice.count === 0) {
+    return { ...efficiencyPlan, type: 'minimum', name: '最小规模方案' };
+  }
+  
+  // 计算缩放比例（使最终设备数量为1）
+  const scaleFactor = 1 / finalDevice.count;
+  
+  // 缩放所有设备数量
+  const scaledDevices = efficiencyPlan.devices.map((device) => {
+    const exactCount = device.count * scaleFactor;
+    const roundedCount = Math.ceil(exactCount); // 向上取整
+    const hasOverflow = roundedCount > exactCount + 0.001; // 使用小容差避免浮点误差
+    const overflowRate = hasOverflow ? roundedCount / exactCount : 1;
+    
+    // 计算新的生产率（基于实际设备数量）
+    const newProductionRate = (device.productionRate / device.count) * roundedCount;
+    
+    return {
+      ...device,
+      count: roundedCount,
+      productionRate: newProductionRate * scaleFactor,
+      hasOverflow,
+      overflowRate,
+    };
+  });
+  
+  // 缩放基础原料需求
+  const scaledBaseMaterials = efficiencyPlan.baseMaterials.map((m) => ({
+    ...m,
+    requiredRate: m.requiredRate * scaleFactor,
+  }));
+  
+  return {
+    ...efficiencyPlan,
+    type: 'minimum',
+    name: '最小规模方案',
+    devices: scaledDevices,
+    totalDeviceCount: scaledDevices.reduce((sum, d) => sum + d.count, 0),
+    calculatedOutputRate: efficiencyPlan.calculatedOutputRate * scaleFactor,
+    baseMaterials: scaledBaseMaterials,
+  };
+}

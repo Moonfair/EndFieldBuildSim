@@ -79,12 +79,6 @@ export default function BaseMaterialSelector({
                 这些物品不需要制造设备，会从仓库以 2秒/个 的速度提供
               </p>
             </div>
-            <button
-              onClick={onUpdateTree}
-              className="px-4 py-2 bg-blue-600 hover:bg-blue-700 text-white rounded-lg text-sm font-medium transition-colors"
-            >
-              重新计算依赖树
-            </button>
           </div>
         </div>
       )}

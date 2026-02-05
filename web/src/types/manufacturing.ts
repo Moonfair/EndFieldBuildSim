@@ -52,13 +52,15 @@ export interface DeviceConfig {
   productionRate: number; // 每秒产出数量
   inputs: Array<{ itemId: string; source: string }>; // 输入来源（设备或仓库）
   outputs: Array<{ itemId: string; destination: string }>; // 输出目标
+  hasOverflow?: boolean; // 是否有产能溢出（最小规模方案中）
+  overflowRate?: number; // 溢出率（实际产能 / 需求产能）
 }
 
 /**
  * 生产方案
  */
 export interface ProductionPlan {
-  type: 'efficiency';
+  type: 'efficiency' | 'minimum';
   name: string;
   targetProduct: { id: string; name: string };
   calculatedOutputRate: number;
@@ -90,6 +92,7 @@ export interface SimulatorState {
   baseMaterialIds: Set<string>; // 用户标记为基础原料的物品ID
   dependencyTree: DependencyNode | null;
   efficiencyPlan: ProductionPlan | null;
+  minimumPlan: ProductionPlan | null; // 最小规模方案
   loading: boolean;
   error: string | null;
 }
