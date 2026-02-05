@@ -247,6 +247,7 @@ function ConnectionGraph({
     }
   };
 
+  // ========== Step 1: Build device maps ==========
   const graphDevices: GraphDevice[] = devices.map((device, index) => ({
     graphId: `${device.deviceId}-${index}`,
     config: device,
@@ -284,51 +285,30 @@ function ConnectionGraph({
 
   const nodeMap = new Map<string, GraphNode>();
   const stageMap = new Map<string, number>();
-  const rowMap = new Map<string, number>();
   const edges: GraphEdge[] = [];
 
-  // Assign each base material to a unique row
-  const baseMaterialRows = new Map<string, number>();
-  baseMaterials.forEach((material, index) => {
-    baseMaterialRows.set(material.id, index);
-  });
-
   const BASE_EXTRACTION_RATE = 0.5;
-  
-  const ensureBaseNode = (itemId: string): string => {
-    const nodeId = `base-${itemId}`;
-    if (!nodeMap.has(nodeId)) {
-      const label = itemLookup[itemId]?.name || baseMaterialMap.get(itemId) || itemId;
-      const row = baseMaterialRows.get(itemId) ?? 0;
-      const requiredRate = baseMaterialRates.get(itemId) ?? 0;
-      const deviceCount = requiredRate > 0 ? Math.ceil(requiredRate / BASE_EXTRACTION_RATE) : 0;
-      
-      nodeMap.set(nodeId, {
-        id: nodeId,
-        label,
-        stage: 0,
-        row,
-        type: 'base',
-        deviceCount,
-        productionRate: requiredRate,
-      });
-      stageMap.set(nodeId, 0);
-      rowMap.set(nodeId, row);
+
+  // ========== Step 2: Helper to resolve upstream node ID ==========
+  const getUpstreamNodeId = (input: { itemId: string; source: string }): string | null => {
+    if (input.source && input.source.startsWith('dev-')) {
+      const upstreamDevice = deviceIdToDevice.get(input.source);
+      return upstreamDevice ? upstreamDevice.graphId : null;
+    } else if (input.source && input.source.startsWith('device-')) {
+      const itemId = input.source.replace('device-', '');
+      const upstreamDevice = outputToDevice.get(itemId);
+      return upstreamDevice ? upstreamDevice.graphId : null;
     }
-    return nodeId;
+    return null; // warehouse source
   };
 
-  baseMaterials.forEach((material) => {
-    ensureBaseNode(material.id);
-  });
-
-  // Compute dependency stages for devices
+  // ========== Step 3: Compute stages using topological sort ==========
   const computeStage = (graphId: string, stack: Set<string>): number => {
     if (stageMap.has(graphId)) {
       return stageMap.get(graphId) as number;
     }
     if (stack.has(graphId)) {
-      return 1;
+      return 1; // cycle detected
     }
     stack.add(graphId);
 
@@ -342,19 +322,9 @@ function ConnectionGraph({
 
     let maxStage = 0;
     device.inputs.forEach((input) => {
-      if (input.source && input.source.startsWith('dev-')) {
-        const upstreamDevice = deviceIdToDevice.get(input.source);
-        if (upstreamDevice) {
-          maxStage = Math.max(maxStage, computeStage(upstreamDevice.graphId, stack));
-        }
-      } else if (input.source && input.source.startsWith('device-')) {
-        const upstreamId = input.source.replace('device-', '');
-        const upstreamDevice = outputToDevice.get(upstreamId);
-        if (upstreamDevice) {
-          maxStage = Math.max(maxStage, computeStage(upstreamDevice.graphId, stack));
-        }
-      } else {
-        maxStage = Math.max(maxStage, 0);
+      const upstreamId = getUpstreamNodeId(input);
+      if (upstreamId) {
+        maxStage = Math.max(maxStage, computeStage(upstreamId, stack));
       }
     });
 
@@ -364,91 +334,57 @@ function ConnectionGraph({
     return currentStage;
   };
 
-  // Assign rows to devices based on which base material they primarily consume
-  const assignDeviceRow = (graphId: string, visited: Set<string>): number => {
-    if (rowMap.has(graphId)) {
-      return rowMap.get(graphId) as number;
-    }
-    if (visited.has(graphId)) {
-      return 0; // Fallback to row 0 for cycles
-    }
-    visited.add(graphId);
+  // Compute stages for all devices
+  graphDevices.forEach(({ graphId }) => {
+    computeStage(graphId, new Set());
+  });
 
-    const entry = deviceMap.get(graphId);
-    const device = entry?.config;
-    if (!device) {
-      rowMap.set(graphId, 0);
-      visited.delete(graphId);
-      return 0;
+  // ========== Step 4: Create base nodes and build edges ==========
+  const baseNodeIds = new Set<string>();
+  
+  const ensureBaseNode = (itemId: string): string => {
+    const nodeId = `base-${itemId}`;
+    if (!nodeMap.has(nodeId)) {
+      const label = itemLookup[itemId]?.name || baseMaterialMap.get(itemId) || itemId;
+      const requiredRate = baseMaterialRates.get(itemId) ?? 0;
+      const deviceCount = requiredRate > 0 ? Math.ceil(requiredRate / BASE_EXTRACTION_RATE) : 0;
+      
+      nodeMap.set(nodeId, {
+        id: nodeId,
+        label,
+        stage: 0,
+        row: 0, // Will be assigned later
+        type: 'base',
+        deviceCount,
+        productionRate: requiredRate,
+      });
+      stageMap.set(nodeId, 0);
+      baseNodeIds.add(nodeId);
     }
-
-    // Find which base material this device primarily consumes
-    let primaryRow = 0;
-
-    for (const input of device.inputs) {
-      if (input.source && input.source.startsWith('dev-')) {
-        const upstreamDevice = outputToDevice.get(input.source);
-        if (upstreamDevice) {
-          const upstreamRow = assignDeviceRow(upstreamDevice.graphId, visited);
-          primaryRow = upstreamRow;
-        }
-      } else if (input.source && input.source.startsWith('device-')) {
-        const upstreamId = input.source.replace('device-', '');
-        const upstreamDevice = outputToDevice.get(upstreamId);
-        if (upstreamDevice) {
-          const upstreamRow = assignDeviceRow(upstreamDevice.graphId, visited);
-          primaryRow = upstreamRow;
-        }
-      } else {
-        const row = baseMaterialRows.get(input.itemId);
-        if (row !== undefined) {
-          primaryRow = row;
-          break; // Use first base material found
-        }
-      }
-    }
-
-    rowMap.set(graphId, primaryRow);
-    visited.delete(graphId);
-    return primaryRow;
+    return nodeId;
   };
 
-  // Process all devices
+  // Create device nodes
   graphDevices.forEach(({ graphId, config }) => {
-    computeStage(graphId, new Set());
-    const row = assignDeviceRow(graphId, new Set());
     nodeMap.set(graphId, {
       id: graphId,
       label: config.deviceName,
       stage: stageMap.get(graphId) ?? 1,
-      row,
+      row: 0, // Will be assigned later
       type: 'device',
       isFinal: finalDeviceIds.has(graphId),
     });
   });
 
-
-
-  // Build edges
+  // Build edges and ensure base nodes exist
   graphDevices.forEach(({ graphId, config }) => {
     config.inputs.forEach((input) => {
-      let fromId: string;
-      if (input.source && input.source.startsWith('dev-')) {
-        fromId = input.source;
-      } else if (input.source && input.source.startsWith('device-')) {
-        const itemId = input.source.replace('device-', '');
-        const producingDevice = outputToDevice.get(itemId);
-        fromId = producingDevice ? producingDevice.graphId : ensureBaseNode(itemId);
-      } else {
-        fromId = ensureBaseNode(input.itemId);
-      }
-
+      const upstreamId = getUpstreamNodeId(input);
+      const fromId = upstreamId ?? ensureBaseNode(input.itemId);
       const productName = itemLookup[input.itemId]?.name || input.itemId;
       edges.push({ from: fromId, to: graphId, product: productName });
     });
   });
-
-
 
   if (edges.length === 0 && !hasPlanConnections) {
     return (
@@ -458,60 +394,144 @@ function ConnectionGraph({
     );
   }
 
+  // ========== Step 5: Build adjacency lists for layout algorithm ==========
+  // outgoing: node -> list of downstream nodes
+  // incoming: node -> list of upstream nodes
+  const outgoing = new Map<string, string[]>();
+  const incoming = new Map<string, string[]>();
+  
+  nodeMap.forEach((_, nodeId) => {
+    outgoing.set(nodeId, []);
+    incoming.set(nodeId, []);
+  });
+  
+  edges.forEach((edge) => {
+    outgoing.get(edge.from)?.push(edge.to);
+    incoming.get(edge.to)?.push(edge.from);
+  });
+
+  // ========== Step 6: Group nodes by stage ==========
+  const maxStage = Math.max(...Array.from(nodeMap.values()).map(n => n.stage));
+  const stageNodes: string[][] = Array.from({ length: maxStage + 1 }, () => []);
+  
+  nodeMap.forEach((node) => {
+    stageNodes[node.stage].push(node.id);
+  });
+
+  // ========== Step 7: Barycenter-based ordering to minimize crossings ==========
+  // Initialize order: base nodes first, then devices by their first input's base material
+  const nodeOrder = new Map<string, number>();
+  
+  // Initial ordering for stage 0 (base materials)
+  // Sort by downstream device stages to group related materials
+  const baseNodeList = stageNodes[0];
+  const baseDownstreamInfo = baseNodeList.map(nodeId => {
+    const downstreamStages = (outgoing.get(nodeId) || []).map(
+      targetId => stageMap.get(targetId) ?? 1
+    );
+    const avgStage = downstreamStages.length > 0 
+      ? downstreamStages.reduce((a, b) => a + b, 0) / downstreamStages.length 
+      : 0;
+    return { nodeId, avgStage };
+  });
+  baseDownstreamInfo.sort((a, b) => a.avgStage - b.avgStage);
+  baseDownstreamInfo.forEach(({ nodeId }, idx) => {
+    nodeOrder.set(nodeId, idx);
+  });
+
+  // Initial ordering for device stages
+  for (let stage = 1; stage <= maxStage; stage++) {
+    const nodesAtStage = stageNodes[stage];
+    // Sort by barycenter of incoming nodes
+    const nodeBarycenter = nodesAtStage.map(nodeId => {
+      const incomingNodes = incoming.get(nodeId) || [];
+      if (incomingNodes.length === 0) return { nodeId, barycenter: 0 };
+      const sum = incomingNodes.reduce((acc, srcId) => acc + (nodeOrder.get(srcId) ?? 0), 0);
+      return { nodeId, barycenter: sum / incomingNodes.length };
+    });
+    nodeBarycenter.sort((a, b) => a.barycenter - b.barycenter);
+    nodeBarycenter.forEach(({ nodeId }, idx) => {
+      nodeOrder.set(nodeId, idx);
+    });
+  }
+
+  // ========== Step 8: Iterative barycenter refinement ==========
+  const ITERATIONS = 4;
+  
+  for (let iter = 0; iter < ITERATIONS; iter++) {
+    // Forward pass: stage 1 to maxStage
+    for (let stage = 1; stage <= maxStage; stage++) {
+      const nodesAtStage = stageNodes[stage];
+      const nodeBarycenter = nodesAtStage.map(nodeId => {
+        const incomingNodes = incoming.get(nodeId) || [];
+        if (incomingNodes.length === 0) return { nodeId, barycenter: nodeOrder.get(nodeId) ?? 0 };
+        const sum = incomingNodes.reduce((acc, srcId) => acc + (nodeOrder.get(srcId) ?? 0), 0);
+        return { nodeId, barycenter: sum / incomingNodes.length };
+      });
+      nodeBarycenter.sort((a, b) => a.barycenter - b.barycenter);
+      nodeBarycenter.forEach(({ nodeId }, idx) => {
+        nodeOrder.set(nodeId, idx);
+      });
+    }
+    
+    // Backward pass: stage maxStage-1 to 0
+    for (let stage = maxStage - 1; stage >= 0; stage--) {
+      const nodesAtStage = stageNodes[stage];
+      const nodeBarycenter = nodesAtStage.map(nodeId => {
+        const outgoingNodes = outgoing.get(nodeId) || [];
+        if (outgoingNodes.length === 0) return { nodeId, barycenter: nodeOrder.get(nodeId) ?? 0 };
+        const sum = outgoingNodes.reduce((acc, tgtId) => acc + (nodeOrder.get(tgtId) ?? 0), 0);
+        return { nodeId, barycenter: sum / outgoingNodes.length };
+      });
+      nodeBarycenter.sort((a, b) => a.barycenter - b.barycenter);
+      nodeBarycenter.forEach(({ nodeId }, idx) => {
+        nodeOrder.set(nodeId, idx);
+      });
+    }
+  }
+
+  // ========== Step 9: Assign row based on final order ==========
+  for (let stage = 0; stage <= maxStage; stage++) {
+    const nodesAtStage = stageNodes[stage];
+    // Sort nodes by their computed order
+    nodesAtStage.sort((a, b) => (nodeOrder.get(a) ?? 0) - (nodeOrder.get(b) ?? 0));
+    nodesAtStage.forEach((nodeId, rowIdx) => {
+      const node = nodeMap.get(nodeId);
+      if (node) {
+        node.row = rowIdx;
+      }
+    });
+  }
+
+  // ========== Step 10: Calculate layout positions ==========
   const cardWidth = 260;
   const cardHeight = 90;
   const columnGap = 100;
   const rowGap = 20;
 
   const layout = new Map<string, { x: number; y: number }>();
-  let containerHeight = 0;
-  let containerWidth = 0;
-
-  // First pass: Calculate base positions
-  const basePositions = new Map<string, { x: number; y: number }>();
+  
+  // Find max row count across all stages for proper vertical centering
+  const maxRowCount = Math.max(...stageNodes.map(nodes => nodes.length));
+  
+  // Calculate positions with vertical centering per stage
   nodeMap.forEach((node) => {
+    const nodesInThisStage = stageNodes[node.stage].length;
+    const stageHeight = nodesInThisStage * (cardHeight + rowGap) - rowGap;
+    const totalHeight = maxRowCount * (cardHeight + rowGap) - rowGap;
+    const verticalOffset = (totalHeight - stageHeight) / 2;
+    
     const x = node.stage * (cardWidth + columnGap);
-    const y = node.row * (cardHeight + rowGap);
-    basePositions.set(node.id, { x, y });
-    containerHeight = Math.max(containerHeight, y + cardHeight);
-    containerWidth = Math.max(containerWidth, x + cardWidth);
+    const y = verticalOffset + node.row * (cardHeight + rowGap);
+    layout.set(node.id, { x, y });
   });
 
-  const sortedDevices = [...graphDevices].sort((a, b) => {
-    const nodeA = nodeMap.get(a.graphId);
-    const nodeB = nodeMap.get(b.graphId);
-    return (nodeA?.stage ?? 0) - (nodeB?.stage ?? 0);
-  });
-
-  sortedDevices.forEach(({ graphId, config }) => {
-    const inputNodeIds = config.inputs.map((input) => {
-      if (input.source && input.source.startsWith('dev-')) {
-        return input.source;
-      } else if (input.source && input.source.startsWith('device-')) {
-        const itemId = input.source.replace('device-', '');
-        const upstreamDevice = outputToDevice.get(itemId);
-        return upstreamDevice ? upstreamDevice.graphId : `base-${input.itemId}`;
-      }
-      return `base-${input.itemId}`;
-    });
-
-    const inputPositions = inputNodeIds
-      .map((id) => basePositions.get(id))
-      .filter((pos): pos is { x: number; y: number } => pos !== undefined);
-
-    if (inputPositions.length > 0) {
-      const avgY = inputPositions.reduce((sum, pos) => sum + pos.y, 0) / inputPositions.length;
-      basePositions.set(graphId, { x: basePositions.get(graphId)!.x, y: avgY });
-    }
-  });
-
-  // Copy adjusted positions to final layout
-  basePositions.forEach((pos, id) => {
-    layout.set(id, pos);
-  });
-
+  // Calculate container dimensions
+  let containerWidth = (maxStage + 1) * (cardWidth + columnGap);
+  let containerHeight = maxRowCount * (cardHeight + rowGap);
+  
   containerWidth = Math.max(800, containerWidth + columnGap);
-  containerHeight = containerHeight + rowGap;
+  containerHeight = Math.max(200, containerHeight + rowGap);
 
   // Calculate midX for each target node
   const targetNodeMidXMap = new Map<string, number>();
