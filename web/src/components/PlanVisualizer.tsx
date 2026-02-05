@@ -490,45 +490,123 @@ function ConnectionGraph({
     }
   }
 
-  // ========== Step 9: Assign row based on final order ==========
-  for (let stage = 0; stage <= maxStage; stage++) {
-    const nodesAtStage = stageNodes[stage];
-    // Sort nodes by their computed order
-    nodesAtStage.sort((a, b) => (nodeOrder.get(a) ?? 0) - (nodeOrder.get(b) ?? 0));
-    nodesAtStage.forEach((nodeId, rowIdx) => {
-      const node = nodeMap.get(nodeId);
-      if (node) {
-        node.row = rowIdx;
-      }
-    });
-  }
-
-  // ========== Step 10: Calculate layout positions ==========
+  // ========== Step 9: Global row assignment to avoid edge-node conflicts ==========
+  // Use a global grid approach: assign each node a unique global row
+  // ensuring that edges don't pass through other nodes
+  
   const cardWidth = 260;
   const cardHeight = 90;
   const columnGap = 100;
   const rowGap = 20;
-
+  
+  // First, assign global rows using a greedy algorithm
+  // Track which global rows are occupied at each stage
+  const globalRowAssignment = new Map<string, number>();
+  const occupiedRows = new Map<number, Set<number>>(); // stage -> set of occupied global rows
+  
+  for (let s = 0; s <= maxStage; s++) {
+    occupiedRows.set(s, new Set());
+  }
+  
+  // Process stages from left to right
+  for (let stage = 0; stage <= maxStage; stage++) {
+    const nodesAtStage = stageNodes[stage];
+    // Sort by barycenter order
+    nodesAtStage.sort((a, b) => (nodeOrder.get(a) ?? 0) - (nodeOrder.get(b) ?? 0));
+    
+    for (const nodeId of nodesAtStage) {
+      // Calculate preferred row based on incoming edges
+      const incomingNodes = incoming.get(nodeId) || [];
+      let preferredRow = 0;
+      
+      if (incomingNodes.length > 0) {
+        // Use median of incoming node rows for better stability
+        const incomingRows = incomingNodes
+          .map(srcId => globalRowAssignment.get(srcId))
+          .filter((r): r is number => r !== undefined)
+          .sort((a, b) => a - b);
+        
+        if (incomingRows.length > 0) {
+          const midIdx = Math.floor(incomingRows.length / 2);
+          preferredRow = incomingRows[midIdx];
+        }
+      } else if (stage === 0) {
+        // For base nodes without dependencies, use their barycenter order
+        preferredRow = nodeOrder.get(nodeId) ?? 0;
+      }
+      
+      // Find nearest available row that doesn't conflict with edges
+      let assignedRow = preferredRow;
+      const stageOccupied = occupiedRows.get(stage)!;
+      
+      // Check if preferred row is available
+      if (stageOccupied.has(assignedRow)) {
+        // Search for nearest available row
+        let searchRadius = 1;
+        while (true) {
+          const upRow = preferredRow - searchRadius;
+          const downRow = preferredRow + searchRadius;
+          
+          if (upRow >= 0 && !stageOccupied.has(upRow)) {
+            assignedRow = upRow;
+            break;
+          }
+          if (!stageOccupied.has(downRow)) {
+            assignedRow = downRow;
+            break;
+          }
+          searchRadius++;
+          if (searchRadius > 100) break; // Safety limit
+        }
+      }
+      
+      globalRowAssignment.set(nodeId, assignedRow);
+      stageOccupied.add(assignedRow);
+      
+      // Reserve rows for edge paths to this node
+      // For each incoming edge, reserve the row range between source and target
+      for (const srcId of incomingNodes) {
+        const srcRow = globalRowAssignment.get(srcId);
+        const srcStage = stageMap.get(srcId) ?? 0;
+        if (srcRow !== undefined) {
+          const minRow = Math.min(srcRow, assignedRow);
+          const maxRow = Math.max(srcRow, assignedRow);
+          // Reserve intermediate rows at intermediate stages
+          for (let s = srcStage + 1; s < stage; s++) {
+            for (let r = minRow; r <= maxRow; r++) {
+              occupiedRows.get(s)!.add(r);
+            }
+          }
+        }
+      }
+    }
+  }
+  
+  // ========== Step 10: Calculate layout positions ==========
   const layout = new Map<string, { x: number; y: number }>();
   
-  // Find max row count across all stages for proper vertical centering
-  const maxRowCount = Math.max(...stageNodes.map(nodes => nodes.length));
+  // Find the range of global rows used
+  const allRows = Array.from(globalRowAssignment.values());
+  const minGlobalRow = Math.min(...allRows, 0);
+  const maxGlobalRow = Math.max(...allRows, 0);
+  const totalRows = maxGlobalRow - minGlobalRow + 1;
   
-  // Calculate positions with vertical centering per stage
+  // Calculate positions
   nodeMap.forEach((node) => {
-    const nodesInThisStage = stageNodes[node.stage].length;
-    const stageHeight = nodesInThisStage * (cardHeight + rowGap) - rowGap;
-    const totalHeight = maxRowCount * (cardHeight + rowGap) - rowGap;
-    const verticalOffset = (totalHeight - stageHeight) / 2;
+    const globalRow = globalRowAssignment.get(node.id) ?? 0;
+    const adjustedRow = globalRow - minGlobalRow; // Normalize to 0-based
     
     const x = node.stage * (cardWidth + columnGap);
-    const y = verticalOffset + node.row * (cardHeight + rowGap);
+    const y = adjustedRow * (cardHeight + rowGap);
     layout.set(node.id, { x, y });
+    
+    // Update node.row for consistency
+    node.row = adjustedRow;
   });
 
   // Calculate container dimensions
   let containerWidth = (maxStage + 1) * (cardWidth + columnGap);
-  let containerHeight = maxRowCount * (cardHeight + rowGap);
+  let containerHeight = totalRows * (cardHeight + rowGap);
   
   containerWidth = Math.max(800, containerWidth + columnGap);
   containerHeight = Math.max(200, containerHeight + rowGap);
