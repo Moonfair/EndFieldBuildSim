@@ -1,4 +1,5 @@
 import { useState, useEffect } from 'react';
+import { clearRecipeCache } from '../../utils/recipeLoader';
 
 const STORAGE_KEY = 'ignored_devices';
 
@@ -93,6 +94,7 @@ export default function IgnoredDevicesPanel({ onIgnoredDevicesChange }: IgnoredD
       }
 
       localStorage.setItem(STORAGE_KEY, JSON.stringify(Array.from(newIgnored)));
+      clearRecipeCache();
       onIgnoredDevicesChange?.(Array.from(newIgnored));
 
       return newIgnored;
@@ -109,6 +111,7 @@ export default function IgnoredDevicesPanel({ onIgnoredDevicesChange }: IgnoredD
 
     localStorage.setItem(STORAGE_KEY, JSON.stringify(Array.from(newIgnored)));
     setIgnoredDevices(newIgnored);
+    clearRecipeCache();
     onIgnoredDevicesChange?.(Array.from(newIgnored));
   };
 
@@ -122,18 +125,21 @@ export default function IgnoredDevicesPanel({ onIgnoredDevicesChange }: IgnoredD
 
     localStorage.setItem(STORAGE_KEY, JSON.stringify(Array.from(newIgnored)));
     setIgnoredDevices(newIgnored);
+    clearRecipeCache();
     onIgnoredDevicesChange?.(Array.from(newIgnored));
   };
 
   const clearAll = () => {
     localStorage.setItem(STORAGE_KEY, JSON.stringify([]));
     setIgnoredDevices(new Set());
+    clearRecipeCache();
     onIgnoredDevicesChange?.([]);
   };
 
   const resetToDefaults = () => {
     localStorage.removeItem(STORAGE_KEY);
     setIgnoredDevices(new Set(defaultIgnoredDevices));
+    clearRecipeCache();
     onIgnoredDevicesChange?.(Array.from(defaultIgnoredDevices));
   };
 

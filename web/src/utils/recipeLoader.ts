@@ -170,10 +170,14 @@ async function loadDefaultIgnoredDevices(): Promise<Set<string>> {
 }
 
 async function getIgnoredDevices(): Promise<Set<string>> {
-  // First check localStorage
+  // Load defaults from config file first
+  const defaults = await loadDefaultIgnoredDevices();
+  
+  // Then check localStorage for user overrides
   try {
     const stored = localStorage.getItem(STORAGE_KEY);
-    if (stored) {
+    if (stored !== null) {
+      // User has explicitly set their preferences (even if empty)
       const deviceIds = JSON.parse(stored) as string[];
       return new Set(deviceIds);
     }
@@ -181,8 +185,8 @@ async function getIgnoredDevices(): Promise<Set<string>> {
     console.warn('Failed to load ignored devices from localStorage:', error);
   }
   
-  // If no localStorage, load defaults from config file
-  return loadDefaultIgnoredDevices();
+  // No user preferences, use defaults
+  return defaults;
 }
 
 let cachedRecipeLookup: RecipeLookup | null = null;
