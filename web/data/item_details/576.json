@@ -1,0 +1,1940 @@
+{
+  "code": 0,
+  "message": "OK",
+  "timestamp": "1770606991",
+  "data": {
+    "item": {
+      "itemId": "576",
+      "document": {
+        "documentMap": {
+          "ElyyAqe6": {
+            "id": "document-id",
+            "blockIds": [
+              "bQnTCN",
+              "QB7bLN",
+              "2nHcjG",
+              "g2xcVp",
+              "WV5WMI",
+              "OgJYWI",
+              "cc9Nq6",
+              "JSBZcC"
+            ],
+            "blockMap": {
+              "2nHcjG": {
+                "id": "2nHcjG",
+                "parentId": "document-id",
+                "kind": "list",
+                "list": {
+                  "id": "2nHcjG",
+                  "itemIds": [
+                    "ZQeKqJ",
+                    "vvo31b"
+                  ],
+                  "itemMap": {
+                    "ZQeKqJ": {
+                      "id": "ZQeKqJ",
+                      "childIds": [
+                        "2wVgSq"
+                      ]
+                    },
+                    "vvo31b": {
+                      "id": "vvo31b",
+                      "childIds": [
+                        "zGKMUB"
+                      ]
+                    }
+                  },
+                  "kind": "unordered"
+                }
+              },
+              "2wVgSq": {
+                "id": "2wVgSq",
+                "parentId": "ZQeKqJ",
+                "align": "left",
+                "kind": "text",
+                "text": {
+                  "inlineElements": [
+                    {
+                      "color": "light_text_primary",
+                      "kind": "text",
+                      "text": {
+                        "text": "极少量分布在武陵城"
+                      }
+                    },
+                    {
+                      "bold": true,
+                      "color": "light_rank_yellow",
+                      "kind": "text",
+                      "text": {
+                        "text": "实验作物试点区"
+                      }
+                    },
+                    {
+                      "color": "light_text_primary",
+                      "kind": "text",
+                      "text": {
+                        "text": "等地。"
+                      }
+                    }
+                  ],
+                  "kind": "body"
+                }
+              },
+              "JSBZcC": {
+                "id": "JSBZcC",
+                "parentId": "document-id",
+                "align": "left",
+                "kind": "text",
+                "text": {
+                  "inlineElements": [],
+                  "kind": "body"
+                }
+              },
+              "OgJYWI": {
+                "id": "OgJYWI",
+                "parentId": "document-id",
+                "kind": "list",
+                "list": {
+                  "id": "OgJYWI",
+                  "itemIds": [
+                    "lKOXTR"
+                  ],
+                  "itemMap": {
+                    "lKOXTR": {
+                      "id": "lKOXTR",
+                      "childIds": [
+                        "QP3SE0"
+                      ]
+                    }
+                  },
+                  "kind": "unordered"
+                }
+              },
+              "QB7bLN": {
+                "id": "QB7bLN",
+                "parentId": "document-id",
+                "align": "left",
+                "kind": "text",
+                "text": {
+                  "inlineElements": [
+                    {
+                      "bold": true,
+                      "color": "light_text_primary",
+                      "kind": "text",
+                      "text": {
+                        "text": "武陵城等地采集。"
+                      }
+                    }
+                  ],
+                  "kind": "body"
+                }
+              },
+              "QP3SE0": {
+                "id": "QP3SE0",
+                "parentId": "lKOXTR",
+                "align": "left",
+                "kind": "text",
+                "text": {
+                  "inlineElements": [
+                    {
+                      "color": "light_text_primary",
+                      "kind": "text",
+                      "text": {
+                        "text": "放置"
+                      }
+                    },
+                    {
+                      "kind": "entry",
+                      "entry": {
+                        "id": "766",
+                        "showType": "link-imgText",
+                        "count": "0"
+                      }
+                    },
+                    {
+                      "color": "light_text_primary",
+                      "kind": "text",
+                      "text": {
+                        "text": "并进行育苗和浇水，等待其成熟时收获可以获取"
+                      }
+                    },
+                    {
+                      "kind": "entry",
+                      "entry": {
+                        "id": "576",
+                        "showType": "link-imgText",
+                        "count": "3"
+                      }
+                    },
+                    {
+                      "color": "light_text_primary",
+                      "kind": "text",
+                      "text": {
+                        "text": "。"
+                      }
+                    }
+                  ],
+                  "kind": "body"
+                }
+              },
+              "WV5WMI": {
+                "id": "WV5WMI",
+                "parentId": "document-id",
+                "align": "left",
+                "kind": "text",
+                "text": {
+                  "inlineElements": [
+                    {
+                      "bold": true,
+                      "color": "light_text_primary",
+                      "kind": "text",
+                      "text": {
+                        "text": "生态种植区进行种植培育。"
+                      }
+                    }
+                  ],
+                  "kind": "body"
+                }
+              },
+              "bQnTCN": {
+                "id": "bQnTCN",
+                "parentId": "document-id",
+                "kind": "horizontalLine",
+                "horizontalLine": {
+                  "kind": "5"
+                }
+              },
+              "cc9Nq6": {
+                "id": "cc9Nq6",
+                "parentId": "document-id",
+                "kind": "horizontalLine",
+                "horizontalLine": {
+                  "kind": "2"
+                }
+              },
+              "g2xcVp": {
+                "id": "g2xcVp",
+                "parentId": "document-id",
+                "kind": "horizontalLine",
+                "horizontalLine": {
+                  "kind": "5"
+                }
+              },
+              "zGKMUB": {
+                "id": "zGKMUB",
+                "parentId": "vvo31b",
+                "align": "left",
+                "kind": "text",
+                "text": {
+                  "inlineElements": [
+                    {
+                      "color": "light_text_primary",
+                      "kind": "text",
+                      "text": {
+                        "text": "琼叶参的采集点较为矮小难以察觉，注意采集点的闪光提示。"
+                      }
+                    }
+                  ],
+                  "kind": "body"
+                }
+              }
+            },
+            "authorMap": {},
+            "version": "1.0.0"
+          },
+          "QMV0Pirj": {
+            "id": "document-id",
+            "blockIds": [
+              "V3gVqk",
+              "bGKSuM",
+              "BvJa5K"
+            ],
+            "blockMap": {
+              "8hwKgY": {
+                "id": "8hwKgY",
+                "parentId": "1CYfiZ_VD7uDo",
+                "align": "center",
+                "kind": "text",
+                "text": {
+                  "inlineElements": [
+                    {
+                      "bold": true,
+                      "kind": "text",
+                      "text": {
+                        "text": "合成产物"
+                      }
+                    }
+                  ],
+                  "kind": "body"
+                }
+              },
+              "BvJa5K": {
+                "id": "BvJa5K",
+                "parentId": "document-id",
+                "kind": "horizontalLine",
+                "horizontalLine": {
+                  "kind": "3"
+                }
+              },
+              "JTyDqe": {
+                "id": "JTyDqe",
+                "parentId": "1CYfiZ_IMxSAY",
+                "align": "center",
+                "kind": "text",
+                "text": {
+                  "inlineElements": [
+                    {
+                      "bold": true,
+                      "kind": "text",
+                      "text": {
+                        "text": "合成设备"
+                      }
+                    }
+                  ],
+                  "kind": "body"
+                }
+              },
+              "RL1oCE": {
+                "id": "RL1oCE",
+                "parentId": "VBrhPT_IMxSAY",
+                "align": "center",
+                "kind": "text",
+                "text": {
+                  "inlineElements": [
+                    {
+                      "kind": "entry",
+                      "entry": {
+                        "id": "173",
+                        "showType": "card-big",
+                        "count": "0"
+                      }
+                    }
+                  ],
+                  "kind": "body"
+                }
+              },
+              "V3gVqk": {
+                "id": "V3gVqk",
+                "parentId": "document-id",
+                "align": "left",
+                "kind": "text",
+                "text": {
+                  "inlineElements": [],
+                  "kind": "body"
+                }
+              },
+              "bGKSuM": {
+                "id": "bGKSuM",
+                "parentId": "document-id",
+                "kind": "table",
+                "table": {
+                  "id": "bGKSuM",
+                  "rowIds": [
+                    "1CYfiZ",
+                    "VBrhPT"
+                  ],
+                  "columnIds": [
+                    "IMxSAY",
+                    "l07u7G",
+                    "VD7uDo"
+                  ],
+                  "rowMap": {
+                    "1CYfiZ": {
+                      "id": "1CYfiZ"
+                    },
+                    "VBrhPT": {
+                      "id": "VBrhPT"
+                    }
+                  },
+                  "columnMap": {
+                    "IMxSAY": {
+                      "id": "IMxSAY",
+                      "width": 386.6666666666667
+                    },
+                    "VD7uDo": {
+                      "id": "VD7uDo",
+                      "width": 386.6666666666667
+                    },
+                    "l07u7G": {
+                      "id": "l07u7G",
+                      "width": 386.6666666666667
+                    }
+                  },
+                  "cellMap": {
+                    "1CYfiZ_IMxSAY": {
+                      "id": "1CYfiZ_IMxSAY",
+                      "childIds": [
+                        "JTyDqe"
+                      ],
+                      "rowSpan": "1",
+                      "colSpan": "1",
+                      "borderKind": "",
+                      "borderColor": "",
+                      "backgroundColor": "",
+                      "verticalAlign": "unknown"
+                    },
+                    "1CYfiZ_VD7uDo": {
+                      "id": "1CYfiZ_VD7uDo",
+                      "childIds": [
+                        "8hwKgY"
+                      ],
+                      "rowSpan": "1",
+                      "colSpan": "1",
+                      "borderKind": "",
+                      "borderColor": "",
+                      "backgroundColor": "",
+                      "verticalAlign": "unknown"
+                    },
+                    "1CYfiZ_l07u7G": {
+                      "id": "1CYfiZ_l07u7G",
+                      "childIds": [
+                        "r0ZAnP"
+                      ],
+                      "rowSpan": "1",
+                      "colSpan": "1",
+                      "borderKind": "",
+                      "borderColor": "",
+                      "backgroundColor": "",
+                      "verticalAlign": "unknown"
+                    },
+                    "VBrhPT_IMxSAY": {
+                      "id": "VBrhPT_IMxSAY",
+                      "childIds": [
+                        "RL1oCE"
+                      ],
+                      "rowSpan": "1",
+                      "colSpan": "1",
+                      "borderKind": "",
+                      "borderColor": "",
+                      "backgroundColor": "",
+                      "verticalAlign": "unknown"
+                    },
+                    "VBrhPT_VD7uDo": {
+                      "id": "VBrhPT_VD7uDo",
+                      "childIds": [
+                        "e81EcD"
+                      ],
+                      "rowSpan": "1",
+                      "colSpan": "1",
+                      "borderKind": "",
+                      "borderColor": "",
+                      "backgroundColor": "",
+                      "verticalAlign": "unknown"
+                    },
+                    "VBrhPT_l07u7G": {
+                      "id": "VBrhPT_l07u7G",
+                      "childIds": [
+                        "sKTzi7"
+                      ],
+                      "rowSpan": "1",
+                      "colSpan": "1",
+                      "borderKind": "",
+                      "borderColor": "",
+                      "backgroundColor": "",
+                      "verticalAlign": "unknown"
+                    }
+                  },
+                  "description": "",
+                  "rowHeader": true,
+                  "colHeader": false
+                }
+              },
+              "e81EcD": {
+                "id": "e81EcD",
+                "parentId": "VBrhPT_VD7uDo",
+                "align": "center",
+                "kind": "text",
+                "text": {
+                  "inlineElements": [
+                    {
+                      "kind": "entry",
+                      "entry": {
+                        "id": "577",
+                        "showType": "card-big",
+                        "count": "2"
+                      }
+                    }
+                  ],
+                  "kind": "body"
+                }
+              },
+              "r0ZAnP": {
+                "id": "r0ZAnP",
+                "parentId": "1CYfiZ_l07u7G",
+                "align": "center",
+                "kind": "text",
+                "text": {
+                  "inlineElements": [
+                    {
+                      "bold": true,
+                      "kind": "text",
+                      "text": {
+                        "text": "原料需求"
+                      }
+                    }
+                  ],
+                  "kind": "body"
+                }
+              },
+              "sKTzi7": {
+                "id": "sKTzi7",
+                "parentId": "VBrhPT_l07u7G",
+                "align": "center",
+                "kind": "text",
+                "text": {
+                  "inlineElements": [
+                    {
+                      "kind": "entry",
+                      "entry": {
+                        "id": "576",
+                        "showType": "card-big",
+                        "count": "1"
+                      }
+                    }
+                  ],
+                  "kind": "body"
+                }
+              }
+            },
+            "authorMap": {},
+            "version": "1.0.0"
+          },
+          "hpxeFhg8": {
+            "id": "document-id",
+            "blockIds": [
+              "ga3rld",
+              "xNBqz1"
+            ],
+            "blockMap": {
+              "1hopfz": {
+                "id": "1hopfz",
+                "parentId": "2QukeN_KiCxpS",
+                "align": "center",
+                "kind": "text",
+                "text": {
+                  "inlineElements": [
+                    {
+                      "kind": "text",
+                      "text": {
+                        "text": "20"
+                      }
+                    }
+                  ],
+                  "kind": "body"
+                }
+              },
+              "8uOBIl": {
+                "id": "8uOBIl",
+                "parentId": "VyY8pJ_UYOJEv",
+                "align": "center",
+                "kind": "text",
+                "text": {
+                  "inlineElements": [
+                    {
+                      "bold": true,
+                      "kind": "text",
+                      "text": {
+                        "text": "收集奖励"
+                      }
+                    }
+                  ],
+                  "kind": "body"
+                }
+              },
+              "92M4qN": {
+                "id": "92M4qN",
+                "parentId": "AnyygQ_KiCxpS",
+                "align": "center",
+                "kind": "text",
+                "text": {
+                  "inlineElements": [
+                    {
+                      "kind": "text",
+                      "text": {
+                        "text": "1"
+                      }
+                    }
+                  ],
+                  "kind": "body"
+                }
+              },
+              "9Kd3p0": {
+                "id": "9Kd3p0",
+                "parentId": "2QukeN_UYOJEv",
+                "align": "center",
+                "kind": "text",
+                "text": {
+                  "inlineElements": [
+                    {
+                      "kind": "entry",
+                      "entry": {
+                        "id": "894",
+                        "showType": "card-big",
+                        "count": "0"
+                      }
+                    }
+                  ],
+                  "kind": "body"
+                }
+              },
+              "PjqZ9Y": {
+                "id": "PjqZ9Y",
+                "parentId": "zxNaft_UYOJEv",
+                "align": "center",
+                "kind": "text",
+                "text": {
+                  "inlineElements": [
+                    {
+                      "kind": "entry",
+                      "entry": {
+                        "id": "926",
+                        "showType": "card-big",
+                        "count": "50"
+                      }
+                    }
+                  ],
+                  "kind": "body"
+                }
+              },
+              "SMlsXd": {
+                "id": "SMlsXd",
+                "parentId": "2QukeN_UYOJEv",
+                "align": "center",
+                "kind": "text",
+                "text": {
+                  "inlineElements": [
+                    {
+                      "bold": true,
+                      "color": "light_rank_yellow",
+                      "kind": "text",
+                      "text": {
+                        "text": "配方"
+                      }
+                    }
+                  ],
+                  "kind": "body"
+                }
+              },
+              "SixNG8": {
+                "id": "SixNG8",
+                "parentId": "zxNaft_KiCxpS",
+                "align": "center",
+                "kind": "text",
+                "text": {
+                  "inlineElements": [
+                    {
+                      "kind": "text",
+                      "text": {
+                        "text": "30"
+                      }
+                    }
+                  ],
+                  "kind": "body"
+                }
+              },
+              "Wmb20C": {
+                "id": "Wmb20C",
+                "parentId": "VyY8pJ_KiCxpS",
+                "align": "center",
+                "kind": "text",
+                "text": {
+                  "inlineElements": [
+                    {
+                      "bold": true,
+                      "kind": "text",
+                      "text": {
+                        "text": "收集进度"
+                      }
+                    }
+                  ],
+                  "kind": "body"
+                }
+              },
+              "XrvDwW": {
+                "id": "XrvDwW",
+                "parentId": "AnyygQ_UYOJEv",
+                "align": "center",
+                "kind": "text",
+                "text": {
+                  "inlineElements": [
+                    {
+                      "bold": true,
+                      "color": "light_rank_yellow",
+                      "kind": "text",
+                      "text": {
+                        "text": "配方"
+                      }
+                    }
+                  ],
+                  "kind": "body"
+                }
+              },
+              "cAPJee": {
+                "id": "cAPJee",
+                "parentId": "zSwWLF_KiCxpS",
+                "align": "center",
+                "kind": "text",
+                "text": {
+                  "inlineElements": [
+                    {
+                      "kind": "text",
+                      "text": {
+                        "text": "10"
+                      }
+                    }
+                  ],
+                  "kind": "body"
+                }
+              },
+              "ga3rld": {
+                "id": "ga3rld",
+                "parentId": "document-id",
+                "kind": "table",
+                "table": {
+                  "id": "ga3rld",
+                  "rowIds": [
+                    "VyY8pJ",
+                    "AnyygQ",
+                    "zSwWLF",
+                    "2QukeN",
+                    "zxNaft",
+                    "bOpfUo"
+                  ],
+                  "columnIds": [
+                    "KiCxpS",
+                    "UYOJEv"
+                  ],
+                  "rowMap": {
+                    "2QukeN": {
+                      "id": "2QukeN"
+                    },
+                    "AnyygQ": {
+                      "id": "AnyygQ"
+                    },
+                    "VyY8pJ": {
+                      "id": "VyY8pJ"
+                    },
+                    "bOpfUo": {
+                      "id": "bOpfUo"
+                    },
+                    "zSwWLF": {
+                      "id": "zSwWLF"
+                    },
+                    "zxNaft": {
+                      "id": "zxNaft"
+                    }
+                  },
+                  "columnMap": {
+                    "KiCxpS": {
+                      "id": "KiCxpS",
+                      "width": 580
+                    },
+                    "UYOJEv": {
+                      "id": "UYOJEv",
+                      "width": 580
+                    }
+                  },
+                  "cellMap": {
+                    "2QukeN_KiCxpS": {
+                      "id": "2QukeN_KiCxpS",
+                      "childIds": [
+                        "1hopfz"
+                      ],
+                      "rowSpan": "1",
+                      "colSpan": "1",
+                      "borderKind": "",
+                      "borderColor": "",
+                      "backgroundColor": "",
+                      "verticalAlign": "unknown"
+                    },
+                    "2QukeN_UYOJEv": {
+                      "id": "2QukeN_UYOJEv",
+                      "childIds": [
+                        "9Kd3p0",
+                        "SMlsXd"
+                      ],
+                      "rowSpan": "1",
+                      "colSpan": "1",
+                      "borderKind": "",
+                      "borderColor": "",
+                      "backgroundColor": "",
+                      "verticalAlign": "unknown"
+                    },
+                    "AnyygQ_KiCxpS": {
+                      "id": "AnyygQ_KiCxpS",
+                      "childIds": [
+                        "92M4qN"
+                      ],
+                      "rowSpan": "1",
+                      "colSpan": "1",
+                      "borderKind": "",
+                      "borderColor": "",
+                      "backgroundColor": "",
+                      "verticalAlign": "unknown"
+                    },
+                    "AnyygQ_UYOJEv": {
+                      "id": "AnyygQ_UYOJEv",
+                      "childIds": [
+                        "pfFowr",
+                        "XrvDwW"
+                      ],
+                      "rowSpan": "1",
+                      "colSpan": "1",
+                      "borderKind": "",
+                      "borderColor": "",
+                      "backgroundColor": "",
+                      "verticalAlign": "unknown"
+                    },
+                    "VyY8pJ_KiCxpS": {
+                      "id": "VyY8pJ_KiCxpS",
+                      "childIds": [
+                        "Wmb20C"
+                      ],
+                      "rowSpan": "1",
+                      "colSpan": "1",
+                      "borderKind": "",
+                      "borderColor": "",
+                      "backgroundColor": "",
+                      "verticalAlign": "unknown"
+                    },
+                    "VyY8pJ_UYOJEv": {
+                      "id": "VyY8pJ_UYOJEv",
+                      "childIds": [
+                        "8uOBIl"
+                      ],
+                      "rowSpan": "1",
+                      "colSpan": "1",
+                      "borderKind": "",
+                      "borderColor": "",
+                      "backgroundColor": "",
+                      "verticalAlign": "unknown"
+                    },
+                    "bOpfUo_KiCxpS": {
+                      "id": "bOpfUo_KiCxpS",
+                      "childIds": [
+                        "hHvVJc"
+                      ],
+                      "rowSpan": "1",
+                      "colSpan": "1",
+                      "borderKind": "",
+                      "borderColor": "",
+                      "backgroundColor": "",
+                      "verticalAlign": "unknown"
+                    },
+                    "bOpfUo_UYOJEv": {
+                      "id": "bOpfUo_UYOJEv",
+                      "childIds": [
+                        "zSehpW"
+                      ],
+                      "rowSpan": "1",
+                      "colSpan": "1",
+                      "borderKind": "",
+                      "borderColor": "",
+                      "backgroundColor": "",
+                      "verticalAlign": "unknown"
+                    },
+                    "zSwWLF_KiCxpS": {
+                      "id": "zSwWLF_KiCxpS",
+                      "childIds": [
+                        "cAPJee"
+                      ],
+                      "rowSpan": "1",
+                      "colSpan": "1",
+                      "borderKind": "",
+                      "borderColor": "",
+                      "backgroundColor": "",
+                      "verticalAlign": "unknown"
+                    },
+                    "zSwWLF_UYOJEv": {
+                      "id": "zSwWLF_UYOJEv",
+                      "childIds": [
+                        "rsYCx8"
+                      ],
+                      "rowSpan": "1",
+                      "colSpan": "1",
+                      "borderKind": "",
+                      "borderColor": "",
+                      "backgroundColor": "",
+                      "verticalAlign": "unknown"
+                    },
+                    "zxNaft_KiCxpS": {
+                      "id": "zxNaft_KiCxpS",
+                      "childIds": [
+                        "SixNG8"
+                      ],
+                      "rowSpan": "1",
+                      "colSpan": "1",
+                      "borderKind": "",
+                      "borderColor": "",
+                      "backgroundColor": "",
+                      "verticalAlign": "unknown"
+                    },
+                    "zxNaft_UYOJEv": {
+                      "id": "zxNaft_UYOJEv",
+                      "childIds": [
+                        "PjqZ9Y"
+                      ],
+                      "rowSpan": "1",
+                      "colSpan": "1",
+                      "borderKind": "",
+                      "borderColor": "",
+                      "backgroundColor": "",
+                      "verticalAlign": "unknown"
+                    }
+                  },
+                  "description": "",
+                  "rowHeader": true,
+                  "colHeader": false
+                }
+              },
+              "hHvVJc": {
+                "id": "hHvVJc",
+                "parentId": "bOpfUo_KiCxpS",
+                "align": "center",
+                "kind": "text",
+                "text": {
+                  "inlineElements": [
+                    {
+                      "kind": "text",
+                      "text": {
+                        "text": "150"
+                      }
+                    }
+                  ],
+                  "kind": "body"
+                }
+              },
+              "pfFowr": {
+                "id": "pfFowr",
+                "parentId": "AnyygQ_UYOJEv",
+                "align": "center",
+                "kind": "text",
+                "text": {
+                  "inlineElements": [
+                    {
+                      "kind": "entry",
+                      "entry": {
+                        "id": "595",
+                        "showType": "card-big",
+                        "count": "0"
+                      }
+                    }
+                  ],
+                  "kind": "body"
+                }
+              },
+              "rsYCx8": {
+                "id": "rsYCx8",
+                "parentId": "zSwWLF_UYOJEv",
+                "align": "center",
+                "kind": "text",
+                "text": {
+                  "inlineElements": [
+                    {
+                      "kind": "entry",
+                      "entry": {
+                        "id": "926",
+                        "showType": "card-big",
+                        "count": "25"
+                      }
+                    }
+                  ],
+                  "kind": "body"
+                }
+              },
+              "xNBqz1": {
+                "id": "xNBqz1",
+                "parentId": "document-id",
+                "kind": "horizontalLine",
+                "horizontalLine": {
+                  "kind": "3"
+                }
+              },
+              "zSehpW": {
+                "id": "zSehpW",
+                "parentId": "bOpfUo_UYOJEv",
+                "align": "center",
+                "kind": "text",
+                "text": {
+                  "inlineElements": [
+                    {
+                      "kind": "entry",
+                      "entry": {
+                        "id": "926",
+                        "showType": "card-big",
+                        "count": "80"
+                      }
+                    }
+                  ],
+                  "kind": "body"
+                }
+              }
+            },
+            "authorMap": {},
+            "version": "1.0.0"
+          },
+          "pNM4L1cy": {
+            "id": "document-id",
+            "blockIds": [
+              "GJmaYW",
+              "3OsOze"
+            ],
+            "blockMap": {
+              "3OsOze": {
+                "id": "3OsOze",
+                "parentId": "document-id",
+                "kind": "horizontalLine",
+                "horizontalLine": {
+                  "kind": "3"
+                }
+              },
+              "41uK6D": {
+                "id": "41uK6D",
+                "parentId": "EMwV9T_UAHBQV",
+                "align": "center",
+                "kind": "text",
+                "text": {
+                  "inlineElements": [
+                    {
+                      "bold": true,
+                      "color": "light_rank_yellow",
+                      "kind": "text",
+                      "text": {
+                        "text": "精制食药"
+                      }
+                    }
+                  ],
+                  "kind": "body"
+                }
+              },
+              "5U8VDq": {
+                "id": "5U8VDq",
+                "parentId": "zIB5HG_m3Onvo",
+                "align": "center",
+                "kind": "text",
+                "text": {
+                  "inlineElements": [
+                    {
+                      "bold": true,
+                      "kind": "text",
+                      "text": {
+                        "text": "原料需求"
+                      }
+                    }
+                  ],
+                  "kind": "body"
+                }
+              },
+              "5vrQ3j": {
+                "id": "5vrQ3j",
+                "parentId": "zIB5HG_UAHBQV",
+                "align": "center",
+                "kind": "text",
+                "text": {
+                  "inlineElements": [
+                    {
+                      "bold": true,
+                      "kind": "text",
+                      "text": {
+                        "text": "制作类型"
+                      }
+                    }
+                  ],
+                  "kind": "body"
+                }
+              },
+              "9BF3IM": {
+                "id": "9BF3IM",
+                "parentId": "4V2wLM_MwWWgq",
+                "align": "center",
+                "kind": "text",
+                "text": {
+                  "inlineElements": [
+                    {
+                      "kind": "entry",
+                      "entry": {
+                        "id": "595",
+                        "showType": "card-big",
+                        "count": "1"
+                      }
+                    }
+                  ],
+                  "kind": "body"
+                }
+              },
+              "GJmaYW": {
+                "id": "GJmaYW",
+                "parentId": "document-id",
+                "kind": "table",
+                "table": {
+                  "id": "GJmaYW",
+                  "rowIds": [
+                    "zIB5HG",
+                    "4V2wLM",
+                    "EMwV9T",
+                    "H2Rm6l"
+                  ],
+                  "columnIds": [
+                    "UAHBQV",
+                    "m3Onvo",
+                    "MwWWgq"
+                  ],
+                  "rowMap": {
+                    "4V2wLM": {
+                      "id": "4V2wLM"
+                    },
+                    "EMwV9T": {
+                      "id": "EMwV9T"
+                    },
+                    "H2Rm6l": {
+                      "id": "H2Rm6l"
+                    },
+                    "zIB5HG": {
+                      "id": "zIB5HG"
+                    }
+                  },
+                  "columnMap": {
+                    "MwWWgq": {
+                      "id": "MwWWgq",
+                      "width": 386.6666666666667
+                    },
+                    "UAHBQV": {
+                      "id": "UAHBQV",
+                      "width": 386.6666666666667
+                    },
+                    "m3Onvo": {
+                      "id": "m3Onvo",
+                      "width": 386.6666666666667
+                    }
+                  },
+                  "cellMap": {
+                    "4V2wLM_MwWWgq": {
+                      "id": "4V2wLM_MwWWgq",
+                      "childIds": [
+                        "9BF3IM"
+                      ],
+                      "rowSpan": "1",
+                      "colSpan": "1",
+                      "borderKind": "",
+                      "borderColor": "",
+                      "backgroundColor": "",
+                      "verticalAlign": "unknown"
+                    },
+                    "4V2wLM_UAHBQV": {
+                      "id": "4V2wLM_UAHBQV",
+                      "childIds": [
+                        "41uK6D"
+                      ],
+                      "rowSpan": "1",
+                      "colSpan": "1",
+                      "borderKind": "",
+                      "borderColor": "",
+                      "backgroundColor": "",
+                      "verticalAlign": "unknown"
+                    },
+                    "4V2wLM_m3Onvo": {
+                      "id": "4V2wLM_m3Onvo",
+                      "childIds": [
+                        "ej1gzd"
+                      ],
+                      "rowSpan": "1",
+                      "colSpan": "1",
+                      "borderKind": "",
+                      "borderColor": "",
+                      "backgroundColor": "",
+                      "verticalAlign": "unknown"
+                    },
+                    "EMwV9T_MwWWgq": {
+                      "id": "EMwV9T_MwWWgq",
+                      "childIds": [
+                        "i5fEQy"
+                      ],
+                      "rowSpan": "1",
+                      "colSpan": "1",
+                      "borderKind": "",
+                      "borderColor": "",
+                      "backgroundColor": "",
+                      "verticalAlign": "unknown"
+                    },
+                    "EMwV9T_UAHBQV": {
+                      "id": "EMwV9T_UAHBQV",
+                      "childIds": [
+                        "41uK6D"
+                      ],
+                      "rowSpan": "1",
+                      "colSpan": "1",
+                      "borderKind": "",
+                      "borderColor": "",
+                      "backgroundColor": "",
+                      "verticalAlign": "unknown"
+                    },
+                    "EMwV9T_m3Onvo": {
+                      "id": "EMwV9T_m3Onvo",
+                      "childIds": [
+                        "JTHnxn"
+                      ],
+                      "rowSpan": "1",
+                      "colSpan": "1",
+                      "borderKind": "",
+                      "borderColor": "",
+                      "backgroundColor": "",
+                      "verticalAlign": "unknown"
+                    },
+                    "H2Rm6l_MwWWgq": {
+                      "id": "H2Rm6l_MwWWgq",
+                      "childIds": [
+                        "onYoWssmCIRB"
+                      ],
+                      "rowSpan": "1",
+                      "colSpan": "1",
+                      "borderKind": "",
+                      "borderColor": "",
+                      "backgroundColor": "",
+                      "verticalAlign": "unknown"
+                    },
+                    "H2Rm6l_UAHBQV": {
+                      "id": "H2Rm6l_UAHBQV",
+                      "childIds": [
+                        "mDaoacXN7n2g"
+                      ],
+                      "rowSpan": "1",
+                      "colSpan": "1",
+                      "borderKind": "",
+                      "borderColor": "",
+                      "backgroundColor": "",
+                      "verticalAlign": "unknown"
+                    },
+                    "H2Rm6l_m3Onvo": {
+                      "id": "H2Rm6l_m3Onvo",
+                      "childIds": [
+                        "pykRWtuwmOG2"
+                      ],
+                      "rowSpan": "1",
+                      "colSpan": "1",
+                      "borderKind": "",
+                      "borderColor": "",
+                      "backgroundColor": "",
+                      "verticalAlign": "unknown"
+                    },
+                    "zIB5HG_MwWWgq": {
+                      "id": "zIB5HG_MwWWgq",
+                      "childIds": [
+                        "QjWcIG"
+                      ],
+                      "rowSpan": "1",
+                      "colSpan": "1",
+                      "borderKind": "",
+                      "borderColor": "",
+                      "backgroundColor": "",
+                      "verticalAlign": "unknown"
+                    },
+                    "zIB5HG_UAHBQV": {
+                      "id": "zIB5HG_UAHBQV",
+                      "childIds": [
+                        "5vrQ3j"
+                      ],
+                      "rowSpan": "1",
+                      "colSpan": "1",
+                      "borderKind": "",
+                      "borderColor": "",
+                      "backgroundColor": "",
+                      "verticalAlign": "unknown"
+                    },
+                    "zIB5HG_m3Onvo": {
+                      "id": "zIB5HG_m3Onvo",
+                      "childIds": [
+                        "5U8VDq"
+                      ],
+                      "rowSpan": "1",
+                      "colSpan": "1",
+                      "borderKind": "",
+                      "borderColor": "",
+                      "backgroundColor": "",
+                      "verticalAlign": "unknown"
+                    }
+                  },
+                  "description": "",
+                  "rowHeader": true,
+                  "colHeader": false
+                }
+              },
+              "JTHnxn": {
+                "id": "JTHnxn",
+                "parentId": "EMwV9T_m3Onvo",
+                "align": "center",
+                "kind": "text",
+                "text": {
+                  "inlineElements": [
+                    {
+                      "kind": "entry",
+                      "entry": {
+                        "id": "576",
+                        "showType": "card-big",
+                        "count": "8"
+                      }
+                    },
+                    {
+                      "kind": "entry",
+                      "entry": {
+                        "id": "34",
+                        "showType": "card-big",
+                        "count": "4"
+                      }
+                    }
+                  ],
+                  "kind": "body"
+                }
+              },
+              "QjWcIG": {
+                "id": "QjWcIG",
+                "parentId": "zIB5HG_MwWWgq",
+                "align": "center",
+                "kind": "text",
+                "text": {
+                  "inlineElements": [
+                    {
+                      "bold": true,
+                      "kind": "text",
+                      "text": {
+                        "text": "制作产物"
+                      }
+                    }
+                  ],
+                  "kind": "body"
+                }
+              },
+              "ej1gzd": {
+                "id": "ej1gzd",
+                "parentId": "4V2wLM_m3Onvo",
+                "align": "center",
+                "kind": "text",
+                "text": {
+                  "inlineElements": [
+                    {
+                      "kind": "entry",
+                      "entry": {
+                        "id": "576",
+                        "showType": "card-big",
+                        "count": "8"
+                      }
+                    },
+                    {
+                      "kind": "entry",
+                      "entry": {
+                        "id": "586",
+                        "showType": "card-big",
+                        "count": "8"
+                      }
+                    }
+                  ],
+                  "kind": "body"
+                }
+              },
+              "i5fEQy": {
+                "id": "i5fEQy",
+                "parentId": "EMwV9T_MwWWgq",
+                "align": "center",
+                "kind": "text",
+                "text": {
+                  "inlineElements": [
+                    {
+                      "kind": "entry",
+                      "entry": {
+                        "id": "894",
+                        "showType": "card-big",
+                        "count": "1"
+                      }
+                    }
+                  ],
+                  "kind": "body"
+                }
+              },
+              "mDaoacXN7n2g": {
+                "id": "mDaoacXN7n2g",
+                "parentId": "H2Rm6l_UAHBQV",
+                "align": "center",
+                "kind": "text",
+                "text": {
+                  "inlineElements": [
+                    {
+                      "bold": true,
+                      "color": "light_rank_yellow",
+                      "kind": "text",
+                      "text": {
+                        "text": "精制食药"
+                      }
+                    }
+                  ],
+                  "kind": "body"
+                }
+              },
+              "onYoWssmCIRB": {
+                "id": "onYoWssmCIRB",
+                "parentId": "H2Rm6l_MwWWgq",
+                "align": "center",
+                "kind": "text",
+                "text": {
+                  "inlineElements": [
+                    {
+                      "bold": true,
+                      "kind": "text",
+                      "text": {
+                        "text": "炝炒时蔬"
+                      }
+                    },
+                    {
+                      "kind": "text",
+                      "text": {
+                        "text": "（1）"
+                      }
+                    }
+                  ],
+                  "kind": "body"
+                }
+              },
+              "pykRWtuwmOG2": {
+                "id": "pykRWtuwmOG2",
+                "parentId": "H2Rm6l_m3Onvo",
+                "align": "center",
+                "kind": "text",
+                "text": {
+                  "inlineElements": [
+                    {
+                      "kind": "entry",
+                      "entry": {
+                        "id": "576",
+                        "showType": "card-big",
+                        "count": "1"
+                      }
+                    },
+                    {
+                      "kind": "entry",
+                      "entry": {
+                        "id": "587",
+                        "showType": "card-big",
+                        "count": "1"
+                      }
+                    },
+                    {
+                      "kind": "entry",
+                      "entry": {
+                        "id": "581",
+                        "showType": "card-big",
+                        "count": "1"
+                      }
+                    }
+                  ],
+                  "kind": "body"
+                }
+              }
+            },
+            "authorMap": {},
+            "version": "1.0.0"
+          },
+          "qZnNlGjO": {
+            "id": "document-id",
+            "blockIds": [
+              "POJC5u",
+              "VLHJm1",
+              "Vn5hvf",
+              "pCnuhO"
+            ],
+            "blockMap": {
+              "91w3Ju": {
+                "id": "91w3Ju",
+                "parentId": "kwPhM2",
+                "align": "left",
+                "kind": "text",
+                "text": {
+                  "inlineElements": [
+                    {
+                      "color": "light_text_primary",
+                      "kind": "text",
+                      "text": {
+                        "text": "每装箱"
+                      }
+                    },
+                    {
+                      "kind": "entry",
+                      "entry": {
+                        "id": "576",
+                        "showType": "link-imgText",
+                        "count": "1"
+                      }
+                    },
+                    {
+                      "color": "light_text_primary",
+                      "kind": "text",
+                      "text": {
+                        "text": "需要10点货箱容量。"
+                      }
+                    }
+                  ],
+                  "kind": "body"
+                }
+              },
+              "POJC5u": {
+                "id": "POJC5u",
+                "parentId": "document-id",
+                "kind": "horizontalLine",
+                "horizontalLine": {
+                  "kind": "5"
+                }
+              },
+              "VLHJm1": {
+                "id": "VLHJm1",
+                "parentId": "document-id",
+                "align": "left",
+                "kind": "text",
+                "text": {
+                  "inlineElements": [
+                    {
+                      "bold": true,
+                      "color": "light_text_primary",
+                      "kind": "text",
+                      "text": {
+                        "text": "用于仓储节点货物装箱。"
+                      }
+                    }
+                  ],
+                  "kind": "body"
+                }
+              },
+              "Vn5hvf": {
+                "id": "Vn5hvf",
+                "parentId": "document-id",
+                "kind": "list",
+                "list": {
+                  "id": "Vn5hvf",
+                  "itemIds": [
+                    "kwPhM2"
+                  ],
+                  "itemMap": {
+                    "kwPhM2": {
+                      "id": "kwPhM2",
+                      "childIds": [
+                        "91w3Ju"
+                      ]
+                    }
+                  },
+                  "kind": "unordered"
+                }
+              },
+              "pCnuhO": {
+                "id": "pCnuhO",
+                "parentId": "document-id",
+                "kind": "horizontalLine",
+                "horizontalLine": {
+                  "kind": "2"
+                }
+              }
+            },
+            "authorMap": {},
+            "version": "1.0.0"
+          }
+        },
+        "chapterGroup": [
+          {
+            "title": "物品来源",
+            "widgets": [
+              {
+                "id": "JRRTRIUi",
+                "title": "相关来源",
+                "size": "large"
+              }
+            ]
+          },
+          {
+            "title": "物品用途",
+            "widgets": [
+              {
+                "id": "BrfRWXDB",
+                "title": "相关用途",
+                "size": "large"
+              }
+            ]
+          },
+          {
+            "title": "参与配方",
+            "widgets": [
+              {
+                "id": "mRBEdn8A",
+                "title": "简易制作",
+                "size": "large"
+              },
+              {
+                "id": "ZQxNP3i5",
+                "title": "工业合成",
+                "size": "large"
+              }
+            ]
+          },
+          {
+            "title": "简制手册",
+            "widgets": [
+              {
+                "id": "0PAYOgSY",
+                "title": "收集奖励",
+                "size": "large"
+              }
+            ]
+          }
+        ],
+        "extraInfo": {
+          "showType": "",
+          "illustration": "",
+          "composite": ""
+        },
+        "widgetCommonMap": {
+          "0PAYOgSY": {
+            "type": "common",
+            "tableList": [],
+            "tabList": [],
+            "tabDataMap": {
+              "default": {
+                "intro": null,
+                "content": "hpxeFhg8",
+                "audioList": []
+              }
+            }
+          },
+          "BrfRWXDB": {
+            "type": "common",
+            "tableList": [],
+            "tabList": [],
+            "tabDataMap": {
+              "default": {
+                "intro": null,
+                "content": "qZnNlGjO",
+                "audioList": []
+              }
+            }
+          },
+          "JRRTRIUi": {
+            "type": "common",
+            "tableList": [],
+            "tabList": [],
+            "tabDataMap": {
+              "default": {
+                "intro": null,
+                "content": "ElyyAqe6",
+                "audioList": []
+              }
+            }
+          },
+          "ZQxNP3i5": {
+            "type": "common",
+            "tableList": [],
+            "tabList": [],
+            "tabDataMap": {
+              "default": {
+                "intro": null,
+                "content": "QMV0Pirj",
+                "audioList": []
+              }
+            }
+          },
+          "mRBEdn8A": {
+            "type": "common",
+            "tableList": [],
+            "tabList": [],
+            "tabDataMap": {
+              "default": {
+                "intro": null,
+                "content": "pNM4L1cy",
+                "audioList": []
+              }
+            }
+          }
+        }
+      },
+      "name": "琼叶参",
+      "mainType": {
+        "id": "1",
+        "name": "终末地百科",
+        "status": 2,
+        "position": 1,
+        "typeSub": []
+      },
+      "subType": {
+        "id": "6",
+        "name": "物品",
+        "fatherTypeId": "1",
+        "style": 7,
+        "status": 2,
+        "position": 7,
+        "icon": "",
+        "items": [],
+        "filterTagTree": [
+          {
+            "id": "10000",
+            "children": [
+              {
+                "id": "10001",
+                "children": [],
+                "name": "1星",
+                "type": 2,
+                "value": "rarity_1"
+              },
+              {
+                "id": "10002",
+                "children": [],
+                "name": "2星",
+                "type": 2,
+                "value": "rarity_2"
+              },
+              {
+                "id": "10003",
+                "children": [],
+                "name": "3星",
+                "type": 2,
+                "value": "rarity_3"
+              },
+              {
+                "id": "10004",
+                "children": [],
+                "name": "4星",
+                "type": 2,
+                "value": "rarity_4"
+              },
+              {
+                "id": "10005",
+                "children": [],
+                "name": "5星",
+                "type": 2,
+                "value": "rarity_5"
+              },
+              {
+                "id": "10006",
+                "children": [],
+                "name": "6星",
+                "type": 2,
+                "value": "rarity_6"
+              }
+            ],
+            "name": "星级",
+            "type": 2,
+            "value": ""
+          },
+          {
+            "id": "10253",
+            "children": [
+              {
+                "id": "10261",
+                "children": [],
+                "name": "灰色品质",
+                "type": 1,
+                "value": ""
+              },
+              {
+                "id": "10260",
+                "children": [],
+                "name": "绿色品质",
+                "type": 1,
+                "value": ""
+              },
+              {
+                "id": "10263",
+                "children": [],
+                "name": "蓝色品质",
+                "type": 1,
+                "value": ""
+              },
+              {
+                "id": "10257",
+                "children": [],
+                "name": "紫色品质",
+                "type": 1,
+                "value": ""
+              },
+              {
+                "id": "10259",
+                "children": [],
+                "name": "金色品质",
+                "type": 1,
+                "value": ""
+              },
+              {
+                "id": "10313",
+                "children": [],
+                "name": "橙色品质",
+                "type": 1,
+                "value": ""
+              }
+            ],
+            "name": "品质",
+            "type": 1,
+            "value": ""
+          },
+          {
+            "id": "10254",
+            "children": [
+              {
+                "id": "10320",
+                "children": [],
+                "name": "自然资源",
+                "type": 1,
+                "value": ""
+              },
+              {
+                "id": "10255",
+                "children": [],
+                "name": "采集材料",
+                "type": 1,
+                "value": ""
+              },
+              {
+                "id": "10332",
+                "children": [],
+                "name": "珍贵材料",
+                "type": 1,
+                "value": ""
+              },
+              {
+                "id": "10318",
+                "children": [],
+                "name": "工业产物",
+                "type": 1,
+                "value": ""
+              },
+              {
+                "id": "10317",
+                "children": [],
+                "name": "可用道具",
+                "type": 1,
+                "value": ""
+              },
+              {
+                "id": "10316",
+                "children": [],
+                "name": "功能道具",
+                "type": 1,
+                "value": ""
+              },
+              {
+                "id": "10319",
+                "children": [],
+                "name": "干员礼物",
+                "type": 1,
+                "value": ""
+              },
+              {
+                "id": "10258",
+                "children": [],
+                "name": "培养素材",
+                "type": 1,
+                "value": ""
+              },
+              {
+                "id": "10262",
+                "children": [],
+                "name": "任务物品",
+                "type": 1,
+                "value": ""
+              },
+              {
+                "id": "10256",
+                "children": [],
+                "name": "珍贵物品",
+                "type": 1,
+                "value": ""
+              }
+            ],
+            "name": "物品分类",
+            "type": 1,
+            "value": ""
+          }
+        ]
+      },
+      "lang": "zh_Hans",
+      "lastUpdatedUser": {
+        "id": "9228422493033",
+        "nickname": "骷髅先生",
+        "avatarCode": 0,
+        "avatar": "https://bbs.hycdn.cn/asset/avatar_award/4c05c11e12994d409cec99541c949805.webp"
+      },
+      "createdUser": {
+        "id": "3358404863657",
+        "nickname": "A_Pullu_Pie",
+        "avatarCode": 0,
+        "avatar": "https://bbs.hycdn.cn/asset/avatar/04fd45d25fde55799b8e3df64ead6c29.webp"
+      },
+      "brief": {
+        "cover": "https://bbs.hycdn.cn/image/2026/01/06/5119534/0b494c38cff2742457026b26aff9a7a1.png",
+        "name": "琼叶参",
+        "description": {
+          "id": "document-id",
+          "blockIds": [
+            "LXY1iB",
+            "9bzHRe"
+          ],
+          "blockMap": {
+            "9bzHRe": {
+              "id": "9bzHRe",
+              "parentId": "document-id",
+              "align": "left",
+              "kind": "text",
+              "text": {
+                "inlineElements": [
+                  {
+                    "color": "light_text_tertiary",
+                    "kind": "text",
+                    "text": {
+                      "text": "琼叶参药性温良平和，常被宏山人当作温补自身的药材使用。"
+                    }
+                  }
+                ],
+                "kind": "body"
+              }
+            },
+            "LXY1iB": {
+              "id": "LXY1iB",
+              "parentId": "document-id",
+              "align": "left",
+              "kind": "text",
+              "text": {
+                "inlineElements": [
+                  {
+                    "bold": true,
+                    "color": "light_text_primary",
+                    "kind": "text",
+                    "text": {
+                      "text": "通过精细种植才能培育的作物，可直接用于珍贵食药的制作。"
+                    }
+                  }
+                ],
+                "kind": "body"
+              }
+            }
+          },
+          "authorMap": {},
+          "version": "1.0.0"
+        },
+        "associate": null,
+        "subTypeList": [
+          {
+            "subTypeId": "10000",
+            "value": "10002"
+          },
+          {
+            "subTypeId": "10253",
+            "value": "10260"
+          },
+          {
+            "subTypeId": "10254",
+            "value": "10320"
+          }
+        ],
+        "composite": null
+      },
+      "status": 2,
+      "publishedAtTs": "1766383057",
+      "lastAuditPassedAt": "1769578709",
+      "tagIds": [
+        "10002",
+        "10320",
+        "10260"
+      ]
+    }
+  }
+}

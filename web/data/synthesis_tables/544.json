@@ -1,0 +1,127 @@
+{
+  "itemId": "544",
+  "name": "致密源石粉末",
+  "tables": [
+    {
+      "rows": 5,
+      "columns": 3,
+      "headers": [
+        [
+          {
+            "type": "text",
+            "text": "合成设备"
+          }
+        ],
+        [
+          {
+            "type": "text",
+            "text": "原料需求"
+          }
+        ],
+        [
+          {
+            "type": "text",
+            "text": "合成产物"
+          }
+        ]
+      ],
+      "data": [
+        [
+          [
+            {
+              "type": "entry",
+              "id": "188",
+              "count": "0"
+            }
+          ],
+          [
+            {
+              "type": "entry",
+              "id": "47",
+              "count": "2"
+            },
+            {
+              "type": "entry",
+              "id": "543",
+              "count": "1"
+            }
+          ],
+          []
+        ],
+        [
+          [
+            {
+              "type": "entry",
+              "id": "53",
+              "count": "0"
+            }
+          ],
+          [
+            {
+              "type": "entry",
+              "id": "544",
+              "count": "1"
+            }
+          ],
+          [
+            {
+              "type": "entry",
+              "id": "545",
+              "count": "1"
+            }
+          ]
+        ],
+        [
+          [
+            {
+              "type": "entry",
+              "id": "177",
+              "count": "0"
+            }
+          ],
+          [
+            {
+              "type": "entry",
+              "id": "544",
+              "count": "15"
+            },
+            {
+              "type": "entry",
+              "id": "541",
+              "count": "10"
+            }
+          ],
+          [
+            {
+              "type": "entry",
+              "id": "549",
+              "count": "1"
+            }
+          ]
+        ],
+        [
+          [],
+          [
+            {
+              "type": "entry",
+              "id": "544",
+              "count": "15"
+            },
+            {
+              "type": "entry",
+              "id": "771",
+              "count": "5"
+            }
+          ],
+          [
+            {
+              "type": "entry",
+              "id": "767",
+              "count": "1"
+            }
+          ]
+        ]
+      ]
+    }
+  ]
+}

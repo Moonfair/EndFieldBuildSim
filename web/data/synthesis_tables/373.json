@@ -1,0 +1,139 @@
+{
+  "itemId": "373",
+  "name": "铁制零件",
+  "tables": [
+    {
+      "rows": 5,
+      "columns": 3,
+      "headers": [
+        [
+          {
+            "type": "text",
+            "text": "合成设备"
+          }
+        ],
+        [
+          {
+            "type": "text",
+            "text": "原料需求"
+          }
+        ],
+        [
+          {
+            "type": "text",
+            "text": "合成产物"
+          }
+        ]
+      ],
+      "data": [
+        [
+          [
+            {
+              "type": "entry",
+              "id": "171",
+              "count": "0"
+            }
+          ],
+          [
+            {
+              "type": "entry",
+              "id": "194",
+              "count": "1"
+            }
+          ],
+          [
+            {
+              "type": "entry",
+              "id": "373",
+              "count": "1"
+            }
+          ]
+        ],
+        [
+          [
+            {
+              "type": "entry",
+              "id": "177",
+              "count": "0"
+            }
+          ],
+          [
+            {
+              "type": "entry",
+              "id": "373",
+              "count": "10"
+            },
+            {
+              "type": "entry",
+              "id": "47",
+              "count": "15"
+            }
+          ],
+          [
+            {
+              "type": "entry",
+              "id": "378",
+              "count": "1"
+            }
+          ]
+        ],
+        [
+          [
+            {
+              "type": "entry",
+              "id": "177",
+              "count": "0"
+            }
+          ],
+          [
+            {
+              "type": "entry",
+              "id": "373",
+              "count": "0"
+            },
+            {
+              "type": "entry",
+              "id": "371",
+              "count": "5"
+            }
+          ],
+          [
+            {
+              "type": "entry",
+              "id": "593",
+              "count": "1"
+            }
+          ]
+        ],
+        [
+          [
+            {
+              "type": "entry",
+              "id": "177",
+              "count": "0"
+            }
+          ],
+          [
+            {
+              "type": "entry",
+              "id": "373",
+              "count": "10"
+            },
+            {
+              "type": "entry",
+              "id": "371",
+              "count": "5"
+            }
+          ],
+          [
+            {
+              "type": "entry",
+              "id": "594",
+              "count": "1"
+            }
+          ]
+        ]
+      ]
+    }
+  ]
+}

@@ -1,0 +1,115 @@
+{
+  "itemId": "551",
+  "name": "高晶质瓶",
+  "tables": [
+    {
+      "rows": 4,
+      "columns": 3,
+      "headers": [
+        [
+          {
+            "type": "text",
+            "text": "合成设备"
+          }
+        ],
+        [
+          {
+            "type": "text",
+            "text": "原料需求"
+          }
+        ],
+        [
+          {
+            "type": "text",
+            "text": "合成产物"
+          }
+        ]
+      ],
+      "data": [
+        [
+          [
+            {
+              "type": "entry",
+              "id": "172",
+              "count": "0"
+            }
+          ],
+          [
+            {
+              "type": "entry",
+              "id": "556",
+              "count": "2"
+            }
+          ],
+          [
+            {
+              "type": "entry",
+              "id": "551",
+              "count": "1"
+            }
+          ]
+        ],
+        [
+          [
+            {
+              "type": "entry",
+              "id": "176",
+              "count": "0"
+            }
+          ],
+          [
+            {
+              "type": "entry",
+              "id": "551",
+              "count": "1"
+            },
+            {
+              "type": "entry",
+              "id": "381",
+              "count": "1"
+            }
+          ],
+          [
+            {
+              "type": "text",
+              "text": "已盛装"
+            },
+            {
+              "type": "entry",
+              "id": "381",
+              "count": "0"
+            }
+          ]
+        ],
+        [
+          [
+            {
+              "type": "entry",
+              "id": "745",
+              "count": "0"
+            }
+          ],
+          [
+            {
+              "type": "entry",
+              "id": "551",
+              "count": "1"
+            }
+          ],
+          [
+            {
+              "type": "entry",
+              "id": "551",
+              "count": "1"
+            },
+            {
+              "type": "entry",
+              "id": "381",
+              "count": "1"
+            }
+          ]
+        ]
+      ]
+    }
+  ]
+}

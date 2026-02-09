@@ -9,6 +9,7 @@ import type { Request, Response } from 'express';
 import { promises as fs } from 'fs';
 import path from 'path';
 import { fileURLToPath } from 'url';
+import { spawn, ChildProcess } from 'child_process';
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
@@ -17,6 +18,56 @@ const app = express();
 const PORT = 3001;
 const CUSTOM_DATA_DIR = path.join(__dirname, '../public/data/custom');
 const API_DATA_DIR = path.join(__dirname, '../public/data');
+
+const SCRIPTS_CONFIG = {
+  'fetch-catalogs': {
+    id: 'fetch-catalogs',
+    name: 'Fetch Catalogs',
+    command: 'python3',
+    args: ['../data/fetch.py'],
+    cwd: path.join(__dirname, '..'),
+    description: '获取物品目录 (fetch.py)',
+    outputFiles: [
+      '../data/type5_devices.json',
+      '../data/type6_items.json'
+    ]
+  },
+  'fetch-details': {
+    id: 'fetch-details',
+    name: 'Fetch Details',
+    command: 'python3',
+    args: ['../data/fetch_details_browser.py'],
+    cwd: path.join(__dirname, '..'),
+    description: '获取物品详情 (fetch_details_browser.py)',
+    outputFiles: [
+      '../data/item_details'
+    ]
+  },
+  'extract-synthesis': {
+    id: 'extract-synthesis',
+    name: 'Extract Synthesis Tables',
+    command: 'python3',
+    args: ['../data/extract_synthesis_tables.py'],
+    cwd: path.join(__dirname, '..'),
+    description: '提取合成表格 (extract_synthesis_tables.py)',
+    outputFiles: [
+      '../data/synthesis_tables'
+    ]
+  },
+  'extract-productions': {
+    id: 'extract-productions',
+    name: 'Extract Device Productions',
+    command: 'python3',
+    args: ['../data/extract_device_productions.py'],
+    cwd: path.join(__dirname, '..'),
+    description: '提取设备生产表格 (extract_device_productions.py)',
+    outputFiles: [
+      '../data/device_production_tables'
+    ]
+  }
+} as const;
+
+const runningProcesses = new Map<string, ChildProcess>();
 
 app.use(cors({ origin: ['http://localhost:5173', 'http://localhost:5174', 'http://localhost:3000'] }));
 app.use(express.json());
@@ -247,6 +298,99 @@ app.delete('/api/custom/items/:id', async (req, res) => {
     res.json({ success: true });
   } catch (error: any) {
     res.status(500).json({ error: error.message });
+  }
+});
+
+app.get('/api/scripts', async (req, res) => {
+  try {
+    const scriptsWithTimestamps = await Promise.all(
+      Object.values(SCRIPTS_CONFIG).map(async (script) => {
+        const fileTimestamps = await Promise.all(
+          script.outputFiles.map(async (file: string) => {
+            const filePath = path.join(__dirname, '..', file);
+            try {
+              const stats = await fs.stat(filePath);
+              return {
+                path: file,
+                lastModified: stats.mtime.toISOString(),
+                exists: true
+              };
+            } catch {
+              return {
+                path: file,
+                lastModified: null,
+                exists: false
+              };
+            }
+          })
+        );
+        
+        return {
+          ...script,
+          files: fileTimestamps
+        };
+      })
+    );
+    
+    res.json({ scripts: scriptsWithTimestamps });
+  } catch (error) {
+    res.status(500).json({ error: 'Failed to load script information' });
+  }
+});
+
+app.get('/api/scripts/:id/execute', (req, res) => {
+  const { id } = req.params;
+  const script = SCRIPTS_CONFIG[id];
+
+  if (!script) {
+    return res.status(404).json({ error: 'Script not found' });
+  }
+
+  res.setHeader('Content-Type', 'text/event-stream');
+  res.setHeader('Cache-Control', 'no-cache');
+  res.setHeader('Connection', 'keep-alive');
+
+  const executionId = `${id}-${Date.now()}`;
+  const childProcess = spawn(script.command, script.args, {
+    cwd: script.cwd,
+    env: { ...process.env, PYTHONUNBUFFERED: '1' }
+  });
+
+  runningProcesses.set(executionId, childProcess);
+  res.write(`data: ${JSON.stringify({ type: 'start', executionId })}\n\n`);
+
+  childProcess.stdout.on('data', (data) => {
+    res.write(`data: ${JSON.stringify({ type: 'stdout', data: data.toString() })}\n\n`);
+  });
+
+  childProcess.stderr.on('data', (data) => {
+    res.write(`data: ${JSON.stringify({ type: 'stderr', data: data.toString() })}\n\n`);
+  });
+
+  childProcess.on('close', (code) => {
+    runningProcesses.delete(executionId);
+    res.write(`data: ${JSON.stringify({ type: 'done', exitCode: code })}\n\n`);
+    res.end();
+  });
+
+  req.on('close', () => {
+    if (runningProcesses.has(executionId)) {
+      childProcess.kill('SIGTERM');
+      runningProcesses.delete(executionId);
+    }
+  });
+});
+
+app.post('/api/scripts/cancel/:executionId', (req, res) => {
+  const { executionId } = req.params;
+  const childProcess = runningProcesses.get(executionId);
+
+  if (childProcess) {
+    childProcess.kill('SIGTERM');
+    runningProcesses.delete(executionId);
+    res.json({ success: true, message: 'Script cancelled' });
+  } else {
+    res.status(404).json({ error: 'No running script found' });
   }
 });
 

@@ -1,0 +1,129 @@
+{
+  "itemId": "556",
+  "name": "高晶纤维",
+  "tables": [
+    {
+      "rows": 5,
+      "columns": 3,
+      "headers": [
+        [
+          {
+            "type": "text",
+            "text": "合成设备"
+          }
+        ],
+        [
+          {
+            "type": "text",
+            "text": "原料需求"
+          }
+        ],
+        [
+          {
+            "type": "text",
+            "text": "合成产物"
+          }
+        ]
+      ],
+      "data": [
+        [
+          [
+            {
+              "type": "entry",
+              "id": "53",
+              "count": "0"
+            }
+          ],
+          [
+            {
+              "type": "entry",
+              "id": "546",
+              "count": "1"
+            }
+          ],
+          [
+            {
+              "type": "entry",
+              "id": "556",
+              "count": "1"
+            }
+          ]
+        ],
+        [
+          [
+            {
+              "type": "entry",
+              "id": "175",
+              "count": "0"
+            }
+          ],
+          [
+            {
+              "type": "entry",
+              "id": "556",
+              "count": "10"
+            },
+            {
+              "type": "entry",
+              "id": "557",
+              "count": "10"
+            }
+          ],
+          [
+            {
+              "type": "entry",
+              "id": "479",
+              "count": "1"
+            }
+          ]
+        ],
+        [
+          [
+            {
+              "type": "entry",
+              "id": "171",
+              "count": "0"
+            }
+          ],
+          [
+            {
+              "type": "entry",
+              "id": "556",
+              "count": "1"
+            }
+          ],
+          [
+            {
+              "type": "entry",
+              "id": "540",
+              "count": "1"
+            }
+          ]
+        ],
+        [
+          [
+            {
+              "type": "entry",
+              "id": "172",
+              "count": "0"
+            }
+          ],
+          [
+            {
+              "type": "entry",
+              "id": "556",
+              "count": "2"
+            }
+          ],
+          [
+            {
+              "type": "entry",
+              "id": "551",
+              "count": "1"
+            }
+          ]
+        ]
+      ]
+    }
+  ]
+}

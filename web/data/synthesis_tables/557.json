@@ -1,0 +1,105 @@
+{
+  "itemId": "557",
+  "name": "密制晶体",
+  "tables": [
+    {
+      "rows": 4,
+      "columns": 3,
+      "headers": [
+        [
+          {
+            "type": "text",
+            "text": "合成设备"
+          }
+        ],
+        [
+          {
+            "type": "text",
+            "text": "原料需求"
+          }
+        ],
+        [
+          {
+            "type": "text",
+            "text": "合成产物"
+          }
+        ]
+      ],
+      "data": [
+        [
+          [
+            {
+              "type": "entry",
+              "id": "53",
+              "count": "0"
+            }
+          ],
+          [
+            {
+              "type": "entry",
+              "id": "545",
+              "count": "1"
+            }
+          ],
+          [
+            {
+              "type": "entry",
+              "id": "557",
+              "count": "1"
+            }
+          ]
+        ],
+        [
+          [
+            {
+              "type": "entry",
+              "id": "175",
+              "count": "0"
+            }
+          ],
+          [
+            {
+              "type": "entry",
+              "id": "557",
+              "count": "10"
+            },
+            {
+              "type": "entry",
+              "id": "556",
+              "count": "10"
+            }
+          ],
+          [
+            {
+              "type": "entry",
+              "id": "479",
+              "count": "1"
+            }
+          ]
+        ],
+        [
+          [],
+          [
+            {
+              "type": "entry",
+              "id": "557",
+              "count": "10"
+            },
+            {
+              "type": "entry",
+              "id": "771",
+              "count": "10"
+            }
+          ],
+          [
+            {
+              "type": "entry",
+              "id": "480",
+              "count": "1"
+            }
+          ]
+        ]
+      ]
+    }
+  ]
+}

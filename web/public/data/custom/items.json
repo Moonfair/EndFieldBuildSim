@@ -1,1 +1,154 @@
-{}
+{
+  "10": {
+    "name": "物品准入口",
+    "image": "/images/items/10.png",
+    "subTypeID": "5",
+    "subTypeName": "设备",
+    "width": 1,
+    "height": 1
+  },
+  "51": {
+    "name": "供电桩",
+    "image": "/images/items/51.png",
+    "subTypeID": "5",
+    "subTypeName": "设备",
+    "width": 2,
+    "height": 2,
+    "powerConsumption": null
+  },
+  "53": {
+    "name": "精炼炉",
+    "image": "/images/items/53.png",
+    "subTypeID": "5",
+    "subTypeName": "设备",
+    "width": 3,
+    "height": 3,
+    "powerConsumption": 5
+  },
+  "54": {
+    "name": "粉碎机",
+    "image": "/images/items/54.png",
+    "subTypeID": "5",
+    "subTypeName": "设备",
+    "width": 3,
+    "height": 3,
+    "powerConsumption": 5
+  },
+  "166": {
+    "name": "电驱矿机",
+    "image": "/images/items/166.png",
+    "subTypeID": "5",
+    "subTypeName": "设备",
+    "width": null,
+    "height": null,
+    "powerConsumption": 5
+  },
+  "167": {
+    "name": "二型电驱矿机",
+    "image": "/images/items/167.png",
+    "subTypeID": "5",
+    "subTypeName": "设备",
+    "width": null,
+    "height": null,
+    "powerConsumption": 10
+  },
+  "168": {
+    "name": "协议储存箱",
+    "image": "/images/items/168.png",
+    "subTypeID": "5",
+    "subTypeName": "设备",
+    "width": 3,
+    "height": 3,
+    "powerConsumption": 5
+  },
+  "171": {
+    "name": "配件机",
+    "image": "/images/items/171.png",
+    "subTypeID": "5",
+    "subTypeName": "设备",
+    "width": 3,
+    "height": 3,
+    "powerConsumption": 20
+  },
+  "172": {
+    "name": "塑形机",
+    "image": "/images/items/172.png",
+    "subTypeID": "5",
+    "subTypeName": "设备",
+    "width": 3,
+    "height": 3,
+    "powerConsumption": 10
+  },
+  "173": {
+    "name": "采种机",
+    "image": "/images/items/173.png",
+    "subTypeID": "5",
+    "subTypeName": "设备",
+    "width": 5,
+    "height": 5,
+    "powerConsumption": 10
+  },
+  "174": {
+    "name": "种植机",
+    "image": "/images/items/174.png",
+    "subTypeID": "5",
+    "subTypeName": "设备",
+    "width": 5,
+    "height": 5,
+    "powerConsumption": 20
+  },
+  "175": {
+    "name": "装备原件机",
+    "image": "/images/items/175.png",
+    "subTypeID": "5",
+    "subTypeName": "设备",
+    "width": 6,
+    "height": 4,
+    "powerConsumption": 10
+  },
+  "176": {
+    "name": "灌装机",
+    "image": "/images/items/176.png",
+    "subTypeID": "5",
+    "subTypeName": "设备",
+    "width": 6,
+    "height": 4,
+    "powerConsumption": 20
+  },
+  "177": {
+    "name": "封装机",
+    "image": "/images/items/177.png",
+    "subTypeID": "5",
+    "subTypeName": "设备",
+    "width": 6,
+    "height": 4,
+    "powerConsumption": 20
+  },
+  "188": {
+    "name": "研磨机",
+    "image": "/images/items/188.png",
+    "subTypeID": "5",
+    "subTypeName": "设备",
+    "width": 6,
+    "height": 4,
+    "powerConsumption": 50
+  },
+  "746": {
+    "name": "反应池",
+    "image": "/images/items/746.png",
+    "subTypeID": "5",
+    "subTypeName": "设备",
+    "width": 5,
+    "height": 5,
+    "powerConsumption": 50
+  },
+  "752": {
+    "name": "天有洪炉",
+    "image": "/images/items/752.png",
+    "subTypeID": "5",
+    "subTypeName": "设备",
+    "width": 5,
+    "height": 5,
+    "powerConsumption": 50
+  }
+}

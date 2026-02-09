@@ -14,7 +14,10 @@ export default function ItemEditor({ itemId, item, apiItem, onSave, onCancel }: 
     name: item?.name || apiItem?.name || '',
     image: item?.image || apiItem?.image || '',
     subTypeID: item?.subTypeID || apiItem?.subTypeID || '',
-    subTypeName: item?.subTypeName || apiItem?.subTypeName || ''
+    subTypeName: item?.subTypeName || apiItem?.subTypeName || '',
+    width: item?.width ?? '',
+    height: item?.height ?? '',
+    powerConsumption: item?.powerConsumption ?? ''
   });
 
   const handleSubmit = async (e: React.FormEvent) => {
@@ -27,7 +30,12 @@ export default function ItemEditor({ itemId, item, apiItem, onSave, onCancel }: 
       name: formData.name,
       image: formData.image,
       subTypeID: formData.subTypeID || null,
-      subTypeName: formData.subTypeName || null
+      subTypeName: formData.subTypeName || null,
+      ...(formData.subTypeID === '5' && {
+        width: formData.width ? parseInt(String(formData.width), 10) : null,
+        height: formData.height ? parseInt(String(formData.height), 10) : null,
+        powerConsumption: formData.powerConsumption ? parseInt(String(formData.powerConsumption), 10) : null
+      })
     });
   };
 
@@ -113,6 +121,48 @@ export default function ItemEditor({ itemId, item, apiItem, onSave, onCancel }: 
               />
             </div>
           </div>
+          {formData.subTypeID === '5' && (
+            <>
+              <div className="grid grid-cols-2 gap-4">
+                <div>
+                  <label className="block text-sm font-medium text-gray-700 mb-1">宽度 (格)</label>
+                  <input
+                    type="number"
+                    min="1"
+                    step="1"
+                    value={formData.width}
+                    onChange={(e) => setFormData({...formData, width: e.target.value})}
+                    className="w-full border border-gray-300 rounded p-2"
+                    placeholder="2"
+                  />
+                </div>
+                <div>
+                  <label className="block text-sm font-medium text-gray-700 mb-1">高度 (格)</label>
+                  <input
+                    type="number"
+                    min="1"
+                    step="1"
+                    value={formData.height}
+                    onChange={(e) => setFormData({...formData, height: e.target.value})}
+                    className="w-full border border-gray-300 rounded p-2"
+                    placeholder="3"
+                  />
+                </div>
+              </div>
+              <div>
+                <label className="block text-sm font-medium text-gray-700 mb-1">功率消耗 (W)</label>
+                <input
+                  type="number"
+                  min="0"
+                  step="1"
+                  value={formData.powerConsumption}
+                  onChange={(e) => setFormData({...formData, powerConsumption: e.target.value})}
+                  className="w-full border border-gray-300 rounded p-2"
+                  placeholder="例如: 100"
+                />
+              </div>
+            </>
+          )}
         </div>
         <div className="flex space-x-3 mt-6">
           <button

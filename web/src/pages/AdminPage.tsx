@@ -1,15 +1,16 @@
 import { useState, useEffect } from 'react';
 import ItemsPanel from '../components/admin/ItemsPanel';
 import RecipesPanel from '../components/admin/RecipesPanel';
+import ScriptsPanel from '../components/admin/ScriptsPanel';
 import BaseMaterialsPanel from '../components/admin/BaseMaterialsPanel';
 import IgnoredDevicesPanel from '../components/admin/IgnoredDevicesPanel';
 import { clearRecipeCache } from '../utils/recipeLoader';
 
-type Tab = 'items' | 'recipes' | 'settings';
+type Tab = 'devices' | 'items' | 'recipes' | 'scripts' | 'settings';
 type SettingsTab = 'base-materials' | 'ignored-devices';
 
 export default function AdminPage() {
-  const [activeTab, setActiveTab] = useState<Tab>('items');
+  const [activeTab, setActiveTab] = useState<Tab>('devices');
   const [settingsTab, setSettingsTab] = useState<SettingsTab>('base-materials');
   const [customItems, setCustomItems] = useState<Record<string, any>>({ items: {} });
   const [customRecipes, setCustomRecipes] = useState({ recipes: {}, deletedRecipes: [], fixedBaseMaterials: [] });
@@ -55,13 +56,13 @@ export default function AdminPage() {
 
       <div className="border-b border-gray-300 mb-4">
         <div className="flex space-x-4">
-          {(['items', 'recipes', 'settings'] as Tab[]).map(tab => (
+          {(['devices', 'items', 'recipes', 'scripts', 'settings'] as Tab[]).map(tab => (
             <button
               key={tab}
               onClick={() => setActiveTab(tab)}
               className={`px-4 py-2 ${activeTab === tab ? 'border-b-2 border-blue-600 font-semibold' : ''}`}
             >
-              {tab.charAt(0).toUpperCase() + tab.slice(1)}
+              {tab === 'devices' ? '设备' : tab === 'items' ? '物品' : tab.charAt(0).toUpperCase() + tab.slice(1)}
             </button>
           ))}
         </div>
@@ -69,12 +70,20 @@ export default function AdminPage() {
 
       {loading && <div className="text-gray-500">Loading...</div>}
 
+      {!loading && activeTab === 'devices' && (
+        <ItemsPanel customItems={customItems} onLoad={fetchCustomData} filterType="5" />
+      )}
+
       {!loading && activeTab === 'items' && (
-        <ItemsPanel customItems={customItems} onLoad={fetchCustomData} />
+        <ItemsPanel customItems={customItems} onLoad={fetchCustomData} filterType="6" />
       )}
 
       {!loading && activeTab === 'recipes' && (
         <RecipesPanel customRecipes={customRecipes} onLoad={fetchCustomData} />
+      )}
+
+      {!loading && activeTab === 'scripts' && (
+        <ScriptsPanel />
       )}
 
       {!loading && activeTab === 'settings' && (

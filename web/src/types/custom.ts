@@ -8,6 +8,9 @@ export interface CustomItem {
   image?: string;
   subTypeID?: string;
   subTypeName?: string;
+  width?: number;   // Grid width (only for devices with subTypeID === "5")
+  height?: number;  // Grid height (only for devices with subTypeID === "5")
+  powerConsumption?: number;  // Power consumption (only for devices with subTypeID === "5")
 }
 
 export interface CustomRecipe {

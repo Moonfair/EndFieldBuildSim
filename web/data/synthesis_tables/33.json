@@ -1,0 +1,169 @@
+{
+  "itemId": "33",
+  "name": "晶体外壳",
+  "tables": [
+    {
+      "rows": 8,
+      "columns": 3,
+      "headers": [
+        [
+          {
+            "type": "text",
+            "text": "合成设备"
+          }
+        ],
+        [
+          {
+            "type": "text",
+            "text": "原料需求"
+          }
+        ],
+        [
+          {
+            "type": "text",
+            "text": "合成产物"
+          }
+        ]
+      ],
+      "data": [
+        [
+          [
+            {
+              "type": "entry",
+              "id": "53",
+              "count": "0"
+            }
+          ],
+          [
+            {
+              "type": "entry",
+              "id": "48",
+              "count": "1"
+            }
+          ],
+          [
+            {
+              "type": "entry",
+              "id": "33",
+              "count": "1"
+            }
+          ]
+        ],
+        [
+          [
+            {
+              "type": "entry",
+              "id": "53",
+              "count": "0"
+            }
+          ],
+          [
+            {
+              "type": "entry",
+              "id": "38",
+              "count": "1"
+            }
+          ],
+          [
+            {
+              "type": "entry",
+              "id": "33",
+              "count": "1"
+            }
+          ]
+        ],
+        [
+          [
+            {
+              "type": "entry",
+              "id": "175",
+              "count": "0"
+            }
+          ],
+          [
+            {
+              "type": "entry",
+              "id": "33",
+              "count": "5"
+            },
+            {
+              "type": "text",
+              "text": " "
+            },
+            {
+              "type": "entry",
+              "id": "193",
+              "count": "5"
+            }
+          ],
+          [
+            {
+              "type": "entry",
+              "id": "374",
+              "count": "1"
+            }
+          ]
+        ],
+        [
+          [],
+          [],
+          []
+        ],
+        [
+          [],
+          [
+            {
+              "type": "entry",
+              "id": "33",
+              "count": "10"
+            },
+            {
+              "type": "text",
+              "text": " "
+            },
+            {
+              "type": "entry",
+              "id": "194",
+              "count": "10"
+            }
+          ],
+          [
+            {
+              "type": "entry",
+              "id": "375",
+              "count": "1"
+            }
+          ]
+        ],
+        [
+          [],
+          [],
+          []
+        ],
+        [
+          [
+            {
+              "type": "entry",
+              "id": "54",
+              "count": "0"
+            }
+          ],
+          [
+            {
+              "type": "entry",
+              "id": "33",
+              "count": "1"
+            }
+          ],
+          [
+            {
+              "type": "entry",
+              "id": "38",
+              "count": "1"
+            }
+          ]
+        ]
+      ]
+    }
+  ]
+}
